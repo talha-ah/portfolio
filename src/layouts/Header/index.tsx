@@ -1,92 +1,110 @@
-import React from "react"
+import { useRouter } from "next/router"
+import React, { useCallback } from "react"
 
-import { Container } from "@mui/material"
-import { styled } from "@mui/material/styles"
+import { Theme } from "@mui/material/styles"
+import { Box, Container } from "@mui/material"
 
-import { Header } from "./Header"
-import { Width } from "@utils/types"
-import { ActionHeader } from "@ui/ActionHeader"
+import { Link } from "@ui/Link"
+import { Logo } from "@ui/Logo"
+import { UserMenu } from "@ui/UserMenu"
+import { SelectTheme } from "@forms/profile"
+import { useAppContext } from "@contexts/index"
+import { APP_BAR_HEIGHT } from "@utils/constants"
+import { Width, Link as LinkType } from "@utils/types"
 
-const Main = styled("main")(({ theme }) => ({
-  padding: 0,
-  width: "100vw",
-  height: "100vh",
-  display: "flex",
-  overflow: "hidden",
-  flexDirection: "column",
-  backgroundColor: theme.palette.background.default,
-  transition: theme.transitions.create("margin", {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
+const styles = {
+  root: (theme: Theme) => ({
+    width: "100%",
+    display: "flex",
+    height: `${APP_BAR_HEIGHT}px`,
+    borderBottom: `1px solid ${theme.palette.divider}`,
   }),
-}))
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  items: {
+    gap: 4,
+    display: "flex",
+    alignItems: "center",
+  },
+}
 
-const Content = styled("div")(({ theme }) => ({
-  height: "100%",
-  overflow: "auto",
-  transition: theme.transitions.create("margin", {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  /* width */
-  "&::-webkit-scrollbar": {
-    width: 5,
-    backgroundColor: "transparent",
+const AuthenticatedLinks: LinkType[] = [
+  {
+    to: "/",
+    exact: true,
+    label: "Home",
   },
-  /* Track */
-  "&::-webkit-scrollbar-track": {
-    backgroundColor: "transparent",
+  {
+    label: "Profile",
+    to: "/profile",
   },
-  /* Thumb */
-  "&::-webkit-scrollbar-thumb": {
-    borderRadius: 8,
-    backgroundColor: "#babac0",
-  },
-  /* Thumb:hover */
-  "&::-webkit-scrollbar-thumb:hover": {
-    backgroundColor: "#babac0",
-  },
-  /* Button (top and bottom of the scrollbar) */
-  "&::-webkit-scrollbar-button": {
-    display: "none",
-  },
-}))
+]
 
-export const HeaderLayout = ({
-  title,
-  actions,
-  children,
-  withBackButton,
-}: {
-  title?: string
-  withBackButton?: boolean
-  actions?: React.ReactNode
-  children?: React.ReactNode
-}) => {
-  const maxWidth: Width = "xl"
+const UnauthenticatedLinks: LinkType[] = [
+  {
+    to: "/",
+    exact: true,
+    label: "Home",
+  },
+  {
+    label: "Resume",
+    to: "/resume",
+  },
+  {
+    label: "Github",
+    to: "/github",
+  },
+]
+
+export const Header = ({ maxWidth }: { maxWidth: Width }) => {
+  const { state } = useAppContext()
 
   return (
-    <Main>
-      <Header maxWidth={maxWidth} />
+    <Box component="header" sx={styles.root}>
+      <Container maxWidth={maxWidth} sx={styles.container}>
+        <Logo />
 
-      <Content>
-        <Container
-          maxWidth={maxWidth}
-          sx={(theme) => ({ height: "100%", padding: theme.spacing(2) })}
-        >
-          {/* Page Header */}
-          {title && (
-            <ActionHeader
-              title={title}
-              sx={{ borderBottom: "none" }}
-              withBackButton={withBackButton}
-            >
-              {actions}
-            </ActionHeader>
-          )}
-          {children}
-        </Container>
-      </Content>
-    </Main>
+        <Links
+          links={state.auth.isAuth ? AuthenticatedLinks : UnauthenticatedLinks}
+        />
+
+        <Box sx={styles.items}>
+          <SelectTheme />
+
+          {state.auth.isAuth ? <UserMenu /> : null}
+        </Box>
+      </Container>
+    </Box>
+  )
+}
+
+const Links = ({ links }: { links: LinkType[] }) => {
+  const router = useRouter()
+
+  const getColor = useCallback(
+    (pathname: string, exact?: boolean) => {
+      if (exact) {
+        return pathname === router.pathname ? "primary.main" : "text.primary"
+      }
+
+      return router.pathname.startsWith(pathname)
+        ? "primary.main"
+        : "text.primary"
+    },
+    [router.pathname]
+  )
+
+  return (
+    <Box sx={styles.items}>
+      {links.map(({ label, to, exact }: LinkType) => (
+        <Link key={to} to={to as string} color={getColor(to as string, exact)}>
+          {label}
+        </Link>
+      ))}
+    </Box>
   )
 }

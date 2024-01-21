@@ -46,23 +46,12 @@ export interface AuthStateType {
 
 export interface AuthInitialStateType extends AuthStateType, LoginResponse {}
 
-export interface NavLink {
-  type: string
-  href?: string
-  value: string
+export interface Link {
+  icon?: any
+  to?: string
+  label: string
   color?: string
   exact?: boolean
-  children?: NavLink[]
-  icon?: React.ReactElement
-  actions?: React.ReactNode[]
-}
-
-export interface MenuLink {
-  icon?: any
-  type: string
-  href?: string
-  value: string
-  color?: string
   onClick?: () => void
 }
 

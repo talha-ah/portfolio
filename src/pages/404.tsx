@@ -1,11 +1,10 @@
 import Head from "next/head"
 
-import { Box } from "@mui/material"
-import { Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 
 import { Button } from "@ui/Button"
 import { APP_NAME } from "@utils/constants"
-import { HeaderLayout } from "@layouts/Header"
+import { HeaderLayout } from "@layouts/index"
 
 export default function NotFoundTitle() {
   return (

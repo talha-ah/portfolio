@@ -1,14 +1,14 @@
-import { useRouter } from "next/router"
-import { useEffect } from "react"
+import React, { useEffect } from "react"
+import { useRouter, usePathname } from "next/navigation"
 
-import { Box } from "@mui/material"
-import { CircularProgress } from "@mui/material"
+import { Box, CircularProgress } from "@mui/material"
 
 import { Logo } from "@ui/Logo"
 import { AuthTypes, useAppContext } from "@contexts/index"
 
-export function AuthGuard({ children }: { children: JSX.Element }) {
+export function AuthGuard({ children }: Readonly<{ children: JSX.Element }>) {
   const router = useRouter()
+  const pathname = usePathname()
 
   const { state, dispatch } = useAppContext()
   const { user, initializing } = state.auth
@@ -20,15 +20,13 @@ export function AuthGuard({ children }: { children: JSX.Element }) {
         // remember the page that user tried to access
         dispatch({
           type: AuthTypes.SET_REDIRECT,
-          payload: { redirect: router.pathname },
+          payload: { redirect: pathname },
         })
         // redirect
         router.push("/auth/login")
       }
     }
-
-    console.log("AuthGuard", { initializing, user })
-  }, [initializing, router, user, dispatch])
+  }, [initializing, router, pathname, user, dispatch])
 
   /* show loading indicator while the auth provider is still initializing */
   if (initializing) {
@@ -52,9 +50,7 @@ export function AuthGuard({ children }: { children: JSX.Element }) {
   }
 
   // if auth initialized with a valid user show protected page
-  if (!initializing && user) {
-    return <>{children}</>
-  }
+  if (!initializing && user) return <>{children}</>
 
   /* otherwise don't return anything, will do a redirect from useEffect */
   return null

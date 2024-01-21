@@ -3,6 +3,8 @@ import { grey } from "@mui/material/colors"
 
 import { ThemeMode } from "@utils/types"
 
+const DEFAULT_MODE = "light" as ThemeMode
+
 export const Palette = (mode: ThemeMode) => {
   mode = getMode(mode)
 
@@ -17,7 +19,7 @@ const getMode = (mode: ThemeMode) => {
       : "dark"
   }
 
-  return mode || "light"
+  return mode || DEFAULT_MODE
 }
 
 const lightPalette = () => {

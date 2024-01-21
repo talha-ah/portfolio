@@ -1,18 +1,17 @@
 import Head from "next/head"
-import { useEffect } from "react"
-import type { NextPage } from "next"
-import { useRouter } from "next/router"
+import React, { useEffect } from "react"
+import { useRouter } from "next/navigation"
 
-import Box from "@mui/material/Box"
+import { Box } from "@mui/material"
 
-import { HeaderLayout } from "@layouts/Header"
-import { ForgotPasswordForm } from "@forms/auth"
+import { LoginForm } from "@forms/auth"
+import { APP_NAME } from "@utils/constants"
+import { HeaderLayout } from "@layouts/index"
 
-const RecoverPasswordRequest: NextPage = () => {
+const Login = () => {
   const router = useRouter()
 
   useEffect(() => {
-    router.prefetch("/auth/login")
     router.prefetch("/app")
     // eslint-disable-next-line
   }, [])
@@ -20,8 +19,8 @@ const RecoverPasswordRequest: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Forgot Password</title>
-        <meta name="description" content="Forgot Password" />
+        <title>Login - {APP_NAME}</title>
+        <meta name="description" content="Login" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -34,11 +33,11 @@ const RecoverPasswordRequest: NextPage = () => {
             justifyContent: "center",
           }}
         >
-          <ForgotPasswordForm />
+          <LoginForm />
         </Box>
       </HeaderLayout>
     </>
   )
 }
 
-export default RecoverPasswordRequest
+export default Login

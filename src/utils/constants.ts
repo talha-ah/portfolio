@@ -33,44 +33,32 @@ export const YEARS: string[] = Array.from(new Array(10), (_, i) =>
 export const ENDPOINTS = {
   // Auth
   login: "/auth/login",
-  register: "/auth/register",
   authProfile: "/auth/profile",
-  refreshToken: "/auth/refresh",
-  checkToken: "/auth/check/token",
-  checkEmail: "/auth/check/email",
-  verifyEmail: "/auth/verify-email",
-  forgotPassword: "/auth/forgot-password",
-  switchOrganization: "/auth/organization",
-  recoverPassword: "/auth/recover-password",
 
   // Profile
   profile: "/profile",
   profileTheme: "/profile/theme",
 
-  // Users
-  users: "/users",
+  // Github
+  githubZen: "/api/github/zen",
+  githubOctocat: "/api/github/octocat",
+  githubVerify: "/api/github/verify",
+  githubToken: "/api/github/token",
+  githubLogin: "/api/github/login",
+  github: "/api/github/:user",
+  githubRepositories: "/api/github/:user/repositories", // sort by star (.star)
+  githubContributed: "/api/github/:user/contributed", // sort by star (.star)
+  githubCommits: "/api/github/:user/commits", // sort by totalCommits (.totalCommits)
+  githubLanguages: "/api/github/:user/languages",
+  githubOrganizations: "/api/github/:user/organizations",
+  githubUpdateStatus: "/api/github/:user/update",
+  githubUpdate: "/api/github/:user/update",
+  githubHotmap: "/api/github/:user/hotmap",
+  githubContributions: "/api/github/:user/contributions",
+  githubLanguagesStats: "/api/github/:user/languages/stats",
 
-  // Organizations
-  organizations: "/organizations",
-  organizationMetadata: "/organizations/metadata",
-
-  // Organization Users
-  organizationUsers: "/organizations/users",
-
-  // Invite Users
-  invites: "/invites",
-  checkInvite: "/invites/check",
-  acceptInvite: "/invites/accept",
-  rejectInvite: "/invites/reject",
-  resendInvite: "/invites/resend",
-
-  // Settings
-  settings: "/settings",
-
-  // Customers
-  customers: "/customers",
-
-  // Analytics
-  analyticsUsers: "/analytics/users",
-  analyticsUsersChart: "/analytics/users/charts",
+  // Scientific
+  scientific: "/scientific",
+  scientificStatistics: "/scientific/:user/statistic",
+  scientificPredictions: "/scientific/:user/predictions",
 }

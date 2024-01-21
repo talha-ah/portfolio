@@ -21,7 +21,7 @@ interface LocalAppProps extends AppProps {
   Component: NextPage & { requireAuth?: boolean }
 }
 
-export default function App(props: LocalAppProps) {
+export default function App(props: Readonly<LocalAppProps>) {
   const { Component, emotionCache = createEmotionCache, pageProps } = props
 
   return (

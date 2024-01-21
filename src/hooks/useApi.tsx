@@ -1,4 +1,4 @@
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import { useSnackbar } from "notistack"
 import { useLayoutEffect, useEffect, useRef } from "react"
 

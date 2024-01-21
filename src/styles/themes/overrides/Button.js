@@ -8,7 +8,7 @@ export default function Button(theme) {
   return {
     MuiButton: {
       defaultProps: {
-        // size: "small",
+        size: "small",
         // disableElevation: true,
       },
       styleOverrides: {
@@ -22,6 +22,10 @@ export default function Button(theme) {
         },
         outlined: {
           // ...disabledStyle,
+          color:
+            theme.palette.mode === "dark"
+              ? theme.palette.common.white
+              : theme.palette.primary.main,
         },
       },
     },

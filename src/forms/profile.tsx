@@ -1,16 +1,8 @@
 import { useCallback, useEffect, useState } from "react"
 
-import { Box } from "@mui/material"
-import { Grid } from "@mui/material"
-import { Typography } from "@mui/material"
-import { DarkMode } from "@mui/icons-material"
-import { CardActionArea } from "@mui/material"
-import { MailLock } from "@mui/icons-material"
-import { LightMode } from "@mui/icons-material"
-import { Card as MuiCard } from "@mui/material"
-import { SettingsBrightnessOutlined } from "@mui/icons-material"
+import { Box, Grid } from "@mui/material"
+import { DarkMode, LightMode } from "@mui/icons-material"
 
-import { Menu } from "@ui/Menu"
 import { Alert } from "@ui/Alert"
 import { Input } from "@ui/Input"
 import { Button } from "@ui/Button"
@@ -26,7 +18,6 @@ export function UpdateProfile() {
 
   const [loading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
-  const [verifyEmailLoading, setVerifyEmailLoading] = useState<boolean>(false)
 
   const [email, setEmail] = useState<string>("")
   const [firstName, setFirstName] = useState<string>("")
@@ -34,10 +25,10 @@ export function UpdateProfile() {
   const [lastName, setLastName] = useState<string | undefined>("")
 
   useEffect(() => {
-    setEmail(state?.auth?.user?.email || "")
-    setPhone(state?.auth?.user?.phone || "")
-    setLastName(state?.auth?.user?.lastName || "")
-    setFirstName(state?.auth?.user?.firstName || "")
+    setEmail(state?.auth?.user?.email ?? "")
+    setPhone(state?.auth?.user?.phone ?? "")
+    setLastName(state?.auth?.user?.lastName ?? "")
+    setFirstName(state?.auth?.user?.firstName ?? "")
   }, [state?.auth?.user])
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -74,29 +65,6 @@ export function UpdateProfile() {
       setError(error.message)
     } finally {
       setLoading(false)
-    }
-  }
-
-  const sendVerifyEmail = async () => {
-    try {
-      setError(null)
-      setVerifyEmailLoading(true)
-
-      const body = {
-        email: email,
-      }
-
-      await API({
-        method: "POST",
-        notifyError: false,
-        body: JSON.stringify(body),
-        uri: `${ENDPOINTS.verifyEmail}`,
-        message: "Verification email sent successfully",
-      })
-    } catch (error: any) {
-      setError(error.message)
-    } finally {
-      setVerifyEmailLoading(false)
     }
   }
 
@@ -149,18 +117,6 @@ export function UpdateProfile() {
               autoComplete="email"
               label="Email Address"
               onChange={(event) => setEmail(event.target.value)}
-              InputProps={{
-                endAdornment:
-                  state?.auth?.user?.status === "pending" ? (
-                    <IconButton
-                      onClick={sendVerifyEmail}
-                      loading={verifyEmailLoading}
-                      tooltip="Kindly verify your email. Click to resend verification email"
-                    >
-                      <MailLock color="primary" />
-                    </IconButton>
-                  ) : null,
-              }}
             />
           </Grid>
           <Grid item xs={6}>
@@ -298,12 +254,14 @@ export function UpdatePassword() {
   )
 }
 
-export function SelectTheme({ view = "cards" }: { view?: "cards" | "icons" }) {
+export function SelectTheme() {
   const API = useApi()
   const { state, dispatch } = useAppContext()
 
-  const handleSubmit = useCallback(async (theme: ThemeMode) => {
+  const handleSubmit = useCallback(async () => {
     try {
+      const theme: ThemeMode = state.auth.theme === "light" ? "dark" : "light"
+
       dispatch({
         type: AuthTypes.SET_THEME,
         payload: { theme },
@@ -318,122 +276,15 @@ export function SelectTheme({ view = "cards" }: { view?: "cards" | "icons" }) {
       })
     } catch (error: any) {}
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [state.auth.theme])
 
-  const Card = useCallback(
-    ({ type }: { type: ThemeMode }) => (
-      <MuiCard variant="outlined">
-        <CardActionArea
-          onClick={() => handleSubmit(type)}
-          sx={{
-            py: 2,
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: type === state.auth.theme ? "white" : "inherit",
-            backgroundColor:
-              type === state.auth.theme ? "primary.main" : "background.default",
-          }}
-        >
-          {type === "light" ? (
-            <LightMode />
-          ) : type === "dark" ? (
-            <DarkMode />
-          ) : (
-            <SettingsBrightnessOutlined />
-          )}
-
-          <Typography
-            sx={{
-              ml: 2,
-              fontSize: 14,
-              fontWeight: 500,
-            }}
-          >
-            {type === "light"
-              ? "Light Mode"
-              : type === "dark"
-              ? "Dark Mode"
-              : "System"}
-          </Typography>
-        </CardActionArea>
-      </MuiCard>
-    ),
-    [handleSubmit, state.auth.theme]
+  return (
+    <IconButton
+      onClick={handleSubmit}
+      aria-label="Toggle theme"
+      tooltip={state.auth.theme === "light" ? "Dark Mode" : "Light Mode"}
+    >
+      {state.auth.theme === "light" ? <LightMode /> : <DarkMode />}
+    </IconButton>
   )
-
-  const Cards = useCallback(
-    () => (
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
-        <Grid container spacing={2}>
-          <Grid item sm={4}>
-            <Card type="light" />
-          </Grid>
-          <Grid item sm={4}>
-            <Card type="dark" />
-          </Grid>
-          <Grid item sm={4}>
-            <Card type="system" />
-          </Grid>
-        </Grid>
-      </Box>
-    ),
-    [Card]
-  )
-
-  const Icons = useCallback(
-    () => (
-      <Menu
-        selected={state.auth.theme}
-        onClick={(option) => handleSubmit(option.key as ThemeMode)}
-        options={[
-          {
-            key: "light",
-            icon: LightMode,
-            value: "Light Mode",
-            onClick: () => handleSubmit("light"),
-          },
-          {
-            key: "dark",
-            icon: DarkMode,
-            value: "Dark Mode",
-            onClick: () => handleSubmit("dark"),
-          },
-          {
-            key: "system",
-            value: "System",
-            icon: SettingsBrightnessOutlined,
-            onClick: () => handleSubmit("system"),
-          },
-        ]}
-        trigger={({ toggleOpen, ref }) => (
-          <IconButton
-            ref={ref}
-            onClick={toggleOpen}
-            tooltip="Toggle Theme"
-            aria-label="Toggle Theme"
-          >
-            {state.auth.theme === "light" ? (
-              <LightMode />
-            ) : state.auth.theme === "dark" ? (
-              <DarkMode />
-            ) : (
-              <SettingsBrightnessOutlined />
-            )}
-          </IconButton>
-        )}
-      />
-    ),
-    [handleSubmit, state.auth.theme]
-  )
-
-  return view === "icons" ? <Icons /> : <Cards />
 }

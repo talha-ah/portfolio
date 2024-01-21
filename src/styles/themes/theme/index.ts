@@ -1,12 +1,10 @@
 import { ThemeMode } from "@utils/types"
 
 import { Palette } from "./palette"
-// import Typography from "./typography"
 
 export const theme = (mode: ThemeMode) => {
   return {
     palette: Palette(mode),
-    // typography: Typography,
     direction: "ltr" as "ltr" | "rtl",
     shape: {
       borderRadius: 4,

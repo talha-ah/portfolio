@@ -1,9 +1,16 @@
 export default function IconButton(theme) {
   return {
     MuiIconButton: {
+      defaultProps: {
+        size: "small",
+        // disableElevation: true,
+      },
       styleOverrides: {
         root: {
-          // borderRadius: 4,
+          // padding: 8, // Adjust padding as needed
+          // "& svg": {
+          //   fontSize: "small", // set the size for the icon inside the IconButton
+          // },
         },
         // sizeLarge: {
         //   width: theme.spacing(5.5),

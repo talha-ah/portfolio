@@ -8,9 +8,9 @@ import { useAppContext } from "@contexts/index"
 
 export default function ThemeCustomization({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   const { state } = useAppContext()
 
   const customTheme = createTheme(theme(state.auth.theme))

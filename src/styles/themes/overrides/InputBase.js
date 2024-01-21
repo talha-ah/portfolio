@@ -2,7 +2,7 @@ export default function MuiInputBase(theme) {
   return {
     MuiInputBase: {
       defaultProps: {
-        // size: "small",
+        size: "small",
         // disableElevation: true,
       },
       styleOverrides: {

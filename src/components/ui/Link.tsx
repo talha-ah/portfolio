@@ -46,13 +46,13 @@ export const Link = ({
 }) => {
   return to ? (
     <Typography
-      sx={sx}
       passHref
       href={to}
       color="inherit"
       variant="body2"
       component={NextLink}
       style={{ textDecoration: underline ? "underline" : "none" }}
+      sx={sx}
       {...other}
     >
       {children}

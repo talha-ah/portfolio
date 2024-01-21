@@ -2,7 +2,7 @@ export default function InputLabel(theme) {
   return {
     MuiInputLabel: {
       defaultProps: {
-        // size: "small",
+        size: "small",
         // disableElevation: true,
       },
       styleOverrides: {

@@ -8,6 +8,7 @@ const nextConfig = {
     apiLimit: process.env.NEXT_PUBLIC_API_LIMIT,
     apiVersion: process.env.NEXT_PUBLIC_API_VERSION,
     storageKey: process.env.NEXT_PUBLIC_STORAGE_KEY,
+    githubToken: process.env.NEXT_PUBLIC_GITHUB_TOKEN,
   },
   images: {
     domains: ["source.unsplash.com", "premiumlayers.com"],
