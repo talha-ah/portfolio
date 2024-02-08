@@ -3,11 +3,11 @@ import { useSnackbar } from "notistack"
 import { useLayoutEffect, useEffect, useRef } from "react"
 
 import { getLocaleDate } from "@utils/date"
-import { getBrowserObj } from "@utils/browser-utility"
 import { BASE_URL, ENDPOINTS } from "@utils/constants"
+import { getBrowserObj } from "@utils/browser-utility"
 import { useAppContext, AuthTypes } from "@contexts/index"
 import {
-  Params,
+  APIParams,
   ApiResponse,
   LoginResponse,
   ErrorWithMessage,
@@ -44,13 +44,14 @@ export const useApi = () => {
   }, [])
 
   const API = async <T = ApiResponse,>({
-    uri,
+    url,
     body,
+    local,
     message,
     method = "GET",
     notifyError = true,
     contentType = "application/json",
-  }: Params): Promise<T> => {
+  }: APIParams): Promise<T> => {
     return new Promise(async (resolve, reject) => {
       const loginData: LoginResponse = getBrowserObj()
 
@@ -58,11 +59,11 @@ export const useApi = () => {
         const headers = new Headers()
         if (contentType) headers.append("Content-Type", contentType)
 
-        if (loginData && loginData.accessToken) {
+        if (loginData?.accessToken) {
           headers.append("Authorization", `Bearer ${loginData.accessToken}`)
         }
 
-        const response = await fetch(BASE_URL + uri, {
+        const response = await fetch(local ? url : BASE_URL + url, {
           body: body,
           method: method,
           headers: headers,
@@ -105,43 +106,22 @@ export const useApi = () => {
           body && console.log(`Error for Body`, JSON.parse(body))
         }
 
-        if (errorStatus === 401) {
+        if (errorStatus === 401 && loginData?.refreshToken) {
           try {
-            if (!loginData || !loginData.refreshToken) {
-              throw new Error("No refresh token found")
-            }
-
             const response = await API({
               method: "POST",
-              uri: ENDPOINTS.refreshToken,
-              body: JSON.stringify({
-                refreshToken: loginData.refreshToken,
-              }),
+              url: ENDPOINTS.refreshToken,
+              body: JSON.stringify({ refreshToken: loginData.refreshToken }),
             })
-
-            dispatch({
-              type: AuthTypes.LOGIN,
-              payload: response?.data,
-            })
-
-            return API({
-              uri,
-              body,
-              method,
-              message,
-              notifyError,
-              contentType,
-            })
+            dispatch({ type: AuthTypes.LOGIN, payload: response?.data })
+            return API({ url, body, method, message, notifyError, contentType })
           } catch (error: any) {
             dispatch({ type: AuthTypes.LOGOUT })
             router.push("/login")
           }
-        } else if (
-          notifyError &&
-          errorStatus &&
-          errorMessage !== "Token is expired" &&
-          errorMessage !== "The user aborted a request."
-        ) {
+        }
+
+        if (notifyError && errorMessage !== "The user aborted a request.") {
           if (errorMessage === "Failed to fetch") errorMessage = "Network Error"
 
           enqueueSnackbar(errorMessage, {

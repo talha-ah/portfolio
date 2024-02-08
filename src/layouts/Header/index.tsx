@@ -18,6 +18,10 @@ const styles = {
     display: "flex",
     height: `${APP_BAR_HEIGHT}px`,
     borderBottom: `1px solid ${theme.palette.divider}`,
+
+    "@media print": {
+      display: "none",
+    },
   }),
   container: {
     display: "flex",
@@ -54,10 +58,10 @@ const UnauthenticatedLinks: LinkType[] = [
     label: "Resume",
     to: "/resume",
   },
-  {
-    label: "Github",
-    to: "/github",
-  },
+  // {
+  //   label: "Github",
+  //   to: "/github",
+  // },
 ]
 
 export const Header = ({ maxWidth }: { maxWidth: Width }) => {

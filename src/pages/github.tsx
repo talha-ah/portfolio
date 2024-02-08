@@ -1,9 +1,29 @@
-import React from "react"
 import Head from "next/head"
+import React, { useEffect, useState } from "react"
 
+import { useApi } from "@hooks/useApi"
 import { HeaderLayout } from "@layouts/index"
 
 const Github = () => {
+  const API = useApi()
+
+  const [commits, setCommits] = useState<any>(null)
+
+  const fetchCommits = async () => {
+    const response = await API({
+      local: true,
+      method: "GET",
+      url: "/api/github/commits",
+    })
+
+    setCommits(response)
+  }
+
+  useEffect(() => {
+    fetchCommits()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
       <Head>
@@ -23,7 +43,7 @@ const Github = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HeaderLayout>Github</HeaderLayout>
+      <HeaderLayout>Work in progress!!!</HeaderLayout>
     </>
   )
 }

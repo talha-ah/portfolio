@@ -35,10 +35,11 @@ export interface ActionType {
 
 export interface AuthInitialStateType extends AuthStateType, LoginResponse {}
 
-export interface Params {
+export interface APIParams {
   body?: any
-  uri: string
+  url: string
   method?: string
+  local?: boolean
   message?: string
   contentType?: string
   notifyError?: boolean
@@ -66,6 +67,13 @@ export interface ErrorWithMessage {
 export interface Option {
   key: string
   value: string | React.ReactNode
+}
+
+export interface IAxiosConfig {
+  method: string
+  url: string
+  data?: any
+  headers?: any
 }
 
 export interface Link {

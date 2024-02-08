@@ -34,9 +34,10 @@ export const ENDPOINTS = {
   // Auth
   login: "/auth/login",
   authProfile: "/auth/profile",
+  refreshToken: "/auth/refresh-token",
 
   // Profile
-  profile: "/profile",
+  profile: `/profile`,
   profileTheme: "/profile/theme",
 
   // Github
