@@ -11,6 +11,22 @@ import {
 } from "@mui/icons-material"
 import { Box, Theme, Typography } from "@mui/material"
 
+import {
+  Phone,
+  Email,
+  GitHub,
+  Skills,
+  Colour,
+  Summary,
+  LinkedIn,
+  Location,
+  Projects,
+  Educations,
+  HiddenJobs,
+  Experiences,
+  LocationLink,
+} from "./data"
+
 const HeaderFontSize = "11.68px"
 const HeaderNameFontSize = "29.15px"
 
@@ -126,220 +142,7 @@ const styles = {
   },
 }
 
-const Colour = ({
-  weight,
-  children,
-  color = "error.main",
-}: {
-  color?: string
-  weight?: number
-  children: React.ReactNode
-}) => {
-  return (
-    <Box component="span" sx={{ color, fontWeight: weight }}>
-      {children}
-    </Box>
-  )
-}
-
-const HiddenJobs = ({ jobs }: { jobs: string[] }) => {
-  return (
-    <Box sx={styles.hidden} component="span">
-      {jobs.join(" Developer, ")} {jobs.join(" Engineer, ")}
-    </Box>
-  )
-}
-
-/**
- * ResumePDF Content
- */
-
-const GitHub = "talha-ah"
-const LinkedIn = "talha-ah"
-const Location = "London, UK"
-const Phone = "+44 794-643-4693"
-const Email = "talha1392.ahmed@gmail.com"
-const LocationLink = "https://maps.app.goo.gl/f9Z4nm6bcx3WsiQU8"
-
-const Summary = (
-  <>
-    Engineer recognized for delivering top-tier solutions and proven expertise
-    in JavaScript and Python, with a keen eye for a healthy degree of
-    perfectionism. Led successfully a teams of <strong>5-6</strong> engineers in
-    agile project environments, contributing to the success of projects valued
-    between <strong>$5M</strong> to <strong>$7M</strong>. Adept at understanding
-    and addressing complex business needs.
-  </>
-)
-
-const Experiences = [
-  {
-    company: "Skupreme",
-    role: "Software Engineer",
-    location: "Miami, US (Remote)",
-    duration: "January 2021 - Present",
-    description: [
-      <>
-        Boosted the application&apos;s functionality and speed by{" "}
-        <strong>30%</strong>; resulting in more than <strong>$2M</strong> value
-        increase through the implementation of advanced strategies and
-        techniques.{" "}
-        <strong>
-          Key skills: Javascript, Next.js, Node.js, Express.js, MongoDB, AWS,
-          Serverless, Automation, Package management, Agile
-        </strong>
-      </>,
-      <>
-        Engineered scalable frameworks, implementing best-in-class design
-        principles; achieving a <strong>30%</strong> reduction in response time
-        and enhanced overall performance metrics by <strong>25%</strong>
-      </>,
-      <>
-        Orchestrated client collaboration, facilitating demos and resolving
-        challenges in real-time; resulted in a seamless project development
-        process and a <strong>30%</strong> boost in client satisfaction ratings
-      </>,
-    ],
-  },
-  {
-    location: "Lahore, PK",
-    role: "Full Stack Developer",
-    company: "Falcon IT Consulting",
-    duration: "July 2020 - May 2021",
-    description: [
-      <>
-        Spearheaded comprehensive analysis and documentation of client
-        requirements, fostering clear communication which resulted in a 20%
-        reduction in project iteration cycles, enhancing overall efficiency and
-        client satisfaction.{" "}
-        <strong>
-          Key skills: JavaScript, React, React Native, Node.js, Express.js,
-          MongoDB, Firebase
-        </strong>
-      </>,
-      <>
-        Managing and mentoring a team of <strong>5</strong> engineers, providing
-        career advice and identifying areas for improvement.
-      </>,
-      <>
-        Directed a <strong>$3 million</strong> project, overseeing analysis,
-        planning, development, and achieved the{" "}
-        <strong>
-          &quot;Award of Excellence for Outstanding Accomplishments.&quot;
-        </strong>
-      </>,
-    ],
-  },
-  {
-    company: "Fiverr (Freelancer)",
-    location: "Lahore, PK",
-    role: "Full Stack Developer",
-    duration: "Oct 2018 - May 2020",
-    description: [
-      <>
-        Delivered tailored web applications for diverse industries and
-        maintained an unwavering commitment to excellence, securing consistent{" "}
-        <strong>5-star</strong> ratings for project deliverables.{" "}
-        <strong>
-          Key skills: JavaScript, React, React Native, Node.js, Express.js,
-          MongoDB, Firebase, AWS, Lambda, EC2
-        </strong>
-      </>,
-      <>
-        Successfully completed over <strong>10</strong> diverse projects,
-        showcasing a proven track record of project management expertise and
-        timely delivery across various domains.
-      </>,
-    ],
-  },
-]
-
-const Skills = [
-  {
-    title: "Programming languages",
-    description:
-      "JavaScript, Typescript, ES9, React, Next.js, React Native, HTML5, CSS3, Node.js, Express.js, Python, Django, FastAPI, MongoDB, PostgreSQL, Firestore. Had experience with C++, C#, PHP, MySQL, Angular, Flutter",
-  },
-  {
-    title: "Other",
-    description:
-      "Docker, Jenkins, Elastic Search, Git, CI/CD, DevOps, Google Cloud, Firebase, AWS, Serverless, AppSync, Amplify, Heroku, Vercel, Netlify, Linux, EC2, Automation, Package management, Agile, Lambda, TFS, Jira,DynamoDB, GraphQL, XML, SOAP, RESTAPI, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Hooks, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Nginx, Apache, Bash, SSH",
-  },
-  {
-    title: "Languages",
-    description: "Urdu (native), Punjabi (native), English (advanced)",
-  },
-]
-
-const Projects = [
-  {
-    title: "Prospects Trading",
-    skills: "Javascript, Nodejs, Expressjs, Flutter, AWS",
-    description: (
-      <>
-        As Backend Engineer, enabled player engagement in{" "}
-        <strong>&apos;Sports Illustrated&apos;</strong> tournaments, ensuring a
-        seamless event experience.
-      </>
-    ),
-    link: "https://play.google.com/store/apps/details?id=com.si.prospects",
-  },
-  {
-    title: "AAB Engage App",
-    skills: "Javascript, Nodejs, Expressjs, SQL, TFS",
-    description: (
-      <>
-        As Backend Engineer, improved <strong>&apos;AAB&apos;</strong> Mobile
-        app support, simplified requests, and enhanced rental accessibility for
-        users.
-      </>
-    ),
-    link: "https://play.google.com/store/apps/details?id=com.sap.webide.x4efb5a44557f416482c43ec9805cc9b6&hl=en&gl=US",
-  },
-  {
-    title: "Orgaplan SA",
-    skills: "Javascript, React, React Native, Node.js, Express.js, MongoDB",
-    description: (
-      <>
-        As Full-Stack Engineer, empowered construction firms for streamlined
-        resource management, enhancing efficiency and ease on construction
-        sites.
-      </>
-    ),
-    link: "https://orgaplansa.com",
-  },
-  {
-    title: "Owl Express",
-    skills:
-      "Javascript, ReactJs, ReactNative, AWS, DynamoDB, AppAsync, Cognito, Amplify",
-    description: (
-      <>
-        As Full-Stack Engineer, I designed a dynamic Learning Platform,
-        fostering collaboration among users. Pioneered a system for active user
-        engagement, empowering them to create help requests with seamless
-        responsiveness from volunteers.
-      </>
-    ),
-    link: "https://www.owlexpress.net",
-  },
-]
-
-const Educations = [
-  {
-    institution: "Canterbury Christ Church University",
-    location: "Canterbuy, UK",
-    degree: "Master of Science in Data Intelligence",
-    duration: "September 2021 - November 2022",
-  },
-  {
-    institution: "Government College University",
-    location: "Lahore, PK",
-    degree: "Bachelor of Science in Computer Science - Distinction",
-    duration: "October 2016 - October 2020",
-  },
-]
-
-export const ResumePDF = forwardRef(
+export const ResumeSingleColumn = forwardRef(
   ({ jobs, jobIndex }: { jobs: string[]; jobIndex: number }, ref) => {
     return (
       <Box ref={ref} id="resume-pdf">
@@ -398,7 +201,12 @@ export const ResumePDF = forwardRef(
 
               <Box sx={styles.flexSpaceBetween}>
                 <Typography sx={styles.subtitle2}>{exp.role}</Typography>
-                <Typography sx={styles.subtitle2}>{exp.duration}</Typography>
+                <Typography sx={styles.subtitle2}>
+                  {exp.duration.start.month} {exp.duration.start.year} -{" "}
+                  {exp.duration.end
+                    ? `${exp.duration.end.month} ${exp.duration.end.year}`
+                    : "Present"}
+                </Typography>
               </Box>
 
               <Box component="ul" sx={styles.list}>
@@ -434,7 +242,7 @@ export const ResumePDF = forwardRef(
             <Colour>Pr</Colour>ojects
           </Typography>
 
-          {Projects.map((project, index) => (
+          {Projects.slice(1, Projects.length - 1).map((project, index) => (
             <Box sx={styles.section} key={index}>
               <Box sx={styles.flexSpaceBetween}>
                 <Typography
@@ -478,7 +286,9 @@ export const ResumePDF = forwardRef(
                   {education.degree}
                 </Typography>
                 <Typography sx={styles.subtitle2}>
-                  {education.duration}
+                  {education.duration.start.month}{" "}
+                  {education.duration.start.year} -{" "}
+                  {education.duration.end.month} {education.duration.end.year}
                 </Typography>
               </Box>
             </Box>
@@ -489,4 +299,4 @@ export const ResumePDF = forwardRef(
   }
 )
 
-ResumePDF.displayName = "ResumePDF"
+ResumeSingleColumn.displayName = "ResumeSingleColumn"
