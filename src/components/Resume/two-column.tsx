@@ -266,6 +266,8 @@ export const ResumeTwoColumn = forwardRef(
               ))}
             </Box>
 
+            <Divider sx={() => styles.divider(3)} />
+
             {/* Achievements */}
             <Box sx={styles.section}>
               <Typography sx={styles.heading}>
