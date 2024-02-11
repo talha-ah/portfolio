@@ -33,6 +33,7 @@ const Content = styled(Container)(({ theme }) => ({
   /* width */
   "&::-webkit-scrollbar": {
     width: 5,
+    height: 5,
     backgroundColor: "transparent",
   },
   /* Track */

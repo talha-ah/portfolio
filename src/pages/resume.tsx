@@ -1,29 +1,19 @@
 import Head from "next/head"
-import { useReactToPrint } from "react-to-print"
 import React, { useRef, useState } from "react"
+import { useReactToPrint } from "react-to-print"
 
 import { Box, Theme, ButtonGroup } from "@mui/material"
 import { Print, NavigateNext, NavigateBefore } from "@mui/icons-material"
 
 import { Button } from "@ui/Button"
 import { HeaderLayout } from "@layouts/index"
-import { ResumeSingleColumn as RSC } from "@components/Resume"
-import { ResumeTwoColumn as RTC } from "@components/Resume/two-column"
+import { jobs, Tags } from "@components/Resume/data"
+import { TwoColumn, OneColumn } from "@components/Resume"
 
 const BASE_FONT_SIZE = "11px"
 
-const jobs = [
-  "Software",
-  "Full stack",
-  "Backend",
-  "Frontend",
-  "Nodejs",
-  "Python",
-  "Javascript",
-]
-
 const styles = {
-  rsc: (theme: Theme) => ({
+  content: (theme: Theme, fontFamily: string) => ({
     margin: "auto",
     padding: "44px",
 
@@ -35,42 +25,8 @@ const styles = {
 
     overflow: "hidden",
 
+    fontFamily: fontFamily,
     fontSize: BASE_FONT_SIZE,
-    color: theme.palette.common.black,
-    fontFamily: "Lato, Roboto, sans-serif",
-    backgroundColor: theme.palette.common.white,
-
-    "@media print": {
-      "@page": {
-        size: "A4 portrait",
-      },
-
-      margin: 0,
-      padding: 0,
-
-      border: 0,
-      borderRadius: 0,
-
-      top: 0,
-      left: 0,
-      zIndex: 9999,
-      position: "absolute",
-    },
-  }),
-  rtc: (theme: Theme) => ({
-    margin: "auto",
-    padding: "44px",
-
-    maxWidth: "792px",
-    maxHeight: "1122.24px",
-
-    borderRadius: "1rem",
-    border: `4px solid ${theme.palette.secondary.main}`,
-
-    overflow: "hidden",
-
-    fontSize: BASE_FONT_SIZE,
-    fontFamily: "Jost, sans-serif",
     color: theme.palette.common.black,
     backgroundColor: theme.palette.common.white,
 
@@ -96,17 +52,43 @@ const styles = {
     gap: 2,
     display: "flex",
     justifyContent: "flex-end",
+
+    "@media print": {
+      display: "none",
+    },
   },
 }
 
 interface Props {
   index: number
+  fontFamily: string
   setIndex: (args: any) => void
-  actions: (args: React.ReactNode) => React.ReactNode | void
+  setResumeType: (args: any) => void
+  component: React.ForwardRefExoticComponent<any>
 }
 
-const ResumeSingleColumn = ({ actions, index, setIndex }: Props) => {
+const ResumeContent = ({
+  index,
+  setIndex,
+  component,
+  fontFamily,
+  setResumeType,
+}: Props) => {
   const componentRef = useRef(null)
+
+  const onSwitch = () => {
+    setResumeType((prev: any) => (prev + 1) % 2)
+  }
+
+  const onPrevious = () => {
+    setIndex((prev: any) =>
+      prev - 1 < 0 ? jobs.length - 1 : (prev - 1) % jobs.length
+    )
+  }
+
+  const onNext = () => {
+    setIndex((prev: any) => (prev + 1) % jobs.length)
+  }
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
@@ -121,7 +103,7 @@ const ResumeSingleColumn = ({ actions, index, setIndex }: Props) => {
         max-width: 800px;
         padding: 34px 44px;
         max-height: 1122.24px;
-        
+
         color: black !important;
         background-color: white !important;
         font-family: Lato, Roboto, sans-serif;
@@ -138,10 +120,7 @@ const ResumeSingleColumn = ({ actions, index, setIndex }: Props) => {
       }
     `,
     onAfterPrint: () => {
-      setIndex((prev: number) => {
-        if (prev === jobs.length - 1) return 0
-        return prev + 1
-      })
+      onNext()
     },
     print: async (iFrame: HTMLIFrameElement) => {
       //github.com/gregnb/react-to-print/issues/484
@@ -156,82 +135,30 @@ const ResumeSingleColumn = ({ actions, index, setIndex }: Props) => {
     },
   })
 
+  const ResumeComponent = component
+
   return (
     <>
-      {actions(
+      <Box sx={styles.buttons}>
+        <ButtonGroup size="small" aria-label="print-actions">
+          <Button onClick={onPrevious} startIcon={<NavigateBefore />}>
+            Previous
+          </Button>
+          <Button onClick={onNext} endIcon={<NavigateNext />}>
+            Next
+          </Button>
+        </ButtonGroup>
+        <Button onClick={onSwitch}>Switch Resume</Button>
+
         <Button onClick={handlePrint} startIcon={<Print />}>
           Print
         </Button>
-      )}
-
-      <Box sx={styles.rsc}>
-        <RSC ref={componentRef} jobs={jobs} jobIndex={index} />
       </Box>
-    </>
-  )
-}
 
-const ResumeTwoColumn = ({ actions, index, setIndex }: Props) => {
-  const componentRef = useRef(null)
+      <Tags />
 
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-    pageStyle: `
-      @page {
-        size: A4 portrait;
-        margin: 34px 44px;
-      }
-
-      body {
-        // For custom print function and to get the html content
-        max-width: 800px;
-        padding: 34px 44px;
-        max-height: 1122.24px;
-        
-        color: black !important;
-        background-color: white !important;
-        font-family: Lato, Roboto, sans-serif;
-        font-size: ${BASE_FONT_SIZE} !important;
-      }
-
-      @media print {
-        body {
-          margin: 0;
-          padding: 0;
-          max-width: 100%;
-          max-height: 100%;
-        }
-      }
-    `,
-    onAfterPrint: () => {
-      setIndex((prev: number) => {
-        if (prev === jobs.length - 1) return 0
-        return prev + 1
-      })
-    },
-    // print: async (iFrame: HTMLIFrameElement) => {
-    //   //github.com/gregnb/react-to-print/issues/484
-    //   if (iFrame) {
-    //     const fd = iFrame.contentDocument
-    //     if (fd) {
-    //       // const html = fd.getElementsByTagName("html")[0].outerHTML
-    //     }
-    //   }
-
-    //   window.print()
-    // },
-  })
-
-  return (
-    <>
-      {actions(
-        <Button onClick={handlePrint} startIcon={<Print />}>
-          Print
-        </Button>
-      )}
-
-      <Box sx={styles.rtc}>
-        <RTC ref={componentRef} jobs={jobs} jobIndex={index} />
+      <Box sx={(theme) => styles.content(theme, fontFamily)}>
+        <ResumeComponent ref={componentRef} index={index} />
       </Box>
     </>
   )
@@ -240,36 +167,6 @@ const ResumeTwoColumn = ({ actions, index, setIndex }: Props) => {
 const Resume = () => {
   const [index, setIndex] = useState(0)
   const [resumeType, setResumeType] = useState(0)
-
-  const onPrevious = () => {
-    setIndex((prev) =>
-      prev - 1 < 0 ? jobs.length - 1 : (prev - 1) % jobs.length
-    )
-  }
-
-  const onNext = () => {
-    setIndex((prev) => (prev + 1) % jobs.length)
-  }
-
-  const onSwitch = () => {
-    setResumeType((prev) => (prev + 1) % 2)
-  }
-
-  const Actions = (printButton: React.ReactNode) => (
-    <Box sx={styles.buttons}>
-      <ButtonGroup size="small" aria-label="print-actions">
-        <Button onClick={onPrevious} startIcon={<NavigateBefore />}>
-          Previous
-        </Button>
-        <Button onClick={onNext} endIcon={<NavigateNext />}>
-          Next
-        </Button>
-      </ButtonGroup>
-      <Button onClick={onSwitch}>Switch Resume</Button>
-
-      {printButton}
-    </Box>
-  )
 
   return (
     <>
@@ -293,19 +190,15 @@ const Resume = () => {
       </Head>
 
       <HeaderLayout>
-        {resumeType === 0 ? (
-          <ResumeSingleColumn
-            index={index}
-            actions={Actions}
-            setIndex={setIndex}
-          />
-        ) : (
-          <ResumeTwoColumn
-            actions={Actions}
-            index={index}
-            setIndex={setIndex}
-          />
-        )}
+        <ResumeContent
+          index={index}
+          setIndex={setIndex}
+          setResumeType={setResumeType}
+          component={resumeType === 0 ? OneColumn : TwoColumn}
+          fontFamily={
+            resumeType === 0 ? "Lato, Roboto, sans-serif" : "Jost, sans-serif"
+          }
+        />
       </HeaderLayout>
     </>
   )

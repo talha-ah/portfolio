@@ -7,6 +7,33 @@ export const Phone = "+44 794-643-4693"
 export const Email = "talha1392.ahmed@gmail.com"
 export const LocationLink = "https://maps.app.goo.gl/f9Z4nm6bcx3WsiQU8"
 
+// Words to be highlighted in the resume
+export const HighlightedWords = [
+  "Managing",
+  "Mentoring",
+  "Leading",
+  "Identifying",
+  "Facilitating",
+  "Responsible",
+  "Collaborating",
+  "Career Advice",
+  "Project Management",
+  "Client Collaboration",
+  "Agile Project Environments",
+  "Designed",
+  "Implemented",
+]
+
+export const jobs = [
+  "Software",
+  "Full stack",
+  "Backend",
+  "Frontend",
+  "Node",
+  "Python",
+  "Javascript",
+]
+
 export const Summary = (
   <>
     Engineer recognized for delivering top-tier solutions and proven expertise
@@ -19,6 +46,38 @@ export const Summary = (
 )
 
 export const Experiences = [
+  // {
+  //   company: "NTT DATA & GiffGaff",
+  //   role: "Software Engineer",
+  //   location: "London, UK",
+  //   duration: {
+  //     start: {
+  //       year: "2023",
+  //       month: "January",
+  //     },
+  //     end: {
+  //       year: "2024",
+  //       month: "January",
+  //     },
+  //   },
+  //   skills:
+  //     "Javascript, Next.js, PHP, PostgreSQL, AWS, Airtime Hypernova, Jenkins, Elastic Search, Agile",
+  //   description: [
+  //     <>Integrated MFE to the Monolithic Application using Hypernova</>,
+  //     <>
+  //       Worked on Internal Design Library to provide components for the
+  //       organization
+  //     </>,
+  //     <>
+  //       Experience with distributed, cloud hosted product with rapid release
+  //       cycles
+  //     </>,
+  //     <>
+  //       Automated Testing (unit/integration/e2e) and Experience with Docker, git
+  //       and CI/CD
+  //     </>,
+  //   ],
+  // },
   {
     company: "Skupreme",
     role: "Software Engineer",
@@ -41,8 +100,8 @@ export const Experiences = [
       </>,
       <>
         Engineered scalable frameworks, implementing best-in-class design
-        principles; achieving a <strong>30%</strong> reduction in response time
-        and enhanced overall performance metrics by <strong>25%</strong>
+        principles; achieving and enhanced overall performance metrics by{" "}
+        <strong>25%</strong>
       </>,
       <>
         Orchestrated client collaboration, facilitating demos and resolving
@@ -50,6 +109,7 @@ export const Experiences = [
         process and a <strong>30%</strong> boost in client satisfaction ratings
       </>,
     ],
+    // ['Designed applications architecture & services for clients', 'Crafted literate, comprehensive source code', 'Provided commentary to improve maintainability', 'Collaboration and coordination with the client for demos, functionalities, challenges and development updates', '', 'Improved the functionality and speed of the application worth $2.5M by 30% by implementing advanced strategies and techniques']
   },
   {
     location: "Lahore, PK",
@@ -70,12 +130,12 @@ export const Experiences = [
     description: [
       <>
         Spearheaded comprehensive analysis and documentation of client
-        requirements, fostering clear communication which resulted in a 20%
-        reduction in project iteration cycles, enhancing overall efficiency and
-        client satisfaction.
+        requirements, fostering clear communication which resulted in a{" "}
+        <strong>20%</strong> reduction in project iteration cycles, enhancing
+        overall efficiency and client satisfaction.
       </>,
       <>
-        Managing and mentoring a team of <strong>5</strong> engineers, providing
+        Guiding and mentoring a team of <strong>5</strong> engineers, providing
         career advice and identifying areas for improvement.
       </>,
       <>
@@ -86,6 +146,14 @@ export const Experiences = [
         </strong>
       </>,
     ],
+    // descriptions: [
+    //   "Dealt with the onsite team and directly with the client to analyze and document the client’s requirements",
+    //   "Involved in the Analysis and Solution Approach",
+    //   "Fostered ongoing services to clients as requested or needed",
+    //   "",
+    //   "Designed, developed, and managed a project worth $1M",
+    //   'Honoured with "Award of Excellence for Outstanding Accomplishments"',
+    // ],
   },
   {
     company: "Freelancer",
@@ -110,11 +178,16 @@ export const Experiences = [
         <strong>5-star</strong> ratings for project deliverables.{" "}
       </>,
       <>
-        Successfully completed over <strong>10</strong> diverse projects,
-        showcasing a proven track record of project management expertise and
-        timely delivery across various domains.
+        Successfully completed <strong>10+</strong> diverse projects, showcasing
+        a proven track record of project management expertise and timely
+        delivery across various domains.
       </>,
     ],
+    // descriptions: [
+    //   "Developed and maintained web applications for clients in various industries",
+    //   "Utilized technologies such as React, Node.js, AWS, and MongoDB to build responsive and performant web applications",
+    //   "Completed 10+ projects for clients",
+    // ],
   },
 ]
 
@@ -215,11 +288,13 @@ export const Projects = [
       "Javascript, Nodejs, Expressjs, Reactjs, Nextjs, MongoDB, Serverless, Automation, AWS",
     description: (
       <>
-        I made things smoother for e-commerce brand managers by automating tasks
-        as a Backend and DevOps Engineer. My work made operations more
-        efficient, saving time and boosting productivity for everyone involved.
+        Enhanced operational efficiency for e-commerce brand managers by
+        automating tasks as a Backend and DevOps Engineer. My contributions
+        streamlined processes, resulting in significant time savings and
+        increased productivity across the board.
       </>
     ),
+    // I made things smoother for e-commerce brand managers by automating tasks as a Backend and DevOps Engineer. My work made operations more efficient, saving time and boosting productivity for everyone involved. I'm proud to have achieved these positive changes in the e-commerce world.
   },
   {
     title: "Permispop",
@@ -239,11 +314,13 @@ export const Projects = [
     link: "https://play.google.com/store/apps/details?id=com.sap.webide.x4efb5a44557f416482c43ec9805cc9b6&hl=en&gl=US",
     description: (
       <>
-        As Backend Engineer, improved <strong>&apos;AAB&apos;</strong> Mobile
-        app support, simplified requests, and enhanced rental accessibility for
-        users.
+        As Backend Engineer, improved <strong>AAB</strong> Mobile app support,
+        simplified requests, and enhanced rental accessibility for users.
+        {/* OR */}
+        {/* Served as a Backend Engineer, ensuring smooth customer experiences by simplifying support requests and facilitating rental services for users of the 'AAB' Mobile application. I contributed to making assistance and rental processes more accessible for users on the go. */}
       </>
     ),
+    // Served as a Backend Engineer, ensuring smooth customer experiences by simplifying support requests and facilitating rental services for users of the 'AAB' Mobile application. I contributed to making assistance and rental processes more accessible for users on the go.
   },
   {
     title: "Owl Express",
@@ -252,10 +329,12 @@ export const Projects = [
       "Javascript, ReactJs, ReactNative, AWS, DynamoDB, AppAsync, Cognito, Amplify",
     description: (
       <>
-        As Full-Stack Engineer, I designed a dynamic Learning Platform,
-        fostering collaboration among users. Pioneered a system for active user
+        As Full-Stack Engineer, designed a dynamic Learning Platform, fostering
+        collaboration among users. Pioneered a system for active user
         engagement, empowering them to create help requests with seamless
         responsiveness from volunteers.
+        {/* OR */}
+        {/* Architected and implemented a dynamic Learning Platform fostering user collaboration. Pioneered a system where users actively engage in helping one another—empowering them to create help requests with seamless responsiveness from available volunteers. */}
       </>
     ),
   },
@@ -266,10 +345,11 @@ export const Projects = [
     description: (
       <>
         As Backend Engineer, enabled player engagement in{" "}
-        <strong>&apos;Sports Illustrated&apos;</strong> tournaments, ensuring a
-        seamless event experience.
+        <strong>Sports Illustrated</strong> tournaments, ensuring a seamless
+        experience.
       </>
     ),
+    // Functioned as a Backend and DevOps Engineer, facilitating player participation in 'Sports Illustrated' tournaments and events. I contributed to creating a seamless experience for players joining various events
   },
   {
     title: "Orgaplan SA",
@@ -280,8 +360,11 @@ export const Projects = [
         As Full-Stack Engineer, empowered construction firms for streamlined
         resource management, enhancing efficiency and ease on construction
         sites.
+        {/* OR */}
+        {/* Played a pivotal role as a Full-Stack Engineer on a Logistic Platform, empowering construction companies to streamline resource management effortlessly. The focus was on enhancing efficiency and ease of operation for companies working on construction sites. */}
       </>
     ),
+    // Architected and implemented a dynamic Learning Platform fostering user collaboration. Pioneered a system where users actively engage in helping one another—empowering them to create help requests with seamless responsiveness from available volunteers.
   },
 ]
 
@@ -338,19 +421,11 @@ export const Acheivements = [
   },
 ]
 
-const styles = {
-  hidden: {
-    left: "0",
-    right: "0",
-    position: "absolute",
-    visibility: "hidden",
-  },
-}
-
-export const HiddenJobs = ({ jobs }: { jobs: string[] }) => {
+export const Tags = () => {
   return (
-    <Box sx={styles.hidden} component="span">
-      {jobs.join(" Developer, ")} {jobs.join(" Engineer, ")}
+    <Box component="span" sx={{ fontSize: 0.1 }}>
+      {jobs.join(" Developer, ")} {jobs.join(" Engineer, ")}{" "}
+      {HighlightedWords.join(", ")}
     </Box>
   )
 }
