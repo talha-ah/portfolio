@@ -38,7 +38,7 @@ export const Summary = (
   <>
     Engineer recognized for delivering top-tier solutions and proven expertise
     in JavaScript and Python, with a keen eye for a healthy degree of
-    perfectionism. Led successfully a teams of <strong>5-6</strong> engineers in
+    perfectionism. Led a team of <strong>5-6</strong> engineers successfully in
     agile project environments, contributing to the success of projects valued
     between <strong>$5M</strong> to <strong>$7M</strong>. Adept at understanding
     and addressing complex business needs.
@@ -94,19 +94,19 @@ export const Experiences = [
     description: [
       <>
         Boosted the application&apos;s functionality and speed by{" "}
-        <strong>30%</strong>; resulting in more than <strong>$2M</strong> value
-        increase through the implementation of advanced strategies and
+        <strong>30%</strong>, resulting in a more than <strong>$2M</strong>{" "}
+        increase in value through the implementation of advanced strategies and
         techniques.
       </>,
       <>
         Engineered scalable frameworks, implementing best-in-class design
-        principles; achieving and enhanced overall performance metrics by{" "}
-        <strong>25%</strong>
+        principles, achieving and enhanced overall performance metrics by{" "}
+        <strong>25%</strong>.
       </>,
       <>
-        Orchestrated client collaboration, facilitating demos and resolving
-        challenges in real-time; resulted in a seamless project development
-        process and a <strong>30%</strong> boost in client satisfaction ratings
+        Orchestrated client collaboration, facilitating demos, and resolving
+        challenges in real-time, resulting in a seamless project development
+        process and a <strong>30%</strong> boost in client satisfaction ratings.
       </>,
     ],
     // ['Designed applications architecture & services for clients', 'Crafted literate, comprehensive source code', 'Provided commentary to improve maintainability', 'Collaboration and coordination with the client for demos, functionalities, challenges and development updates', '', 'Improved the functionality and speed of the application worth $2.5M by 30% by implementing advanced strategies and techniques']
@@ -130,17 +130,17 @@ export const Experiences = [
     description: [
       <>
         Spearheaded comprehensive analysis and documentation of client
-        requirements, fostering clear communication which resulted in a{" "}
+        requirements, fostering clear communication that resulted in a{" "}
         <strong>20%</strong> reduction in project iteration cycles, enhancing
         overall efficiency and client satisfaction.
       </>,
       <>
-        Guiding and mentoring a team of <strong>5</strong> engineers, providing
+        Guided and mentored a team of <strong>5</strong> engineers, providing
         career advice and identifying areas for improvement.
       </>,
       <>
         Directed a <strong>$3 million</strong> project, overseeing analysis,
-        planning, development, and achieved the{" "}
+        planning, and development, achieving the{" "}
         <strong>
           &quot;Award of Excellence for Outstanding Accomplishments.&quot;
         </strong>
@@ -195,7 +195,7 @@ export const Skills = [
   {
     title: "Programming languages",
     description:
-      "JavaScript, Typescript, ES9, React, Next.js, React Native, HTML5, CSS3, Node.js, Express.js, Python, Django, FastAPI, MongoDB, PostgreSQL, Firestore. Had experience with C++, C#, PHP, MySQL, Angular, Flutter",
+      "JavaScript, Typescript, ES9, React, Next.js, React Native, HTML5, CSS3, Node.js, Express.js, Python, Django, FastAPI, MongoDB, PostgreSQL, Firestore. Have experience with C++, C#, PHP, MySQL, Angular, Flutter",
     list: [
       "JavaScript",
       "Typescript",
@@ -223,7 +223,7 @@ export const Skills = [
   {
     title: "Other",
     description:
-      "Docker, Jenkins, Elastic Search, Git, CI/CD, DevOps, Google Cloud, Firebase, AWS, Serverless, AppSync, Amplify, Heroku, Vercel, Netlify, Linux, EC2, Automation, Package management, Agile, Lambda, TFS, Jira,DynamoDB, GraphQL, XML, SOAP, RESTAPI, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Hooks, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Nginx, Apache, Bash, SSH",
+      "Docker, Jenkins, Elastic Search, Git, CI/CD, DevOps, Google Cloud, Firebase, AWS, Serverless, AppSync, Amplify, Heroku, Vercel, Netlify, Linux, EC2, Automation, Package management, Agile, Lambda, TFS, Jira, DynamoDB, GraphQL, XML, SOAP, RESTAPI, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Hooks, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Nginx, Apache, Bash, SSH",
     list: [
       "Docker",
       "Jenkins",
@@ -285,7 +285,7 @@ export const Projects = [
     title: "Skupreme",
     link: "https://skupreme.com",
     skills:
-      "Javascript, Nodejs, Expressjs, Reactjs, Nextjs, MongoDB, Serverless, Automation, AWS",
+      "Javascript, Node.js, Express.js, Reactjs, Nextjs, MongoDB, Serverless, Automation, AWS",
     description: (
       <>
         Enhanced operational efficiency for e-commerce brand managers by
@@ -299,7 +299,7 @@ export const Projects = [
   {
     title: "Permispop",
     link: "https://permispop.fr",
-    skills: "Javascript, ReactJs, ReactNative, .NET, MongoDB",
+    skills: "Javascript, ReactJs, React Native, .NET, MongoDB",
     description: (
       <>
         Led team in React.js & React Native development for Permispop,
@@ -310,11 +310,11 @@ export const Projects = [
   },
   {
     title: "AAB Engage App",
-    skills: "Javascript, Nodejs, Expressjs, SQL, TFS",
+    skills: "Javascript, Node.js, Express.js, SQL, TFS",
     link: "https://play.google.com/store/apps/details?id=com.sap.webide.x4efb5a44557f416482c43ec9805cc9b6&hl=en&gl=US",
     description: (
       <>
-        As Backend Engineer, improved <strong>AAB</strong> Mobile app support,
+        As a Backend Engineer, improved <strong>AAB</strong> Mobile app support,
         simplified requests, and enhanced rental accessibility for users.
         {/* OR */}
         {/* Served as a Backend Engineer, ensuring smooth customer experiences by simplifying support requests and facilitating rental services for users of the 'AAB' Mobile application. I contributed to making assistance and rental processes more accessible for users on the go. */}
@@ -326,11 +326,11 @@ export const Projects = [
     title: "Owl Express",
     link: "https://www.owlexpress.net",
     skills:
-      "Javascript, ReactJs, ReactNative, AWS, DynamoDB, AppAsync, Cognito, Amplify",
+      "Javascript, React.js, React Native, AWS, DynamoDB, AppSync, Cognito, Amplify",
     description: (
       <>
-        As Full-Stack Engineer, designed a dynamic Learning Platform, fostering
-        collaboration among users. Pioneered a system for active user
+        As a Full stack Engineer, designed a dynamic Learning Platform,
+        fostering collaboration among users. Pioneered a system for active user
         engagement, empowering them to create help requests with seamless
         responsiveness from volunteers.
         {/* OR */}
@@ -340,11 +340,11 @@ export const Projects = [
   },
   {
     title: "Prospects Trading",
-    skills: "Javascript, Nodejs, Expressjs, Flutter, AWS",
+    skills: "Javascript, Node.js, Express.js, Flutter, AWS",
     link: "https://play.google.com/store/apps/details?id=com.si.prospects",
     description: (
       <>
-        As Backend Engineer, enabled player engagement in{" "}
+        As a Backend Engineer, enabled player engagement in{" "}
         <strong>Sports Illustrated</strong> tournaments, ensuring a seamless
         experience.
       </>
@@ -357,7 +357,7 @@ export const Projects = [
     skills: "Javascript, React, React Native, Node.js, Express.js, MongoDB",
     description: (
       <>
-        As Full-Stack Engineer, empowered construction firms for streamlined
+        As a Full-Stack Engineer, empowered construction firms for streamlined
         resource management, enhancing efficiency and ease on construction
         sites.
         {/* OR */}
@@ -371,7 +371,7 @@ export const Projects = [
 export const Educations = [
   {
     institution: "Canterbury Christ Church University",
-    location: "Canterbuy, UK",
+    location: "Canterbury, UK",
     degree: "Master of Science in Data Intelligence",
     duration: {
       start: {
