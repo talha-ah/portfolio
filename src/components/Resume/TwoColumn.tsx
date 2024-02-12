@@ -48,12 +48,17 @@ const styles = {
     justifyContent: "space-between",
   },
   headerRight: (theme: Theme) => ({
-    width: "32px",
+    width: 32,
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
     justifyContent: "center",
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.common.black,
+    // background in the print doesn't work and it looks like a browser settings to be turned on
+    // but we can only override the browser setting by this
+    "color-adjust": "exact",
+    "print-color-adjust": "exact",
+    "-webkit-print-color-adjust": "exact",
   }),
   initials: (theme: Theme) => ({
     lineHeight: 1,
