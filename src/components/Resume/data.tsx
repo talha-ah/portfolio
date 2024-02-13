@@ -281,21 +281,21 @@ export const Skills = [
 ]
 
 export const Projects = [
-  {
-    title: "Skupreme",
-    link: "https://skupreme.com",
-    skills:
-      "Javascript, Node.js, Express.js, Reactjs, Nextjs, MongoDB, Serverless, Automation, AWS",
-    description: (
-      <>
-        Enhanced operational efficiency for e-commerce brand managers by
-        automating tasks as a Backend and DevOps Engineer. My contributions
-        streamlined processes, resulting in significant time savings and
-        increased productivity across the board.
-      </>
-    ),
-    // I made things smoother for e-commerce brand managers by automating tasks as a Backend and DevOps Engineer. My work made operations more efficient, saving time and boosting productivity for everyone involved. I'm proud to have achieved these positive changes in the e-commerce world.
-  },
+  // {
+  //   title: "Skupreme",
+  //   link: "https://skupreme.com",
+  //   skills:
+  //     "Javascript, Node.js, Express.js, Reactjs, Nextjs, MongoDB, Serverless, Automation, AWS",
+  //   description: (
+  //     <>
+  //       Enhanced operational efficiency for e-commerce brand managers by
+  //       automating tasks as a Backend and DevOps Engineer. My contributions
+  //       streamlined processes, resulting in significant time savings and
+  //       increased productivity across the board.
+  //     </>
+  //   ),
+  //   // I made things smoother for e-commerce brand managers by automating tasks as a Backend and DevOps Engineer. My work made operations more efficient, saving time and boosting productivity for everyone involved. I'm proud to have achieved these positive changes in the e-commerce world.
+  // },
   {
     title: "Permispop",
     link: "https://permispop.fr",
@@ -418,6 +418,24 @@ export const Acheivements = [
         name: "FGEI [C/G]",
       },
     ],
+  },
+]
+
+export const Certifications = [
+  {
+    title: "MongoDB Basics",
+    organization: "MongoDB University",
+    year: 2021,
+  },
+  {
+    title: "Full-Stack Web Development with React",
+    organization: "Coursera",
+    year: 2020,
+  },
+  {
+    title: "IBM Data Science",
+    organization: "Coursera",
+    year: 2020,
   },
 ]
 

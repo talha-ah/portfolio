@@ -21,10 +21,11 @@ import {
   Summary,
   LinkedIn,
   Location,
-  Projects,
   Educations,
   Experiences,
   LocationLink,
+  Acheivements,
+  Certifications,
 } from "./data"
 
 const HeaderFontSize = "11.68px"
@@ -56,7 +57,6 @@ const styles = {
     fontStyle: "italic",
     fontFamily: "inherit",
     fontSize: HeaderFontSize,
-    position: "relative", // for hidden jobs
   },
   headerContact: (theme: Theme) => ({
     width: "100%",
@@ -83,32 +83,35 @@ const styles = {
     mt: theme.spacing(0.4),
     mb: theme.spacing(0.8),
   }),
-  flexSpaceBetween: {
+  spaceBetween: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
   },
-  title: (theme: Theme) => ({
-    mt: theme.spacing(0.8),
+  text: {
+    lineHeight: 1.3,
+    color: "inherit",
     fontFamily: "inherit",
+    fontSize: TextFontSize,
+    textDecoration: "none",
+  },
+  title: (theme: Theme) => ({
+    ...styles.text,
+    mt: theme.spacing(0.8),
     fontSize: TitleFontSize,
     fontWeight: theme.typography.fontWeightBold,
   }),
   subtitle: (theme: Theme) => ({
+    ...styles.text,
     lineHeight: 1,
-    color: "inherit",
-    fontFamily: "inherit",
-    textDecoration: "none",
     fontSize: SubTitleFontSize,
     marginBottom: theme.spacing(0.4),
     fontWeight: theme.typography.fontWeightBold,
   }),
-  subtitle2: (theme: Theme) => ({
+  subtitle2: () => ({
+    ...styles.text,
     lineHeight: 1,
     fontStyle: "italic",
-    fontFamily: "inherit",
-    fontSize: TextFontSize,
-    fontWeight: theme.typography.fontWeightRegular,
   }),
   list: () => ({
     margin: 0,
@@ -128,18 +131,6 @@ const styles = {
       marginRight: theme.spacing(0.5),
     },
   }),
-  listItemText: {
-    lineHeight: 1.3,
-    color: "inherit",
-    fontFamily: "inherit",
-    fontSize: TextFontSize,
-  },
-  hidden: {
-    left: "0",
-    right: "0",
-    position: "absolute",
-    visibility: "hidden",
-  },
 }
 
 export const Resume = forwardRef(({ index }: { index: number }, ref) => {
@@ -188,7 +179,7 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
 
         {Experiences.map((exp, index) => (
           <Box sx={styles.section} key={index}>
-            <Box sx={styles.flexSpaceBetween}>
+            <Box sx={styles.spaceBetween}>
               <Typography sx={styles.subtitle}>
                 <Colour color="primary.main" weight={800}>
                   {exp.company}
@@ -197,7 +188,7 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
               <Typography sx={styles.subtitle}>{exp.location}</Typography>
             </Box>
 
-            <Box sx={styles.flexSpaceBetween}>
+            <Box sx={styles.spaceBetween}>
               <Typography sx={styles.subtitle2}>{exp.role}</Typography>
               <Typography sx={styles.subtitle2}>
                 {exp.duration.start.month} {exp.duration.start.year} -{" "}
@@ -211,7 +202,7 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
               {exp.description.map((desc, index) => (
                 <Box component="li" sx={styles.listItem} key={index}>
                   <FiberManualRecord fontSize="small" />
-                  <Typography sx={styles.listItemText}>{desc}</Typography>
+                  <Typography sx={styles.text}>{desc}</Typography>
                 </Box>
               ))}
             </Box>
@@ -227,38 +218,9 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
 
         {Skills.map((skill, index) => (
           <Box sx={styles.section} key={index}>
-            <Typography sx={styles.listItemText}>
+            <Typography sx={styles.text}>
               <strong>{skill.title}:</strong>&nbsp;{skill.description}
             </Typography>
-          </Box>
-        ))}
-      </Box>
-
-      {/* Projects */}
-      <Box>
-        <Typography sx={styles.title}>
-          <Colour>Pr</Colour>ojects
-        </Typography>
-
-        {Projects.slice(1, Projects.length).map((project, index) => (
-          <Box sx={styles.section} key={index}>
-            <Box sx={styles.flexSpaceBetween}>
-              <Typography
-                target="_blank"
-                component={Link}
-                href={project.link}
-                sx={styles.subtitle}
-              >
-                {project.title} ↗
-              </Typography>
-              <Typography sx={styles.subtitle}>{project.skills}</Typography>
-            </Box>
-
-            <Box sx={styles.flexSpaceBetween}>
-              <Typography sx={styles.subtitle2}>
-                {project.description}
-              </Typography>
-            </Box>
           </Box>
         ))}
       </Box>
@@ -271,20 +233,54 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
 
         {Educations.map((education, index) => (
           <Box sx={styles.section} key={index}>
-            <Box sx={styles.flexSpaceBetween}>
+            <Box sx={styles.spaceBetween}>
               <Typography sx={styles.subtitle}>
                 {education.institution}
               </Typography>
               <Typography sx={styles.subtitle}>{education.location}</Typography>
             </Box>
 
-            <Box sx={styles.flexSpaceBetween}>
+            <Box sx={styles.spaceBetween}>
               <Typography sx={styles.subtitle2}>{education.degree}</Typography>
               <Typography sx={styles.subtitle2}>
                 {education.duration.start.month} {education.duration.start.year}{" "}
                 - {education.duration.end.month} {education.duration.end.year}
               </Typography>
             </Box>
+          </Box>
+        ))}
+      </Box>
+
+      {/* Certifications */}
+      <Box>
+        <Typography sx={styles.title}>
+          <Colour>Ce</Colour>rtifications
+        </Typography>
+
+        {Certifications.map((item, index) => (
+          <Box sx={styles.section} key={index}>
+            <Typography sx={styles.subtitle}>
+              {item.title} | {item.year}
+            </Typography>
+            <Typography sx={styles.subtitle2}>{item.organization}</Typography>
+          </Box>
+        ))}
+      </Box>
+
+      {/* Achievements */}
+      <Box>
+        <Typography sx={styles.title}>
+          <Colour>Ac</Colour>hievements
+        </Typography>
+
+        {Acheivements.map((item, index) => (
+          <Box sx={styles.section} key={index}>
+            <Typography sx={styles.subtitle}>{item.title}</Typography>
+            <Typography sx={styles.subtitle2}>
+              {item.organizations
+                .map((org) => `${org.name} | ${org.year}`)
+                .join(" AND ")}
+            </Typography>
           </Box>
         ))}
       </Box>

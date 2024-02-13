@@ -10,6 +10,10 @@ const styles = {
   root: (theme: Theme) => ({
     width: "100%",
     padding: theme.spacing(2),
+
+    "@media print": {
+      display: "none",
+    },
   }),
   container: {
     gap: 2,

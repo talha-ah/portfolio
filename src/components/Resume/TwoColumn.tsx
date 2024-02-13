@@ -26,6 +26,7 @@ import {
   Experiences,
   LocationLink,
   Acheivements,
+  Certifications,
 } from "./data"
 
 const NameFontSize = "29.15px"
@@ -334,6 +335,26 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
                 <Typography sx={styles.text}>
                   {skill.title ? <strong>{skill.title}:&nbsp;</strong> : ""}
                   {skill.list.join(", ")}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+
+          <Divider sx={() => styles.divider()} />
+
+          {/* Certifications */}
+          <Box sx={styles.section}>
+            <Typography sx={styles.heading}>
+              <Colour>Ce</Colour>rtifications
+            </Typography>
+
+            {Certifications.map((item, index) => (
+              <Box sx={styles.box} key={index}>
+                <Typography sx={styles.title}>
+                  {item.title} | {item.year}
+                  <Typography sx={styles.subtitle}>
+                    {item.organization}
+                  </Typography>
                 </Typography>
               </Box>
             ))}

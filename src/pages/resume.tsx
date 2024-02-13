@@ -194,9 +194,9 @@ const Resume = () => {
           index={index}
           setIndex={setIndex}
           setResumeType={setResumeType}
-          component={resumeType === 0 ? OneColumn : TwoColumn}
+          component={resumeType === 0 ? TwoColumn : OneColumn}
           fontFamily={
-            resumeType === 0 ? "Lato, Roboto, sans-serif" : "Jost, sans-serif"
+            resumeType === 0 ? "Jost, sans-serif" : "Lato, Roboto, sans-serif"
           }
         />
       </HeaderLayout>
