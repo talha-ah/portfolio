@@ -259,10 +259,17 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
 
         {Certifications.map((item, index) => (
           <Box sx={styles.section} key={index}>
-            <Typography sx={styles.subtitle}>
-              {item.title} | {item.year}
+            <Typography
+              sx={styles.subtitle}
+              target="_blank"
+              component={Link}
+              href={item.link}
+            >
+              {item.title} ↗
             </Typography>
-            <Typography sx={styles.subtitle2}>{item.organization}</Typography>
+            <Typography sx={styles.subtitle2}>
+              {item.organization} | {item.year}
+            </Typography>
           </Box>
         ))}
       </Box>

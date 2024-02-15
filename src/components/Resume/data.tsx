@@ -26,7 +26,7 @@ export const HighlightedWords = [
 
 export const jobs = [
   "Software",
-  "Full stack",
+  "Full Stack",
   "Backend",
   "Frontend",
   "Node",
@@ -422,20 +422,29 @@ export const Acheivements = [
 ]
 
 export const Certifications = [
-  {
-    title: "MongoDB Basics",
-    organization: "MongoDB University",
-    year: 2021,
-  },
+  // {
+  //   title: "MongoDB Basics",
+  //   organization: "MongoDB University",
+  //   year: 2021,
+  //   link: "https://learn.mongodb.com/c/hIr9WNYCWqWYXqoDDJE9Og",
+  // },
   {
     title: "Full-Stack Web Development with React",
     organization: "Coursera",
     year: 2020,
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/AYEQNF2AUWJ2",
   },
   {
     title: "IBM Data Science",
-    organization: "Coursera",
+    organization: "IBM - Coursera",
     year: 2020,
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/GGUZ86AV2BZN",
+  },
+  {
+    title: "Data Visualization with Python",
+    organization: "IBM - Coursera",
+    year: 2019,
+    link: "https://www.coursera.org/account/accomplishments/certificate/4PEJU8B5LTFG",
   },
 ]
 
