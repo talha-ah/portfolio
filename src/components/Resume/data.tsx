@@ -46,38 +46,30 @@ export const Summary = (
 )
 
 export const Experiences = [
-  // {
-  //   company: "NTT DATA & GiffGaff",
-  //   role: "Software Engineer",
-  //   location: "London, UK",
-  //   duration: {
-  //     start: {
-  //       year: "2023",
-  //       month: "January",
-  //     },
-  //     end: {
-  //       year: "2024",
-  //       month: "January",
-  //     },
-  //   },
-  //   skills:
-  //     "Javascript, Next.js, PHP, PostgreSQL, AWS, Airtime Hypernova, Jenkins, Elastic Search, Agile",
-  //   description: [
-  //     <>Integrated MFE to the Monolithic Application using Hypernova</>,
-  //     <>
-  //       Worked on Internal Design Library to provide components for the
-  //       organization
-  //     </>,
-  //     <>
-  //       Experience with distributed, cloud hosted product with rapid release
-  //       cycles
-  //     </>,
-  //     <>
-  //       Automated Testing (unit/integration/e2e) and Experience with Docker, git
-  //       and CI/CD
-  //     </>,
-  //   ],
-  // },
+  {
+    company: "NTT DATA & GiffGaff",
+    role: "Software Engineer",
+    location: "London, UK",
+    duration: {
+      start: {
+        year: "2023",
+        month: "January",
+      },
+      end: null,
+    },
+    skills:
+      "Javascript, React.js, Next.js, PHP, PostgreSQL, AWS, Airtime Hypernova, Jenkins, Elastic Search, Agile",
+    description: [
+      <>
+        Integrated MFE to the Monolithic Application using Hypernova and Worked
+        on Internal Design Library to provide components for the organization
+      </>,
+      <>
+        Experience with distributed, cloud hosted product with rapid release
+        cycles and a strong focus on automation and continuous delivery
+      </>,
+    ],
+  },
   {
     company: "Skupreme",
     role: "Software Engineer",
@@ -87,7 +79,10 @@ export const Experiences = [
         year: "2021",
         month: "January",
       },
-      end: null,
+      end: {
+        year: "2022",
+        month: "December",
+      },
     },
     skills:
       "Javascript, Next.js, Node.js, Express.js, MongoDB, AWS, Serverless, Automation, Package management, Agile",
@@ -96,17 +91,17 @@ export const Experiences = [
         Boosted the application&apos;s functionality and speed by{" "}
         <strong>30%</strong>, resulting in a more than <strong>$2M</strong>{" "}
         increase in value through the implementation of advanced strategies and
-        techniques.
+        techniques
       </>,
       <>
         Engineered scalable frameworks, implementing best-in-class design
         principles, achieving and enhanced overall performance metrics by{" "}
-        <strong>25%</strong>.
+        <strong>25%</strong>
       </>,
       <>
         Orchestrated client collaboration, facilitating demos, and resolving
         challenges in real-time, resulting in a seamless project development
-        process and a <strong>30%</strong> boost in client satisfaction ratings.
+        process and a <strong>30%</strong> boost in client satisfaction ratings
       </>,
     ],
     // ['Designed applications architecture & services for clients', 'Crafted literate, comprehensive source code', 'Provided commentary to improve maintainability', 'Collaboration and coordination with the client for demos, functionalities, challenges and development updates', '', 'Improved the functionality and speed of the application worth $2.5M by 30% by implementing advanced strategies and techniques']
@@ -132,11 +127,11 @@ export const Experiences = [
         Spearheaded comprehensive analysis and documentation of client
         requirements, fostering clear communication that resulted in a{" "}
         <strong>20%</strong> reduction in project iteration cycles, enhancing
-        overall efficiency and client satisfaction.
+        overall efficiency and client satisfaction
       </>,
       <>
         Guided and mentored a team of <strong>5</strong> engineers, providing
-        career advice and identifying areas for improvement.
+        career advice and identifying areas for improvement
       </>,
       <>
         Directed a <strong>$3 million</strong> project, overseeing analysis,
@@ -175,12 +170,12 @@ export const Experiences = [
       <>
         Delivered tailored web applications for diverse industries and
         maintained an unwavering commitment to excellence, securing consistent{" "}
-        <strong>5-star</strong> ratings for project deliverables.{" "}
+        <strong>5-star</strong> ratings for project deliverables{" "}
       </>,
       <>
         Successfully completed <strong>10+</strong> diverse projects, showcasing
         a proven track record of project management expertise and timely
-        delivery across various domains.
+        delivery across various domains
       </>,
     ],
     // descriptions: [
@@ -225,14 +220,17 @@ export const Skills = [
     description:
       "Docker, Jenkins, Elastic Search, Git, CI/CD, DevOps, Google Cloud, Firebase, AWS, Serverless, AppSync, Amplify, Heroku, Vercel, Netlify, Linux, EC2, Automation, Package management, Agile, Lambda, TFS, Jira, DynamoDB, GraphQL, XML, SOAP, RESTAPI, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Hooks, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Nginx, Apache, Bash, SSH",
     list: [
+      "Machine Learning/AI",
       "Docker",
       "Jenkins",
       "Elastic Search",
       "Git",
+      "Microservices",
       "CI/CD",
       "DevOps",
       "Google Cloud",
       "Firebase",
+      "Azure",
       "AWS",
       "Serverless",
       "AppSync",
@@ -351,21 +349,21 @@ export const Projects = [
     ),
     // Functioned as a Backend and DevOps Engineer, facilitating player participation in 'Sports Illustrated' tournaments and events. I contributed to creating a seamless experience for players joining various events
   },
-  {
-    title: "Orgaplan SA",
-    link: "https://orgaplansa.com",
-    skills: "Javascript, React, React Native, Node.js, Express.js, MongoDB",
-    description: (
-      <>
-        As a Full-Stack Engineer, empowered construction firms for streamlined
-        resource management, enhancing efficiency and ease on construction
-        sites.
-        {/* OR */}
-        {/* Played a pivotal role as a Full-Stack Engineer on a Logistic Platform, empowering construction companies to streamline resource management effortlessly. The focus was on enhancing efficiency and ease of operation for companies working on construction sites. */}
-      </>
-    ),
-    // Architected and implemented a dynamic Learning Platform fostering user collaboration. Pioneered a system where users actively engage in helping one another—empowering them to create help requests with seamless responsiveness from available volunteers.
-  },
+  // {
+  //   title: "Orgaplan SA",
+  //   link: "https://orgaplansa.com",
+  //   skills: "Javascript, React, React Native, Node.js, Express.js, MongoDB",
+  //   description: (
+  //     <>
+  //       As a Full-Stack Engineer, empowered construction firms for streamlined
+  //       resource management, enhancing efficiency and ease on construction
+  //       sites.
+  //       {/* OR */}
+  //       {/* Played a pivotal role as a Full-Stack Engineer on a Logistic Platform, empowering construction companies to streamline resource management effortlessly. The focus was on enhancing efficiency and ease of operation for companies working on construction sites. */}
+  //     </>
+  //   ),
+  //   // Architected and implemented a dynamic Learning Platform fostering user collaboration. Pioneered a system where users actively engage in helping one another—empowering them to create help requests with seamless responsiveness from available volunteers.
+  // },
 ]
 
 export const Educations = [
@@ -430,7 +428,7 @@ export const Certifications = [
   // },
   {
     title: "Full-Stack Web Development with React",
-    organization: "Coursera",
+    organization: "Hong Kong University of Science - Coursera",
     year: 2020,
     link: "https://www.coursera.org/account/accomplishments/specialization/certificate/AYEQNF2AUWJ2",
   },
@@ -458,16 +456,14 @@ export const Tags = () => {
 }
 
 export const Colour = ({
-  weight,
   children,
   color = "error.main",
 }: {
   color?: string
-  weight?: number
   children: React.ReactNode
 }) => {
   return (
-    <Box component="span" sx={{ color, fontWeight: weight }}>
+    <Box component="span" sx={{ color }}>
       {children}
     </Box>
   )

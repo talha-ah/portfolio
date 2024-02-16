@@ -9,7 +9,7 @@ import {
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
 } from "@mui/icons-material"
-import { Box, Theme, Typography } from "@mui/material"
+import { Box, Grid, Theme, Typography } from "@mui/material"
 
 import {
   jobs,
@@ -180,10 +180,8 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
         {Experiences.map((exp, index) => (
           <Box sx={styles.section} key={index}>
             <Box sx={styles.spaceBetween}>
-              <Typography sx={styles.subtitle}>
-                <Colour color="primary.main" weight={800}>
-                  {exp.company}
-                </Colour>
+              <Typography sx={styles.subtitle} fontWeight={800}>
+                {exp.company}
               </Typography>
               <Typography sx={styles.subtitle}>{exp.location}</Typography>
             </Box>
@@ -251,46 +249,51 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
         ))}
       </Box>
 
-      {/* Certifications */}
-      <Box>
-        <Typography sx={styles.title}>
-          <Colour>Ce</Colour>rtifications
-        </Typography>
+      <Grid container spacing={1}>
+        <Grid item xs={6}>
+          {/* Certifications */}
+          <Box>
+            <Typography sx={styles.title}>
+              <Colour>Ce</Colour>rtifications
+            </Typography>
 
-        {Certifications.map((item, index) => (
-          <Box sx={styles.section} key={index}>
-            <Typography
-              sx={styles.subtitle}
-              target="_blank"
-              component={Link}
-              href={item.link}
-            >
-              {item.title} ↗
-            </Typography>
-            <Typography sx={styles.subtitle2}>
-              {item.organization} | {item.year}
-            </Typography>
+            {Certifications.map((item, index) => (
+              <Box sx={styles.section} key={index}>
+                <Typography
+                  sx={styles.subtitle}
+                  target="_blank"
+                  component={Link}
+                  href={item.link}
+                >
+                  {item.title} ↗
+                </Typography>
+                <Typography sx={styles.subtitle2}>
+                  {item.organization} | {item.year}
+                </Typography>
+              </Box>
+            ))}
           </Box>
-        ))}
-      </Box>
-
-      {/* Achievements */}
-      <Box>
-        <Typography sx={styles.title}>
-          <Colour>Ac</Colour>hievements
-        </Typography>
-
-        {Acheivements.map((item, index) => (
-          <Box sx={styles.section} key={index}>
-            <Typography sx={styles.subtitle}>{item.title}</Typography>
-            <Typography sx={styles.subtitle2}>
-              {item.organizations
-                .map((org) => `${org.name} | ${org.year}`)
-                .join(" AND ")}
+        </Grid>
+        <Grid item xs={6}>
+          {/* Achievements */}
+          <Box>
+            <Typography sx={styles.title}>
+              <Colour>Ac</Colour>hievements
             </Typography>
+
+            {Acheivements.map((item, index) => (
+              <Box sx={styles.section} key={index}>
+                <Typography sx={styles.subtitle}>{item.title}</Typography>
+                <Typography sx={styles.subtitle2}>
+                  {item.organizations
+                    .map((org) => `${org.name} | ${org.year}`)
+                    .join(" AND ")}
+                </Typography>
+              </Box>
+            ))}
           </Box>
-        ))}
-      </Box>
+        </Grid>
+      </Grid>
     </Box>
   )
 })

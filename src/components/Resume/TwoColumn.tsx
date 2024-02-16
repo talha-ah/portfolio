@@ -147,7 +147,8 @@ const styles = {
     },
   }),
   divider: (width?: number) => ({
-    my: 1.2,
+    mb: width ? 0.6 : 1,
+    mt: width ? 0.6 : 1.2,
     border: 0,
     borderBottom: `${width ?? 3}px solid #e0e0e0`,
   }),
@@ -260,30 +261,8 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
                 <Typography sx={styles.title}>
                   {item.institution} | {item.duration.start.year} -{" "}
                   {item.duration.end.year}
-                  <Typography sx={styles.subtitle}>{item.degree}</Typography>
                 </Typography>
-              </Box>
-            ))}
-          </Box>
-
-          <Divider sx={() => styles.divider()} />
-
-          {/* Achievements */}
-          <Box sx={styles.section}>
-            <Typography sx={styles.heading}>
-              <Colour>Ac</Colour>hievements
-            </Typography>
-
-            {Acheivements.map((item, index) => (
-              <Box sx={styles.box} key={index}>
-                <Typography sx={styles.title}>
-                  {item.title}
-                  <Typography sx={styles.subtitle}>
-                    {item.organizations
-                      .map((org) => `${org.name} | ${org.year}`)
-                      .join(" AND ")}
-                  </Typography>
-                </Typography>
+                <Typography sx={styles.subtitle}>{item.degree}</Typography>
               </Box>
             ))}
           </Box>
@@ -358,6 +337,26 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
                   <Typography sx={styles.subtitle}>
                     {item.organization} | {item.year}
                   </Typography>
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+
+          <Divider sx={() => styles.divider()} />
+
+          {/* Achievements */}
+          <Box sx={styles.section}>
+            <Typography sx={styles.heading}>
+              <Colour>Ac</Colour>hievements
+            </Typography>
+
+            {Acheivements.map((item, index) => (
+              <Box sx={styles.box} key={index}>
+                <Typography sx={styles.title}>{item.title}</Typography>
+                <Typography sx={styles.subtitle}>
+                  {item.organizations
+                    .map((org) => `${org.name} | ${org.year}`)
+                    .join(" AND ")}
                 </Typography>
               </Box>
             ))}

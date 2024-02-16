@@ -17,13 +17,11 @@ const styles = {
     margin: "auto",
     padding: "44px",
 
-    maxWidth: "792px",
-    maxHeight: "1122.24px",
+    maxWidth: "820px",
+    maxHeight: "1085px",
 
     borderRadius: "1rem",
     border: `4px solid ${theme.palette.secondary.main}`,
-
-    overflow: "hidden",
 
     fontFamily: fontFamily,
     fontSize: BASE_FONT_SIZE,
