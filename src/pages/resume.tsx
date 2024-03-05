@@ -7,7 +7,7 @@ import { Print, NavigateNext, NavigateBefore } from "@mui/icons-material"
 
 import { Button } from "@ui/Button"
 import { HeaderLayout } from "@layouts/index"
-import { jobs, Tags } from "@components/Resume/data"
+import { jobs } from "@components/Resume/data"
 import { TwoColumn, OneColumn } from "@components/Resume"
 
 const BASE_FONT_SIZE = "11px"
@@ -153,7 +153,7 @@ const ResumeContent = ({
         </Button>
       </Box>
 
-      <Tags />
+      {/* <Tags /> */}
 
       <Box sx={(theme) => styles.content(theme, fontFamily)}>
         <ResumeComponent ref={componentRef} index={index} />
