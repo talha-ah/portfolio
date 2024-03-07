@@ -132,3 +132,8 @@ export interface User {
   lastName?: string
   status?: Status | "pending" | "blocked"
 }
+
+export interface Skill {
+  list: string
+  title: string
+}

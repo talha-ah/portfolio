@@ -3,11 +3,14 @@ import React, { useRef, useState } from "react"
 import { useReactToPrint } from "react-to-print"
 
 import { Box, Theme, ButtonGroup } from "@mui/material"
-import { Print, NavigateNext, NavigateBefore } from "@mui/icons-material"
+import { Print, NavigateNext, NavigateBefore, Edit } from "@mui/icons-material"
 
+import { Dialog } from "@ui/Dialog"
 import { Button } from "@ui/Button"
+import { Skill } from "@utils/types"
+import { UpdateSkills } from "@forms/resume"
 import { HeaderLayout } from "@layouts/index"
-import { jobs } from "@components/Resume/data"
+import { jobs, Skills } from "@components/Resume/data"
 import { TwoColumn, OneColumn } from "@components/Resume"
 
 const BASE_FONT_SIZE = "11px"
@@ -74,6 +77,8 @@ const ResumeContent = ({
 }: Props) => {
   const componentRef = useRef(null)
 
+  const [skills, setSkills] = useState<Skill[]>(Skills)
+
   const onSwitch = () => {
     setResumeType((prev: any) => (prev + 1) % 2)
   }
@@ -138,6 +143,22 @@ const ResumeContent = ({
   return (
     <>
       <Box sx={styles.buttons}>
+        <Dialog
+          title="Skills"
+          trigger={({ toggleOpen }) => (
+            <Button startIcon={<Edit />} onClick={toggleOpen}>
+              Edit
+            </Button>
+          )}
+          content={({ onClose }) => (
+            <UpdateSkills
+              skills={skills}
+              onClose={onClose}
+              onSubmit={setSkills}
+            />
+          )}
+        />
+
         <ButtonGroup size="small" aria-label="print-actions">
           <Button onClick={onPrevious} startIcon={<NavigateBefore />}>
             Previous
@@ -156,7 +177,11 @@ const ResumeContent = ({
       {/* <Tags /> */}
 
       <Box sx={(theme) => styles.content(theme, fontFamily)}>
-        <ResumeComponent ref={componentRef} index={index} />
+        <ResumeComponent
+          index={index}
+          ref={componentRef}
+          skills={skills.filter(({ list }) => list)} // Filter out empty skills
+        />
       </Box>
     </>
   )

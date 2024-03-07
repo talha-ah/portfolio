@@ -52,7 +52,7 @@ export function UpdateProfile() {
 
       const response = await API({
         method: "PUT",
-        uri: ENDPOINTS.profile,
+        url: ENDPOINTS.profile,
         body: JSON.stringify(body),
         message: "Profile updated successfully",
       })
@@ -179,7 +179,7 @@ export function UpdatePassword() {
 
       await API({
         method: "PATCH",
-        uri: ENDPOINTS.profile,
+        url: ENDPOINTS.profile,
         body: JSON.stringify(body),
         message: "Password updated successfully",
       })
@@ -271,7 +271,7 @@ export function SelectTheme() {
 
       await API({
         method: "PUT",
-        uri: ENDPOINTS.profileTheme,
+        url: ENDPOINTS.profileTheme,
         body: JSON.stringify({ theme }),
       })
     } catch (error: any) {}

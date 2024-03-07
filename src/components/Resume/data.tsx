@@ -1,5 +1,7 @@
 import { Box } from "@mui/material"
 
+import { Skill } from "@utils/types"
+
 export const GitHub = "talha-ah"
 export const LinkedIn = "talha-ah"
 export const Location = "London, UK"
@@ -186,20 +188,18 @@ export const Experiences = [
   },
 ]
 
-export const Skills = [
+export const Skills: Skill[] = [
   {
-    title: "Programming languages",
-    description:
-      "JavaScript, Typescript, ES6, React, Next.js, React Native, HTML5, CSS3, Node.js, Express.js, Python, Django, FastAPI, MongoDB, PostgreSQL, Firestore, C++, C#, PHP, MySQL, Angular, Flutter",
+    title: "Main Stack",
+    list: "JavaScript, Typescript, React, Next.js, React Native, HTML, CSS, Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, Firestore, Webpack, Babel, CSS-in-JS, AWS",
   },
   {
-    title: "Other",
-    description:
-      "Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, AWS, Serverless, AppSync, Amplify, Heroku, Vercel, Netlify, Linux, EC2, Automation, Package management, Agile, Lambda, TFS, Jira, DynamoDB, GraphQL, XML, SOAP, RESTAPI, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Hooks, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Nginx, Apache, Bash, SSH",
+    title: "Others",
+    list: "Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, EC2, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH",
   },
   {
     title: "Languages",
-    description: "English (professional), Urdu (native), Punjabi (native)",
+    list: "English (professional), Urdu (native), Punjabi (native)",
   },
 ]
 

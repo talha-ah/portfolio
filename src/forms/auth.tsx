@@ -71,7 +71,7 @@ export function LoginForm() {
       const response = await API({
         method: "POST",
         notifyError: false,
-        uri: ENDPOINTS.login,
+        url: ENDPOINTS.login,
         body: JSON.stringify(body),
       })
 
