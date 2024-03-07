@@ -134,6 +134,8 @@ const styles = {
 }
 
 export const Resume = forwardRef(({ index }: { index: number }, ref) => {
+  const [skills, setSkills] = React.useState(Skills)
+
   return (
     <Box ref={ref} id="resume-pdf">
       {/* Introduction */}
@@ -214,7 +216,7 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
           <Colour>Sk</Colour>ills
         </Typography>
 
-        {Skills.map((skill, index) => (
+        {skills.map((skill, index) => (
           <Box sx={styles.section} key={index}>
             <Typography sx={styles.text}>
               <strong>{skill.title}:</strong>&nbsp;{skill.description}

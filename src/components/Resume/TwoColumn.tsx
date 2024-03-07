@@ -311,7 +311,7 @@ export const Resume = forwardRef(({ index }: { index: number }, ref) => {
               <Box sx={styles.box} key={index}>
                 <Typography sx={styles.text}>
                   {item.title ? <strong>{item.title}:&nbsp;</strong> : ""}
-                  {item.list.join(", ")}
+                  {item.description}
                 </Typography>
               </Box>
             ))}
