@@ -18,10 +18,10 @@ const BASE_FONT_SIZE = "11px"
 const styles = {
   content: (theme: Theme, fontFamily: string) => ({
     margin: "auto",
-    padding: "44px",
+    padding: "44px 44px",
 
     maxWidth: "820px",
-    maxHeight: "1085px",
+    minHeight: "1085px",
 
     borderRadius: "1rem",
     border: `4px solid ${theme.palette.secondary.main}`,
@@ -108,8 +108,8 @@ const ResumeContent = ({
         max-height: 1122.24px;
 
         color: black !important;
+        font-family: ${fontFamily};
         background-color: white !important;
-        font-family: Lato, Roboto, sans-serif;
         font-size: ${BASE_FONT_SIZE} !important;
       }
 
@@ -130,7 +130,7 @@ const ResumeContent = ({
       if (iFrame) {
         const fd = iFrame.contentDocument
         if (fd) {
-          // const html = fd.getElementsByTagName("html")[0].outerHTML
+          // const html = fd.getElementsByTagName("html")
         }
       }
 
@@ -216,11 +216,9 @@ const Resume = () => {
         <ResumeContent
           index={index}
           setIndex={setIndex}
+          fontFamily="Cambria, serif"
           setResumeType={setResumeType}
-          component={resumeType === 0 ? TwoColumn : OneColumn}
-          fontFamily={
-            resumeType === 0 ? "Jost, sans-serif" : "Lato, Roboto, sans-serif"
-          }
+          component={resumeType === 0 ? OneColumn : TwoColumn}
         />
       </HeaderLayout>
     </>

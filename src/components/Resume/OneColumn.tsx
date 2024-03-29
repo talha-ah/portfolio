@@ -17,8 +17,8 @@ import {
   Phone,
   Email,
   GitHub,
-  Colour,
   Summary,
+  Projects,
   LinkedIn,
   Location,
   Educations,
@@ -28,39 +28,27 @@ import {
   Certifications,
 } from "./data"
 
-const HeaderFontSize = "11.68px"
-const HeaderNameFontSize = "29.15px"
+const NameFontSize = "29.15px"
 
 const TitleFontSize = "20.35px"
-const SubTitleFontSize = "13.75px"
+const SubTitleFontSize = "15px"
 
-const TextFontSize = "12.375px"
+const TextFontSize = "12.35px"
 
 const styles = {
   header: {
-    display: "flex",
-    textAlign: "center",
-    alignItems: "center",
-    flexDirection: "column",
+    color: "#000000",
   },
-  headerName: (theme: Theme) => ({
+  headerName: {
+    fontWeight: 800,
+    textAlign: "center",
     fontFamily: "inherit",
-    fontSize: HeaderNameFontSize,
-    fontWeight: theme.typography.fontWeightBold,
-  }),
-  headerNameThin: (theme: Theme) => ({
-    fontWeight: theme.typography.fontWeightLight,
-  }),
-  headerSummary: {
-    maxWidth: "98%",
-    marginBottom: 0.8,
-    fontStyle: "italic",
-    fontFamily: "inherit",
-    fontSize: HeaderFontSize,
+    fontSize: NameFontSize,
   },
   headerContact: (theme: Theme) => ({
     width: "100%",
     display: "flex",
+    marginBottom: 0.8,
     alignItems: "center",
     justifyContent: "space-between",
     "& > a": {
@@ -70,17 +58,20 @@ const styles = {
       fontFamily: "inherit",
       textDecoration: "none",
       gap: theme.spacing(0.5),
-      fontSize: HeaderFontSize,
+      fontSize: TextFontSize,
       justifyContent: "center",
       fontWeight: theme.typography.fontWeightBold,
     },
   }),
-  paddingLeft: {
-    pl: (theme: Theme) => theme.spacing(2),
+  text: {
+    lineHeight: 1.2,
+    color: "inherit",
+    fontFamily: "inherit",
+    fontSize: TextFontSize,
+    textDecoration: "none",
   },
   section: (theme: Theme) => ({
-    ...styles.paddingLeft,
-    mt: theme.spacing(0.4),
+    mt: theme.spacing(0.6),
     mb: theme.spacing(0.8),
   }),
   spaceBetween: {
@@ -88,25 +79,19 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between",
   },
-  text: {
-    lineHeight: 1.3,
-    color: "inherit",
-    fontFamily: "inherit",
-    fontSize: TextFontSize,
-    textDecoration: "none",
-  },
   title: (theme: Theme) => ({
     ...styles.text,
+    fontWeight: 800,
     mt: theme.spacing(0.8),
     fontSize: TitleFontSize,
-    fontWeight: theme.typography.fontWeightBold,
+    borderBottom: `2px solid #000000`,
   }),
   subtitle: (theme: Theme) => ({
     ...styles.text,
     lineHeight: 1,
+    fontWeight: 800,
     fontSize: SubTitleFontSize,
     marginBottom: theme.spacing(0.4),
-    fontWeight: theme.typography.fontWeightBold,
   }),
   subtitle2: () => ({
     ...styles.text,
@@ -118,16 +103,15 @@ const styles = {
     padding: 0,
     listStyle: "none",
     fontFamily: "inherit",
-    ...styles.paddingLeft,
   }),
   listItem: (theme: Theme) => ({
     display: "flex",
     alignItems: "flex-start",
     marginTop: theme.spacing(0.2),
     "& > svg": {
-      fontSize: 7,
+      fontSize: 4,
       fontFamily: "inherit",
-      marginTop: theme.spacing(0.5),
+      marginTop: theme.spacing(0.8),
       marginRight: theme.spacing(0.5),
     },
   }),
@@ -140,21 +124,11 @@ export const Resume = forwardRef(
         {/* Introduction */}
         <Box sx={styles.header}>
           {/* Name */}
-          <Typography sx={styles.headerName}>
-            <Box component="span" sx={styles.headerNameThin}>
-              Talha
-            </Box>{" "}
-            Ahmad
-          </Typography>
-
-          {/* Summary */}
-          <Typography sx={styles.headerSummary}>
-            {jobs[index]} {Summary}
-          </Typography>
+          <Typography sx={styles.headerName}>Talha Ahmad</Typography>
 
           {/* Contacts */}
           <Box sx={styles.headerContact}>
-            <Link href={LocationLink}>
+            <Link href={LocationLink} target="_blank">
               <LocationOn fontSize="small" /> {Location}
             </Link>
             <Link href={`tel:${Phone}`}>
@@ -163,45 +137,42 @@ export const Resume = forwardRef(
             <Link href={`mailto:${Email}`}>
               <EmailIcon fontSize="small" /> {Email}
             </Link>
-            <Link href={`https://github.com/${GitHub}`}>
+            <Link href={`https://github.com/${GitHub}`} target="_blank">
               <GitHubIcon fontSize="small" /> {GitHub}
             </Link>
-            <Link href={`https://www.linkedin.com/in/${LinkedIn}`}>
+            <Link
+              href={`https://www.linkedin.com/in/${LinkedIn}`}
+              target="_blank"
+            >
               <LinkedInIcon fontSize="small" /> {LinkedIn}
             </Link>
           </Box>
+
+          {/* Summary */}
+          <Typography sx={styles.text}>
+            {jobs[index]} {Summary}
+          </Typography>
         </Box>
 
         {/* Experiences */}
         <Box>
-          <Typography sx={styles.title}>
-            <Colour>Pr</Colour>ofessional Experience
-          </Typography>
+          <Typography sx={styles.title}>EXPERIENCES</Typography>
 
-          {Experiences.map((exp, index) => (
-            <Box sx={styles.section} key={index}>
-              <Box sx={styles.spaceBetween}>
-                <Typography sx={styles.subtitle} fontWeight={800}>
-                  {exp.company}
-                </Typography>
-                <Typography sx={styles.subtitle}>{exp.location}</Typography>
-              </Box>
-
-              <Box sx={styles.spaceBetween}>
-                <Typography sx={styles.subtitle2}>{exp.role}</Typography>
-                <Typography sx={styles.subtitle2}>
-                  {exp.duration.start.month} {exp.duration.start.year} -{" "}
-                  {exp.duration.end
-                    ? `${exp.duration.end.month} ${exp.duration.end.year}`
-                    : "Present"}
-                </Typography>
-              </Box>
+          {Experiences.map((item, index) => (
+            <Box sx={{ my: 1 }} key={index} mb={5}>
+              <Typography sx={styles.subtitle} fontWeight={800}>
+                {item.role} | {item.company} | {item.location} |{" "}
+                {item.duration.start.month} {item.duration.start.year} -{" "}
+                {item.duration.end
+                  ? `${item.duration.end.month} ${item.duration.end.year}`
+                  : "Present"}
+              </Typography>
 
               <Box component="ul" sx={styles.list}>
-                {exp.description.map((desc, index) => (
+                {item.description.map((i, index) => (
                   <Box component="li" sx={styles.listItem} key={index}>
                     <FiberManualRecord fontSize="small" />
-                    <Typography sx={styles.text}>{desc}</Typography>
+                    <Typography sx={styles.text}>{i}</Typography>
                   </Box>
                 ))}
               </Box>
@@ -211,14 +182,12 @@ export const Resume = forwardRef(
 
         {/* Skills */}
         <Box>
-          <Typography sx={styles.title}>
-            <Colour>Sk</Colour>ills
-          </Typography>
+          <Typography sx={styles.title}>Skills</Typography>
 
-          {skills.map((skill, index) => (
-            <Box sx={styles.section} key={index}>
+          {skills.map((item, index) => (
+            <Box sx={{ mt: 0.4 }} key={index}>
               <Typography sx={styles.text}>
-                <strong>{skill.title}:</strong>&nbsp;{skill.list}
+                <strong>{item.title}:</strong>&nbsp;{item.list}
               </Typography>
             </Box>
           ))}
@@ -226,29 +195,20 @@ export const Resume = forwardRef(
 
         {/* Education */}
         <Box>
-          <Typography sx={styles.title}>
-            <Colour>Ed</Colour>ucation
-          </Typography>
+          <Typography sx={styles.title}>Education</Typography>
 
-          {Educations.map((education, index) => (
+          {Educations.map((item, index) => (
             <Box sx={styles.section} key={index}>
               <Box sx={styles.spaceBetween}>
-                <Typography sx={styles.subtitle}>
-                  {education.institution}
-                </Typography>
-                <Typography sx={styles.subtitle}>
-                  {education.location}
-                </Typography>
+                <Typography sx={styles.subtitle}>{item.institution}</Typography>
+                <Typography sx={styles.subtitle}>{item.location}</Typography>
               </Box>
 
               <Box sx={styles.spaceBetween}>
+                <Typography sx={styles.subtitle2}>{item.degree}</Typography>
                 <Typography sx={styles.subtitle2}>
-                  {education.degree}
-                </Typography>
-                <Typography sx={styles.subtitle2}>
-                  {education.duration.start.month}{" "}
-                  {education.duration.start.year} -{" "}
-                  {education.duration.end.month} {education.duration.end.year}
+                  {item.duration.start.month} {item.duration.start.year} -{" "}
+                  {item.duration.end.month} {item.duration.end.year}
                 </Typography>
               </Box>
             </Box>
@@ -259,17 +219,15 @@ export const Resume = forwardRef(
           <Grid item xs={6}>
             {/* Certifications */}
             <Box>
-              <Typography sx={styles.title}>
-                <Colour>Ce</Colour>rtifications
-              </Typography>
+              <Typography sx={styles.title}>Certifications</Typography>
 
               {Certifications.map((item, index) => (
                 <Box sx={styles.section} key={index}>
                   <Typography
-                    sx={styles.subtitle}
                     target="_blank"
                     component={Link}
                     href={item.link}
+                    sx={styles.subtitle}
                   >
                     {item.title} ↗
                   </Typography>
@@ -283,12 +241,10 @@ export const Resume = forwardRef(
           <Grid item xs={6}>
             {/* Achievements */}
             <Box>
-              <Typography sx={styles.title}>
-                <Colour>Ac</Colour>hievements
-              </Typography>
+              <Typography sx={styles.title}>Achievements</Typography>
 
               {Acheivements.map((item, index) => (
-                <Box sx={styles.section} key={index}>
+                <Box sx={styles.section} key={index} mt={0}>
                   <Typography sx={styles.subtitle}>{item.title}</Typography>
                   <Typography sx={styles.subtitle2}>
                     {item.organizations
@@ -300,6 +256,48 @@ export const Resume = forwardRef(
             </Box>
           </Grid>
         </Grid>
+
+        {/* Projects */}
+        <Box>
+          <Typography sx={styles.title}>Projects</Typography>
+
+          {Projects.map((item, index) => (
+            <Box sx={styles.section} key={index}>
+              <Box>
+                <Typography
+                  target="_blank"
+                  component={Link}
+                  href={item.link}
+                  sx={styles.subtitle}
+                >
+                  {item.title} ↗
+                </Typography>
+                <Typography sx={styles.subtitle2}>{item.skills}</Typography>
+              </Box>
+
+              <Typography sx={styles.text}>
+                <strong>Description:</strong> {item.description}
+              </Typography>
+              <Typography sx={styles.text}>
+                <strong>Experience:</strong> {item.experience}
+              </Typography>
+              {item.achievements.length ? (
+                <Typography sx={styles.text}>
+                  <strong>Highlights:</strong>
+                </Typography>
+              ) : null}
+
+              <Box component="ul" sx={styles.list}>
+                {item.achievements.map((i, index) => (
+                  <Box component="li" sx={styles.listItem} key={index}>
+                    <FiberManualRecord fontSize="small" />
+                    <Typography sx={styles.text}>{i}</Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+          ))}
+        </Box>
       </Box>
     )
   }

@@ -9,7 +9,7 @@ import {
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
 } from "@mui/icons-material"
-import { Box, Grid, Theme, Divider, Typography } from "@mui/material"
+import { Box, Grid, Theme, Typography } from "@mui/material"
 
 import { Skill } from "@utils/types"
 import {
@@ -17,7 +17,6 @@ import {
   Email,
   Phone,
   GitHub,
-  Colour,
   Summary,
   LinkedIn,
   Location,
@@ -36,9 +35,12 @@ const JobTitleFontSize = "16.5px"
 const TextFontSize = "11.6875px"
 const HeadingFontSize = "16.375px"
 
+const Border = "2px solid #000000"
+
 const styles = {
   header: {
     gap: 2,
+    marginBottom: 1,
     display: "flex",
     justifyContent: "space-between",
   },
@@ -76,10 +78,10 @@ const styles = {
     fontSize: NameFontSize,
   },
   jobTitle: {
-    mb: 0.6,
     lineHeight: 1,
     fontWeight: 700,
     fontFamily: "inherit",
+    display: "inline-block",
     fontSize: JobTitleFontSize,
   },
   contact: (theme: Theme) => ({
@@ -111,6 +113,7 @@ const styles = {
   }),
   heading: (theme: Theme) => ({
     ...styles.text,
+    borderBottom: Border,
     fontSize: HeadingFontSize,
     fontWeight: theme.typography.fontWeightBold,
   }),
@@ -146,12 +149,6 @@ const styles = {
       marginRight: theme.spacing(0.4),
     },
   }),
-  divider: (width?: number) => ({
-    mb: width ? 0.6 : 1,
-    mt: width ? 0.6 : 1.2,
-    border: 0,
-    borderBottom: `${width ?? 3}px solid #e0e0e0`,
-  }),
 }
 
 export const Resume = forwardRef(
@@ -161,12 +158,16 @@ export const Resume = forwardRef(
         <Box sx={styles.header}>
           {/* Introduction */}
           <Box sx={styles.headerLeft}>
-            <Typography sx={styles.name}>Talha Ahmad</Typography>
+            <Typography sx={styles.name}>
+              Talha Ahmad{" "}
+              <Typography sx={styles.jobTitle}>
+                {jobs[index]} Engineer
+              </Typography>
+            </Typography>
 
-            <Typography sx={styles.jobTitle}>{jobs[index]} Engineer</Typography>
-
+            {/* Contacts */}
             <Box sx={styles.contact}>
-              <Link href={LocationLink}>
+              <Link target="_blank" href={LocationLink}>
                 <LocationOn /> {Location}
               </Link>
               <Link href={`tel:${Phone}`}>
@@ -175,10 +176,13 @@ export const Resume = forwardRef(
               <Link href={`mailto:${Email}`}>
                 <EmailIcon /> {Email}
               </Link>
-              <Link href={`https://github.com/${GitHub}`}>
+              <Link target="_blank" href={`https://github.com/${GitHub}`}>
                 <GitHubIcon /> {GitHub}
               </Link>
-              <Link href={`https://www.linkedin.com/in/${LinkedIn}`}>
+              <Link
+                target="_blank"
+                href={`https://www.linkedin.com/in/${LinkedIn}`}
+              >
                 <LinkedInIcon /> {LinkedIn}
               </Link>
             </Box>
@@ -191,16 +195,12 @@ export const Resume = forwardRef(
           </Box>
         </Box>
 
-        <Divider sx={() => styles.divider()} />
-
         <Grid container spacing={2}>
           {/* Left Column */}
           <Grid item xs={6}>
             {/* Summary */}
             <Box sx={styles.section}>
-              <Typography sx={styles.heading}>
-                <Colour>Su</Colour>mmary
-              </Typography>
+              <Typography sx={styles.heading}>Summary</Typography>
 
               <Box sx={styles.box}>
                 <Typography sx={styles.text}>
@@ -209,75 +209,11 @@ export const Resume = forwardRef(
               </Box>
             </Box>
 
-            <Divider sx={() => styles.divider()} />
-
-            {/* Experience */}
-            <Box sx={styles.section}>
-              <Typography sx={styles.heading}>
-                <Colour>Pr</Colour>ofessional Experience
-              </Typography>
-
-              {Experiences.map((item, index) => (
-                <Box sx={styles.box} key={index}>
-                  <Box>
-                    <Typography sx={styles.title}>{item.role}</Typography>
-                    <Typography sx={styles.subtitle}>
-                      {item.duration.start.month.substring(0, 3)}{" "}
-                      {item.duration.start.year} -{" "}
-                      {item.duration.end
-                        ? `${item.duration.end.month.substring(0, 3)} ${
-                            item.duration.end.year
-                          }`
-                        : "Present"}{" "}
-                      | {item.company}
-                    </Typography>
-                  </Box>
-
-                  <Box component="ul" sx={styles.list}>
-                    {item.description.map((desc, index) => (
-                      <Box component="li" sx={styles.listItem} key={index}>
-                        <FiberManualRecord fontSize="small" />
-                        <Typography sx={styles.text}>{desc}</Typography>
-                      </Box>
-                    ))}
-                  </Box>
-
-                  {index !== Experiences.length - 1 && (
-                    <Divider sx={() => styles.divider(1)} />
-                  )}
-                </Box>
-              ))}
-            </Box>
-
-            <Divider sx={() => styles.divider()} />
-
-            {/* Education */}
-            <Box sx={styles.section}>
-              <Typography sx={styles.heading}>
-                <Colour>Ed</Colour>ucation
-              </Typography>
-
-              {Educations.map((item, index) => (
-                <Box sx={styles.box} key={index}>
-                  <Typography sx={styles.title}>
-                    {item.institution} | {item.duration.start.year} -{" "}
-                    {item.duration.end.year}
-                  </Typography>
-                  <Typography sx={styles.subtitle}>{item.degree}</Typography>
-                </Box>
-              ))}
-            </Box>
-          </Grid>
-
-          {/* Right Column */}
-          <Grid item xs={6}>
             {/* Projects */}
             <Box sx={styles.section}>
-              <Typography sx={styles.heading}>
-                <Colour>Pr</Colour>ojects
-              </Typography>
+              <Typography sx={styles.heading}>Projects</Typography>
 
-              {Projects.map((item, index) => (
+              {Projects.slice(0, 4).map((item, index) => (
                 <Box sx={styles.box} key={index}>
                   <Box>
                     <Typography
@@ -291,48 +227,37 @@ export const Resume = forwardRef(
                     <Typography sx={styles.subtitle}>{item.skills}</Typography>
                   </Box>
 
-                  <Typography sx={styles.text}>{item.description}</Typography>
-
-                  {index !== Projects.length - 1 && (
-                    <Divider sx={() => styles.divider(1)} />
-                  )}
+                  <Typography sx={styles.text}>{item.experience}</Typography>
                 </Box>
               ))}
             </Box>
 
-            <Divider sx={() => styles.divider()} />
-
-            {/* Skills */}
+            {/* Education */}
             <Box sx={styles.section}>
-              <Typography sx={styles.heading}>
-                <Colour>Sk</Colour>ills
-              </Typography>
+              <Typography sx={styles.heading}>Education</Typography>
 
-              {skills.map((item, index) => (
+              {Educations.map((item, index) => (
                 <Box sx={styles.box} key={index}>
-                  <Typography sx={styles.text}>
-                    {item.title ? <strong>{item.title}:&nbsp;</strong> : ""}
-                    {item.list}
+                  <Typography sx={styles.title}>
+                    {item.institution} | {item.duration.start.year} -{" "}
+                    {item.duration.end.year}
                   </Typography>
+                  <Typography sx={styles.subtitle}>{item.degree}</Typography>
                 </Box>
               ))}
             </Box>
-
-            <Divider sx={() => styles.divider()} />
 
             {/* Certifications */}
             <Box sx={styles.section}>
-              <Typography sx={styles.heading}>
-                <Colour>Ce</Colour>rtifications
-              </Typography>
+              <Typography sx={styles.heading}>Certifications</Typography>
 
               {Certifications.map((item, index) => (
                 <Box sx={styles.box} key={index}>
                   <Typography
-                    sx={styles.title}
                     target="_blank"
                     component={Link}
                     href={item.link}
+                    sx={styles.title}
                   >
                     {item.title} ↗
                     <Typography sx={styles.subtitle}>
@@ -343,13 +268,9 @@ export const Resume = forwardRef(
               ))}
             </Box>
 
-            <Divider sx={() => styles.divider()} />
-
             {/* Achievements */}
             <Box sx={styles.section}>
-              <Typography sx={styles.heading}>
-                <Colour>Ac</Colour>hievements
-              </Typography>
+              <Typography sx={styles.heading}>Achievements</Typography>
 
               {Acheivements.map((item, index) => (
                 <Box sx={styles.box} key={index}>
@@ -358,6 +279,54 @@ export const Resume = forwardRef(
                     {item.organizations
                       .map((org) => `${org.name} | ${org.year}`)
                       .join(" AND ")}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Grid>
+
+          {/* Right Column */}
+          <Grid item xs={6}>
+            {/* Experience */}
+            <Box sx={styles.section}>
+              <Typography sx={styles.heading}>
+                Professional Experience
+              </Typography>
+
+              {Experiences.slice(0, 3).map((item, index) => (
+                <Box sx={styles.box} key={index}>
+                  <Typography sx={styles.title}>{item.role}</Typography>
+                  <Typography sx={styles.subtitle}>
+                    {item.company} | {item.duration.start.month.substring(0, 3)}{" "}
+                    {item.duration.start.year} -{" "}
+                    {item.duration.end
+                      ? `${item.duration.end.month.substring(0, 3)} ${
+                          item.duration.end.year
+                        }`
+                      : "Present"}
+                  </Typography>
+
+                  <Box component="ul" sx={styles.list}>
+                    {item.description.map((desc, index) => (
+                      <Box component="li" sx={styles.listItem} key={index}>
+                        <FiberManualRecord fontSize="small" />
+                        <Typography sx={styles.text}>{desc}</Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+
+            {/* Skills */}
+            <Box sx={styles.section}>
+              <Typography sx={styles.heading}>Skills</Typography>
+
+              {skills.map((item, index) => (
+                <Box sx={styles.box} key={index}>
+                  <Typography sx={styles.text}>
+                    {item.title ? <strong>{item.title}:&nbsp;</strong> : ""}
+                    {item.list}
                   </Typography>
                 </Box>
               ))}

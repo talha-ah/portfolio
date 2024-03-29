@@ -7,7 +7,7 @@ export const LinkedIn = "talha-ah"
 export const Location = "London, UK"
 export const Phone = "+44 794-643-4693"
 export const Email = "talha1392.ahmed@gmail.com"
-export const LocationLink = "https://maps.app.goo.gl/f9Z4nm6bcx3WsiQU8"
+export const LocationLink = "https://maps.app.goo.gl/qKhcWwXKXbewqidB7"
 
 // Words to be highlighted in the resume
 export const HighlightedWords = [
@@ -24,6 +24,27 @@ export const HighlightedWords = [
   "Agile Project Environments",
   "Designed",
   "Implemented",
+  // ===
+  "Analyzed",
+  "Collaborated",
+  "Constructed",
+  "Coordinated",
+  "Deployed",
+  "Designed",
+  "Developed",
+  "Diagnosed",
+  "Enhanced",
+  "Evaluated",
+  "Implemented",
+  "Improved",
+  "Integrated",
+  "Managed",
+  "Oversaw",
+  "Partnered",
+  "Performed",
+  "Resolved",
+  "Tested",
+  "Troubleshot",
 ]
 
 export const jobs = [
@@ -42,8 +63,8 @@ export const Summary = (
     in JavaScript and Python, with a keen eye for a healthy degree of
     perfectionism. Led a team of <strong>5-6</strong> engineers successfully in
     agile project environments, contributing to the success of projects valued
-    between <strong>$5M</strong> to <strong>$7M</strong>. Adept at understanding
-    and addressing complex business needs.
+    between <strong>$5M</strong> to <strong>$7M</strong>. Adept at driving
+    success through innovation, collaboration, and a commitment to excellence.
   </>
 )
 
@@ -60,15 +81,42 @@ export const Experiences = [
       end: null,
     },
     skills:
-      "Javascript, React.js, Next.js, PHP, PostgreSQL, AWS, Airtime Hypernova, Jenkins, Elastic Search, Agile",
+      "Javascript, React, Next.js, PHP, PostgreSQL, AWS, Airtime Hypernova, Jenkins, Elastic Search, Agile",
     description: [
       <>
-        Integrated MFE to the Monolithic Application using Hypernova and Worked
-        on Internal Design Library to provide components for the organization
+        <strong>Leadership:</strong> Stepped up to manage team lead
+        responsibilities during the urgent absense of the team lead, effectively
+        coordinating tasks and ensuring project continuity, earning recognition
+        from project and engineering managers for professionalism and
+        leadership.
       </>,
       <>
-        Experience with distributed, cloud hosted product with rapid release
-        cycles and a strong focus on automation and continuous delivery
+        <strong>Collaboration:</strong> Worked with various teams to understand
+        their component usage needs, updating and optimizing components to
+        support diverse requirements, resulting in increased efficiency and
+        satisfaction across teams.
+      </>,
+      <>
+        <strong>Efficiency:</strong> Spearheaded contract plan design
+        implementation, resulting in a <strong>20%</strong> increase in giffgaff
+        service offerings and more than a million in revenue.
+      </>,
+      <>
+        <strong>Innovation:</strong> Developed and published over{" "}
+        <strong>10</strong> React components to the internal design library,
+        standardizing UI elements across teams and ensuring consistency in
+        design implementation.
+      </>,
+      <>
+        <strong>Impact:</strong> Engineered a scalable microservices
+        architecture, supporting a <strong>25%</strong> increase in product
+        service loads.
+      </>,
+      <>
+        <strong>Mentorship:</strong> Created onboarding documentation for new
+        employees that was used to onboard <strong>5</strong> employees.
+        Provided mentorship and guidance to junior engineers, resulting in a{" "}
+        <strong>30%</strong> increase in team productivity.
       </>,
     ],
   },
@@ -90,23 +138,29 @@ export const Experiences = [
       "Javascript, Next.js, Node.js, Express.js, MongoDB, AWS, Serverless, Automation, Package management, Agile",
     description: [
       <>
-        Boosted the application&apos;s functionality and speed by{" "}
-        <strong>30%</strong>, resulting in a more than <strong>$2M</strong>{" "}
+        <strong>Leadership:</strong> Orchestrated client collaboration,
+        facilitating demos, and resolving challenges in real-time, resulting in
+        a seamless project development process and a <strong>30%</strong> boost
+        in client satisfaction ratings.
+      </>,
+      <>
+        <strong>Impact:</strong> Boosted the application&apos;s functionality
+        and speed by <strong>30%</strong>, resulting in a <strong>$2M</strong>{" "}
         increase in value through the implementation of advanced strategies and
-        techniques
+        techniques.
       </>,
       <>
-        Engineered scalable frameworks, implementing best-in-class design
-        principles, achieving and enhanced overall performance metrics by{" "}
-        <strong>25%</strong>
+        <strong>Efficiency:</strong> Engineered scalable frameworks,
+        implementing best-in-class design principles, achieving and enhanced
+        overall performance metrics by <strong>25%</strong>.
       </>,
       <>
-        Orchestrated client collaboration, facilitating demos, and resolving
-        challenges in real-time, resulting in a seamless project development
-        process and a <strong>30%</strong> boost in client satisfaction ratings
+        <strong>Mentorship:</strong> Provided mentorship to the junior
+        engineers, and guiding them on best practices and methodologies,
+        developing new and optimizing existing features in a standardized and
+        efficient manner.
       </>,
     ],
-    // ['Designed applications architecture & services for clients', 'Crafted literate, comprehensive source code', 'Provided commentary to improve maintainability', 'Collaboration and coordination with the client for demos, functionalities, challenges and development updates', '', 'Improved the functionality and speed of the application worth $2.5M by 30% by implementing advanced strategies and techniques']
   },
   {
     location: "Lahore, PK",
@@ -123,34 +177,28 @@ export const Experiences = [
       },
     },
     skills:
-      "JavaScript, React, React Native, Node.js, Express.js, MongoDB, Firebase",
+      "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase",
     description: [
       <>
-        Spearheaded comprehensive analysis and documentation of client
-        requirements, fostering clear communication that resulted in a{" "}
-        <strong>20%</strong> reduction in project iteration cycles, enhancing
-        overall efficiency and client satisfaction
+        <strong>Mentorship:</strong> Guided and mentored a team of{" "}
+        <strong>5</strong> engineers, providing career advice and identifying
+        areas for improvement.
       </>,
       <>
-        Guided and mentored a team of <strong>5</strong> engineers, providing
-        career advice and identifying areas for improvement
+        <strong>Collaboration:</strong> Led comprehensive analysis and
+        documentation of client requirements, resulting in a{" "}
+        <strong>20%</strong> reduction in project iteration cycles.
       </>,
       <>
-        Directed a <strong>$3 million</strong> project, overseeing analysis,
-        planning, and development, achieving the{" "}
+        <strong>Achievement:</strong> Directed a <strong>$3 million</strong>{" "}
+        project, overseeing analysis, planning, and development, and achieved
+        the{" "}
         <strong>
-          &quot;Award of Excellence for Outstanding Accomplishments.&quot;
-        </strong>
+          &quot;Award of Excellence for Outstanding Accomplishments&quot;
+        </strong>{" "}
+        .
       </>,
     ],
-    // descriptions: [
-    //   "Dealt with the onsite team and directly with the client to analyze and document the client’s requirements",
-    //   "Involved in the Analysis and Solution Approach",
-    //   "Fostered ongoing services to clients as requested or needed",
-    //   "",
-    //   "Designed, developed, and managed a project worth $1M",
-    //   'Honoured with "Award of Excellence for Outstanding Accomplishments"',
-    // ],
   },
   {
     company: "Freelancer",
@@ -167,35 +215,38 @@ export const Experiences = [
       },
     },
     skills:
-      "JavaScript, React, React Native, Node.js, Express.js, MongoDB, Firebase, AWS, Lambda, EC2",
+      "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, AWS, Lambda, EC2",
     description: [
       <>
-        Delivered tailored web applications for diverse industries and
-        maintained an unwavering commitment to excellence, securing consistent{" "}
-        <strong>5-star</strong> ratings for project deliverables{" "}
+        <strong>Excellence:</strong> Maintained consistent{" "}
+        <strong>5-star</strong> ratings for project deliverables across{" "}
+        <strong>10+</strong> diverse projects.
       </>,
       <>
-        Successfully completed <strong>10+</strong> diverse projects, showcasing
-        a proven track record of project management expertise and timely
-        delivery across various domains
+        <strong>Efficiency:</strong> Delivered tailored web applications across
+        diverse industries, ensuring seamless user experiences and optimal
+        performance.
       </>,
     ],
-    // descriptions: [
-    //   "Developed and maintained web applications for clients in various industries",
-    //   "Utilized technologies such as React, Node.js, AWS, and MongoDB to build responsive and performant web applications",
-    //   "Completed 10+ projects for clients",
-    // ],
   },
 ]
 
 export const Skills: Skill[] = [
+  // {
+  //   title: "Main Stack",
+  //   list: "JavaScript, Typescript, React, Next.js, React Native, HTML, CSS, Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, Firestore, Webpack, Babel, CSS-in-JS, AWS",
+  // },
+  // {
+  //   title: "Others",
+  //   list: "Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, EC2, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH",
+  // },
   {
     title: "Main Stack",
-    list: "JavaScript, Typescript, React, Next.js, React Native, HTML, CSS, Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, Firestore, Webpack, Babel, CSS-in-JS, AWS",
+    list: "JavaScript, TypeScript, React, Node.js, Python, MongoDB, PostgreSQL, AWS, GCP",
   },
   {
     title: "Others",
-    list: "Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, EC2, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH",
+    list: "Redux, Next.js, Express.js, FastAPI, DynamoDB, Firestore, RESTAPI, GraphQL, Serverless, Microservices, Docker, CI/CD, Git, Agile",
   },
   {
     title: "Languages",
@@ -204,91 +255,144 @@ export const Skills: Skill[] = [
 ]
 
 export const Projects = [
-  // {
-  //   title: "Skupreme",
-  //   link: "https://skupreme.com",
-  //   skills:
-  //     "Javascript, Node.js, Express.js, Reactjs, Nextjs, MongoDB, Serverless, Automation, AWS",
-  //   description: (
-  //     <>
-  //       Enhanced operational efficiency for e-commerce brand managers by
-  //       automating tasks as a Backend and DevOps Engineer. My contributions
-  //       streamlined processes, resulting in significant time savings and
-  //       increased productivity across the board.
-  //     </>
-  //   ),
-  //   // I made things smoother for e-commerce brand managers by automating tasks as a Backend and DevOps Engineer. My work made operations more efficient, saving time and boosting productivity for everyone involved. I'm proud to have achieved these positive changes in the e-commerce world.
-  // },
   {
-    title: "Permispop",
-    link: "https://permispop.fr",
-    skills: "Javascript, ReactJs, React Native, .NET, MongoDB",
-    description: (
+    title: "Electromatic Works",
+    link: "https://electromatic-next.vercel.app",
+    skills:
+      "Javascript, Node.js, Express.js, React, Next.js, MongoDB, CI/CD, DevOps",
+    description:
+      "A platform designed for a local business by providing users the ability to contact the business and list products they are interested in without the need for user registration.",
+    experience:
+      "As a Full stack Engineer, developed the platform from scratch, streamlining the product inquiry process by 40% through implementing cart functionality without user registration. Implemented CI/CD best practices to ensure the client can update the platform business details and deploy the changes directly from the Admin Panel.",
+    achievements: [
       <>
-        Led team in React.js & React Native development for Permispop,
-        delivering seamless user experiences & integrating calendar/booking
-        functions.
-      </>
-    ),
+        Streamlined product inquiry process by 40% through implementing cart
+        functionality without user registration.
+      </>,
+      <>
+        Implemented CI/CD best practices to ensure the client can update the
+        platform business details and deploy the changes directly from the Admin
+        Panel.
+      </>,
+    ],
+  },
+  {
+    title: "Retail Link",
+    link: "https://retail-link.vercel.app",
+    skills: "Javascript, React, Next.js, Node.js, MongoDB, CI/CD, DevOps",
+    description:
+      "A transformative platform tailored for local retail shops, offering end-to-end solutions for digitalizing operations and enhancing efficiency.",
+    experience:
+      "As a Full stack Engineer, developed the platform from scratch, providing local retail shops with a cutting-edge digital platform. Implemented DevOps best practices, ensuring seamless deployment and operation.",
+    achievements: [
+      <>Improved order processing efficiency by 30%.</>,
+      <>
+        Successfully developed Retail Link from scratch, providing local retail
+        shops with a cutting-edge digital platform.
+      </>,
+      <>
+        Implemented DevOps best practices, ensuring seamless deployment and
+        operation.
+      </>,
+    ],
+  },
+  {
+    title: "Prospects Trading",
+    skills:
+      "Javascript, Node.js, Express.js, React, Next.js, Flutter, MongoDB, AWS",
+    link: "https://play.google.com/store/apps/details?id=com.si.prospects",
+    description:
+      'A platform for "Sports Illustrated" tournaments to engage players in a sticker trading game.',
+    experience:
+      "As a Full stack Engineer, developed the backend APIs and integrated EventConnect APIs, managing the DevOps and successfully integrating EventConnect APIs.",
+    achievements: [
+      <>Developed the backend APIs and integrated EventConnect APIs.</>,
+      <>
+        Worked with EventConnect Team to optimize APIs for faster processing.
+      </>,
+      <>
+        Managed the DevOps and introduced batch processing and optimizations to
+        the APIs fetching the event details.
+      </>,
+    ],
   },
   {
     title: "AAB Engage App",
     skills: "Javascript, Node.js, Express.js, SQL, TFS",
     link: "https://play.google.com/store/apps/details?id=com.sap.webide.x4efb5a44557f416482c43ec9805cc9b6&hl=en&gl=US",
-    description: (
-      <>
-        As a Backend Engineer, improved <strong>AAB</strong> Mobile app support,
-        simplified requests, and enhanced rental accessibility for users.
-        {/* OR */}
-        {/* Served as a Backend Engineer, ensuring smooth customer experiences by simplifying support requests and facilitating rental services for users of the 'AAB' Mobile application. I contributed to making assistance and rental processes more accessible for users on the go. */}
-      </>
-    ),
-    // Served as a Backend Engineer, ensuring smooth customer experiences by simplifying support requests and facilitating rental services for users of the 'AAB' Mobile application. I contributed to making assistance and rental processes more accessible for users on the go.
+    description:
+      'An app for "Abdul Ghani" Car rental service customers to cater to their requests, easing their efforts to receive support on the go.',
+    experience:
+      "As a Full stack Engineer, developed the backend APIs and integrated SAP APIs, managing the DevOps and successfully integrating SAP APIs.",
+    achievements: [
+      <>Developed the backend APIs and integrated SAP APIs.</>,
+      <>Managed the DevOps and successfully integrated SAP APIs.</>,
+    ],
   },
   {
     title: "Owl Express",
-    link: "https://www.owlexpress.net",
     skills:
-      "Javascript, React.js, React Native, AWS, DynamoDB, AppSync, Cognito, Amplify",
-    description: (
+      "Javascript, React, DynamoDB, GraphQL, AWS, AppSync, Amplify, Cognito",
+    link: "https://www.owlexpress.net",
+    description:
+      "A platform for students to get help from their peers and teachers.",
+    experience:
+      "As a Full stack Engineer, designed a dynamic Learning Platform, fostering collaboration among users. Pioneered a system for active user engagement, empowering them to create help requests with seamless responsiveness from volunteers.",
+    achievements: [
       <>
-        As a Full stack Engineer, designed a dynamic Learning Platform,
-        fostering collaboration among users. Pioneered a system for active user
-        engagement, empowering them to create help requests with seamless
-        responsiveness from volunteers.
-        {/* OR */}
-        {/* Architected and implemented a dynamic Learning Platform fostering user collaboration. Pioneered a system where users actively engage in helping one another—empowering them to create help requests with seamless responsiveness from available volunteers. */}
-      </>
-    ),
+        Developed the web and mobile application, implementing UI/UX design and
+        the design system.
+      </>,
+      <>
+        Integrated Authentication with AWS Cognito, DynamoDB and GraphQL with
+        AWS AppSync.
+      </>,
+      <>
+        Developed serverless synced data architecture for web and mobile
+        applications.
+      </>,
+    ],
   },
   {
-    title: "Prospects Trading",
-    skills: "Javascript, Node.js, Express.js, Flutter, AWS",
-    link: "https://play.google.com/store/apps/details?id=com.si.prospects",
-    description: (
+    title: "Orgaplan",
+    skills:
+      "Javascript, React, React Native, AWS, MongoDB, Firebase, Node.js, Express.js",
+    link: "http://orgaplansa.com",
+    description:
+      "Orgaplan is a logistic platform for construction firms to streamline resource management.",
+    experience:
+      "As a Full stack Engineer, led the project of 5 developers and overcame challenges in integrating visualization tools. Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map. Improved team efficiency by 25%.",
+    achievements: [
       <>
-        As a Backend Engineer, enabled player engagement in{" "}
-        <strong>Sports Illustrated</strong> tournaments, ensuring a seamless
-        experience.
-      </>
-    ),
-    // Functioned as a Backend and DevOps Engineer, facilitating player participation in 'Sports Illustrated' tournaments and events. I contributed to creating a seamless experience for players joining various events
+        Led project of 5 developers and overcame challenges in integrating
+        visualization tools.
+      </>,
+      <>
+        Overcame challenges in integrating CanvasJS for the visualization of the
+        construction site editable map.
+      </>,
+      <>Improved team efficiency by 25%.</>,
+    ],
   },
-  // {
-  //   title: "Orgaplan SA",
-  //   link: "https://orgaplansa.com",
-  //   skills: "Javascript, React, React Native, Node.js, Express.js, MongoDB",
-  //   description: (
-  //     <>
-  //       As a Full-Stack Engineer, empowered construction firms for streamlined
-  //       resource management, enhancing efficiency and ease on construction
-  //       sites.
-  //       {/* OR */}
-  //       {/* Played a pivotal role as a Full-Stack Engineer on a Logistic Platform, empowering construction companies to streamline resource management effortlessly. The focus was on enhancing efficiency and ease of operation for companies working on construction sites. */}
-  //     </>
-  //   ),
-  //   // Architected and implemented a dynamic Learning Platform fostering user collaboration. Pioneered a system where users actively engage in helping one another—empowering them to create help requests with seamless responsiveness from available volunteers.
-  // },
+  {
+    title: "Permispop",
+    skills: "Javascript, React, React Native, .NET, MongoDB",
+    link: "https://permispop.fr",
+    description:
+      "Permispop is a platform for driving instructors to manage their students, lessons, and schedules.",
+    experience:
+      "As a Full stack Engineer, developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling. Completed the project successfully, appreciated by the team and the project manager.",
+    achievements: [
+      // <>
+      //   Developed the mobile application, implementing UI/UX design and
+      //   integrating the calendar for lesson scheduling.
+      // </>,
+      // <>
+      //   Completed the project successfully, appreciated by the team and the
+      //   project manager.
+      // </>,
+    ],
+  },
 ]
 
 export const Educations = [
