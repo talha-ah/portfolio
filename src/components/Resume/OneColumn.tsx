@@ -275,26 +275,7 @@ export const Resume = forwardRef(
                 <Typography sx={styles.subtitle2}>{item.skills}</Typography>
               </Box>
 
-              <Typography sx={styles.text}>
-                <strong>Description:</strong> {item.description}
-              </Typography>
-              <Typography sx={styles.text}>
-                <strong>Experience:</strong> {item.experience}
-              </Typography>
-              {item.achievements.length ? (
-                <Typography sx={styles.text}>
-                  <strong>Highlights:</strong>
-                </Typography>
-              ) : null}
-
-              <Box component="ul" sx={styles.list}>
-                {item.achievements.map((i, index) => (
-                  <Box component="li" sx={styles.listItem} key={index}>
-                    <FiberManualRecord fontSize="small" />
-                    <Typography sx={styles.text}>{i}</Typography>
-                  </Box>
-                ))}
-              </Box>
+              <Typography sx={styles.text}>{item.experience}</Typography>
             </Box>
           ))}
         </Box>

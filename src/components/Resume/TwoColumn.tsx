@@ -227,7 +227,7 @@ export const Resume = forwardRef(
                     <Typography sx={styles.subtitle}>{item.skills}</Typography>
                   </Box>
 
-                  <Typography sx={styles.text}>{item.experience}</Typography>
+                  <Typography sx={styles.text}>{item.description}</Typography>
                 </Box>
               ))}
             </Box>

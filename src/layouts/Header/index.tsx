@@ -14,9 +14,14 @@ import { Width, Link as LinkType } from "@utils/types"
 
 const styles = {
   root: (theme: Theme) => ({
+    top: 0,
+    left: 0,
     width: "100%",
     display: "flex",
+    position: "fixed",
+    zIndex: theme.zIndex.appBar,
     height: `${APP_BAR_HEIGHT}px`,
+    backgroundColor: theme.palette.background.default,
     borderBottom: `1px solid ${theme.palette.divider}`,
 
     "@media print": {
@@ -64,28 +69,6 @@ const UnauthenticatedLinks: LinkType[] = [
   // },
 ]
 
-export const Header = ({ maxWidth }: { maxWidth: Width }) => {
-  const { state } = useAppContext()
-
-  return (
-    <Box component="header" sx={styles.root}>
-      <Container maxWidth={maxWidth} sx={styles.container}>
-        <Logo />
-
-        <Links
-          links={state.auth.isAuth ? AuthenticatedLinks : UnauthenticatedLinks}
-        />
-
-        <Box sx={styles.items}>
-          <SelectTheme />
-
-          {state.auth.isAuth ? <UserMenu /> : null}
-        </Box>
-      </Container>
-    </Box>
-  )
-}
-
 const Links = ({ links }: { links: LinkType[] }) => {
   const router = useRouter()
 
@@ -109,6 +92,28 @@ const Links = ({ links }: { links: LinkType[] }) => {
           {label}
         </Link>
       ))}
+    </Box>
+  )
+}
+
+export const Header = ({ maxWidth }: { maxWidth: Width }) => {
+  const { state } = useAppContext()
+
+  return (
+    <Box component="header" sx={styles.root}>
+      <Container maxWidth={maxWidth} sx={styles.container}>
+        <Logo />
+
+        <Links
+          links={state.auth.isAuth ? AuthenticatedLinks : UnauthenticatedLinks}
+        />
+
+        <Box sx={styles.items}>
+          <SelectTheme />
+
+          {state.auth.isAuth ? <UserMenu /> : null}
+        </Box>
+      </Container>
     </Box>
   )
 }

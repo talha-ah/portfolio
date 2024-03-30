@@ -261,40 +261,18 @@ export const Projects = [
     skills:
       "Javascript, Node.js, Express.js, React, Next.js, MongoDB, CI/CD, DevOps",
     description:
-      "A platform designed for a local business by providing users the ability to contact the business and list products they are interested in without the need for user registration.",
-    experience:
       "As a Full stack Engineer, developed the platform from scratch, streamlining the product inquiry process by 40% through implementing cart functionality without user registration. Implemented CI/CD best practices to ensure the client can update the platform business details and deploy the changes directly from the Admin Panel.",
-    achievements: [
-      <>
-        Streamlined product inquiry process by 40% through implementing cart
-        functionality without user registration.
-      </>,
-      <>
-        Implemented CI/CD best practices to ensure the client can update the
-        platform business details and deploy the changes directly from the Admin
-        Panel.
-      </>,
-    ],
+    experience:
+      "At Electromatic Works, I played a pivotal role in developing a platform for a local business, enabling seamless communication and product showcasing. This platform enabled users to contact the business and browse products without the need for an account, streamlining the customer experience. My initiative in suggesting and implementing a cart system without a user authentication, enhanced user experience and client satisfaction, exemplifying my dedication to delivering impactful solutions that meet client needs. I also implemented CI/CD best practices to enable the client to update business details and deploy changes directly from the Admin Panel, further enhancing platform functionality and user experience.",
   },
   {
     title: "Retail Link",
     link: "https://retail-link.vercel.app",
     skills: "Javascript, React, Next.js, Node.js, MongoDB, CI/CD, DevOps",
     description:
-      "A transformative platform tailored for local retail shops, offering end-to-end solutions for digitalizing operations and enhancing efficiency.",
-    experience:
       "As a Full stack Engineer, developed the platform from scratch, providing local retail shops with a cutting-edge digital platform. Implemented DevOps best practices, ensuring seamless deployment and operation.",
-    achievements: [
-      <>Improved order processing efficiency by 30%.</>,
-      <>
-        Successfully developed Retail Link from scratch, providing local retail
-        shops with a cutting-edge digital platform.
-      </>,
-      <>
-        Implemented DevOps best practices, ensuring seamless deployment and
-        operation.
-      </>,
-    ],
+    experience:
+      "As the sole developer of Retail Link, I spearheaded the creation of a transformative platform tailored for local retail shops, enabling digital transformation and operational efficiency. Through my expertise in React.js, Next.js, Node.js, and MongoDB, I delivered a user-friendly solution that streamlined order processing and inventory management. My initiative in implementing CI/CD best practices and DevOps methodologies ensured seamless deployment and operation, contributing to the platform's success. Retail Link showcases my ability to leverage technology to drive business growth and deliver impactful solutions that meet client needs.",
   },
   {
     title: "Prospects Trading",
@@ -302,32 +280,18 @@ export const Projects = [
       "Javascript, Node.js, Express.js, React, Next.js, Flutter, MongoDB, AWS",
     link: "https://play.google.com/store/apps/details?id=com.si.prospects",
     description:
-      'A platform for "Sports Illustrated" tournaments to engage players in a sticker trading game.',
-    experience:
       "As a Full stack Engineer, developed the backend APIs and integrated EventConnect APIs, managing the DevOps and successfully integrating EventConnect APIs.",
-    achievements: [
-      <>Developed the backend APIs and integrated EventConnect APIs.</>,
-      <>
-        Worked with EventConnect Team to optimize APIs for faster processing.
-      </>,
-      <>
-        Managed the DevOps and introduced batch processing and optimizations to
-        the APIs fetching the event details.
-      </>,
-    ],
+    experience:
+      "In my role as a Backend Engineer for project Prospects Trading, I played a key role in enabling player engagement in **Sports Illustrated** tournaments through a sticker trading platform. This platform allowed users to trade stickers during tournaments, fostering community engagement and excitement. By developing backend APIs and integrating EventConnect APIs, I improved user engagement and experience for tournament participants. My initiative in implementing batch processing and optimizations efficiently overcame API limitations, further enhancing platform functionality. Prospects Trading highlights my ability to leverage technology to create innovative solutions and drive user engagement.",
   },
   {
     title: "AAB Engage App",
     skills: "Javascript, Node.js, Express.js, SQL, TFS",
     link: "https://play.google.com/store/apps/details?id=com.sap.webide.x4efb5a44557f416482c43ec9805cc9b6&hl=en&gl=US",
     description:
-      'An app for "Abdul Ghani" Car rental service customers to cater to their requests, easing their efforts to receive support on the go.',
-    experience:
       "As a Full stack Engineer, developed the backend APIs and integrated SAP APIs, managing the DevOps and successfully integrating SAP APIs.",
-    achievements: [
-      <>Developed the backend APIs and integrated SAP APIs.</>,
-      <>Managed the DevOps and successfully integrated SAP APIs.</>,
-    ],
+    experience:
+      "At AAB Engage App, I focused on improving mobile app support and rental accessibility for users. The AAB Engage App is a mobile application designed to simplify rental processes and enhance user support for Abdul Ghani Car rental service customers. Through my expertise in backend development and integration of SAP APIs, I enhanced user support and streamlined rental processes. Despite challenges in integrating SAP APIs, my dedication and problem-solving skills enabled successful implementation, contributing to the app's success. AAB Engage App underscores my ability to overcome challenges and deliver impactful solutions that meet user needs.",
   },
   {
     title: "Owl Express",
@@ -335,23 +299,9 @@ export const Projects = [
       "Javascript, React, DynamoDB, GraphQL, AWS, AppSync, Amplify, Cognito",
     link: "https://www.owlexpress.net",
     description:
-      "A platform for students to get help from their peers and teachers.",
-    experience:
       "As a Full stack Engineer, designed a dynamic Learning Platform, fostering collaboration among users. Pioneered a system for active user engagement, empowering them to create help requests with seamless responsiveness from volunteers.",
-    achievements: [
-      <>
-        Developed the web and mobile application, implementing UI/UX design and
-        the design system.
-      </>,
-      <>
-        Integrated Authentication with AWS Cognito, DynamoDB and GraphQL with
-        AWS AppSync.
-      </>,
-      <>
-        Developed serverless synced data architecture for web and mobile
-        applications.
-      </>,
-    ],
+    experience:
+      "As a Full-Stack Developer on the Owl Express project, I designed a dynamic Learning Platform that fostered collaboration among students. Owl Express is an educational platform designed to facilitate peer-to-peer learning and support. My leadership in implementing OAuth with AWS Cognito and managing real-time updates efficiently underscored my technical prowess and problem-solving skills. I delivered a seamless user experience, empowering students to learn and collaborate effectively.",
   },
   {
     title: "Orgaplan",
@@ -359,39 +309,18 @@ export const Projects = [
       "Javascript, React, React Native, AWS, MongoDB, Firebase, Node.js, Express.js",
     link: "http://orgaplansa.com",
     description:
-      "Orgaplan is a logistic platform for construction firms to streamline resource management.",
-    experience:
       "As a Full stack Engineer, led the project of 5 developers and overcame challenges in integrating visualization tools. Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map. Improved team efficiency by 25%.",
-    achievements: [
-      <>
-        Led project of 5 developers and overcame challenges in integrating
-        visualization tools.
-      </>,
-      <>
-        Overcame challenges in integrating CanvasJS for the visualization of the
-        construction site editable map.
-      </>,
-      <>Improved team efficiency by 25%.</>,
-    ],
+    experience:
+      "In my role as a Full-Stack Engineer for Orgaplan, I played a pivotal role in developing a logistic platform for construction firms. Orgaplan is a platform designed to streamline resource management and enhance efficiency for construction companies. Leading a team of five developers, I spearheaded comprehensive analysis and documentation efforts, resulting in a 20% reduction in project iteration cycles. By integrating CanvasJS for construction site visualization, I overcame significant challenges, ultimately contributing to the platform's success. Orgaplan highlights my ability to lead cross-functional teams and deliver outstanding accomplishments in complex projects.",
   },
   {
     title: "Permispop",
     skills: "Javascript, React, React Native, .NET, MongoDB",
     link: "https://permispop.fr",
     description:
-      "Permispop is a platform for driving instructors to manage their students, lessons, and schedules.",
-    experience:
       "As a Full stack Engineer, developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling. Completed the project successfully, appreciated by the team and the project manager.",
-    achievements: [
-      // <>
-      //   Developed the mobile application, implementing UI/UX design and
-      //   integrating the calendar for lesson scheduling.
-      // </>,
-      // <>
-      //   Completed the project successfully, appreciated by the team and the
-      //   project manager.
-      // </>,
-    ],
+    experience:
+      "In my role as a Frontend Developer for Permispop, I led the development of a mobile application using React Native. Permispop is a driving lesson platform that allows driving instructors to manage their students, lessons, and schedules. Through my efforts in integrating a calendar for lesson scheduling and creating user-friendly forms, I significantly enhanced user engagement and experience. Permispop exemplifies my ability to leverage technology to solve real-world problems and deliver impactful solutions in mobile development projects.",
   },
 ]
 

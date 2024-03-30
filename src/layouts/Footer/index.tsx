@@ -5,11 +5,13 @@ import { Box, Container } from "@mui/material"
 
 import { Link } from "@ui/Link"
 import { Width } from "@utils/types"
+import { APP_BAR_HEIGHT } from "@utils/constants"
 
 const styles = {
   root: (theme: Theme) => ({
     width: "100%",
     padding: theme.spacing(2),
+    height: `${APP_BAR_HEIGHT}px`,
 
     "@media print": {
       display: "none",

@@ -7,25 +7,14 @@ import { Header } from "./Header"
 import { Footer } from "./Footer"
 import { Width } from "@utils/types"
 import { ActionHeader } from "@ui/ActionHeader"
+import { APP_BAR_HEIGHT } from "@utils/constants"
 
-const Main = styled("main")(({ theme }) => ({
+const Main = styled("div")(({ theme }) => ({
   padding: 0,
   width: "100vw",
   height: "100vh",
-  display: "flex",
-  overflow: "hidden",
-  flexDirection: "column",
-  backgroundColor: theme.palette.background.default,
-  transition: theme.transitions.create("margin", {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-}))
-
-const Content = styled(Container)(({ theme }) => ({
-  height: "100%",
   overflow: "auto",
-  padding: theme.spacing(2),
+  backgroundColor: theme.palette.background.default,
   transition: theme.transitions.create("margin", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -55,6 +44,12 @@ const Content = styled(Container)(({ theme }) => ({
   },
 }))
 
+const Content = styled("main")({
+  padding: `20px 0`,
+  marginTop: `${APP_BAR_HEIGHT}px`,
+  minHeight: `calc(100% - ${2 * APP_BAR_HEIGHT}px)`,
+})
+
 export const HeaderLayout = ({
   title,
   actions,
@@ -72,19 +67,21 @@ export const HeaderLayout = ({
     <Main>
       <Header maxWidth={maxWidth} />
 
-      <Content maxWidth={maxWidth}>
-        {/* Page Header */}
-        {title && (
-          <ActionHeader
-            title={title}
-            sx={{ borderBottom: "none" }}
-            withBackButton={withBackButton}
-          >
-            {actions}
-          </ActionHeader>
-        )}
+      <Content>
+        <Container maxWidth={maxWidth}>
+          {/* Page Header */}
+          {title && (
+            <ActionHeader
+              title={title}
+              sx={{ borderBottom: "none" }}
+              withBackButton={withBackButton}
+            >
+              {actions}
+            </ActionHeader>
+          )}
 
-        {children}
+          {children}
+        </Container>
       </Content>
 
       <Footer maxWidth={maxWidth} />

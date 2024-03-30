@@ -533,19 +533,3 @@ A driving instructor platform that allows driving instructors to manage their st
 #### Source/Company
 
 - [Falcon IT Consulting](https://falconconsulting.fr/)
-
-### Software Engineer | NTT DATA & GiffGaff Jan 2023 - Present
-
-- Impact: Transitioned a PHP application to a microservices architecture, enhancing system scalability.
-- Leadership: Temporarily assumed team lead duties, acknowledged for maintaining project momentum.
-- Innovation: Authored 10+ React components, unifying design elements across projects.
-
-### Software Engineer | Skupreme Jan 2021 - Dec 2022
-
-- Efficiency: Enhanced application speed by 30%, adding over $2M in value.
-- Collaboration: Facilitated client demos, boosting satisfaction by 30%.
-
-### Full Stack Developer | Falcon IT Consulting Jul 2020 - May 2021
-
-- Mentorship: Guided a team of 5, fostering professional growth.
-- Excellence: Directed a $3M project, earning an Award for Outstanding Accomplishments.
