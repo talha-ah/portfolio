@@ -2,6 +2,12 @@ import { Box } from "@mui/material"
 
 import { Skill } from "@utils/types"
 
+import SI from "public/companies/si.svg"
+import GG from "public/companies/gg.svg"
+import NTT from "public/companies/ntt-data.svg"
+import Skupreme from "public/companies/skupreme.svg"
+
+export const Name = "Talha Ahmed"
 export const GitHub = "talha-ah"
 export const LinkedIn = "talha-ah"
 export const Location = "London, UK"
@@ -52,8 +58,6 @@ export const jobs = [
   "Full Stack",
   "Backend",
   "Frontend",
-  "Node",
-  "Python",
   "Javascript",
 ]
 
@@ -73,6 +77,7 @@ export const Experiences = [
     company: "NTT DATA & GiffGaff",
     role: "Software Engineer",
     location: "London, UK",
+    logos: [<GG key="Giffgaff" />, <NTT key="NTT Data" />],
     duration: {
       start: {
         year: "2023",
@@ -124,6 +129,7 @@ export const Experiences = [
     company: "Skupreme",
     role: "Software Engineer",
     location: "Miami, US (Remote)",
+    logos: [<Skupreme key="skupreme" />],
     duration: {
       start: {
         year: "2021",
@@ -138,16 +144,14 @@ export const Experiences = [
       "Javascript, Next.js, Node.js, Express.js, MongoDB, AWS, Serverless, Automation, Package management, Agile",
     description: [
       <>
-        <strong>Leadership:</strong> Orchestrated client collaboration,
-        facilitating demos, and resolving challenges in real-time, resulting in
-        a seamless project development process and a <strong>30%</strong> boost
-        in client satisfaction ratings.
+        <strong>Leadership:</strong> Led client collaboration, conducted demos,
+        and addressed challenges for seamless project development, leading to a{" "}
+        <strong>30%</strong> increase in client satisfaction ratings.
       </>,
       <>
-        <strong>Impact:</strong> Boosted the application&apos;s functionality
-        and speed by <strong>30%</strong>, resulting in a <strong>$2M</strong>{" "}
-        increase in value through the implementation of advanced strategies and
-        techniques.
+        <strong>Impact:</strong> Enhanced application functionality and speed by{" "}
+        <strong>30%</strong>, adding <strong>$2M</strong> in value through
+        advanced strategies and techniques.
       </>,
       <>
         <strong>Efficiency:</strong> Engineered scalable frameworks,
@@ -155,10 +159,9 @@ export const Experiences = [
         overall performance metrics by <strong>25%</strong>.
       </>,
       <>
-        <strong>Mentorship:</strong> Provided mentorship to the junior
-        engineers, and guiding them on best practices and methodologies,
-        developing new and optimizing existing features in a standardized and
-        efficient manner.
+        <strong>Mentorship:</strong> Mentored junior engineers on best
+        practices, methodologies, and feature optimization for standardized and
+        efficient development.
       </>,
     ],
   },
@@ -166,6 +169,13 @@ export const Experiences = [
     location: "Lahore, PK",
     role: "Full Stack Developer",
     company: "Falcon IT Consulting",
+    logos: [
+      <img
+        key="falcon"
+        alt="Falcon IT Consulting"
+        src={"/companies/Falcon-Logo.png"}
+      />,
+    ],
     duration: {
       start: {
         year: "2020",
@@ -180,9 +190,8 @@ export const Experiences = [
       "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase",
     description: [
       <>
-        <strong>Mentorship:</strong> Guided and mentored a team of{" "}
-        <strong>5</strong> engineers, providing career advice and identifying
-        areas for improvement.
+        <strong>Mentorship:</strong> Mentored a team of <strong>5</strong>{" "}
+        engineers, providing career advice and pinpointing areas for growth.
       </>,
       <>
         <strong>Collaboration:</strong> Led comprehensive analysis and
@@ -190,11 +199,10 @@ export const Experiences = [
         <strong>20%</strong> reduction in project iteration cycles.
       </>,
       <>
-        <strong>Achievement:</strong> Directed a <strong>$3 million</strong>{" "}
-        project, overseeing analysis, planning, and development, and achieved
-        the{" "}
+        <strong>Achievement:</strong> Oversaw a <strong>$3</strong> million
+        project from analysis to completion, earning the{" "}
         <strong>
-          &quot;Award of Excellence for Outstanding Accomplishments&quot;
+          &apos;Award of Excellence for Outstanding Accomplishments&apos;
         </strong>{" "}
         .
       </>,
@@ -204,6 +212,7 @@ export const Experiences = [
     company: "Freelancer",
     location: "Lahore, PK",
     role: "Full Stack Developer",
+    logos: [<SI key="Sports Illustrated" />],
     duration: {
       start: {
         year: "2018",
@@ -254,6 +263,45 @@ export const Skills: Skill[] = [
   },
 ]
 
+export const SkillsAll: Skill[] = [
+  {
+    title: "Programming Languages",
+    list: "JavaScript, TypeScript, Python, Java",
+  },
+  {
+    title: "Frontend Technologies",
+    list: "HTML, CSS, React, Next.js, React Native, Angular, Redux, Material-UI, Bootstrap, Tailwind.css, Styled-Components, SCSS, Webpack, Babel, CSS-in-JS",
+  },
+  {
+    title: "Backend Technologies",
+    list: "Node.js, Express.js, FastAPI, Django, Flask",
+  },
+  {
+    title: "Testing Libraries",
+    list: "Jest, Enzyme, Cypress, Mocha, Chai, Sinon, React-Testing-Library",
+  },
+  {
+    title: "Databases",
+    list: "MongoDB, PostgreSQL, MySQL, Firebase, DynamoDB, Firestore",
+  },
+  {
+    title: "Cloud Platforms",
+    list: "AWS, GCP, Azure, TFS, Heroku, Vercel, Netlify",
+  },
+  {
+    title: "CI/CD & DevOps",
+    list: "GitHub Actions, Jenkins, Docker, Elastic Search, Microservices, Serverless, GraphQL, Apollo, Git",
+  },
+  {
+    title: "Others",
+    list: "Lambda, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, EC2, S3, XML, SOAP, RESTAPI, GraphQL, Apollo, Linux, Bash, SSH, Automation, Package management, Agile, Machine Learning/AI, Jira, Nginx, Apache",
+  },
+  {
+    title: "Languages",
+    list: "English (professional), Urdu (native), Punjabi (native)",
+  },
+]
+
 export const Projects = [
   {
     title: "Electromatic Works",
@@ -264,6 +312,10 @@ export const Projects = [
       "As a Full stack Engineer, developed the platform from scratch, streamlining the product inquiry process by 40% through implementing cart functionality without user registration. Implemented CI/CD best practices to ensure the client can update the platform business details and deploy the changes directly from the Admin Panel.",
     experience:
       "At Electromatic Works, I played a pivotal role in developing a platform for a local business, enabling seamless communication and product showcasing. This platform enabled users to contact the business and browse products without the need for an account, streamlining the customer experience. My initiative in suggesting and implementing a cart system without a user authentication, enhanced user experience and client satisfaction, exemplifying my dedication to delivering impactful solutions that meet client needs. I also implemented CI/CD best practices to enable the client to update business details and deploy changes directly from the Admin Panel, further enhancing platform functionality and user experience.",
+    achievements: [
+      "Streamlined product inquiry process by 40% through implementing cart functionality without user registration.",
+      "Implemented CI/CD best practices to ensure the client can update the platform business details and deploy the changes directly from the Admin Panel.",
+    ],
   },
   {
     title: "Retail Link",
@@ -273,6 +325,11 @@ export const Projects = [
       "As a Full stack Engineer, developed the platform from scratch, providing local retail shops with a cutting-edge digital platform. Implemented DevOps best practices, ensuring seamless deployment and operation.",
     experience:
       "As the sole developer of Retail Link, I spearheaded the creation of a transformative platform tailored for local retail shops, enabling digital transformation and operational efficiency. Through my expertise in React.js, Next.js, Node.js, and MongoDB, I delivered a user-friendly solution that streamlined order processing and inventory management. My initiative in implementing CI/CD best practices and DevOps methodologies ensured seamless deployment and operation, contributing to the platform's success. Retail Link showcases my ability to leverage technology to drive business growth and deliver impactful solutions that meet client needs.",
+    achievements: [
+      "Improved order processing efficiency by 30%.",
+      "Successfully developed Retail Link from scratch, providing local retail shops with a cutting-edge digital platform.",
+      "Implemented DevOps best practices, ensuring seamless deployment and operation.",
+    ],
   },
   {
     title: "Prospects Trading",
@@ -282,7 +339,12 @@ export const Projects = [
     description:
       "As a Full stack Engineer, developed the backend APIs and integrated EventConnect APIs, managing the DevOps and successfully integrating EventConnect APIs.",
     experience:
-      "In my role as a Backend Engineer for project Prospects Trading, I played a key role in enabling player engagement in **Sports Illustrated** tournaments through a sticker trading platform. This platform allowed users to trade stickers during tournaments, fostering community engagement and excitement. By developing backend APIs and integrating EventConnect APIs, I improved user engagement and experience for tournament participants. My initiative in implementing batch processing and optimizations efficiently overcame API limitations, further enhancing platform functionality. Prospects Trading highlights my ability to leverage technology to create innovative solutions and drive user engagement.",
+      'In my role as a Backend Engineer for project Prospects Trading, I played a key role in enabling player engagement in "Sports Illustrated" tournaments through a sticker trading platform. This platform allowed users to trade stickers during tournaments, fostering community engagement and excitement. By developing backend APIs and integrating EventConnect APIs, I improved user engagement and experience for tournament participants. My initiative in implementing batch processing and optimizations efficiently overcame API limitations, further enhancing platform functionality. Prospects Trading highlights my ability to leverage technology to create innovative solutions and drive user engagement.',
+    achievements: [
+      "Developed the backend APIs and integrated EventConnect APIs.",
+      "Worked with EventConnect Team to optimize APIs for faster processing.",
+      "Managed the DevOps and introduced batch processing and optimizations to the APIs fetching the event details.",
+    ],
   },
   {
     title: "AAB Engage App",
@@ -292,6 +354,11 @@ export const Projects = [
       "As a Full stack Engineer, developed the backend APIs and integrated SAP APIs, managing the DevOps and successfully integrating SAP APIs.",
     experience:
       "At AAB Engage App, I focused on improving mobile app support and rental accessibility for users. The AAB Engage App is a mobile application designed to simplify rental processes and enhance user support for Abdul Ghani Car rental service customers. Through my expertise in backend development and integration of SAP APIs, I enhanced user support and streamlined rental processes. Despite challenges in integrating SAP APIs, my dedication and problem-solving skills enabled successful implementation, contributing to the app's success. AAB Engage App underscores my ability to overcome challenges and deliver impactful solutions that meet user needs.",
+    achievements: [
+      "Developed the backend APIs and integrated SAP APIs.",
+      "Managed the DevOps and successfully integrated SAP APIs.",
+      "Improved my skills in backend development and DevOps.",
+    ],
   },
   {
     title: "Owl Express",
@@ -302,6 +369,11 @@ export const Projects = [
       "As a Full stack Engineer, designed a dynamic Learning Platform, fostering collaboration among users. Pioneered a system for active user engagement, empowering them to create help requests with seamless responsiveness from volunteers.",
     experience:
       "As a Full-Stack Developer on the Owl Express project, I designed a dynamic Learning Platform that fostered collaboration among students. Owl Express is an educational platform designed to facilitate peer-to-peer learning and support. My leadership in implementing OAuth with AWS Cognito and managing real-time updates efficiently underscored my technical prowess and problem-solving skills. I delivered a seamless user experience, empowering students to learn and collaborate effectively.",
+    achievements: [
+      "Developed the web and mobile application, implementing UI/UX design and the design system.",
+      "Integrated DynamoDB using GraphQL and AWS AppSync.",
+      "Developed serverless synced data architecture for web and mobile applications.",
+    ],
   },
   {
     title: "Orgaplan",
@@ -312,6 +384,11 @@ export const Projects = [
       "As a Full stack Engineer, led the project of 5 developers and overcame challenges in integrating visualization tools. Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map. Improved team efficiency by 25%.",
     experience:
       "In my role as a Full-Stack Engineer for Orgaplan, I played a pivotal role in developing a logistic platform for construction firms. Orgaplan is a platform designed to streamline resource management and enhance efficiency for construction companies. Leading a team of five developers, I spearheaded comprehensive analysis and documentation efforts, resulting in a 20% reduction in project iteration cycles. By integrating CanvasJS for construction site visualization, I overcame significant challenges, ultimately contributing to the platform's success. Orgaplan highlights my ability to lead cross-functional teams and deliver outstanding accomplishments in complex projects.",
+    achievements: [
+      "Led project of 5 developers and overcame challenges in integrating visualization tools.",
+      "Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map.",
+      "Improved team efficiency by 25%",
+    ],
   },
   {
     title: "Permispop",
@@ -321,6 +398,10 @@ export const Projects = [
       "As a Full stack Engineer, developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling. Completed the project successfully, appreciated by the team and the project manager.",
     experience:
       "In my role as a Frontend Developer for Permispop, I led the development of a mobile application using React Native. Permispop is a driving lesson platform that allows driving instructors to manage their students, lessons, and schedules. Through my efforts in integrating a calendar for lesson scheduling and creating user-friendly forms, I significantly enhanced user engagement and experience. Permispop exemplifies my ability to leverage technology to solve real-world problems and deliver impactful solutions in mobile development projects.",
+    achievements: [
+      "Developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling.",
+      "Completed the project successfully, appreciated by the team and the project manager.",
+    ],
   },
 ]
 
@@ -357,7 +438,7 @@ export const Educations = [
   },
 ]
 
-export const Acheivements = [
+export const Achievements = [
   {
     title: "Award of Excellence for Outstanding Accomplishments",
     organizations: [{ year: 2021, name: "Falcon IT Consulting" }],
@@ -386,19 +467,19 @@ export const Certifications = [
   // },
   {
     title: "Full-Stack Web Development with React",
-    organization: "Hong Kong University of Science - Coursera",
+    organization: "Hong Kong University of Science",
     year: 2020,
     link: "https://www.coursera.org/account/accomplishments/specialization/certificate/AYEQNF2AUWJ2",
   },
   {
     title: "IBM Data Science",
-    organization: "IBM - Coursera",
+    organization: "IBM",
     year: 2020,
     link: "https://www.coursera.org/account/accomplishments/specialization/certificate/GGUZ86AV2BZN",
   },
   {
     title: "Data Visualization with Python",
-    organization: "IBM - Coursera",
+    organization: "IBM",
     year: 2019,
     link: "https://www.coursera.org/account/accomplishments/certificate/4PEJU8B5LTFG",
   },

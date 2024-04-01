@@ -1,20 +1,23 @@
 import * as React from "react"
 import { useState } from "react"
 
-import { IconButton } from "@mui/material"
-import { DialogTitle } from "@mui/material"
 import { Close } from "@mui/icons-material"
-import { DialogContent } from "@mui/material"
-import { Dialog as MuiDialog } from "@mui/material"
 import { SxProps, Theme } from "@mui/material/styles"
+import {
+  IconButton,
+  DialogTitle,
+  DialogContent,
+  Dialog as MuiDialog,
+} from "@mui/material"
 
 import { Width } from "@utils/types"
 import { useWindowResize } from "@hooks/useWindowResize"
 
 interface DialogProps {
-  title: string
   width?: Width
+  title?: string
   sx?: SxProps<Theme>
+  fullScreen?: boolean
   trigger: (args: any) => void
   content: (args: any) => React.ReactNode
 }
@@ -33,6 +36,7 @@ export const Dialog = ({
   title,
   trigger,
   content,
+  fullScreen,
   width = "sm",
 }: DialogProps) => {
   const [windowWidth] = useWindowResize()
@@ -42,26 +46,36 @@ export const Dialog = ({
 
   return (
     <>
-      {trigger({ toggleOpen })}
-      <MuiDialog sx={sx} open={open} onClose={toggleOpen} maxWidth={width}>
-        <DialogTitle id={`dialog-${title}`}>
-          {title}{" "}
-          <IconButton
-            aria-label="close"
-            onClick={toggleOpen}
-            sx={(theme: Theme) => ({
-              position: "absolute",
-              top: theme.spacing(1.2),
-              right: theme.spacing(2),
-            })}
-          >
-            <Close />
-          </IconButton>
-        </DialogTitle>
+      {trigger({ open, toggleOpen })}
+
+      <MuiDialog
+        sx={sx}
+        open={open}
+        maxWidth={width}
+        onClose={toggleOpen}
+        fullScreen={fullScreen}
+      >
+        {!fullScreen && (
+          <DialogTitle id={`dialog-${title}`}>
+            {title}{" "}
+            <IconButton
+              aria-label="close"
+              onClick={toggleOpen}
+              sx={(theme: Theme) => ({
+                position: "absolute",
+                top: theme.spacing(1.2),
+                right: theme.spacing(2),
+              })}
+            >
+              <Close />
+            </IconButton>
+          </DialogTitle>
+        )}
 
         <DialogContent
           sx={(theme: Theme) => ({
-            width: getMaxWidth(theme, width, windowWidth),
+            padding: fullScreen ? 0 : theme.spacing(2),
+            width: fullScreen ? "100%" : getMaxWidth(theme, width, windowWidth),
           })}
         >
           {typeof content === "function"

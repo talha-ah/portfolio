@@ -8,9 +8,9 @@ const nextConfig = {
     apiLimit: process.env.NEXT_PUBLIC_API_LIMIT,
     apiVersion: process.env.NEXT_PUBLIC_API_VERSION,
     storageKey: process.env.NEXT_PUBLIC_STORAGE_KEY,
-    githubToken: process.env.NEXT_PUBLIC_GITHUB_TOKEN,
   },
   images: {
+    formats: ["image/avif", "image/webp"],
     domains: ["source.unsplash.com", "premiumlayers.com"],
   },
   typescript: {
@@ -24,6 +24,15 @@ const nextConfig = {
   //   appDir: true,
   //   esmExternals: "loose",
   // },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"],
+    })
+
+    return config
+  },
 }
 
 module.exports = nextConfig

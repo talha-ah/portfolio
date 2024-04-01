@@ -1,28 +1,45 @@
-import { ThemeMode } from "@utils/types"
+import { PaletteMode } from "@mui/material"
 
-import { Palette } from "./palette"
+const PRIMARY = "#075fe4"
 
-export const theme = (mode: ThemeMode) => {
+const PAPER = "#22282f"
+const BACKGROUND = "#1b1f24"
+
+export const theme = () => {
   return {
-    palette: Palette(mode),
+    palette: {
+      mode: "dark" as PaletteMode,
+      primary: {
+        main: PRIMARY,
+      },
+      divider: "#8895aa",
+      background: {
+        paper: PAPER,
+        default: BACKGROUND,
+      },
+      text: {
+        primary: "#ffffff",
+        secondary: "#c3cad5",
+      },
+    },
+    typography: {
+      fontFamily: '"Space Grotesk", "Cambria", sans-serif',
+      fontSize: 14,
+      fontWeightLight: 300,
+      fontWeightRegular: 400,
+      fontWeightMedium: 500,
+    },
     direction: "ltr" as "ltr" | "rtl",
     shape: {
       borderRadius: 4,
     },
     breakpoints: {
       values: {
-        xs: 400,
-        sm: 768,
-        md: 1024,
-        lg: 1266,
-        xl: 1536,
-      },
-    },
-    mixins: {
-      toolbar: {
-        minHeight: 60,
-        paddingTop: 8,
-        paddingBottom: 8,
+        xs: 0,
+        sm: 400,
+        md: 768,
+        lg: 1024,
+        xl: 1266,
       },
     },
   }

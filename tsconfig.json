@@ -16,6 +16,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
     "paths": {
+      "@ui/*": ["./src/ui/*"],
       "@auth/*": ["./src/auth/*"],
       "@utils/*": ["./src/utils/*"],
       "@pages/*": ["./src/pages/*"],
@@ -26,7 +27,6 @@
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@ui/*": ["./src/components/ui/*"],
       "@contexts/*": ["./src/contexts/*"],
       "@components/*": ["./src/components/*"]
     }

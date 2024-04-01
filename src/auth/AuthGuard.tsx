@@ -44,7 +44,7 @@ export function AuthGuard({ children }: Readonly<{ children: JSX.Element }>) {
       >
         <CircularProgress size={64} />
 
-        <Logo variant="text" />
+        <Logo />
       </Box>
     )
   }

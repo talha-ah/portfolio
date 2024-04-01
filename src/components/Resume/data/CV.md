@@ -1,6 +1,6 @@
 # Talha Ahmad
 
-Email: talha.ahmad@example.com | Phone: +1234567890 | LinkedIn: linkedin.com/in/talhaahmad
+Email: talha1392.ahmed@gmail.com | Phone: +44 794-643-4693 | LinkedIn: talha-ah | GitHub: talha-ah
 
 ## Summary
 
@@ -23,18 +23,18 @@ _Jan 2023 - Present | NTT DATA & GiffGaff_
 
 _Jan 2021 - Dec 2022 | Skupreme_
 
-- Leadership: Orchestrated client collaboration, facilitating demos, and resolving challenges in real-time, resulting in a seamless project development process and a 30% boost in client satisfaction ratings.
-- Impact: Boosted the application&apos;s functionality and speed by 30%, resulting in a $2M increase in value through the implementation of advanced strategies and techniques.
-- Efficiency: Engineered scalable frameworks, implementing best-in-class design principles, achieving and enhanced overall performance metrics by 25%.
-- Mentorship: Provided mentorship to the junior engineers, and guiding them on best practices and methodologies, developing new and optimizing existing features in standardized and efficient manner.
+- Leadership: Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a 30% increase in client satisfaction ratings.
+- Impact: Enhanced application functionality and speed by 30%, adding $2M in value through advanced strategies and techniques.
+- Efficiency: Engineered scalable frameworks, implementing best-in-class design principles, achieving overall performance metrics by 25%.
+- Mentorship: Mentored junior engineers on best practices, methodologies, and feature optimization for standardized and efficient development.
 
 ### Full Stack Developer
 
 _Jul 2020 - May 2021 | Falcon IT Consulting_
 
-- Mentorship: Guided and mentored a team of 5 engineers, providing career advice and identifying areas for improvement.
+- Mentorship: Mentored a team of 5 engineers, providing career advice and pinpointing areas for growth.
 - Collaboration: Led comprehensive analysis and documentation of client requirements, resulting in a 20% reduction in project iteration cycles.
-- Achievement: Directed a $3 million project, overseeing analysis, planning, and development, and achieved the "**Award of Excellence for Outstanding Accomplishments**".
+- Achievement: Oversaw a $3 million project from analysis to completion, earning the 'Award of Excellence for Outstanding Accomplishments'.
 
 ### Full Stack Developer
 
@@ -76,7 +76,7 @@ _Oct 2018 - May 2020 | Freelancer_
 
 **Short Description**: As a Full stack Engineer, developed the platform from scratch, streamlining the product inquiry process by 40% through implementing cart functionality without user registration. Implemented CI/CD best practices to ensure the client can update the platform business details and deploy the changes directly from the Admin Panel.
 
-**Description**: At Electromatic Works, I played a pivotal role in developing a platform for a local business, enabling seamless communication and product showcasing. This platform enabled users to contact the business and browse products without the need for an account, streamlining the customer experience. My initiative in suggesting and implementing a cart system without a user authentication, enhanced user experience and client satisfaction, exemplifying my dedication to delivering impactful solutions that meet client needs. I also implemented CI/CD best practices to enable the client to update business details and deploy changes directly from the Admin Panel, further enhancing platform functionality and user experience.
+**Description**: For Electromatic Works, I played a pivotal role in developing a platform for a local business, enabling seamless communication and product showcasing. This platform enabled users to contact the business and browse products without the need for an account, streamlining the customer experience. My initiative in suggesting and implementing a cart system without a user authentication, enhanced user experience and client satisfaction, exemplifying my dedication to delivering impactful solutions that meet client needs. I also implemented CI/CD best practices to enable the client to update business details and deploy changes directly from the Admin Panel, further enhancing platform functionality and user experience.
 
 **Tech Stack**: Node.js, Express.js, React.js, Next.js, MongoDB, CI/CD, DevOps
 

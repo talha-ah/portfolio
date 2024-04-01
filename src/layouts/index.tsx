@@ -1,13 +1,10 @@
 import React from "react"
 
-import { Container } from "@mui/material"
 import { styled } from "@mui/material/styles"
 
 import { Header } from "./Header"
 import { Footer } from "./Footer"
-import { Width } from "@utils/types"
-import { ActionHeader } from "@ui/ActionHeader"
-import { APP_BAR_HEIGHT } from "@utils/constants"
+import { Width, Link as LinkType } from "@utils/types"
 
 const Main = styled("div")(({ theme }) => ({
   padding: 0,
@@ -44,47 +41,40 @@ const Main = styled("div")(({ theme }) => ({
   },
 }))
 
-const Content = styled("main")({
-  padding: `20px 0`,
-  marginTop: `${APP_BAR_HEIGHT}px`,
-  minHeight: `calc(100% - ${2 * APP_BAR_HEIGHT}px)`,
-})
+const Content = styled("main")(({ mb }: { mb: string }) => ({
+  paddingBottom: mb,
+  paddingTop: "48px",
+  // minHeight: "calc(100vh - 38%)",
+}))
+
+const links: LinkType[] = [
+  {
+    to: "/",
+    exact: true,
+    label: "Home",
+  },
+  // {
+  //   label: "Resume",
+  //   to: "/resume",
+  // },
+]
 
 export const HeaderLayout = ({
-  title,
-  actions,
   children,
-  withBackButton,
+  mb = "48px",
 }: {
-  title?: string
-  withBackButton?: boolean
-  actions?: React.ReactNode
+  mb?: string
   children?: React.ReactNode
 }) => {
   const maxWidth: Width = "xl"
 
   return (
     <Main>
-      <Header maxWidth={maxWidth} />
+      <Header maxWidth={maxWidth} links={links} />
 
-      <Content>
-        <Container maxWidth={maxWidth}>
-          {/* Page Header */}
-          {title && (
-            <ActionHeader
-              title={title}
-              sx={{ borderBottom: "none" }}
-              withBackButton={withBackButton}
-            >
-              {actions}
-            </ActionHeader>
-          )}
+      <Content mb={mb}>{children}</Content>
 
-          {children}
-        </Container>
-      </Content>
-
-      <Footer maxWidth={maxWidth} />
+      <Footer maxWidth={maxWidth} links={links} />
     </Main>
   )
 }

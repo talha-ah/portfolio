@@ -1,14 +1,10 @@
-import { useCallback, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 import { Box, Grid } from "@mui/material"
-import { DarkMode, LightMode } from "@mui/icons-material"
 
-import { Alert } from "@ui/Alert"
 import { Input } from "@ui/Input"
 import { Button } from "@ui/Button"
 import { useApi } from "@hooks/useApi"
-import { ThemeMode } from "@utils/types"
-import { IconButton } from "@ui/IconButton"
 import { ENDPOINTS } from "@utils/constants"
 import { useAppContext, AuthTypes } from "@contexts/index"
 
@@ -145,7 +141,7 @@ export function UpdateProfile() {
           </Grid>
         </Grid>
 
-        <Alert type="error" message={error} />
+        {error}
       </Box>
     </Box>
   )
@@ -248,43 +244,8 @@ export function UpdatePassword() {
           </Grid>
         </Grid>
 
-        <Alert type="error" message={error} />
+        {error}
       </Box>
     </Box>
-  )
-}
-
-export function SelectTheme() {
-  const API = useApi()
-  const { state, dispatch } = useAppContext()
-
-  const handleSubmit = useCallback(async () => {
-    try {
-      const theme: ThemeMode = state.auth.theme === "light" ? "dark" : "light"
-
-      dispatch({
-        type: AuthTypes.SET_THEME,
-        payload: { theme },
-      })
-
-      if (!state.auth.isAuth) return
-
-      await API({
-        method: "PUT",
-        url: ENDPOINTS.profileTheme,
-        body: JSON.stringify({ theme }),
-      })
-    } catch (error: any) {}
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.auth.theme])
-
-  return (
-    <IconButton
-      onClick={handleSubmit}
-      aria-label="Toggle theme"
-      tooltip={state.auth.theme === "light" ? "Dark Mode" : "Light Mode"}
-    >
-      {state.auth.theme === "light" ? <LightMode /> : <DarkMode />}
-    </IconButton>
   )
 }

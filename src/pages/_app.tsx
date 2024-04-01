@@ -1,12 +1,8 @@
-import "@fontsource/roboto/300.css"
-import "@fontsource/roboto/400.css"
-import "@fontsource/roboto/500.css"
-import "@fontsource/roboto/700.css"
-
 import React from "react"
 import Head from "next/head"
 import { NextPage } from "next"
 import { AppProps } from "next/app"
+import { AnimatePresence } from "framer-motion"
 
 import { SnackbarProvider } from "notistack"
 import { CacheProvider, EmotionCache } from "@emotion/react"
@@ -44,15 +40,17 @@ export default function App(props: Readonly<LocalAppProps>) {
           <ThemeCustomization>
             <SnackbarProvider maxSnack={3}>
               <AuthProvider>
-                {/* if requireAuth property is present - protect the page */}
-                {Component.requireAuth ? (
-                  <AuthGuard>
+                <AnimatePresence mode="wait" initial={false}>
+                  {/* if requireAuth property is present - protect the page */}
+                  {Component.requireAuth ? (
+                    <AuthGuard>
+                      <Component {...pageProps} />
+                    </AuthGuard>
+                  ) : (
+                    // public page
                     <Component {...pageProps} />
-                  </AuthGuard>
-                ) : (
-                  // public page
-                  <Component {...pageProps} />
-                )}
+                  )}
+                </AnimatePresence>
               </AuthProvider>
             </SnackbarProvider>
           </ThemeCustomization>

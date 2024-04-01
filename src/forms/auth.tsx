@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation"
 import { Grid, Box, Typography, Card as MuiCard } from "@mui/material"
 
 import { Input } from "@ui/Input"
-import { Alert } from "@ui/Alert"
 import { Button } from "@ui/Button"
 import { useApi } from "@hooks/useApi"
 import { ENDPOINTS } from "@utils/constants"
@@ -125,7 +124,7 @@ export function LoginForm() {
           </Grid>
         </Grid>
 
-        <Alert type="error" message={error} />
+        {error}
       </Box>
     </Card>
   )

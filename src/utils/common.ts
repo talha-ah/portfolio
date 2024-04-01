@@ -7,6 +7,13 @@ export const getFullName = (user: any) => {
   return name
 }
 
+export const getInitials = (user: any) => {
+  if (!user) return ""
+  return (
+    user.firstName.charAt(0) + (user.lastName ? user.lastName.charAt(0) : "")
+  )
+}
+
 export const toTitleCase = (str: string) => {
   if (str) str = str.charAt(0).toUpperCase() + str.slice(1)
 
@@ -18,6 +25,11 @@ export const numberWithCommas = (x: any): string => {
   return Number(String(x).replaceAll(",", "")).toLocaleString(undefined, {
     maximumFractionDigits: 2,
   })
+}
+
+export const scrollIntoView = (id: string) => {
+  const element = document.getElementById(id)
+  if (element) element.scrollIntoView({ behavior: "smooth" })
 }
 
 export const callAxios = async (config: IAxiosConfig) => {

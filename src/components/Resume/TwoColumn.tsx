@@ -24,7 +24,7 @@ import {
   Educations,
   Experiences,
   LocationLink,
-  Acheivements,
+  Achievements,
   Certifications,
 } from "./data"
 
@@ -272,7 +272,7 @@ export const Resume = forwardRef(
             <Box sx={styles.section}>
               <Typography sx={styles.heading}>Achievements</Typography>
 
-              {Acheivements.map((item, index) => (
+              {Achievements.map((item, index) => (
                 <Box sx={styles.box} key={index}>
                   <Typography sx={styles.title}>{item.title}</Typography>
                   <Typography sx={styles.subtitle}>

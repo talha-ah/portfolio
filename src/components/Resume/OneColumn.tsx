@@ -24,7 +24,7 @@ import {
   Educations,
   Experiences,
   LocationLink,
-  Acheivements,
+  Achievements,
   Certifications,
 } from "./data"
 
@@ -115,6 +115,9 @@ const styles = {
       marginRight: theme.spacing(0.5),
     },
   }),
+  pageBreak: {
+    pageBreakAfter: "always",
+  },
 }
 
 export const Resume = forwardRef(
@@ -128,7 +131,7 @@ export const Resume = forwardRef(
 
           {/* Contacts */}
           <Box sx={styles.headerContact}>
-            <Link href={LocationLink} target="_blank">
+            <Link href={LocationLink} target="_blank" rel="noreferrer">
               <LocationOn fontSize="small" /> {Location}
             </Link>
             <Link href={`tel:${Phone}`}>
@@ -137,12 +140,17 @@ export const Resume = forwardRef(
             <Link href={`mailto:${Email}`}>
               <EmailIcon fontSize="small" /> {Email}
             </Link>
-            <Link href={`https://github.com/${GitHub}`} target="_blank">
+            <Link
+              target="_blank"
+              rel="noreferrer"
+              href={`https://github.com/${GitHub}`}
+            >
               <GitHubIcon fontSize="small" /> {GitHub}
             </Link>
             <Link
-              href={`https://www.linkedin.com/in/${LinkedIn}`}
               target="_blank"
+              rel="noreferrer"
+              href={`https://www.linkedin.com/in/${LinkedIn}`}
             >
               <LinkedInIcon fontSize="small" /> {LinkedIn}
             </Link>
@@ -238,12 +246,13 @@ export const Resume = forwardRef(
               ))}
             </Box>
           </Grid>
+
           <Grid item xs={6}>
             {/* Achievements */}
             <Box>
               <Typography sx={styles.title}>Achievements</Typography>
 
-              {Acheivements.map((item, index) => (
+              {Achievements.map((item, index) => (
                 <Box sx={styles.section} key={index} mt={0}>
                   <Typography sx={styles.subtitle}>{item.title}</Typography>
                   <Typography sx={styles.subtitle2}>
@@ -256,6 +265,8 @@ export const Resume = forwardRef(
             </Box>
           </Grid>
         </Grid>
+
+        <Box sx={styles.pageBreak} />
 
         {/* Projects */}
         <Box>

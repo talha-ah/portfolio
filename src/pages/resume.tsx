@@ -2,7 +2,7 @@ import Head from "next/head"
 import React, { useRef, useState } from "react"
 import { useReactToPrint } from "react-to-print"
 
-import { Box, Theme, ButtonGroup } from "@mui/material"
+import { Box, Theme, ButtonGroup, Container } from "@mui/material"
 import { Print, NavigateNext, NavigateBefore, Edit } from "@mui/icons-material"
 
 import { Dialog } from "@ui/Dialog"
@@ -141,7 +141,7 @@ const ResumeContent = ({
   const ResumeComponent = component
 
   return (
-    <>
+    <Container maxWidth="xl">
       <Box sx={styles.buttons}>
         <Dialog
           title="Skills"
@@ -183,7 +183,7 @@ const ResumeContent = ({
           skills={skills.filter(({ list }) => list)} // Filter out empty skills
         />
       </Box>
-    </>
+    </Container>
   )
 }
 
