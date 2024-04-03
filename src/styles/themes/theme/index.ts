@@ -1,6 +1,6 @@
 import { PaletteMode } from "@mui/material"
 
-const PRIMARY = "#075fe4"
+const PRIMARY = "#64ffda"
 
 const PAPER = "#22282f"
 const BACKGROUND = "#1b1f24"
@@ -31,7 +31,7 @@ export const theme = () => {
     },
     direction: "ltr" as "ltr" | "rtl",
     shape: {
-      borderRadius: 4,
+      borderRadius: 2,
     },
     breakpoints: {
       values: {

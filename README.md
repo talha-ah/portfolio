@@ -20,3 +20,5 @@ This is my portfolio website. I have created this website to showcase my project
 ## Reference Website
 
 - https://developertemplate.webflow.io/home
+- https://v4.brittanychiang.com
+- (Previous companies inspiration as a continuos scroll horizontal)[https://www.behance.net/gallery/190633295/Personal-Portfolio-Landing-Page-UI-Design?tracking_source=search_projects|portfolio&l=4]

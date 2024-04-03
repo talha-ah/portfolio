@@ -1,14 +1,13 @@
-import { Box } from "@mui/material"
+import { SkillType, ProjectType } from "../types"
 
-import { Skill } from "@utils/types"
-
-import SI from "public/companies/si.svg"
-import GG from "public/companies/gg.svg"
-import NTT from "public/companies/ntt-data.svg"
+import Si from "public/companies/si.svg"
+import Gg from "public/companies/gg.svg"
+import Ntt from "public/companies/ntt-data.svg"
 import Skupreme from "public/companies/skupreme.svg"
 
-export const Name = "Talha Ahmed"
 export const GitHub = "talha-ah"
+export const TotalExperience = 4
+export const Name = "Talha Ahmed"
 export const LinkedIn = "talha-ah"
 export const Location = "London, UK"
 export const Phone = "+44 794-643-4693"
@@ -77,7 +76,16 @@ export const Experiences = [
     company: "NTT DATA & GiffGaff",
     role: "Software Engineer",
     location: "London, UK",
-    logos: [<GG key="Giffgaff" />, <NTT key="NTT Data" />],
+    logos: [
+      {
+        logo: <Ntt key="NTT Data" />,
+        link: "https://www.nttdata.com/global/en",
+      },
+      {
+        logo: <Gg key="Giffgaff" />,
+        link: "https://www.giffgaff.com",
+      },
+    ],
     duration: {
       start: {
         year: "2023",
@@ -129,7 +137,12 @@ export const Experiences = [
     company: "Skupreme",
     role: "Software Engineer",
     location: "Miami, US (Remote)",
-    logos: [<Skupreme key="skupreme" />],
+    logos: [
+      {
+        logo: <Skupreme key="skupreme" />,
+        link: "https://skupreme.com",
+      },
+    ],
     duration: {
       start: {
         year: "2021",
@@ -170,11 +183,16 @@ export const Experiences = [
     role: "Full Stack Developer",
     company: "Falcon IT Consulting",
     logos: [
-      <img
-        key="falcon"
-        alt="Falcon IT Consulting"
-        src={"/companies/Falcon-Logo.png"}
-      />,
+      {
+        logo: (
+          <img
+            key="falcon"
+            alt="Falcon IT Consulting"
+            src={"/companies/Falcon-Logo.png"}
+          />
+        ),
+        link: "https://falconconsulting.fr",
+      },
     ],
     duration: {
       start: {
@@ -212,7 +230,12 @@ export const Experiences = [
     company: "Freelancer",
     location: "Lahore, PK",
     role: "Full Stack Developer",
-    logos: [<SI key="Sports Illustrated" />],
+    logos: [
+      {
+        logo: <Si key="Sports Illustrated" />,
+        link: "https://www.si.com",
+      },
+    ],
     duration: {
       start: {
         year: "2018",
@@ -240,14 +263,14 @@ export const Experiences = [
   },
 ]
 
-export const Skills: Skill[] = [
+export const Skills: SkillType[] = [
   // {
   //   title: "Main Stack",
   //   list: "JavaScript, Typescript, React, Next.js, React Native, HTML, CSS, Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, Firestore, Webpack, Babel, CSS-in-JS, AWS",
   // },
   // {
   //   title: "Others",
-  //   list: "Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, EC2, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH",
+  //   list: "Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH",
   // },
   {
     title: "Main Stack",
@@ -263,7 +286,7 @@ export const Skills: Skill[] = [
   },
 ]
 
-export const SkillsAll: Skill[] = [
+export const SkillsAll: SkillType[] = [
   {
     title: "Programming Languages",
     list: "JavaScript, TypeScript, Python, Java",
@@ -294,7 +317,7 @@ export const SkillsAll: Skill[] = [
   },
   {
     title: "Others",
-    list: "Lambda, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, EC2, S3, XML, SOAP, RESTAPI, GraphQL, Apollo, Linux, Bash, SSH, Automation, Package management, Agile, Machine Learning/AI, Jira, Nginx, Apache",
+    list: "Lambda, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, S3, XML, SOAP, RESTAPI, GraphQL, Apollo, Linux, Bash, SSH, Automation, Package management, Agile, Machine Learning/AI, Jira, Nginx, Apache",
   },
   {
     title: "Languages",
@@ -302,12 +325,14 @@ export const SkillsAll: Skill[] = [
   },
 ]
 
-export const Projects = [
+export const Projects: ProjectType[] = [
   {
+    slug: "electromatic-works",
     title: "Electromatic Works",
     link: "https://electromatic-next.vercel.app",
-    skills:
-      "Javascript, Node.js, Express.js, React, Next.js, MongoDB, CI/CD, DevOps",
+    skills: "React, Next.js, Node.js, Express.js, MongoDB, CI/CD, DevOps",
+    role: "Streamlining the customer experience by enabling the users to send product queries without an account.",
+
     description:
       "As a Full stack Engineer, developed the platform from scratch, streamlining the product inquiry process by 40% through implementing cart functionality without user registration. Implemented CI/CD best practices to ensure the client can update the platform business details and deploy the changes directly from the Admin Panel.",
     experience:
@@ -318,9 +343,12 @@ export const Projects = [
     ],
   },
   {
+    slug: "retail-link",
     title: "Retail Link",
     link: "https://retail-link.vercel.app",
-    skills: "Javascript, React, Next.js, Node.js, MongoDB, CI/CD, DevOps",
+    skills: "React, Next.js, Node.js, Express.js, MongoDB, CI/CD, DevOps",
+    role: "Developing a transformative platform tailored for local retail shops, enabling digital transformation and operational efficiency.",
+
     description:
       "As a Full stack Engineer, developed the platform from scratch, providing local retail shops with a cutting-edge digital platform. Implemented DevOps best practices, ensuring seamless deployment and operation.",
     experience:
@@ -332,10 +360,12 @@ export const Projects = [
     ],
   },
   {
+    slug: "prospects-trading",
     title: "Prospects Trading",
-    skills:
-      "Javascript, Node.js, Express.js, React, Next.js, Flutter, MongoDB, AWS",
     link: "https://play.google.com/store/apps/details?id=com.si.prospects",
+    skills: "React, Next.js, Node.js, Express.js, MongoDB, AWS, CI/CD, DevOps",
+    role: "Enabling player engagement in Sports Illustrated tournaments through a sticker trading platform.",
+
     description:
       "As a Full stack Engineer, developed the backend APIs and integrated EventConnect APIs, managing the DevOps and successfully integrating EventConnect APIs.",
     experience:
@@ -347,9 +377,12 @@ export const Projects = [
     ],
   },
   {
+    slug: "aab-engage-app",
     title: "AAB Engage App",
-    skills: "Javascript, Node.js, Express.js, SQL, TFS",
+    skills: "Node.js, Express.js, SQL, TFS, DevOps",
     link: "https://play.google.com/store/apps/details?id=com.sap.webide.x4efb5a44557f416482c43ec9805cc9b6&hl=en&gl=US",
+    role: "Simplifying rental processes and enhancing user support for Abdul Ghani Car rental service customers.",
+
     description:
       "As a Full stack Engineer, developed the backend APIs and integrated SAP APIs, managing the DevOps and successfully integrating SAP APIs.",
     experience:
@@ -361,10 +394,13 @@ export const Projects = [
     ],
   },
   {
+    slug: "owl-express",
     title: "Owl Express",
-    skills:
-      "Javascript, React, DynamoDB, GraphQL, AWS, AppSync, Amplify, Cognito",
     link: "https://www.owlexpress.net",
+    skills:
+      "React, React Native, GraphQL, AWS, DynamoDB, AppSync, Amplify, Cognito, CI/CD, DevOps",
+    role: "Fostering collaboration among students and empowering them to learn and collaborate effectively.",
+
     description:
       "As a Full stack Engineer, designed a dynamic Learning Platform, fostering collaboration among users. Pioneered a system for active user engagement, empowering them to create help requests with seamless responsiveness from volunteers.",
     experience:
@@ -376,10 +412,12 @@ export const Projects = [
     ],
   },
   {
+    slug: "orgaplan",
     title: "Orgaplan",
-    skills:
-      "Javascript, React, React Native, AWS, MongoDB, Firebase, Node.js, Express.js",
+    skills: "React, React Native, Node.js, Express.js, MongoDB, Firebase",
     link: "http://orgaplansa.com",
+    role: "Streamlining resource management and enhancing efficiency for construction firms.",
+
     description:
       "As a Full stack Engineer, led the project of 5 developers and overcame challenges in integrating visualization tools. Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map. Improved team efficiency by 25%.",
     experience:
@@ -391,9 +429,12 @@ export const Projects = [
     ],
   },
   {
+    slug: "permispop",
     title: "Permispop",
-    skills: "Javascript, React, React Native, .NET, MongoDB",
     link: "https://permispop.fr",
+    skills: "React, React Native, .NET, MongoDB",
+    role: "Revolutionizing the driving lesson experience for instructors and students.",
+
     description:
       "As a Full stack Engineer, developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling. Completed the project successfully, appreciated by the team and the project manager.",
     experience:
@@ -441,7 +482,12 @@ export const Educations = [
 export const Achievements = [
   {
     title: "Award of Excellence for Outstanding Accomplishments",
-    organizations: [{ year: 2021, name: "Falcon IT Consulting" }],
+    organizations: [
+      {
+        year: 2021,
+        name: "Falcon IT Consulting",
+      },
+    ],
   },
   {
     title: "Award of Excellence",
@@ -484,26 +530,3 @@ export const Certifications = [
     link: "https://www.coursera.org/account/accomplishments/certificate/4PEJU8B5LTFG",
   },
 ]
-
-export const Tags = () => {
-  return (
-    <Box component="span" sx={{ fontSize: 0.1 }}>
-      {jobs.join(" Developer, ")} {jobs.join(" Engineer, ")}{" "}
-      {HighlightedWords.join(", ")}
-    </Box>
-  )
-}
-
-export const Colour = ({
-  children,
-  color = "error.main",
-}: {
-  color?: string
-  children: React.ReactNode
-}) => {
-  return (
-    <Box component="span" sx={{ color }}>
-      {children}
-    </Box>
-  )
-}

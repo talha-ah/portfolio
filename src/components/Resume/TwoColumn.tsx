@@ -11,7 +11,7 @@ import {
 } from "@mui/icons-material"
 import { Box, Grid, Theme, Typography } from "@mui/material"
 
-import { Skill } from "@utils/types"
+import { SkillType } from "../Portfolio/types"
 import {
   jobs,
   Email,
@@ -26,7 +26,7 @@ import {
   LocationLink,
   Achievements,
   Certifications,
-} from "./data"
+} from "../Portfolio/data"
 
 const NameFontSize = "29.15px"
 const InitialFontSize = "20.35px"
@@ -152,7 +152,7 @@ const styles = {
 }
 
 export const Resume = forwardRef(
-  ({ index, skills }: { index: number; skills: Skill[] }, ref) => {
+  ({ index, skills }: { index: number; skills: SkillType[] }, ref) => {
     return (
       <Box ref={ref} id="resume-pdf">
         <Box sx={styles.header}>

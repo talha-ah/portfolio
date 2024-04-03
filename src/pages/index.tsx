@@ -1,7 +1,15 @@
 import React from "react"
 import Head from "next/head"
 
-import { Box, Grid, Theme, Container, Typography } from "@mui/material"
+import {
+  Tab,
+  Box,
+  Grid,
+  Tabs,
+  Theme,
+  Container,
+  Typography,
+} from "@mui/material"
 import {
   Phone as PhoneIcon,
   Email as EmailIcon,
@@ -9,9 +17,11 @@ import {
   LinkedIn as LinkedInIcon,
 } from "@mui/icons-material"
 
-import { Link, LinkArrow } from "@ui/Link"
+import { Link } from "@ui/Link"
 import { APP_NAME } from "@utils/constants"
 import { HeaderLayout } from "@layouts/index"
+import { Project } from "@components/Portfolio/Project"
+import { Section } from "@components/Portfolio/Section"
 
 import {
   Name,
@@ -25,7 +35,9 @@ import {
   Experiences,
   Achievements,
   Certifications,
-} from "@components/Resume/data"
+  TotalExperience,
+} from "@components/Portfolio/data"
+import { useIsMobile } from "@hooks/useIsMobile"
 
 const styles = {
   root: {
@@ -36,169 +48,101 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
   },
+  intro: {
+    gap: 4,
+    display: "flex",
+    minHeight: "80vh",
+    flexDirection: "column",
+    justifyContent: "center",
+    maxWidth: (theme: Theme) => `${theme.breakpoints.values.lg}px`,
+  },
   title: {
     fontWeight: "700",
     marginBottom: "10px",
     lineHeight: "1.132em",
     color: "text.primary",
-    fontSize: { xs: "34px", sm: "40px", md: "58px" },
+    fontSize: "clamp(40px, 8vw, 80px)",
   },
+  subTitle: () => ({
+    ...styles.title,
+    opacity: 0.6,
+    color: "text.secondary",
+  }),
   text: {
     fontWeight: "400",
     lineHeight: "1.667em",
     color: "text.secondary",
-    fontSize: { xs: "16px", md: "18px" },
+    maxWidth: (theme: Theme) => `${theme.breakpoints.values.md}px`,
+    fontSize: "clamp(14px, 4vw, 20px)",
   },
-  intro: {
-    display: "flex",
-    paddingTop: {
-      xs: 0,
-      md: 12,
-    },
-    alignItems: "center",
-  },
-  introLine: {
+  line: {
     height: "6px",
     width: "160px",
     marginBottom: "20px",
-    backgroundColor: "#ffffff",
+    backgroundColor: "primary.main",
   },
-  introItem: (theme: Theme) => ({
-    pr: 2,
-    gap: 2,
-    py: "50px",
-    display: "flex",
-    flexDirection: "column",
-    borderBottom: `1px solid ${theme.palette.divider}`,
-  }),
-  introItemTitle: {
-    fontSize: {
-      xs: "16px",
-      md: "18px",
-    },
+  heading: {
     fontWeight: "700",
     lineHeight: "1.111em",
     letterSpacing: "0.1em",
     textTransform: "uppercase",
+    fontSize: "clamp(14px, 4vw, 20px)",
   },
-  introItemLink: {
-    fontWeight: "400",
-    textTransform: "uppercase",
+  socials: {
+    gap: 2,
+    marginTop: 2,
+    display: "flex",
+    alignItems: "center",
+    fontSize: "clamp(14px, 4vw, 20px)",
   },
-  introItemSocials: {
-    fontSize: {
-      xs: "16px",
-      md: "18px",
-    },
+  metrics: {
     gap: 2,
     display: "flex",
     alignItems: "center",
-  },
-  section: {
-    width: "100%",
-    marginTop: "40px",
-    p: {
-      xs: "40px 20px 88px 20px",
-      md: "160px 40px 88px 40px",
+    justifyContent: "center",
+    flexDirection: {
+      xs: "column",
+      sm: "row",
+      md: "column",
     },
   },
-  sectionTitle: {
-    fontSize: "20px",
-    fontWeight: "700",
-    paddingLeft: "20px",
-    lineHeight: "1.1em",
-    position: "relative",
-    marginBottom: "24px",
-    letterSpacing: "0.06em",
-    textTransform: "uppercase",
-
-    "&::before": {
-      top: 0,
-      left: 0,
-      content: '"/"',
-      position: "absolute",
-      color: (theme: Theme) => theme.palette.primary.main,
-    },
-  },
-  aboutTitle: {
-    fontSize: {
-      xs: "34px",
-      md: "52px",
-    },
-    fontWeight: "700",
-    marginBottom: "10px",
-    lineHeight: "1.132em",
-  },
-  aboutMetrics: {
-    gap: 2,
-    marginBottom: 2,
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: { xs: "column", md: "row" },
-  },
-  aboutMetric: {
+  metric: {
     gap: 1,
     display: "flex",
     alignItems: "center",
   },
-  aboutMetricNumber: {
-    fontSize: {
-      xs: "34px",
-      md: "76px",
-    },
+  metricNumber: {
     fontWeight: "700",
     lineHeight: "1.132em",
+    fontSize: "clamp(36px, 4vw, 80px)",
   },
-  aboutMetricText: {
-    fontSize: {
-      xs: "18px",
-      md: "20px",
-    },
-    maxWidth: {
-      xs: "100%",
-      md: "120px",
-    },
+  metricText: {
     fontWeight: "700",
+    maxWidth: "120px",
     lineHeight: "1.1em",
+    fontSize: "clamp(18px, 4vw, 24px)",
   },
-  aboutCompanies: (theme: Theme) => ({
-    display: "flex",
-    marginTop: "64px",
-    paddingTop: "40px",
-    alignItems: "center",
+  aboutSkills: {
+    mt: 2,
+    paddingInlineStart: 2,
+  },
+  companies: (theme: Theme) => ({
+    py: "40px",
+    width: "100%",
     borderTop: `1px solid ${theme.palette.divider}`,
-    justifyContent: {
-      xs: "center",
-      md: "space-between",
-    },
-    flexDirection: {
-      xs: "column",
-      md: "row",
-    },
+    borderBottom: `1px solid ${theme.palette.divider}`,
   }),
-  aboutCompaniesTitle: {
-    fontSize: {
-      xs: "18px",
-      md: "24px",
-    },
-    fontWeight: "700",
-    lineHeight: "1.1em",
-    letterSpacing: ".06em",
-    textTransform: "uppercase",
-  },
-  aboutCompaniesLogos: {
+  companiesLogos: {
     gap: 2,
     display: "flex",
     flexWrap: "wrap",
     alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "center",
-    marginTop: {
-      xs: "20px",
-      md: 0,
+    justifyContent: {
+      xs: "center",
+      md: "space-between",
     },
   },
-  aboutCompaniesLogo: {
+  companiesLogo: {
     "& > img": {
       width: "150px",
       height: "auto",
@@ -208,45 +152,86 @@ const styles = {
       height: "auto",
     },
   },
-  skillTitle: {
-    mb: 1,
-    fontSize: "16px",
-    fontWeight: "700",
-    lineHeight: "1.1em",
-    letterSpacing: ".06em",
-    textTransform: "uppercase",
-  },
-  skill: {
-    margin: "5px",
-    padding: "5px 10px",
-    borderRadius: "5px",
-    display: "inline-block",
-    border: "1px solid #000",
-  },
 }
 
-const Section = ({
-  id,
-  title,
-  children,
-  backgroundColor,
-}: {
-  id?: string
-  title?: string
-  backgroundColor?: string
-  children: React.ReactNode
-}) => {
-  return (
-    <Box sx={{ ...styles.section, backgroundColor }} id={id}>
-      <Container maxWidth="xl">
-        {title && (
-          <Typography variant="subtitle1" sx={styles.sectionTitle}>
-            {title}
-          </Typography>
-        )}
+const ExperiencesList = () => {
+  const { isMobile } = useIsMobile()
 
-        {children}
-      </Container>
+  const [value, setValue] = React.useState(0)
+
+  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue)
+  }
+
+  return (
+    <Box sx={{ display: "flex", flexDirection: isMobile ? "column" : "row" }}>
+      <Tabs
+        value={value}
+        scrollButtons="auto"
+        variant="scrollable"
+        onChange={handleChange}
+        aria-label="experience-tabs"
+        orientation={isMobile ? "horizontal" : "vertical"}
+        sx={{
+          "& .MuiTabs-indicator": {
+            left: 0,
+          },
+        }}
+      >
+        {Experiences.map((item, index) => (
+          <Tab
+            key={item.company}
+            label={item.company}
+            id={`vertical-tab-${index}`}
+            aria-controls={`experience-tabs-${index}`}
+            sx={{
+              textWrap: isMobile ? "nowrap" : "wrap",
+              alignItems: "start",
+            }}
+          />
+        ))}
+      </Tabs>
+
+      <Box sx={{ width: isMobile ? "100%" : "70%", mx: "auto" }}>
+        {Experiences.map((item, index) =>
+          value === index ? (
+            <Box
+              role="tabpanel"
+              key={item.company}
+              hidden={value !== index}
+              id={`experience-tabs-${index}`}
+              aria-labelledby={`experience-tabs-${index}`}
+              sx={{
+                px: {
+                  xs: 0,
+                  md: 2,
+                },
+                py: {
+                  xs: 2,
+                  md: 0,
+                },
+              }}
+            >
+              <Typography variant="h4">{item.role}</Typography>
+              <Typography variant="body1">
+                {item.company} | {item.duration.start.month}{" "}
+                {item.duration.start.year} -{" "}
+                {item.duration.end
+                  ? `${item.duration.end.month} ${item.duration.end.year}`
+                  : "Present"}
+              </Typography>
+
+              <Box component="ul">
+                {item.description.map((i, index) => (
+                  <Box key={index} component="li">
+                    {i}
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+          ) : null
+        )}
+      </Box>
     </Box>
   )
 }
@@ -262,180 +247,171 @@ const Main = () => {
 
       <HeaderLayout mb="0">
         <Box sx={styles.root}>
-          <Container maxWidth="xl">
-            <Grid container sx={styles.intro}>
-              <Grid item xs={12} md={7} pr={6}>
-                <Box sx={styles.introLine} />
+          <Container maxWidth="xl" id="introduction">
+            <Box sx={styles.intro}>
+              <Box>
+                <Box sx={styles.line} />
 
                 <Typography variant="h1" sx={styles.title}>
-                  I&apos;m {Name.split(" ")[0]}, a Software Engineer
+                  Hi, I&apos;m {Name.split(" ")[0]}.
+                </Typography>
+
+                <Typography variant="h2" sx={styles.subTitle}>
+                  I build things for the web.
                 </Typography>
 
                 <Typography variant="body1" sx={styles.text}>
-                  with over 4 years of experience. I am passionate about
-                  building web applications and solving problems. I have
-                  experience in both frontend and backend development.
+                  with over {TotalExperience} years of experience. I am
+                  passionate about building web applications and solving
+                  problems. I have experience in both frontend and backend
+                  development.
                 </Typography>
-              </Grid>
+              </Box>
 
-              <Grid container item xs={12} md={5}>
-                <Grid item xs={12} sx={styles.introItem}>
-                  <Typography variant="body1" sx={styles.introItemTitle}>
-                    About me
-                  </Typography>
-                  <Typography variant="body1" sx={styles.text}>
-                    Learn more about me and my journey to becoming a software
-                    engineer.
-                  </Typography>
-                  <LinkArrow to="#about" sx={styles.introItemLink}>
-                    Learn More
-                  </LinkArrow>
-                </Grid>
+              <Box>
+                <Typography variant="h3" sx={styles.heading}>
+                  FOLLOW ME
+                </Typography>
 
-                <Grid item xs={12} sx={styles.introItem}>
-                  <Typography variant="body1" sx={styles.introItemTitle}>
-                    MY WORK
-                  </Typography>
-                  <Typography variant="body1" sx={styles.text}>
-                    Check out some of my projects and see what I&apos;ve been
-                    working on.
-                  </Typography>
-                  <LinkArrow sx={styles.introItemLink} to="#projects">
-                    Browse Portfolio
-                  </LinkArrow>
-                </Grid>
-
-                <Grid
-                  item
-                  xs={12}
-                  sx={styles.introItem}
-                  style={{ border: "none" }}
-                >
-                  <Typography variant="body1" sx={styles.introItemTitle}>
-                    FOLLOW ME
-                  </Typography>
-                  <Box sx={styles.introItemSocials}>
-                    <Link to={`tel:${Phone}`}>
-                      <PhoneIcon sx={{ fontSize: 24 }} />
-                    </Link>
-                    <Link to={`mailto:${Email}`}>
-                      <EmailIcon sx={{ fontSize: 24 }} />
-                    </Link>
-                    <Link
-                      target="_blank"
-                      rel="noreferrer"
-                      to={`https://github.com/${GitHub}`}
-                    >
-                      <GitHubIcon sx={{ fontSize: 24 }} />
-                    </Link>
-                    <Link
-                      target="_blank"
-                      rel="noreferrer"
-                      to={`https://www.linkedin.com/in/${LinkedIn}`}
-                    >
-                      <LinkedInIcon sx={{ fontSize: 24 }} />
-                    </Link>
-                  </Box>
-                </Grid>
-              </Grid>
-            </Grid>
+                <Box sx={styles.socials}>
+                  <Link to={`tel:${Phone}`}>
+                    <PhoneIcon sx={{ fontSize: 24 }} />
+                  </Link>
+                  <Link to={`mailto:${Email}`}>
+                    <EmailIcon sx={{ fontSize: 24 }} />
+                  </Link>
+                  <Link
+                    target="_blank"
+                    rel="noreferrer"
+                    to={`https://github.com/${GitHub}`}
+                  >
+                    <GitHubIcon sx={{ fontSize: 24 }} />
+                  </Link>
+                  <Link
+                    target="_blank"
+                    rel="noreferrer"
+                    to={`https://www.linkedin.com/in/${LinkedIn}`}
+                  >
+                    <LinkedInIcon sx={{ fontSize: 24 }} />
+                  </Link>
+                </Box>
+              </Box>
+            </Box>
           </Container>
 
           <Section
             id="about"
-            title="About me"
+            heading="About me"
             backgroundColor="background.paper"
           >
-            <Grid container>
-              <Grid item xs={12} lg={6} pr={6}>
-                <Typography variant="h1" sx={styles.aboutTitle}>
-                  I&apos;ve been developing websites since 2018
-                </Typography>
-
+            <Grid container spacing={4}>
+              <Grid item xs={12} md={6}>
                 <Typography variant="body1" sx={styles.text}>
-                  I am a software engineer working since 2018 where I started as
-                  a freelancer and then moved to a full-time job. I have over 4
-                  years of professional experience. I am always looking for new
-                  and exciting opportunities to work on.
+                  Hello! My name is Talha, and I enjoy creating things that live
+                  on the internet. My interest in web development started back
+                  in 2018 when I decided to buuild a web based project for my
+                  final Year in Bachelors --- turns out building a custom CMS
+                  for my University taught me a lot of React and Node.js.
                 </Typography>
-
-                {/* <LinkArrow mt={4} to="/">
-                  More about me
-                </LinkArrow> */}
-              </Grid>
-
-              <Grid item xs={12} lg={6}>
-                <Box sx={styles.aboutMetrics}>
-                  <Box sx={styles.aboutMetric}>
-                    <Typography variant="body1" sx={styles.aboutMetricNumber}>
-                      4+
-                    </Typography>
-                    <Typography variant="body1" sx={styles.aboutMetricText}>
-                      Years of experience
-                    </Typography>
-                  </Box>
-                  <Box sx={styles.aboutMetric}>
-                    <Typography variant="body1" sx={styles.aboutMetricNumber}>
-                      15+
-                    </Typography>
-                    <Typography variant="body1" sx={styles.aboutMetricText}>
-                      Successful projects
-                    </Typography>
-                  </Box>
-                </Box>
-
+                &nbsp;
                 <Typography variant="body1" sx={styles.text}>
-                  I have worked with a variety of companies and clients. I have
-                  experience in both frontend and backend development. I have
-                  worked on a variety of projects ranging from small websites to
-                  large web applications.
+                  I have more than {TotalExperience} years of Professional
+                  Experience and in my latest role at NTT DATA & GiffGaff, I
+                  stepped up to lead a team, earning recognition for my
+                  leadership and professionalism. I&apos;ve collaborated across
+                  teams to optimize component usage and spearheaded impactful
+                  projects.
                 </Typography>
-              </Grid>
-
-              <Grid item xs={12} sx={styles.aboutCompanies}>
-                <Typography variant="body1" sx={styles.aboutCompaniesTitle}>
-                  Previously worked with
+                &nbsp;
+                <Typography variant="body1" sx={styles.text}>
+                  Here are a few technologies I&apos;ve been working with
+                  recently:
                 </Typography>
-                <Box sx={styles.aboutCompaniesLogos}>
-                  {Experiences.map((item) => (
-                    <React.Fragment key={item.company}>
-                      {item.logos.map((logo, index) => (
-                        <Box
-                          sx={styles.aboutCompaniesLogo}
-                          key={`${item.company}-${index}`}
-                        >
-                          {logo}
-                        </Box>
-                      ))}
-                    </React.Fragment>
+                <Grid container component="ul" sx={styles.aboutSkills}>
+                  {[
+                    "JavaScript (ES6+)",
+                    "TypeScript",
+                    "React",
+                    "Next.js",
+                    "Node.js",
+                    "Python",
+                  ].map((skill) => (
+                    <Grid
+                      item
+                      xs={12}
+                      sm={6}
+                      key={skill}
+                      component="li"
+                      color="text.secondary"
+                    >
+                      {skill}
+                    </Grid>
                   ))}
+                </Grid>
+              </Grid>
+
+              <Grid item xs={12} md={6} sx={styles.metrics}>
+                <Box sx={styles.metric}>
+                  <Typography variant="body1" sx={styles.metricNumber}>
+                    {TotalExperience}+
+                  </Typography>
+                  <Typography variant="body1" sx={styles.metricText}>
+                    Years of experience
+                  </Typography>
+                </Box>
+                <Box sx={styles.metric}>
+                  <Typography variant="body1" sx={styles.metricNumber}>
+                    {Projects.length}+
+                  </Typography>
+                  <Typography variant="body1" sx={styles.metricText}>
+                    Successful projects
+                  </Typography>
                 </Box>
               </Grid>
             </Grid>
           </Section>
 
-          <Section id="skills" title="Skills">
-            {SkillsAll.map((skill) => (
-              <Box key={skill.title} mb={4}>
-                <Typography variant="h3" sx={styles.skillTitle}>
-                  {skill.title}
-                </Typography>
-                <Box>
-                  {skill.list.split(",").map((item) => (
-                    <Box key={item} sx={styles.skill}>
-                      {item}
-                    </Box>
-                  ))}
-                </Box>
+          <Box id="companies" sx={styles.companies}>
+            <Container maxWidth="xl">
+              <Box sx={styles.companiesLogos}>
+                {Experiences.map((item) => (
+                  <React.Fragment key={item.company}>
+                    {item.logos.map((logo, index) => (
+                      <Link
+                        to={logo.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        sx={styles.companiesLogo}
+                        key={`${item.company}-${index}`}
+                      >
+                        {logo.logo}
+                      </Link>
+                    ))}
+                  </React.Fragment>
+                ))}
               </Box>
-            ))}
+            </Container>
+          </Box>
+
+          <Section id="experience" heading="Experience">
+            <ExperiencesList />
           </Section>
 
           <Section
-            id="education"
-            title="Education"
+            id="projects"
+            heading="Projects"
             backgroundColor="background.paper"
           >
+            <Grid container spacing={2}>
+              {Projects.map((item) => (
+                <Grid key={item.title} item xs={12} md={6} lg={4}>
+                  <Project project={item} />
+                </Grid>
+              ))}
+            </Grid>
+          </Section>
+
+          <Section id="education" heading="Education">
             {Educations.map((item) => (
               <Box key={item.degree} mb={4}>
                 <Typography variant="h4">{item.degree}</Typography>
@@ -450,53 +426,18 @@ const Main = () => {
             ))}
           </Section>
 
-          <Section id="experience" title="Experience">
-            {Experiences.map((item) => (
-              <Box key={item.company} mb={4}>
-                <Typography variant="h4">{item.role}</Typography>
-                <Typography variant="body1">
-                  {item.company} | {item.location} | {item.duration.start.month}{" "}
-                  {item.duration.start.year} -{" "}
-                  {item.duration.end
-                    ? `${item.duration.end.month} ${item.duration.end.year}`
-                    : "Present"}
-                </Typography>
-
-                <Box component="ul">
-                  {item.description.map((i, index) => (
-                    <Box key={index} component="li">
-                      {i}
-                    </Box>
-                  ))}
-                </Box>
-              </Box>
-            ))}
-          </Section>
-
           <Section
-            id="projects"
-            title="Projects"
+            id="certifications"
+            heading="Certifications"
             backgroundColor="background.paper"
           >
-            {Projects.map((item) => (
-              <Box key={item.title} mb={4}>
-                <Link variant="h4" to={item.link}>
-                  {item.title} &#8599;
-                </Link>
-                <Typography variant="body1" sx={styles.text}>
-                  {item.skills}
-                </Typography>
-                <Typography variant="body1">{item.experience}</Typography>
-              </Box>
-            ))}
-          </Section>
-
-          <Section id="certifications" title="Certifications">
             {Certifications.map((item) => (
               <Box key={item.title} mb={4}>
-                <Link variant="h4" to={item.link}>
-                  {item.title} &#8599;
-                </Link>
+                <Typography variant="h4">
+                  <Link to={item.link} target="_blank" rel="noreferrer">
+                    {item.title} &#8599;
+                  </Link>
+                </Typography>
                 <Typography variant="body1">
                   {item.organization} | {item.year}
                 </Typography>
@@ -504,11 +445,7 @@ const Main = () => {
             ))}
           </Section>
 
-          <Section
-            id="achievements"
-            title="Achievements"
-            backgroundColor="background.paper"
-          >
+          <Section id="achievements" heading="Achievements">
             {Achievements.map((item) => (
               <Box key={item.title} mb={4}>
                 <Typography variant="h4">{item.title}</Typography>
@@ -518,6 +455,18 @@ const Main = () => {
                     .join(" AND ")}
                 </Typography>
               </Box>
+            ))}
+          </Section>
+
+          <Section
+            id="skills"
+            heading="Skills"
+            backgroundColor="background.paper"
+          >
+            {SkillsAll.map((skill) => (
+              <Typography key={skill.title} mb={2} variant="body1">
+                <strong>{skill.title}</strong> {skill.list}
+              </Typography>
             ))}
           </Section>
         </Box>

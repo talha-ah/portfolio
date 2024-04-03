@@ -1,20 +1,16 @@
 import * as React from "react"
 
-import TimelineDot from "@mui/lab/TimelineDot"
-import { Timeline as MTimeline } from "@mui/lab"
-import TimelineItem from "@mui/lab/TimelineItem"
-import TimelineContent from "@mui/lab/TimelineContent"
-import { Tooltip, Typography, Box } from "@mui/material"
-import TimelineSeparator from "@mui/lab/TimelineSeparator"
-import TimelineConnector from "@mui/lab/TimelineConnector"
+import { Typography, Box } from "@mui/material"
+import {
+  TimelineDot,
+  TimelineItem,
+  TimelineContent,
+  TimelineSeparator,
+  TimelineConnector,
+  Timeline as MTimeline,
+} from "@mui/lab"
 
-export const Timeline = ({
-  options,
-  action,
-}: {
-  options: any[]
-  action: (args: any) => void
-}) => {
+export const Timeline = ({ options }: { options: any[] }) => {
   return (
     <MTimeline position="alternate" dir="row">
       {options.map((option, index) => (
@@ -23,6 +19,7 @@ export const Timeline = ({
             <TimelineDot />
             {options.length !== index + 1 && <TimelineConnector />}
           </TimelineSeparator>
+
           <TimelineContent>
             <Box
               gap={1}
@@ -30,12 +27,11 @@ export const Timeline = ({
               alignItems="center"
               justifyContent={index % 2 === 0 ? "start" : "end"}
             >
-              <Tooltip title={option.text}>
+              {option?.render || (
                 <Typography variant="subtitle1" component="span">
                   {option.value}
                 </Typography>
-              </Tooltip>
-              {/* {action && action(option)} */}
+              )}
             </Box>
           </TimelineContent>
         </TimelineItem>

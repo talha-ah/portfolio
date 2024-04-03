@@ -45,25 +45,25 @@ export const Link = ({
   children: React.ReactNode
   [key: string]: any
 }) => {
-  return to ? (
+  return (
     <Typography
       passHref
       href={to}
-      color="inherit"
-      variant="body2"
       component={NextLink}
-      style={{
+      sx={{
+        color: "inherit",
+        fontSize: "inherit",
+        fontWeight: "inherit",
+        lineHeight: "inherit",
         fontFamily: "inherit",
         transition: "color 0.2s",
         textDecoration: underline ? "underline" : "none",
+        ...sx,
       }}
-      sx={sx}
       {...other}
     >
       {children}
     </Typography>
-  ) : (
-    <>{children}</>
   )
 }
 

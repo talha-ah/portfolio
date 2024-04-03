@@ -7,10 +7,10 @@ import { Print, NavigateNext, NavigateBefore, Edit } from "@mui/icons-material"
 
 import { Dialog } from "@ui/Dialog"
 import { Button } from "@ui/Button"
-import { Skill } from "@utils/types"
 import { UpdateSkills } from "@forms/resume"
 import { HeaderLayout } from "@layouts/index"
-import { jobs, Skills } from "@components/Resume/data"
+import { SkillType } from "@components/Portfolio/types"
+import { jobs, Skills } from "@components/Portfolio/data"
 import { TwoColumn, OneColumn } from "@components/Resume"
 
 const BASE_FONT_SIZE = "11px"
@@ -77,7 +77,7 @@ const ResumeContent = ({
 }: Props) => {
   const componentRef = useRef(null)
 
-  const [skills, setSkills] = useState<Skill[]>(Skills)
+  const [skills, setSkills] = useState<SkillType[]>(Skills)
 
   const onSwitch = () => {
     setResumeType((prev: any) => (prev + 1) % 2)
@@ -173,8 +173,6 @@ const ResumeContent = ({
           Print
         </Button>
       </Box>
-
-      {/* <Tags /> */}
 
       <Box sx={(theme) => styles.content(theme, fontFamily)}>
         <ResumeComponent

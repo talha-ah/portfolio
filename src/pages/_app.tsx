@@ -40,7 +40,7 @@ export default function App(props: Readonly<LocalAppProps>) {
           <ThemeCustomization>
             <SnackbarProvider maxSnack={3}>
               <AuthProvider>
-                <AnimatePresence mode="wait" initial={false}>
+                <AnimatePresence>
                   {/* if requireAuth property is present - protect the page */}
                   {Component.requireAuth ? (
                     <AuthGuard>

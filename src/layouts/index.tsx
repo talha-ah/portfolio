@@ -50,13 +50,20 @@ const Content = styled("main")(({ mb }: { mb: string }) => ({
 const links: LinkType[] = [
   {
     to: "/",
-    exact: true,
     label: "Home",
   },
-  // {
-  //   label: "Resume",
-  //   to: "/resume",
-  // },
+  {
+    to: "/#about",
+    label: "About",
+  },
+  {
+    to: "/#experience",
+    label: "Experience",
+  },
+  {
+    to: "/#projects",
+    label: "Projects",
+  },
 ]
 
 export const HeaderLayout = ({

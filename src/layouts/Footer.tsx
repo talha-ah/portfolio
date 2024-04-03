@@ -18,7 +18,7 @@ import {
   GitHub,
   LinkedIn,
   Experiences,
-} from "@components/Resume/data"
+} from "@components/Portfolio/data"
 
 const styles = {
   root: {
