@@ -1,87 +1,77 @@
-import React from "react"
+import * as React from "react"
+import { useState, useEffect } from "react"
 
-import { styled } from "@mui/material/styles"
+import { Box, Fab, Theme } from "@mui/material"
+import { KeyboardArrowUp } from "@mui/icons-material"
 
 import { Header } from "./Header"
 import { Footer } from "./Footer"
-import { Width, Link as LinkType } from "@utils/types"
+import { Width } from "@utils/types"
 
-const Main = styled("div")(({ theme }) => ({
-  padding: 0,
-  width: "100vw",
-  height: "100vh",
-  overflow: "auto",
-  backgroundColor: theme.palette.background.default,
-  transition: theme.transitions.create("margin", {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
+const styles = {
+  content: (mb: string) => ({
+    paddingBottom: mb,
+    paddingTop: "48px",
+    backgroundColor: (theme: Theme) => theme.palette.background.default,
+    transition: (theme: Theme) =>
+      theme.transitions.create("margin", {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
   }),
-  /* width */
-  "&::-webkit-scrollbar": {
-    width: 5,
-    height: 5,
-    backgroundColor: "transparent",
-  },
-  /* Track */
-  "&::-webkit-scrollbar-track": {
-    backgroundColor: "transparent",
-  },
-  /* Thumb */
-  "&::-webkit-scrollbar-thumb": {
-    borderRadius: 8,
-    backgroundColor: "#babac0",
-  },
-  /* Thumb:hover */
-  "&::-webkit-scrollbar-thumb:hover": {
-    backgroundColor: "#babac0",
-  },
-  /* Button (top and bottom of the scrollbar) */
-  "&::-webkit-scrollbar-button": {
-    display: "none",
-  },
-}))
-
-const Content = styled("main")(({ mb }: { mb: string }) => ({
-  paddingBottom: mb,
-  paddingTop: "48px",
-  // minHeight: "calc(100vh - 38%)",
-}))
-
-const links: LinkType[] = [
-  {
-    to: "/",
-    label: "Home",
-  },
-  {
-    to: "/#about",
-    label: "About",
-  },
-  {
-    to: "/#experience",
-    label: "Experience",
-  },
-  {
-    to: "/#projects",
-    label: "Projects",
-  },
-]
+  fab: (visibility: boolean) => ({
+    position: "fixed",
+    transition: "all 0.5s ease",
+    display: visibility ? "block" : "none",
+    right: (theme: Theme) => theme.spacing(3),
+    bottom: (theme: Theme) => theme.spacing(3),
+    zIndex: (theme: Theme) => theme.zIndex.fab,
+  }),
+}
 
 export const HeaderLayout = ({
   children,
   mb = "48px",
 }: {
   mb?: string
-  children?: React.ReactNode
+  children: React.ReactNode
 }) => {
   const maxWidth: Width = "xl"
 
+  const [fabVisibility, setFabVisibility] = useState(false)
+
+  const handleVisibleButton = () => {
+    const position = window.scrollY
+
+    setFabVisibility(position > window.innerHeight)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleVisibleButton)
+
+    return () => window.removeEventListener("scroll", handleVisibleButton)
+  }, [])
+
   return (
-    <Main>
-      <Header maxWidth={maxWidth} links={links} />
+    <>
+      <Header maxWidth={maxWidth} />
 
-      <Content mb={mb}>{children}</Content>
+      <Box component="main" sx={() => styles.content(mb)}>
+        {children}
+      </Box>
 
-      <Footer maxWidth={maxWidth} links={links} />
-    </Main>
+      <Footer maxWidth={maxWidth} />
+
+      <Fab
+        color="primary"
+        variant="extended"
+        hidden={!fabVisibility}
+        aria-label="scroll-to-top"
+        sx={() => styles.fab(fabVisibility)}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <KeyboardArrowUp />
+      </Fab>
+    </>
   )
 }

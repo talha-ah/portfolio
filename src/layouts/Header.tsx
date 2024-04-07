@@ -1,15 +1,15 @@
 import React from "react"
 
 import { Theme } from "@mui/material/styles"
-import { Box, Container } from "@mui/material"
+import { Box, Container, Typography } from "@mui/material"
 import { Menu, Close } from "@mui/icons-material"
 
-import { Link } from "@ui/Link"
 import { Logo } from "@ui/Logo"
 import { Dialog } from "@ui/Dialog"
 import { IconButton } from "@ui/IconButton"
-import { Width, Link as LinkType } from "@utils/types"
+import { scrollIntoView } from "@utils/common"
 import { useIsMobile } from "@hooks/useIsMobile"
+import { Width, Link as LinkType } from "@utils/types"
 
 const glassmorphism = {
   opacity: 0.9,
@@ -46,32 +46,30 @@ const styles = {
     height: "100%",
     display: "flex",
     alignItems: "center",
-    flexDirection: "column",
-    justifyContent: "center",
     backgroundColor: theme.palette.background.default,
+    justifyContent: {
+      xs: "center",
+      md: "flex-end",
+    },
+    flexDirection: {
+      xs: "column",
+      md: "row",
+    },
   }),
   link: {
-    fontWeight: 700,
-    lineHeight: "1.111em",
+    cursor: "pointer",
     fontSize: {
       xs: "40px",
-      md: "90px",
+      md: "20px",
     },
-
-    "&:hover": {
-      color: "primary.main",
+    fontWeight: {
+      xs: 700,
+      md: 500,
     },
-  },
-  linksHorizontal: {
-    gap: 6,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  linkHorizontal: {
-    fontWeight: 500,
-    fontSize: "20px",
-    lineHeight: "1.667em",
+    lineHeight: {
+      xs: "1.111em",
+      md: "1.667em",
+    },
 
     "&:hover": {
       color: "primary.main",
@@ -79,27 +77,45 @@ const styles = {
   },
 }
 
-const Links = ({ links }: { links: LinkType[] }) => (
-  <Box sx={styles.linksHorizontal}>
+const links: LinkType[] = [
+  {
+    to: "/#introduction",
+    label: "Home",
+  },
+  {
+    to: "/#about",
+    label: "About",
+  },
+  {
+    to: "/#experience",
+    label: "Experience",
+  },
+  {
+    to: "/#projects",
+    label: "Projects",
+  },
+]
+
+const Links = () => (
+  <Box sx={styles.links}>
     {links.map(({ label, to }: LinkType) => (
-      <Link key={to} to={to as string} sx={styles.linkHorizontal}>
+      <Typography
+        key={to}
+        component="a"
+        sx={styles.link}
+        onClick={() => scrollIntoView(to as string)}
+      >
         {label}
-      </Link>
+      </Typography>
     ))}
   </Box>
 )
 
-export const Header = ({
-  links,
-  maxWidth,
-}: {
-  maxWidth: Width
-  links: LinkType[]
-}) => {
+export const Header = ({ maxWidth }: { maxWidth: Width }) => {
   const { isMobile } = useIsMobile()
 
   return (
-    <Box component="header" sx={styles.root}>
+    <Box id="header" component="header" sx={styles.root}>
       <Container maxWidth={maxWidth} sx={styles.container}>
         <Logo />
 
@@ -111,18 +127,10 @@ export const Header = ({
                 {open ? <Close /> : <Menu />}
               </IconButton>
             )}
-            content={() => (
-              <Box sx={styles.links}>
-                {links.map(({ label, to }: LinkType) => (
-                  <Link key={to} sx={styles.link} to={to as string}>
-                    {label}
-                  </Link>
-                ))}
-              </Box>
-            )}
+            content={() => <Links />}
           />
         ) : (
-          <Links links={links} />
+          <Links />
         )}
       </Container>
     </Box>

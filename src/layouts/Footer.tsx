@@ -9,8 +9,8 @@ import {
   LinkedIn as LinkedInIcon,
 } from "@mui/icons-material"
 
+import { Width } from "@utils/types"
 import { Link, LinkArrow } from "@ui/Link"
-import { Width, Link as LinkType } from "@utils/types"
 import {
   Name,
   Phone,
@@ -23,26 +23,29 @@ import {
 const styles = {
   root: {
     width: "100%",
+    marginTop: "auto",
     borderTop: (theme: Theme) => `1px solid ${theme.palette.divider}`,
 
     "@media print": {
       display: "none",
     },
   },
-  top: {
+  content: {
     gap: 8,
     display: "flex",
+    justifyContent: "space-between",
+    flexDirection: {
+      xs: "column",
+      md: "row",
+    },
     padding: {
       xs: "80px 0",
       md: "120px 0",
     },
-    justifyContent: "space-between",
-    flexDirection: { xs: "column", md: "row" },
   },
   name: {
     fontWeight: 700,
     fontSize: "34px",
-    marginBottom: "8px",
     lineHeight: "1.441em",
   },
   role: {
@@ -67,7 +70,10 @@ const styles = {
   contacts: {
     gap: 6,
     display: "flex",
-    flexDirection: { xs: "column", lg: "row" },
+    flexDirection: {
+      xs: "column",
+      lg: "row",
+    },
   },
   contactTitle: {
     fontWeight: 700,
@@ -78,50 +84,34 @@ const styles = {
     letterSpacing: ".06em",
     textTransform: "uppercase",
   },
-  bottom: (theme: Theme) => ({
+  copyright: (theme: Theme) => ({
     gap: 2,
     display: "flex",
+    fontWeight: 400,
+    fontSize: "16px",
     padding: "32px 0",
-    justifyContent: "space-between",
+    textAlign: "center",
+    lineHeight: "1.667em",
+    justifyContent: "center",
     flexDirection: { xs: "column", md: "row" },
     borderTop: `1px solid ${theme.palette.divider}`,
   }),
-  links: {
-    gap: 4,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  link: {
-    fontSize: "20px",
-    "&:hover": {
-      color: "primary.main",
-    },
-  },
-  copyright: {
-    display: "flex",
-    fontWeight: 400,
-    fontSize: "18px",
-    lineHeight: "1.667em",
-    justifyContent: "center",
-  },
 }
 
-export const Footer = ({
-  links,
-  maxWidth,
-}: {
-  maxWidth: Width
-  links: LinkType[]
-}) => {
+export const Footer = ({ maxWidth }: { maxWidth: Width }) => {
   return (
     <Box sx={styles.root} component="footer">
       <Container maxWidth={maxWidth}>
-        <Box sx={styles.top}>
+        <Box sx={styles.content}>
           <Box>
-            <Typography variant="h6" sx={styles.name}>
-              {Name}
-            </Typography>
+            <h6>
+              <Link
+                sx={styles.name}
+                to={`https://www.linkedin.com/in/${LinkedIn}`}
+              >
+                {Name}
+              </Link>
+            </h6>
             <Typography variant="body2" sx={styles.role}>
               {Experiences[0].role} at {Experiences[0].company}
             </Typography>
@@ -149,13 +139,21 @@ export const Footer = ({
             </Box>
           </Box>
           <Box>
-            <LinkArrow
+            {/* <LinkArrow
               to="/contact"
               arrowColor="primary"
               sx={styles.getInTouch}
             >
-              Get in touch{" "}
-            </LinkArrow>
+              Get in touch
+            </LinkArrow> */}
+
+            <Typography
+              variant="body2"
+              fontWeight="bold"
+              sx={styles.getInTouch}
+            >
+              Get in touch
+            </Typography>
 
             <Box sx={styles.contacts}>
               <Box>
@@ -175,15 +173,9 @@ export const Footer = ({
             </Box>
           </Box>
         </Box>
-        <Box sx={styles.bottom}>
-          <Box sx={styles.links}>
-            {links.map(({ label, to }: LinkType) => (
-              <Link key={to} sx={styles.link} to={to as string}>
-                {label}
-              </Link>
-            ))}
-          </Box>
-          <Box sx={styles.copyright}>Copyright © {Name}</Box>
+        <Box sx={styles.copyright}>
+          Crafted by yours truly using Next.js and Material UI, then launched
+          with Vercel. © {new Date().getFullYear()}
         </Box>
       </Container>
     </Box>

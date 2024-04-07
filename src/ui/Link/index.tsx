@@ -89,7 +89,7 @@ export const LinkArrow = ({
     | "warning"
   [key: string]: any
 }) => {
-  return to ? (
+  return (
     <Typography
       passHref
       href={to}
@@ -108,6 +108,9 @@ export const LinkArrow = ({
 
         "& > svg": {
           fontSize: "inherit",
+          transitionDuration: ".3s",
+          transitionProperty: "transform",
+          transitionTimingFunction: "cubic-bezier(.4,0,.2,1)",
         },
 
         "&::after": {
@@ -127,8 +130,7 @@ export const LinkArrow = ({
 
         "&:hover": {
           "& > svg": {
-            transform: "translateX(4px)",
-            transition: "transform .3s ease-out",
+            transform: "translateX(5px)",
           },
 
           "&::after": {
@@ -142,7 +144,5 @@ export const LinkArrow = ({
     >
       {children} <ArrowForward color={arrowColor} />
     </Typography>
-  ) : (
-    <>{children}</>
   )
 }

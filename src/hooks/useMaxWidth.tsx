@@ -11,7 +11,7 @@ export const useMaxWidth = (margin?: number) => {
   const [maxWidth, setMaxWidth] = useState(0)
 
   useEffect(() => {
-    setMaxWidth(windowWidth - (margin || +theme.spacing(4).replace("px", "")))
+    setMaxWidth(windowWidth - (margin ?? +theme.spacing(4).replace("px", "")))
   }, [theme, margin, windowWidth])
 
   return { width: windowWidth, maxWidth }

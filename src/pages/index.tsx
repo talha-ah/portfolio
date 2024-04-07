@@ -261,10 +261,11 @@ const Main = () => {
                 </Typography>
 
                 <Typography variant="body1" sx={styles.text}>
-                  with over {TotalExperience} years of experience. I am
-                  passionate about building web applications and solving
-                  problems. I have experience in both frontend and backend
-                  development.
+                  I am a Software Engineer with over {TotalExperience} years of
+                  experience. I am passionate about building web applications
+                  and solving problems. I have experience in Full Stack Web and
+                  Mobile Development. I am proficient in JavaScript, TypeScript,
+                  React, Node.js, and Python.
                 </Typography>
               </Box>
 

@@ -10,6 +10,7 @@ const styles = {
   root: {
     fontWeight: 700,
     fontSize: "1.6rem",
+    whiteSpace: "nowrap",
     fontFamily: "inherit",
   },
 }

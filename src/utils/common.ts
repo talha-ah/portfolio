@@ -28,8 +28,18 @@ export const numberWithCommas = (x: any): string => {
 }
 
 export const scrollIntoView = (id: string) => {
+  if (!id) return
+
+  if (id.includes("#")) id = id.split("#")[1]
+
   const element = document.getElementById(id)
-  if (element) element.scrollIntoView({ behavior: "smooth" })
+  if (element) {
+    element.scrollIntoView({
+      block: "start",
+      inline: "nearest",
+      behavior: "smooth",
+    })
+  }
 }
 
 export const callAxios = async (config: IAxiosConfig) => {
