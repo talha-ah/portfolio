@@ -2,7 +2,7 @@ import * as React from "react"
 import NextLink, { LinkProps } from "next/link"
 
 import { ArrowForward } from "@mui/icons-material"
-import { SxProps, Typography } from "@mui/material"
+import { Theme, SxProps, Typography } from "@mui/material"
 
 interface NextLinkProps
   extends Omit<LinkProps, "href" | "as" | "onClick" | "onMouseEnter"> {
@@ -71,22 +71,11 @@ export const LinkArrow = ({
   to,
   sx,
   children,
-  arrowColor = "inherit",
   ...other
 }: {
   to: string
   sx?: SxProps
   children: React.ReactNode
-  arrowColor?:
-    | "inherit"
-    | "disabled"
-    | "action"
-    | "primary"
-    | "secondary"
-    | "error"
-    | "info"
-    | "success"
-    | "warning"
   [key: string]: any
 }) => {
   return (
@@ -124,8 +113,8 @@ export const LinkArrow = ({
           transition: "all .3s",
 
           backgroundSize: "200% 100%",
-          backgroundImage:
-            "linear-gradient(to right, #8895aa 50%, #ffffff 50%)",
+          backgroundImage: (theme: Theme) =>
+            `linear-gradient(to right, #8895aa 50%, ${theme.palette.primary.main} 50%)`,
         },
 
         "&:hover": {
@@ -142,7 +131,7 @@ export const LinkArrow = ({
       }}
       {...other}
     >
-      {children} <ArrowForward color={arrowColor} />
+      {children} <ArrowForward color="primary" />
     </Typography>
   )
 }

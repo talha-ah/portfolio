@@ -79,7 +79,7 @@ const styles = {
 
 const links: LinkType[] = [
   {
-    to: "/#introduction",
+    to: "/",
     label: "Home",
   },
   {
@@ -96,14 +96,17 @@ const links: LinkType[] = [
   },
 ]
 
-const Links = () => (
+const Links = ({ onClick }: { onClick?: () => void }) => (
   <Box sx={styles.links}>
     {links.map(({ label, to }: LinkType) => (
       <Typography
         key={to}
         component="a"
         sx={styles.link}
-        onClick={() => scrollIntoView(to as string)}
+        onClick={() => {
+          onClick?.()
+          scrollIntoView(to as string)
+        }}
       >
         {label}
       </Typography>
@@ -127,7 +130,7 @@ export const Header = ({ maxWidth }: { maxWidth: Width }) => {
                 {open ? <Close /> : <Menu />}
               </IconButton>
             )}
-            content={() => <Links />}
+            content={({ onClose }) => <Links onClick={onClose} />}
           />
         ) : (
           <Links />

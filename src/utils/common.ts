@@ -1,4 +1,5 @@
 import axios from "axios"
+import Router from "next/router"
 import { IAxiosConfig } from "@utils/types"
 
 export const getFullName = (user: any) => {
@@ -28,17 +29,33 @@ export const numberWithCommas = (x: any): string => {
 }
 
 export const scrollIntoView = (id: string) => {
-  if (!id) return
+  if (!id) {
+    window.scrollTo(0, 0)
+    return
+  }
 
-  if (id.includes("#")) id = id.split("#")[1]
+  const path = id.split("#")[0]
+  const section = id.split("#")[1]
 
-  const element = document.getElementById(id)
+  if (path !== Router.asPath.split("#")[0]) {
+    Router.push(id)
+    return
+  }
+
+  if (!id.includes("#")) {
+    window.location.hash = ""
+    window.scrollTo(0, 0)
+    return
+  }
+
+  const element = document.getElementById(section)
   if (element) {
     element.scrollIntoView({
       block: "start",
       inline: "nearest",
       behavior: "smooth",
     })
+    window.location.hash = section
   }
 }
 

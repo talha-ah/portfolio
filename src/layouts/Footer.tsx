@@ -2,12 +2,6 @@ import React from "react"
 
 import { Theme } from "@mui/material/styles"
 import { Box, Container, Typography } from "@mui/material"
-import {
-  Phone as PhoneIcon,
-  Email as EmailIcon,
-  GitHub as GitHubIcon,
-  LinkedIn as LinkedInIcon,
-} from "@mui/icons-material"
 
 import { Width } from "@utils/types"
 import { Link, LinkArrow } from "@ui/Link"
@@ -33,6 +27,10 @@ const styles = {
   content: {
     gap: 8,
     display: "flex",
+    alignItems: {
+      xs: "flex-start",
+      md: "center",
+    },
     justifyContent: "space-between",
     flexDirection: {
       xs: "column",
@@ -46,7 +44,7 @@ const styles = {
   name: {
     fontWeight: 700,
     fontSize: "34px",
-    lineHeight: "1.441em",
+    lineHeight: "1em",
   },
   role: {
     fontWeight: 500,
@@ -54,13 +52,7 @@ const styles = {
     color: "divider",
     lineHeight: "1.083em",
   },
-  socials: {
-    gap: 2,
-    marginTop: 4,
-    display: "flex",
-  },
   getInTouch: {
-    marginBottom: "40px",
     lineHeight: "1.231em",
     fontSize: {
       xs: "32px",
@@ -70,6 +62,7 @@ const styles = {
   contacts: {
     gap: 6,
     display: "flex",
+    marginTop: "40px",
     flexDirection: {
       xs: "column",
       lg: "row",
@@ -104,49 +97,19 @@ export const Footer = ({ maxWidth }: { maxWidth: Width }) => {
       <Container maxWidth={maxWidth}>
         <Box sx={styles.content}>
           <Box>
-            <h6>
+            <Typography variant="h6" gutterBottom>
               <Link
                 sx={styles.name}
                 to={`https://www.linkedin.com/in/${LinkedIn}`}
               >
                 {Name}
               </Link>
-            </h6>
+            </Typography>
             <Typography variant="body2" sx={styles.role}>
               {Experiences[0].role} at {Experiences[0].company}
             </Typography>
-            <Box sx={styles.socials}>
-              <Link to={`tel:${Phone}`}>
-                <PhoneIcon sx={{ fontSize: 24 }} />
-              </Link>
-              <Link to={`mailto:${Email}`}>
-                <EmailIcon sx={{ fontSize: 24 }} />
-              </Link>
-              <Link
-                target="_blank"
-                rel="noreferrer"
-                to={`https://github.com/${GitHub}`}
-              >
-                <GitHubIcon sx={{ fontSize: 24 }} />
-              </Link>
-              <Link
-                target="_blank"
-                rel="noreferrer"
-                to={`https://www.linkedin.com/in/${LinkedIn}`}
-              >
-                <LinkedInIcon sx={{ fontSize: 24 }} />
-              </Link>
-            </Box>
           </Box>
           <Box>
-            {/* <LinkArrow
-              to="/contact"
-              arrowColor="primary"
-              sx={styles.getInTouch}
-            >
-              Get in touch
-            </LinkArrow> */}
-
             <Typography
               variant="body2"
               fontWeight="bold"
@@ -169,6 +132,36 @@ export const Footer = ({ maxWidth }: { maxWidth: Width }) => {
                 </Typography>
 
                 <LinkArrow to={`tel:${Phone}`}>{Phone}</LinkArrow>
+              </Box>
+            </Box>
+
+            <Box sx={styles.contacts}>
+              <Box>
+                <Typography variant="body2" sx={styles.contactTitle}>
+                  LinkedIn:
+                </Typography>
+
+                <LinkArrow
+                  target="_blank"
+                  rel="noreferrer"
+                  to={`https://www.linkedin.com/in/${LinkedIn}`}
+                >
+                  linkedin.com/in/{LinkedIn}
+                </LinkArrow>
+              </Box>
+
+              <Box>
+                <Typography variant="body2" sx={styles.contactTitle}>
+                  GitHub:
+                </Typography>
+
+                <LinkArrow
+                  to={`https://github.com/${GitHub}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  github.com/{GitHub}
+                </LinkArrow>
               </Box>
             </Box>
           </Box>

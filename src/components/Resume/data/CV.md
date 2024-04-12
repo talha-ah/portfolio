@@ -105,11 +105,29 @@ _Oct 2018 - May 2020 | Freelancer_
 
 **URL**: https://retail-link.vercel.app
 
+### Six Wraps
+
+**About**: A platform for the auto services industry, offering a comprehensive options for car wrapping services.
+
+**Short Description**: As a Full Stack Engineer, developed the backend APIs and CMS portal. Implemented CI/CD best practices to streamline deployment and operation.
+
+**Description**: In my role as a Full Stack Engineer for Six Wraps, I played a key role in developing the backend APIs for the mobile app and CMS portal for the auto services industry. Six Wraps is a platform designed to offer comprehensive car wrapping services, catering to the auto services industry. Through my expertise in Node.js, Express.js, and MongoDB, I developed backend APIs that enabled seamless data management and user interaction. My initiative in implementing CI/CD best practices ensured streamlined deployment and operation, enhancing platform functionality and user experience. Six Wraps highlights my ability to deliver innovative solutions that meet industry-specific needs and drive business growth.
+
+**Tech Stack**: Javascript, Node.js, Express.js, React.js, Next.js, Flutter, MongoDB, AWS
+
+**Achievements**:
+
+- Developed the backend APIs and CMS portal for Six Wraps.
+- Implemented CI/CD best practices to streamline deployment and operation.
+- Enhanced user experience and platform functionality through efficient data management and user interaction.
+
+**URL**: https://six-wraps.vercel.app
+
 ### Prospects Trading
 
 **About**: A platform for "Sports Illustrated" tournaments to engage players in a sticker trading game.
 
-**Short Description**: As a Full stack Engineer, developed the backend APIs and integrated EventConnect APIs, managing the DevOps and successfully integrating EventConnect APIs.
+**Short Description**: As a Backend Engineer, developed the backend APIs and integrated EventConnect APIs, managing the DevOps and successfully integrating EventConnect APIs.
 
 **Description**: In my role as a Backend Engineer for project Prospects Trading, I played a key role in enabling player engagement in **Sports Illustrated** tournaments through a sticker trading platform. This platform allowed users to trade stickers during tournaments, fostering community engagement and excitement. By developing backend APIs and integrating EventConnect APIs, I improved user engagement and experience for tournament participants. My initiative in implementing batch processing and optimizations efficiently overcame API limitations, further enhancing platform functionality. Prospects Trading highlights my ability to leverage technology to create innovative solutions and drive user engagement.
 

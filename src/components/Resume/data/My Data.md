@@ -14,6 +14,8 @@ Frontend Engineer recognized for delivering top-tier solutions and proven expert
 
 Jan 2023 - Present | NTT DATA & GiffGaff
 
+Description: Worked as Backend and DevOp Engineer to eliminate friction for eCommerce brand managers by automating catalogue and supply chain operations across various marketplaces. I made things smoother for e-commerce brand managers by automating tasks as a Backend and Devops Engineer. My work made operations more efficient, saving time and boosting productivity for everyone involved. I'm proud to have achieved these positive changes in the e-commerce world.
+
 - Published over 10 React components to the internal design library, standardizing UI elements across teams and ensuring consistency in design implementation.
 
 - Spearheaded the team to design and execute contract plans, resulting in a 20% increase in giffgaff service offerings and contributing to a $500,000 boost in revenue streams.

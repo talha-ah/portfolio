@@ -72,7 +72,6 @@ const styles = {
     fontWeight: "400",
     lineHeight: "1.667em",
     color: "text.secondary",
-    maxWidth: (theme: Theme) => `${theme.breakpoints.values.md}px`,
     fontSize: "clamp(14px, 4vw, 20px)",
   },
   line: {
@@ -80,13 +79,6 @@ const styles = {
     width: "160px",
     marginBottom: "20px",
     backgroundColor: "primary.main",
-  },
-  heading: {
-    fontWeight: "700",
-    lineHeight: "1.111em",
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-    fontSize: "clamp(14px, 4vw, 20px)",
   },
   socials: {
     gap: 2,
@@ -213,7 +205,7 @@ const ExperiencesList = () => {
               }}
             >
               <Typography variant="h4">{item.role}</Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" sx={styles.text}>
                 {item.company} | {item.duration.start.month}{" "}
                 {item.duration.start.year} -{" "}
                 {item.duration.end
@@ -223,9 +215,9 @@ const ExperiencesList = () => {
 
               <Box component="ul">
                 {item.description.map((i, index) => (
-                  <Box key={index} component="li">
+                  <Typography key={index} component="li" sx={styles.text}>
                     {i}
-                  </Box>
+                  </Typography>
                 ))}
               </Box>
             </Box>
@@ -260,7 +252,14 @@ const Main = () => {
                   I build things for the web.
                 </Typography>
 
-                <Typography variant="body1" sx={styles.text}>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    ...styles.text,
+                    maxWidth: (theme: Theme) =>
+                      `${theme.breakpoints.values.md}px`,
+                  }}
+                >
                   I am a Software Engineer with over {TotalExperience} years of
                   experience. I am passionate about building web applications
                   and solving problems. I have experience in Full Stack Web and
@@ -269,33 +268,27 @@ const Main = () => {
                 </Typography>
               </Box>
 
-              <Box>
-                <Typography variant="h3" sx={styles.heading}>
-                  FOLLOW ME
-                </Typography>
-
-                <Box sx={styles.socials}>
-                  <Link to={`tel:${Phone}`}>
-                    <PhoneIcon sx={{ fontSize: 24 }} />
-                  </Link>
-                  <Link to={`mailto:${Email}`}>
-                    <EmailIcon sx={{ fontSize: 24 }} />
-                  </Link>
-                  <Link
-                    target="_blank"
-                    rel="noreferrer"
-                    to={`https://github.com/${GitHub}`}
-                  >
-                    <GitHubIcon sx={{ fontSize: 24 }} />
-                  </Link>
-                  <Link
-                    target="_blank"
-                    rel="noreferrer"
-                    to={`https://www.linkedin.com/in/${LinkedIn}`}
-                  >
-                    <LinkedInIcon sx={{ fontSize: 24 }} />
-                  </Link>
-                </Box>
+              <Box sx={styles.socials}>
+                <Link to={`tel:${Phone}`}>
+                  <PhoneIcon sx={{ fontSize: 24 }} />
+                </Link>
+                <Link to={`mailto:${Email}`}>
+                  <EmailIcon sx={{ fontSize: 24 }} />
+                </Link>
+                <Link
+                  target="_blank"
+                  rel="noreferrer"
+                  to={`https://github.com/${GitHub}`}
+                >
+                  <GitHubIcon sx={{ fontSize: 24 }} />
+                </Link>
+                <Link
+                  target="_blank"
+                  rel="noreferrer"
+                  to={`https://www.linkedin.com/in/${LinkedIn}`}
+                >
+                  <LinkedInIcon sx={{ fontSize: 24 }} />
+                </Link>
               </Box>
             </Box>
           </Container>
@@ -310,7 +303,7 @@ const Main = () => {
                 <Typography variant="body1" sx={styles.text}>
                   Hello! My name is Talha, and I enjoy creating things that live
                   on the internet. My interest in web development started back
-                  in 2018 when I decided to buuild a web based project for my
+                  in 2018 when I decided to build a web based project for my
                   final Year in Bachelors --- turns out building a custom CMS
                   for my University taught me a lot of React and Node.js.
                 </Typography>
@@ -416,10 +409,10 @@ const Main = () => {
             {Educations.map((item) => (
               <Box key={item.degree} mb={4}>
                 <Typography variant="h4">{item.degree}</Typography>
-                <Typography variant="h6">
+                <Typography variant="h6" sx={styles.text}>
                   {item.institution} | {item.location}
                 </Typography>
-                <Typography variant="body1">
+                <Typography variant="body1" sx={styles.text}>
                   {item.duration.start.month} {item.duration.start.year} -{" "}
                   {item.duration.end.month} {item.duration.end.year}
                 </Typography>
@@ -439,7 +432,7 @@ const Main = () => {
                     {item.title} &#8599;
                   </Link>
                 </Typography>
-                <Typography variant="body1">
+                <Typography variant="body1" sx={styles.text}>
                   {item.organization} | {item.year}
                 </Typography>
               </Box>
@@ -450,7 +443,7 @@ const Main = () => {
             {Achievements.map((item) => (
               <Box key={item.title} mb={4}>
                 <Typography variant="h4">{item.title}</Typography>
-                <Typography variant="body1">
+                <Typography variant="body1" sx={styles.text}>
                   {item.organizations
                     .map((org) => `${org.name} | ${org.year}`)
                     .join(" AND ")}
@@ -465,8 +458,13 @@ const Main = () => {
             backgroundColor="background.paper"
           >
             {SkillsAll.map((skill) => (
-              <Typography key={skill.title} mb={2} variant="body1">
-                <strong>{skill.title}</strong> {skill.list}
+              <Typography
+                mb={2}
+                variant="body1"
+                sx={styles.text}
+                key={skill.title}
+              >
+                <strong>{skill.title}:</strong> {skill.list}
               </Typography>
             ))}
           </Section>

@@ -20,12 +20,14 @@ const styles = {
       }),
   }),
   fab: (visibility: boolean) => ({
+    display: "block",
     position: "fixed",
     transition: "all 0.5s ease",
-    display: visibility ? "block" : "none",
+    opacity: visibility ? 1 : 0,
     right: (theme: Theme) => theme.spacing(3),
     bottom: (theme: Theme) => theme.spacing(3),
     zIndex: (theme: Theme) => theme.zIndex.fab,
+    pointerEvents: visibility ? "auto" : "none",
   }),
 }
 
@@ -65,7 +67,6 @@ export const HeaderLayout = ({
       <Fab
         color="primary"
         variant="extended"
-        hidden={!fabVisibility}
         aria-label="scroll-to-top"
         sx={() => styles.fab(fabVisibility)}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
