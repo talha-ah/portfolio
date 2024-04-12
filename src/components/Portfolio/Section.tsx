@@ -7,9 +7,10 @@ const styles = {
   root: {
     width: "100%",
     display: "flex",
+    minHeight: "90vh",
     flexDirection: "column",
     justifyContent: "center",
-    minHeight: "80vh",
+    scrollSnapAlign: "start",
     p: {
       xs: "40px 0 88px 0",
       md: "160px 0 88px 0",

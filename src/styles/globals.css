@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  scroll-snap-type: y mandatory;
   font-family: Space Grotesk, Cambria, sans-serif;
 }
 

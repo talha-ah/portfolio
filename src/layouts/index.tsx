@@ -14,9 +14,8 @@ const styles = {
     minHeight: "100vh",
     flexDirection: "column",
   },
-  content: (mb: string) => ({
-    paddingBottom: mb,
-    paddingTop: "48px",
+  content: (mb: string, snap?: boolean) => ({
+    ...(!snap && { pt: "48px", pb: mb }),
     backgroundColor: (theme: Theme) => theme.palette.background.default,
     transition: (theme: Theme) =>
       theme.transitions.create("margin", {
@@ -39,8 +38,10 @@ const styles = {
 export const HeaderLayout = ({
   children,
   mb = "48px",
+  snap = false,
 }: {
   mb?: string
+  snap?: boolean
   children: React.ReactNode
 }) => {
   const maxWidth: Width = "xl"
@@ -63,11 +64,11 @@ export const HeaderLayout = ({
     <Box sx={styles.root}>
       <Header maxWidth={maxWidth} />
 
-      <Box component="main" sx={() => styles.content(mb)}>
+      <Box component="main" sx={() => styles.content(mb, snap)}>
         {children}
       </Box>
 
-      <Footer maxWidth={maxWidth} />
+      <Footer maxWidth={maxWidth} snap={snap} />
 
       <Fab
         color="primary"

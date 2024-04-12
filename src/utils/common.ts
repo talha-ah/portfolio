@@ -2,6 +2,15 @@ import axios from "axios"
 import Router from "next/router"
 import { IAxiosConfig } from "@utils/types"
 
+export const getRandomColor = () => {
+  const letters = "0123456789ABCDEF"
+  let color = "#"
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }
+  return color
+}
+
 export const getFullName = (user: any) => {
   let name = user.firstName
   if (user.lastName) name += " " + user.lastName
@@ -48,14 +57,25 @@ export const scrollIntoView = (id: string) => {
     return
   }
 
+  window.location.hash = section
+
   const element = document.getElementById(section)
   if (element) {
+    document.getElementsByTagName("html")[0].style.scrollSnapType = "initial"
+    document.getElementsByTagName("body")[0].style.scrollSnapType = "initial"
+
     element.scrollIntoView({
       block: "start",
       inline: "nearest",
       behavior: "smooth",
     })
-    window.location.hash = section
+
+    setTimeout(() => {
+      document.getElementsByTagName("html")[0].style.scrollSnapType =
+        "y mandatory"
+      document.getElementsByTagName("body")[0].style.scrollSnapType =
+        "y mandatory"
+    }, 500)
   }
 }
 

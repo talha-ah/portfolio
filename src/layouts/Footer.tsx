@@ -15,15 +15,16 @@ import {
 } from "@components/Portfolio/data"
 
 const styles = {
-  root: {
+  root: (snap?: boolean) => ({
     width: "100%",
     marginTop: "auto",
+    ...(snap && { scrollSnapAlign: "start" }),
     borderTop: (theme: Theme) => `1px solid ${theme.palette.divider}`,
 
     "@media print": {
       display: "none",
     },
-  },
+  }),
   content: {
     gap: 8,
     display: "flex",
@@ -91,9 +92,15 @@ const styles = {
   }),
 }
 
-export const Footer = ({ maxWidth }: { maxWidth: Width }) => {
+export const Footer = ({
+  maxWidth,
+  snap = false,
+}: {
+  snap?: boolean
+  maxWidth: Width
+}) => {
   return (
-    <Box sx={styles.root} component="footer">
+    <Box sx={() => styles.root(snap)} component="footer">
       <Container maxWidth={maxWidth}>
         <Box sx={styles.content}>
           <Box>
