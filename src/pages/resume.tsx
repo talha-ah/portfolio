@@ -11,7 +11,7 @@ import { UpdateSkills } from "@forms/resume"
 import { HeaderLayout } from "@layouts/index"
 import { SkillType } from "@components/Portfolio/types"
 import { jobs, Skills } from "@components/Portfolio/data"
-import { TwoColumn, OneColumn } from "@components/Resume"
+import { OneColumn, TwoColumn } from "@components/Resume"
 
 const BASE_FONT_SIZE = "11px"
 

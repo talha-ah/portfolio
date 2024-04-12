@@ -1,12 +1,16 @@
-import React from "react"
+import * as React from "react"
+import { useRef } from "react"
+import { useReactToPrint } from "react-to-print"
 
 import { Theme } from "@mui/material/styles"
-import { Box, Container, Typography } from "@mui/material"
 import { Menu, Close } from "@mui/icons-material"
+import { Box, Container, Typography } from "@mui/material"
 
 import { Logo } from "@ui/Logo"
 import { Dialog } from "@ui/Dialog"
+import { Button } from "@ui/Button"
 import { IconButton } from "@ui/IconButton"
+import { OneColumn } from "@components/Resume"
 import { scrollIntoView } from "@utils/common"
 import { useIsMobile } from "@hooks/useIsMobile"
 import { Width, Link as LinkType } from "@utils/types"
@@ -41,7 +45,7 @@ const styles = {
     justifyContent: "space-between",
   },
   links: (theme: Theme) => ({
-    gap: 6,
+    gap: 4,
     width: "100%",
     height: "100%",
     display: "flex",
@@ -74,6 +78,11 @@ const styles = {
     "&:hover": {
       color: "primary.main",
     },
+  },
+  buttonLinks: {
+    gap: 4,
+    display: "flex",
+    alignItems: "center",
   },
 }
 
@@ -116,25 +125,52 @@ const Links = ({ onClick }: { onClick?: () => void }) => (
 
 export const Header = ({ maxWidth }: { maxWidth: Width }) => {
   const { isMobile } = useIsMobile()
+  const componentRef = useRef<HTMLDivElement>(null)
+
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+    pageStyle: `
+      @page {
+        size: A4 portrait;
+      }
+
+      body {
+        color: black !important;
+        font-size: 11px !important;
+        background-color: white !important;
+        font-family: Cambria, serif !important;
+      }
+    `,
+  })
 
   return (
     <Box id="header" component="header" sx={styles.root}>
       <Container maxWidth={maxWidth} sx={styles.container}>
         <Logo />
 
-        {isMobile ? (
-          <Dialog
-            fullScreen
-            trigger={({ open, toggleOpen }) => (
-              <IconButton onClick={toggleOpen}>
-                {open ? <Close /> : <Menu />}
-              </IconButton>
-            )}
-            content={({ onClose }) => <Links onClick={onClose} />}
-          />
-        ) : (
-          <Links />
-        )}
+        <Box sx={styles.buttonLinks}>
+          {isMobile ? (
+            <Dialog
+              fullScreen
+              trigger={({ open, toggleOpen }) => (
+                <IconButton onClick={toggleOpen}>
+                  {open ? <Close /> : <Menu />}
+                </IconButton>
+              )}
+              content={({ onClose }) => <Links onClick={onClose} />}
+            />
+          ) : (
+            <Links />
+          )}
+
+          <Button size="small" onClick={handlePrint}>
+            Resume
+          </Button>
+        </Box>
+
+        <Box display="none">
+          <OneColumn ref={componentRef} />
+        </Box>
       </Container>
     </Box>
   )

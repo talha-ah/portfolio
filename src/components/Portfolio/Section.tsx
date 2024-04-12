@@ -12,7 +12,7 @@ const styles = {
     justifyContent: "center",
     scrollSnapAlign: "start",
     p: {
-      xs: "40px 0 88px 0",
+      xs: "130px 0 88px 0",
       md: "160px 0 88px 0",
     },
   },

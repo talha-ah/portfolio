@@ -16,6 +16,7 @@ import {
   jobs,
   Email,
   Phone,
+  Skills,
   GitHub,
   Summary,
   LinkedIn,
@@ -152,7 +153,16 @@ const styles = {
 }
 
 export const Resume = forwardRef(
-  ({ index, skills }: { index: number; skills: SkillType[] }, ref) => {
+  (
+    {
+      index = 0,
+      skills = Skills.filter(({ list }) => list),
+    }: {
+      index?: number
+      skills?: SkillType[]
+    },
+    ref
+  ) => {
     return (
       <Box ref={ref} id="resume-pdf">
         <Box sx={styles.header}>
