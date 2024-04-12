@@ -48,27 +48,27 @@ const Page = ({ project }: { project: ProjectType }) => {
         <Section title={project.title}>
           <Box sx={styles.root}>
             <Box sx={styles.text}>
-              <strong>Tech Stack</strong>:&nbsp;
+              <strong>Tech Stack:</strong>&nbsp;
               {project.skills}
             </Box>
 
             <Typography variant="h3" sx={styles.text}>
-              <strong>Role</strong>: {project.role}
+              <strong>Role:</strong> {project.role}
             </Typography>
 
             <Typography variant="body1" sx={styles.text}>
-              <strong>Description</strong>: {project.description}
+              <strong>Description:</strong> {project.shortDescription}
             </Typography>
 
             <Typography variant="body1" sx={styles.text}>
-              <strong>Experience</strong>: {project.experience}
+              <strong>Experience:</strong> {project.description}
             </Typography>
 
             <Typography variant="body1" sx={styles.text}>
               <strong>Highlights</strong>
 
               <ul>
-                {project.achievements.map((item) => (
+                {project.highlights.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>

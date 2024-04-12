@@ -50,7 +50,7 @@ export function AuthGuard({ children }: Readonly<{ children: JSX.Element }>) {
   }
 
   // if auth initialized with a valid user show protected page
-  if (!initializing && user) return <>{children}</>
+  if (!initializing && user) return children
 
   /* otherwise don't return anything, will do a redirect from useEffect */
   return null

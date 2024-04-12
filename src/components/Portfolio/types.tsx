@@ -10,6 +10,6 @@ export interface ProjectType {
   slug: string
   role: string
   description: string
-  experience: string
-  achievements: string[]
+  highlights: string[]
+  shortDescription: string
 }

@@ -9,6 +9,11 @@ import { Footer } from "./Footer"
 import { Width } from "@utils/types"
 
 const styles = {
+  root: {
+    display: "flex",
+    minHeight: "100vh",
+    flexDirection: "column",
+  },
   content: (mb: string) => ({
     paddingBottom: mb,
     paddingTop: "48px",
@@ -55,7 +60,7 @@ export const HeaderLayout = ({
   }, [])
 
   return (
-    <>
+    <Box sx={styles.root}>
       <Header maxWidth={maxWidth} />
 
       <Box component="main" sx={() => styles.content(mb)}>
@@ -73,6 +78,6 @@ export const HeaderLayout = ({
       >
         <KeyboardArrowUp />
       </Fab>
-    </>
+    </Box>
   )
 }

@@ -70,6 +70,26 @@ _Oct 2018 - May 2020 | Freelancer_
 
 ## Projects
 
+### SAiY
+
+**About**: A revolutionary platform that leverages GEN AI to redefine communication and interactions for individuals and businesses.
+
+**Short Description**: As a Backend Engineer, developed the platform from scratch, integrating GEN AI APIs to enhance communication and self-expression for users. Managed the DevOps and successfully integrated GEN AI APIs.
+
+**Description**: For SAiY as a Backend Engineer, I played a key role in developing a revolutionary platform that leverages GEN AI to redefine communication and interactions. SAiY is designed to enhance communication skills, self-expression, and clarity for individuals and businesses. Through my expertise in backend development and integration of GEN AI APIs, I made it possible to overcome communication barriers and empower users to achieve meaningful interactions. Using AWS ECR and ECS, I managed the DevOps and successfully integrated GEN AI APIs. SAiY highlights my ability to leverage cutting-edge technology to drive innovation and deliver impactful solutions that transform user experiences.
+
+**Tech Stack**: Node.js, Express.js, Stripe, PostgreSQL (AWS Aurora), AWS, Docker, ChatGPT
+
+**Achievements**:
+
+- Developed the platform from scratch, integrating GEN AI APIs to enhance communication and self-expression for users.
+- Managed the DevOps and successfully integrated GEN AI APIs.
+- Overcame communication barriers and empowered users to achieve meaningful interactions.
+
+**URL**: https://play.google.com/store/apps/details?id=com.app.saiy
+**URL**: https://apps.apple.com/us/app/saiy/id6462937067
+**URL**: https://www.saiy.ai
+
 ### Electromatic Works
 
 **About**: A platform designed for a local business by providing users the ability to contact the business and list products they are interested in without the need for user registration.
@@ -111,7 +131,7 @@ _Oct 2018 - May 2020 | Freelancer_
 
 **Short Description**: As a Full Stack Engineer, developed the backend APIs and CMS portal. Implemented CI/CD best practices to streamline deployment and operation.
 
-**Description**: In my role as a Full Stack Engineer for Six Wraps, I played a key role in developing the backend APIs for the mobile app and CMS portal for the auto services industry. Six Wraps is a platform designed to offer comprehensive car wrapping services, catering to the auto services industry. Through my expertise in Node.js, Express.js, and MongoDB, I developed backend APIs that enabled seamless data management and user interaction. My initiative in implementing CI/CD best practices ensured streamlined deployment and operation, enhancing platform functionality and user experience. Six Wraps highlights my ability to deliver innovative solutions that meet industry-specific needs and drive business growth.
+**Description**: As a Full Stack Engineer for Six Wraps, I played a key role in developing the backend APIs for the mobile app and CMS portal for the auto services industry. Six Wraps is a platform designed to offer comprehensive car wrapping services, catering to the auto services industry. Through my expertise in Node.js, Express.js, and MongoDB, I developed backend APIs that enabled seamless data management and user interaction. My initiative in implementing CI/CD best practices ensured streamlined deployment and operation, enhancing platform functionality and user experience. Six Wraps highlights my ability to deliver innovative solutions that meet industry-specific needs and drive business growth.
 
 **Tech Stack**: Javascript, Node.js, Express.js, React.js, Next.js, Flutter, MongoDB, AWS
 
@@ -129,7 +149,7 @@ _Oct 2018 - May 2020 | Freelancer_
 
 **Short Description**: As a Backend Engineer, developed the backend APIs and integrated EventConnect APIs, managing the DevOps and successfully integrating EventConnect APIs.
 
-**Description**: In my role as a Backend Engineer for project Prospects Trading, I played a key role in enabling player engagement in **Sports Illustrated** tournaments through a sticker trading platform. This platform allowed users to trade stickers during tournaments, fostering community engagement and excitement. By developing backend APIs and integrating EventConnect APIs, I improved user engagement and experience for tournament participants. My initiative in implementing batch processing and optimizations efficiently overcame API limitations, further enhancing platform functionality. Prospects Trading highlights my ability to leverage technology to create innovative solutions and drive user engagement.
+**Description**: As a Backend Engineer for Prospects Trading, I played a key role in developing backend APIs and integrating EventConnect APIs, enabling player engagement in **Sports Illustrated** tournaments through a sticker trading platform. This platform allowed users to trade stickers during tournaments, fostering community engagement and excitement. My initiative in implementing batch processing and optimizations efficiently overcame API limitations, further enhancing platform functionality. Prospects Trading highlights my ability to leverage technology to create innovative solutions and drive user engagement.
 
 **Tech Stack**: Javascript, Node.js, Express.js, React.js, Next.js, Flutter, MongoDB, AWS
 

@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }: { children: any }) => {
         return
       }
 
-      const response = await API({ uri: ENDPOINTS.authProfile })
+      const response = await API({ url: ENDPOINTS.authProfile })
 
       dispatch({ type: AuthTypes.LOGIN, payload: response?.data })
 

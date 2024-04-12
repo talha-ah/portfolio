@@ -263,15 +263,8 @@ export const Experiences = [
   },
 ]
 
+// JavaScript, Typescript, React, Next.js, React Native, HTML, CSS, Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, Firestore, Webpack, Babel, CSS-in-JS, AWS, Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH
 export const Skills: SkillType[] = [
-  // {
-  //   title: "Main Stack",
-  //   list: "JavaScript, Typescript, React, Next.js, React Native, HTML, CSS, Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, Firestore, Webpack, Babel, CSS-in-JS, AWS",
-  // },
-  // {
-  //   title: "Others",
-  //   list: "Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH",
-  // },
   {
     title: "Main Stack",
     list: "JavaScript, TypeScript, React, Node.js, Python, MongoDB, PostgreSQL, AWS, GCP",
@@ -327,17 +320,35 @@ export const SkillsAll: SkillType[] = [
 
 export const Projects: ProjectType[] = [
   {
+    slug: "saiy",
+    title: "SAiY",
+    link: "https://electromatic-next.vercel.app",
+    skills:
+      "Node.js, Express.js, Stripe, PostgreSQL (AWS Aurora), AWS, Docker, ChatGPT",
+    role: "Developing a revolutionary platform that leverages GEN AI to redefine communication and interactions.",
+
+    shortDescription:
+      "As a Backend Engineer, developed the platform from scratch, integrating GEN AI APIs to enhance communication and self-expression for users. Managed the DevOps and successfully integrated GEN AI APIs.",
+    description:
+      "For SAiY as a Backend Engineer, I played a key role in developing a revolutionary platform that leverages GEN AI to redefine communication and interactions. SAiY is designed to enhance communication skills, self-expression, and clarity for individuals and businesses. Through my expertise in backend development and integration of GEN AI APIs, I made it possible to overcome communication barriers and empower users to achieve meaningful interactions. Using AWS ECR and ECS, I managed the DevOps and successfully integrated GEN AI APIs. SAiY highlights my ability to leverage cutting-edge technology to drive innovation and deliver impactful solutions that transform user experiences.",
+    highlights: [
+      "Developed the platform from scratch, integrating GEN AI APIs to enhance communication and self-expression for users.",
+      "Managed the DevOps and successfully integrated GEN AI APIs.",
+      "Overcame communication barriers and empowered users to achieve meaningful interactions.",
+    ],
+  },
+  {
     slug: "electromatic-works",
     title: "Electromatic Works",
     link: "https://electromatic-next.vercel.app",
     skills: "React, Next.js, Node.js, Express.js, MongoDB, CI/CD, DevOps",
     role: "Streamlining the customer experience by enabling the users to send product queries without an account.",
 
+    shortDescription:
+      "As a Full Stack Engineer, played a pivotal role in developing a platform for a local business, enabling seamless communication and product showcasing. Implemented CI/CD best practices to streamline deployment and operation.",
     description:
-      "As a Full stack Engineer, developed the platform from scratch, streamlining the product inquiry process by 40% through implementing cart functionality without user registration. Implemented CI/CD best practices to ensure the client can update the platform business details and deploy the changes directly from the Admin Panel.",
-    experience:
-      "At Electromatic Works, I played a pivotal role in developing a platform for a local business, enabling seamless communication and product showcasing. This platform enabled users to contact the business and browse products without the need for an account, streamlining the customer experience. My initiative in suggesting and implementing a cart system without a user authentication, enhanced user experience and client satisfaction, exemplifying my dedication to delivering impactful solutions that meet client needs. I also implemented CI/CD best practices to enable the client to update business details and deploy changes directly from the Admin Panel, further enhancing platform functionality and user experience.",
-    achievements: [
+      "For Electromatic Works, I played a pivotal role in developing a platform for a local business, enabling seamless communication and product showcasing. This platform enabled users to contact the business and browse products without the need for an account, streamlining the customer experience. My initiative in suggesting and implementing a cart system without a user authentication, enhanced user experience and client satisfaction, exemplifying my dedication to delivering impactful solutions that meet client needs. I also implemented CI/CD best practices to enable the client to update business details and deploy changes directly from the Admin Panel, further enhancing platform functionality and user experience.",
+    highlights: [
       "Streamlined product inquiry process by 40% through implementing cart functionality without user registration.",
       "Implemented CI/CD best practices to ensure the client can update the platform business details and deploy the changes directly from the Admin Panel.",
     ],
@@ -349,28 +360,45 @@ export const Projects: ProjectType[] = [
     skills: "React, Next.js, Node.js, Express.js, MongoDB, CI/CD, DevOps",
     role: "Developing a transformative platform tailored for local retail shops, enabling digital transformation and operational efficiency.",
 
-    description:
+    shortDescription:
       "As a Full stack Engineer, developed the platform from scratch, providing local retail shops with a cutting-edge digital platform. Implemented DevOps best practices, ensuring seamless deployment and operation.",
-    experience:
+    description:
       "As the sole developer of Retail Link, I spearheaded the creation of a transformative platform tailored for local retail shops, enabling digital transformation and operational efficiency. Through my expertise in React.js, Next.js, Node.js, and MongoDB, I delivered a user-friendly solution that streamlined order processing and inventory management. My initiative in implementing CI/CD best practices and DevOps methodologies ensured seamless deployment and operation, contributing to the platform's success. Retail Link showcases my ability to leverage technology to drive business growth and deliver impactful solutions that meet client needs.",
-    achievements: [
+    highlights: [
       "Improved order processing efficiency by 30%.",
       "Successfully developed Retail Link from scratch, providing local retail shops with a cutting-edge digital platform.",
       "Implemented DevOps best practices, ensuring seamless deployment and operation.",
     ],
   },
   {
+    slug: "six-wraps",
+    title: "Six Wraps",
+    link: "https://six-wraps.vercel.app",
+    skills: "React, Next.js, Node.js, Express.js, Flutter, MongoDB, AWS",
+    role: "Developing a comprehensive car wrapping platform for the auto services industry.",
+
+    shortDescription:
+      "As a Full Stack Engineer, developed the backend APIs and CMS portal. Implemented CI/CD best practices to streamline deployment and operation.",
+    description:
+      "As a Full Stack Engineer for Six Wraps, I played a key role in developing the backend APIs for the mobile app and CMS portal for the auto services industry. Six Wraps is a platform designed to offer comprehensive car wrapping services, catering to the auto services industry. Through my expertise in Node.js, Express.js, and MongoDB, I developed backend APIs that enabled seamless data management and user interaction. My initiative in implementing CI/CD best practices ensured streamlined deployment and operation, enhancing platform functionality and user experience. Six Wraps highlights my ability to deliver innovative solutions that meet industry-specific needs and drive business growth.",
+    highlights: [
+      "Developed the backend APIs and CMS portal for Six Wraps.",
+      "Implemented CI/CD best practices to streamline deployment and operation.",
+      "Enhanced user experience and platform functionality through efficient data management and user interaction.",
+    ],
+  },
+  {
     slug: "prospects-trading",
     title: "Prospects Trading",
     link: "https://play.google.com/store/apps/details?id=com.si.prospects",
-    skills: "React, Next.js, Node.js, Express.js, MongoDB, AWS, CI/CD, DevOps",
+    skills: "Node.js, Express.js, MongoDB, AWS, CI/CD, DevOps",
     role: "Enabling player engagement in Sports Illustrated tournaments through a sticker trading platform.",
 
+    shortDescription:
+      "As a Backend Engineer, developed the backend APIs and integrated EventConnect APIs, managing the DevOps and successfully integrating EventConnect APIs.",
     description:
-      "As a Full stack Engineer, developed the backend APIs and integrated EventConnect APIs, managing the DevOps and successfully integrating EventConnect APIs.",
-    experience:
-      'In my role as a Backend Engineer for project Prospects Trading, I played a key role in enabling player engagement in "Sports Illustrated" tournaments through a sticker trading platform. This platform allowed users to trade stickers during tournaments, fostering community engagement and excitement. By developing backend APIs and integrating EventConnect APIs, I improved user engagement and experience for tournament participants. My initiative in implementing batch processing and optimizations efficiently overcame API limitations, further enhancing platform functionality. Prospects Trading highlights my ability to leverage technology to create innovative solutions and drive user engagement.',
-    achievements: [
+      "As a Backend Engineer for Prospects Trading, I played a key role in developing backend APIs and integrating EventConnect APIs, enabling player engagement in **Sports Illustrated** tournaments through a sticker trading platform. This platform allowed users to trade stickers during tournaments, fostering community engagement and excitement. My initiative in implementing batch processing and optimizations efficiently overcame API limitations, further enhancing platform functionality. Prospects Trading highlights my ability to leverage technology to create innovative solutions and drive user engagement.",
+    highlights: [
       "Developed the backend APIs and integrated EventConnect APIs.",
       "Worked with EventConnect Team to optimize APIs for faster processing.",
       "Managed the DevOps and introduced batch processing and optimizations to the APIs fetching the event details.",
@@ -383,11 +411,11 @@ export const Projects: ProjectType[] = [
     link: "https://play.google.com/store/apps/details?id=com.sap.webide.x4efb5a44557f416482c43ec9805cc9b6&hl=en&gl=US",
     role: "Simplifying rental processes and enhancing user support for Abdul Ghani Car rental service customers.",
 
-    description:
+    shortDescription:
       "As a Full stack Engineer, developed the backend APIs and integrated SAP APIs, managing the DevOps and successfully integrating SAP APIs.",
-    experience:
+    description:
       "At AAB Engage App, I focused on improving mobile app support and rental accessibility for users. The AAB Engage App is a mobile application designed to simplify rental processes and enhance user support for Abdul Ghani Car rental service customers. Through my expertise in backend development and integration of SAP APIs, I enhanced user support and streamlined rental processes. Despite challenges in integrating SAP APIs, my dedication and problem-solving skills enabled successful implementation, contributing to the app's success. AAB Engage App underscores my ability to overcome challenges and deliver impactful solutions that meet user needs.",
-    achievements: [
+    highlights: [
       "Developed the backend APIs and integrated SAP APIs.",
       "Managed the DevOps and successfully integrated SAP APIs.",
       "Improved my skills in backend development and DevOps.",
@@ -401,11 +429,11 @@ export const Projects: ProjectType[] = [
       "React, React Native, GraphQL, AWS, DynamoDB, AppSync, Amplify, Cognito, CI/CD, DevOps",
     role: "Fostering collaboration among students and empowering them to learn and collaborate effectively.",
 
-    description:
+    shortDescription:
       "As a Full stack Engineer, designed a dynamic Learning Platform, fostering collaboration among users. Pioneered a system for active user engagement, empowering them to create help requests with seamless responsiveness from volunteers.",
-    experience:
+    description:
       "As a Full-Stack Developer on the Owl Express project, I designed a dynamic Learning Platform that fostered collaboration among students. Owl Express is an educational platform designed to facilitate peer-to-peer learning and support. My leadership in implementing OAuth with AWS Cognito and managing real-time updates efficiently underscored my technical prowess and problem-solving skills. I delivered a seamless user experience, empowering students to learn and collaborate effectively.",
-    achievements: [
+    highlights: [
       "Developed the web and mobile application, implementing UI/UX design and the design system.",
       "Integrated DynamoDB using GraphQL and AWS AppSync.",
       "Developed serverless synced data architecture for web and mobile applications.",
@@ -418,11 +446,11 @@ export const Projects: ProjectType[] = [
     link: "http://orgaplansa.com",
     role: "Streamlining resource management and enhancing efficiency for construction firms.",
 
-    description:
+    shortDescription:
       "As a Full stack Engineer, led the project of 5 developers and overcame challenges in integrating visualization tools. Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map. Improved team efficiency by 25%.",
-    experience:
+    description:
       "In my role as a Full-Stack Engineer for Orgaplan, I played a pivotal role in developing a logistic platform for construction firms. Orgaplan is a platform designed to streamline resource management and enhance efficiency for construction companies. Leading a team of five developers, I spearheaded comprehensive analysis and documentation efforts, resulting in a 20% reduction in project iteration cycles. By integrating CanvasJS for construction site visualization, I overcame significant challenges, ultimately contributing to the platform's success. Orgaplan highlights my ability to lead cross-functional teams and deliver outstanding accomplishments in complex projects.",
-    achievements: [
+    highlights: [
       "Led project of 5 developers and overcame challenges in integrating visualization tools.",
       "Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map.",
       "Improved team efficiency by 25%",
@@ -435,11 +463,11 @@ export const Projects: ProjectType[] = [
     skills: "React, React Native, .NET, MongoDB",
     role: "Revolutionizing the driving lesson experience for instructors and students.",
 
-    description:
+    shortDescription:
       "As a Full stack Engineer, developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling. Completed the project successfully, appreciated by the team and the project manager.",
-    experience:
+    description:
       "In my role as a Frontend Developer for Permispop, I led the development of a mobile application using React Native. Permispop is a driving lesson platform that allows driving instructors to manage their students, lessons, and schedules. Through my efforts in integrating a calendar for lesson scheduling and creating user-friendly forms, I significantly enhanced user engagement and experience. Permispop exemplifies my ability to leverage technology to solve real-world problems and deliver impactful solutions in mobile development projects.",
-    achievements: [
+    highlights: [
       "Developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling.",
       "Completed the project successfully, appreciated by the team and the project manager.",
     ],
