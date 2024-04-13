@@ -16,30 +16,23 @@ import {
 
 const styles = {
   root: (snap?: boolean) => ({
-    width: "100%",
     marginTop: "auto",
     ...(snap && { scrollSnapAlign: "start" }),
-    borderTop: (theme: Theme) => `1px solid ${theme.palette.divider}`,
 
     "@media print": {
       display: "none",
     },
   }),
+  borderTop: {
+    borderTop: (theme: Theme) => `1px solid ${theme.palette.divider}`,
+  },
   content: {
-    gap: 8,
+    gap: 6,
     display: "flex",
-    alignItems: {
-      xs: "flex-start",
-      md: "center",
-    },
-    justifyContent: "space-between",
-    flexDirection: {
-      xs: "column",
-      md: "row",
-    },
+    flexDirection: "column",
     padding: {
-      xs: "80px 0",
-      md: "120px 0",
+      xs: "40px 0 20px 0",
+      md: "80px 0 40px 0",
     },
   },
   name: {
@@ -54,20 +47,21 @@ const styles = {
     lineHeight: "1.083em",
   },
   getInTouch: {
-    lineHeight: "1.231em",
+    marginBottom: {
+      xs: "32px",
+      md: "20px",
+    },
     fontSize: {
       xs: "32px",
       md: "52px",
     },
   },
   contacts: {
-    gap: 6,
+    gap: 4,
     display: "flex",
-    marginTop: "40px",
-    flexDirection: {
-      xs: "column",
-      lg: "row",
-    },
+    flexWrap: "wrap",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   contactTitle: {
     fontWeight: 700,
@@ -78,18 +72,13 @@ const styles = {
     letterSpacing: ".06em",
     textTransform: "uppercase",
   },
-  copyright: (theme: Theme) => ({
-    gap: 2,
-    display: "flex",
+  copyright: {
     fontWeight: 400,
     fontSize: "16px",
     padding: "32px 0",
     textAlign: "center",
     lineHeight: "1.667em",
-    justifyContent: "center",
-    flexDirection: { xs: "column", md: "row" },
-    borderTop: `1px solid ${theme.palette.divider}`,
-  }),
+  },
 }
 
 export const Footer = ({
@@ -101,78 +90,78 @@ export const Footer = ({
 }) => {
   return (
     <Box sx={() => styles.root(snap)} component="footer">
-      <Container maxWidth={maxWidth}>
-        <Box sx={styles.content}>
-          <Box>
-            <Typography variant="h6" gutterBottom>
-              <Link
-                sx={styles.name}
-                to={`https://www.linkedin.com/in/${LinkedIn}`}
-              >
-                {Name}
-              </Link>
-            </Typography>
-            <Typography variant="body2" sx={styles.role}>
-              {Experiences[0].role} at {Experiences[0].company}
-            </Typography>
-          </Box>
-          <Box>
-            <Typography
-              variant="body2"
-              fontWeight="bold"
-              sx={styles.getInTouch}
-            >
-              Get in touch
-            </Typography>
-
-            <Box sx={styles.contacts}>
-              <Box>
-                <Typography variant="body2" sx={styles.contactTitle}>
-                  Email me:
-                </Typography>
-
-                <LinkArrow to={`mailto:${Email}`}>{Email}</LinkArrow>
-              </Box>
-              <Box>
-                <Typography variant="body2" sx={styles.contactTitle}>
-                  Call me:
-                </Typography>
-
-                <LinkArrow to={`tel:${Phone}`}>{Phone}</LinkArrow>
-              </Box>
-            </Box>
-
-            <Box sx={styles.contacts}>
-              <Box>
-                <Typography variant="body2" sx={styles.contactTitle}>
-                  LinkedIn:
-                </Typography>
-
-                <LinkArrow
-                  target="_blank"
-                  rel="noreferrer"
+      <Box sx={styles.borderTop}>
+        <Container maxWidth={maxWidth}>
+          <Box sx={styles.content}>
+            <Box>
+              <Typography variant="h6" gutterBottom>
+                <Link
+                  sx={styles.name}
                   to={`https://www.linkedin.com/in/${LinkedIn}`}
                 >
-                  linkedin.com/in/{LinkedIn}
-                </LinkArrow>
-              </Box>
+                  {Name}
+                </Link>
+              </Typography>
+              <Typography variant="body2" sx={styles.role}>
+                {Experiences[0].role} at {Experiences[0].company}
+              </Typography>
+            </Box>
 
-              <Box>
-                <Typography variant="body2" sx={styles.contactTitle}>
-                  GitHub:
-                </Typography>
+            <Box>
+              <Typography variant="h3" sx={styles.getInTouch}>
+                Get in touch
+              </Typography>
 
-                <LinkArrow
-                  to={`https://github.com/${GitHub}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  github.com/{GitHub}
-                </LinkArrow>
+              <Box sx={styles.contacts}>
+                <Box>
+                  <Typography variant="body2" sx={styles.contactTitle}>
+                    Email me:
+                  </Typography>
+
+                  <LinkArrow to={`mailto:${Email}`}>{Email}</LinkArrow>
+                </Box>
+                <Box>
+                  <Typography variant="body2" sx={styles.contactTitle}>
+                    Call me:
+                  </Typography>
+
+                  <LinkArrow to={`tel:${Phone}`}>{Phone}</LinkArrow>
+                </Box>
+
+                <Box>
+                  <Typography variant="body2" sx={styles.contactTitle}>
+                    LinkedIn:
+                  </Typography>
+
+                  <LinkArrow
+                    target="_blank"
+                    rel="noreferrer"
+                    to={`https://www.linkedin.com/in/${LinkedIn}`}
+                  >
+                    linkedin.com/in/{LinkedIn}
+                  </LinkArrow>
+                </Box>
+
+                <Box>
+                  <Typography variant="body2" sx={styles.contactTitle}>
+                    GitHub:
+                  </Typography>
+
+                  <LinkArrow
+                    to={`https://github.com/${GitHub}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    github.com/{GitHub}
+                  </LinkArrow>
+                </Box>
               </Box>
             </Box>
           </Box>
-        </Box>
+        </Container>
+      </Box>
+
+      <Container maxWidth={maxWidth}>
         <Box sx={styles.copyright}>
           Crafted by yours truly using Next.js and Material UI, then launched
           with Vercel. © {new Date().getFullYear()}
