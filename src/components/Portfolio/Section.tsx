@@ -10,7 +10,7 @@ const styles = {
     minHeight: "90vh",
     flexDirection: "column",
     justifyContent: "center",
-    scrollSnapAlign: "start",
+    // scrollSnapAlign: "start",
     p: {
       xs: "130px 0 88px 0",
       md: "160px 0 88px 0",

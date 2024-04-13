@@ -161,12 +161,14 @@ export const Header = ({ maxWidth }: { maxWidth: Width }) => {
               content={({ onClose }) => <Links onClick={onClose} />}
             />
           ) : (
-            <Links />
-          )}
+            <>
+              <Links />
 
-          <Button size="small" onClick={handlePrint}>
-            Resume
-          </Button>
+              <Button size="small" onClick={handlePrint}>
+                Resume
+              </Button>
+            </>
+          )}
         </Box>
 
         <Box display="none">

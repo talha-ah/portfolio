@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material"
 import {
+  ArrowOutward,
   Phone as PhoneIcon,
   Email as EmailIcon,
   GitHub as GitHubIcon,
@@ -221,7 +222,7 @@ const Main = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HeaderLayout snap>
+      <HeaderLayout mb="0">
         <Section id="introduction">
           <Box sx={styles.line} />
 
@@ -406,7 +407,7 @@ const Main = () => {
             <Box key={item.title} mb={4}>
               <Typography variant="h4">
                 <Link to={item.link} target="_blank" rel="noreferrer">
-                  {item.title} &#8599;
+                  {item.title} <ArrowOutward />
                 </Link>
               </Typography>
               <Typography variant="body1" sx={styles.text}>
