@@ -4,12 +4,12 @@ import { ActionType, AuthInitialStateType } from "@utils/types"
 
 export const AuthInitialState: AuthInitialStateType = {
   user: null,
-  redirect: "",
-  loading: true,
   isAuth: false,
-  theme: "light",
   accessToken: "",
   refreshToken: "",
+
+  redirect: "",
+  theme: "light",
   initializing: true,
 }
 
@@ -17,6 +17,7 @@ export const AuthTypes = {
   LOGIN: "LOGIN",
   LOGOUT: "LOGOUT",
   SET_USER: "SET_USER",
+
   SET_THEME: "SET_THEME",
   SET_REDIRECT: "SET_REDIRECT",
   SET_INITIALIZED: "SET_INITIALIZED",
@@ -52,6 +53,7 @@ export const AuthReducer = (
         ...state,
         user: action.payload.user,
       }
+
     case AuthTypes.SET_THEME:
       return {
         ...state,
@@ -67,6 +69,7 @@ export const AuthReducer = (
         ...state,
         initializing: action.payload.initializing,
       }
+
     default:
       return state
   }

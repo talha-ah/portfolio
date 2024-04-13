@@ -322,7 +322,7 @@ export const Projects: ProjectType[] = [
   {
     slug: "saiy",
     title: "SAiY",
-    link: "https://electromatic-next.vercel.app",
+    link: "https://www.saiy.ai",
     skills:
       "Node.js, Express.js, Stripe, PostgreSQL (AWS Aurora), AWS, Docker, ChatGPT",
     role: "Developing a revolutionary platform that leverages GEN AI to redefine communication and interactions.",

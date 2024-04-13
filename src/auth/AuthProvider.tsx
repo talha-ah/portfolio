@@ -37,10 +37,6 @@ export const AuthProvider = ({ children }: { children: any }) => {
     } catch (error: any) {
     } finally {
       if (route !== pathname) router.replace(route)
-      dispatch({
-        type: AuthTypes.SET_INITIALIZED,
-        payload: { initializing: false },
-      })
     }
   }
 

@@ -129,6 +129,7 @@ export const Header = ({ maxWidth }: { maxWidth: Width }) => {
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
+    documentTitle: "Resume - Talha Ahmad - Software Engineer",
     pageStyle: `
       @page {
         size: A4 portrait;

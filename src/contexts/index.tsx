@@ -2,7 +2,7 @@ import { useContext, createContext, useReducer } from "react"
 
 import { AuthInitialState, AuthReducer, AuthTypes } from "./reducers/auth"
 
-const combineReducers = (slices) => (prevState, action) =>
+const combineReducers = (slices: any) => (prevState: any, action: any) =>
   Object.keys(slices).reduce(
     (nextState, nextProp) => ({
       ...nextState,
@@ -11,21 +11,21 @@ const combineReducers = (slices) => (prevState, action) =>
     prevState
   )
 
-const AppReducer = combineReducers({
+const Reducers = combineReducers({
   auth: AuthReducer,
 })
 
-const AppInitialState = {
+const InitialStates = {
   auth: AuthInitialState,
 }
 
 export const AppContext = createContext({
-  state: AppInitialState,
-  dispatch: (arg1) => undefined,
+  state: InitialStates,
+  dispatch: (arg1: any) => undefined,
 })
 
-export const AppProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducer, AppInitialState)
+export const AppProvider = ({ children }: { children: JSX.Element }) => {
+  const [state, dispatch] = useReducer(Reducers, InitialStates)
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>

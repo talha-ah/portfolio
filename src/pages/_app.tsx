@@ -43,15 +43,9 @@ export default function App(props: Readonly<LocalAppProps>) {
             <SnackbarProvider maxSnack={3}>
               <AuthProvider>
                 <AnimatePresence>
-                  {/* if requireAuth property is present - protect the page */}
-                  {Component.requireAuth ? (
-                    <AuthGuard>
-                      <Component {...pageProps} />
-                    </AuthGuard>
-                  ) : (
-                    // public page
+                  <AuthGuard requireAuth={Component.requireAuth}>
                     <Component {...pageProps} />
-                  )}
+                  </AuthGuard>
                 </AnimatePresence>
               </AuthProvider>
             </SnackbarProvider>

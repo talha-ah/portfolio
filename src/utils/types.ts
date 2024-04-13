@@ -21,11 +21,16 @@ export type Freeze<T> = {
 
 export interface AuthStateType {
   isAuth: boolean
-  loading: boolean
-  theme: ThemeMode
 
+  theme: ThemeMode
   redirect: string
   initializing: boolean
+}
+
+export interface LoginResponse {
+  user: User | null
+  accessToken: string
+  refreshToken: string
 }
 
 export interface ActionType {
@@ -99,12 +104,6 @@ export interface DataTableHeader {
   onSort?: () => React.ReactNode[]
   actions?: () => React.ReactNode[]
   render?: (value: any, index: number) => React.ReactNode
-}
-
-export interface LoginResponse {
-  user: User | null
-  accessToken: string
-  refreshToken: string
 }
 
 export interface Location {
