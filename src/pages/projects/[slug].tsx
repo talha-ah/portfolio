@@ -2,7 +2,9 @@ import React from "react"
 import Head from "next/head"
 
 import { Box, Typography } from "@mui/material"
+import { InsertLink, GitHub } from "@mui/icons-material"
 
+import { Link } from "@ui/Link"
 import { Button } from "@ui/Button"
 import { APP_NAME } from "@utils/constants"
 import { HeaderLayout } from "@layouts/index"
@@ -11,27 +13,23 @@ import { Section } from "@components/Portfolio/Section"
 import { ProjectType } from "@components/Portfolio/types"
 
 const styles = {
-  root: {},
-  header: {
-    width: "100%",
-    display: "flex",
-    alignItems: "center",
-    marginBottom: "1rem",
-    justifyContent: "space-between",
+  name: {
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: "24px",
   },
   text: {
     marginBottom: "24px",
-    lineHeight: "1.785em",
+    lineHeight: "1.667em",
     color: "text.secondary",
-    fontSize: "clamp(14px, 4vw, 16px)",
+    fontSize: "clamp(14px, 4vw, 20px)",
   },
-  skill: {
-    fontWeight: "400",
-    marginRight: "15px",
-    lineHeight: "1.75em",
+  icons: {
+    gap: 4,
+    display: "flex",
+    fontSize: "24px",
     color: "text.secondary",
-    display: "inline-block",
-    fontSize: "clamp(14px, 4vw, 16px)",
+    justifyContent: "center",
   },
 }
 
@@ -45,39 +43,54 @@ const Page = ({ project }: { project: ProjectType }) => {
       </Head>
 
       <HeaderLayout mb="0">
-        <Section title={project.title}>
-          <Box sx={styles.root}>
-            <Box sx={styles.text}>
-              <strong>Tech Stack:</strong>&nbsp;
-              {project.skills}
-            </Box>
+        <Section>
+          <Typography variant="h1" sx={styles.name}>
+            {project.title}
+          </Typography>
 
-            <Typography variant="h3" sx={styles.text}>
-              <strong>Role:</strong> {project.role}
-            </Typography>
-
-            <Typography variant="body1" sx={styles.text}>
-              <strong>Description:</strong> {project.shortDescription}
-            </Typography>
-
-            <Typography variant="body1" sx={styles.text}>
-              <strong>Experience:</strong> {project.description}
-            </Typography>
-
-            <Typography variant="body1" sx={styles.text}>
-              <strong>Highlights</strong>
-
-              <ul>
-                {project.highlights.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </Typography>
-
-            <Button to="/projects" sx={{ mt: 8 }}>
-              All Projects
-            </Button>
+          <Box sx={styles.text}>
+            <strong>Tech Stack:</strong>&nbsp;
+            {project.skills}
           </Box>
+
+          <Typography variant="h3" sx={styles.text}>
+            <strong>Role:</strong> {project.role}
+          </Typography>
+
+          <Typography variant="body1" sx={styles.text}>
+            <strong>Description:</strong> {project.shortDescription}
+          </Typography>
+
+          <Typography variant="body1" sx={styles.text}>
+            <strong>Experience:</strong> {project.description}
+          </Typography>
+
+          <Typography variant="body1" sx={styles.text}>
+            <strong>Highlights</strong>
+
+            <ul>
+              {project.highlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </Typography>
+
+          <Box sx={styles.icons}>
+            <Link target="_blank" rel="noreferrer" to={project.link}>
+              <InsertLink />
+            </Link>
+            {/* <Link
+              target="_blank"
+              rel="noreferrer"
+              to={`https://github.com/${GitHub}`}
+            >
+              <GitHub />
+            </Link> */}
+          </Box>
+
+          <Button to="/projects" sx={{ mt: 8 }}>
+            All Projects
+          </Button>
         </Section>
       </HeaderLayout>
     </>
