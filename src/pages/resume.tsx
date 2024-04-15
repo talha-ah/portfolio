@@ -1,5 +1,5 @@
 import Head from "next/head"
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useReactToPrint } from "react-to-print"
 
 import { Box, Theme, ButtonGroup, Container } from "@mui/material"
@@ -7,7 +7,7 @@ import { Print, NavigateNext, NavigateBefore, Edit } from "@mui/icons-material"
 
 import { Dialog } from "@ui/Dialog"
 import { Button } from "@ui/Button"
-import { UpdateSkills } from "@forms/resume"
+import { UpdateResume } from "@forms/resume"
 import { HeaderLayout } from "@layouts/index"
 import { SkillType } from "@components/Portfolio/types"
 import { jobs, Skills } from "@components/Portfolio/data"
@@ -16,7 +16,7 @@ import { OneColumn, TwoColumn } from "@components/Resume"
 const BASE_FONT_SIZE = "11px"
 
 const styles = {
-  content: (theme: Theme, fontFamily: string) => ({
+  content: (theme: Theme) => ({
     margin: "auto",
     padding: "44px 44px",
 
@@ -26,8 +26,8 @@ const styles = {
     borderRadius: "1rem",
     border: `4px solid ${theme.palette.secondary.main}`,
 
-    fontFamily: fontFamily,
     fontSize: BASE_FONT_SIZE,
+    fontFamily: "Cambria, serif",
     color: theme.palette.common.black,
     backgroundColor: theme.palette.common.white,
 
@@ -60,24 +60,14 @@ const styles = {
   },
 }
 
-interface Props {
-  index: number
-  fontFamily: string
-  setIndex: (args: any) => void
-  setResumeType: (args: any) => void
-  component: React.ForwardRefExoticComponent<any>
-}
+const Resume = () => {
+  const [index, setIndex] = useState(0)
 
-const ResumeContent = ({
-  index,
-  setIndex,
-  component,
-  fontFamily,
-  setResumeType,
-}: Props) => {
-  const componentRef = useRef(null)
-
+  const [resumeType, setResumeType] = useState(0)
+  const [role, setRole] = useState<string>(jobs[index])
   const [skills, setSkills] = useState<SkillType[]>(Skills)
+
+  const componentRef = useRef<any>(null)
 
   const onSwitch = () => {
     setResumeType((prev: any) => (prev + 1) % 2)
@@ -108,7 +98,7 @@ const ResumeContent = ({
         max-height: 1122.24px;
 
         color: black !important;
-        font-family: ${fontFamily};
+        font-family: Cambria, serif;
         background-color: white !important;
         font-size: ${BASE_FONT_SIZE} !important;
       }
@@ -125,99 +115,84 @@ const ResumeContent = ({
     onAfterPrint: () => {
       onNext()
     },
-    print: async (iFrame: HTMLIFrameElement) => {
-      //github.com/gregnb/react-to-print/issues/484
-      if (iFrame) {
-        const fd = iFrame.contentDocument
-        if (fd) {
-          // const html = fd.getElementsByTagName("html")
-        }
-      }
-
-      window.print()
-    },
+    // print: async (iFrame: HTMLIFrameElement) => {
+    //   //github.com/gregnb/react-to-print/issues/484
+    //   if (iFrame) {
+    //     const fd = iFrame.contentDocument
+    //     if (fd) {
+    //       const html = fd.getElementsByTagName("html")
+    //     }
+    //   }
+    // },
   })
 
-  const ResumeComponent = component
-
-  return (
-    <Container maxWidth="xl">
-      <Box sx={styles.buttons}>
-        <Dialog
-          title="Skills"
-          trigger={({ toggleOpen }) => (
-            <Button startIcon={<Edit />} onClick={toggleOpen}>
-              Edit
-            </Button>
-          )}
-          content={({ onClose }) => (
-            <UpdateSkills
-              skills={skills}
-              onClose={onClose}
-              onSubmit={setSkills}
-            />
-          )}
-        />
-
-        <ButtonGroup size="small" aria-label="print-actions">
-          <Button onClick={onPrevious} startIcon={<NavigateBefore />}>
-            Previous
-          </Button>
-          <Button onClick={onNext} endIcon={<NavigateNext />}>
-            Next
-          </Button>
-        </ButtonGroup>
-        <Button onClick={onSwitch}>Switch Resume</Button>
-
-        <Button onClick={handlePrint} startIcon={<Print />}>
-          Print
-        </Button>
-      </Box>
-
-      <Box sx={(theme) => styles.content(theme, fontFamily)}>
-        <ResumeComponent
-          index={index}
-          ref={componentRef}
-          skills={skills.filter(({ list }) => list)} // Filter out empty skills
-        />
-      </Box>
-    </Container>
-  )
-}
-
-const Resume = () => {
-  const [index, setIndex] = useState(0)
-  const [resumeType, setResumeType] = useState(0)
+  useEffect(() => {
+    setRole(jobs[index])
+  }, [index])
 
   return (
     <>
       <Head>
-        <title>Talha Ahmad - {jobs[index]} Engineer</title>
+        <title>Talha Ahmad - {role}</title>
 
         <meta name="author" content="Talha Ahmad" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          name="description"
-          content={`Resume - Talha Ahmad - ${jobs[index]} Engineer`}
-        />
+        <meta name="description" content={`Resume - Talha Ahmad - ${role}`} />
         <meta
           name="keywords"
-          content={`resume,cv,Talha Ahmad,${jobs.join(
-            " Developer, "
-          )}, ${jobs.join(" Engineer, ")}`}
+          content={`resume,cv,Talha Ahmad,${jobs.join(", ")}`}
         />
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <HeaderLayout>
-        <ResumeContent
-          index={index}
-          setIndex={setIndex}
-          fontFamily="Cambria, serif"
-          setResumeType={setResumeType}
-          component={resumeType === 0 ? OneColumn : TwoColumn}
-        />
+        <Container maxWidth="xl">
+          <Box sx={styles.buttons}>
+            <Dialog
+              width="xl"
+              title="Profile"
+              trigger={({ toggleOpen }) => (
+                <Button startIcon={<Edit />} onClick={toggleOpen}>
+                  Edit
+                </Button>
+              )}
+              content={({ onClose }) => (
+                <UpdateResume
+                  onClose={onClose}
+                  data={{ role, skills }}
+                  onSubmit={(value) => {
+                    setRole(value.role)
+                    setSkills(value.skills)
+                  }}
+                />
+              )}
+            />
+
+            <ButtonGroup size="small" aria-label="print-actions">
+              <Button onClick={onPrevious} startIcon={<NavigateBefore />}>
+                Previous
+              </Button>
+              <Button onClick={onNext} endIcon={<NavigateNext />}>
+                Next
+              </Button>
+            </ButtonGroup>
+
+            <Button onClick={onSwitch}>Switch Resume</Button>
+
+            <Button onClick={handlePrint} startIcon={<Print />}>
+              Print
+            </Button>
+          </Box>
+
+          <Box sx={styles.content}>
+            {resumeType === 0 ? (
+              <OneColumn ref={componentRef} role={role} skills={skills} />
+            ) : (
+              <TwoColumn ref={componentRef} role={role} skills={skills} />
+            )}
+          </Box>
+        </Container>
       </HeaderLayout>
     </>
   )

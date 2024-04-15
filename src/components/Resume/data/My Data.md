@@ -10,11 +10,23 @@ Frontend Engineer recognized for delivering top-tier solutions and proven expert
 
 ## Professional Experiences
 
-### Software Engineer
+### Senior Software Engineer
 
-Jan 2023 - Present | NTT DATA & GiffGaff
+Jan 2021 - Present | Skupreme
 
-Description: Worked as Backend and DevOp Engineer to eliminate friction for eCommerce brand managers by automating catalogue and supply chain operations across various marketplaces. I made things smoother for e-commerce brand managers by automating tasks as a Backend and Devops Engineer. My work made operations more efficient, saving time and boosting productivity for everyone involved. I'm proud to have achieved these positive changes in the e-commerce world.
+Role: Backend and DevOps Engineer
+
+Tech Stack: Node.js, Express.js, React.js, Next.js, MongoDB, AI, AWS, Serverless
+
+About Company: Skupreme is a supply chain management platform for automated e-commerce to reduce errors, streamline pricing, stock levels, and identify the most efficient supply chain to help the suppliers and product owners to sell more and dominate their market. It allows the users to merge listings from all marketplaces to create one centralized catalog, end-to-end Supply Chain Management, integrated with all major shipping providers for streamlined product stock levels, precise inventory predictions by analyzing all the data to predict and generate purchase orders, eliminating the guesswork from ordering.
+
+Description: I worked as a Full Stack Software Engineer including Backend and DevOps Engineer and worked on the core features and functionality like authentication/authorization, user/organization management, multi tenancy, subscriptions, catalog, orders, purchase orders, work orders, wholesaler invoices. I integrated stripe and plaid for label purchasing and platform subscriptions, and shipping couriers like USPS, UPS, fedex, DHL and Royal Mail to get rate quotes and labels for the fulfillment of the customer orders. I also integrated Google, USPS and FedEx Address APIs for address validation which is being used by other teams across the organization. I also worked on the DevOps side to automate the deployment process and make it more efficient. I was also responsible for the optimization of the backend APIs for improved performance and scalability. I collaborated with the team members to deliver high-quality software solutions.
+
+I Worked as Backend and DevOp Engineer to eliminate friction for eCommerce brand managers by automating catalogue and supply chain operations across various marketplaces. I made things smoother for e-commerce brand managers by automating tasks as a Backend and Devops Engineer. My work made operations more efficient, saving time and boosting productivity for everyone involved. I'm proud to have achieved these positive changes in the e-commerce world. Enhanced operational efficiency for e-commerce brand managers by automating tasks as a Backend and DevOps Engineer. My contributions streamlined processes, resulting in significant time savings and increased productivity across the board.
+
+### Senior Software Engineer
+
+Jan 2023 - Mar 2024 | NTT DATA & GiffGaff
 
 - Published over 10 React components to the internal design library, standardizing UI elements across teams and ensuring consistency in design implementation.
 
@@ -27,18 +39,6 @@ Description: Worked as Backend and DevOp Engineer to eliminate friction for eCom
 - Engineered a scalable microservices architecture that supported a 50% increase in product service loads, leveraging containerization with Docker to ensure high availability and efficient resource utilization.
 
 - Created onboarding documentation for new employees that was used to onboard 5 employees. Provided mentorship and guidance to junior engineers, resulting in a 30% increase in team productivity.
-
-### Software Engineer
-
-Jan 2021 - Dec 2022 | Skupreme
-
-- Boosted the application's functionality and speed by 30%, resulting in a more than $2M increase in value through the implementation of advanced strategies and techniques.
-
-- Engineered scalable frameworks, implementing best-in-class design principles, achieving and enhanced overall performance metrics by 25%.
-
-- Orchestrated client collaboration, facilitating demos, and resolving challenges in real-time, resulting in a seamless project development process and a 30% boost in client satisfaction ratings.
-
-- Provided mentorship to the junior engineers, and guidance to colleagues on best practices and methodologies, developing new and optimizing existing features in a standardized and efficient manner.
 
 ### Full Stack Developer
 

@@ -8,25 +8,27 @@ Software Engineer recognized for delivering top-tier solutions and proven expert
 
 ## Professional Experience
 
-### Software Engineer
+### Senior Software Engineer
 
-_Jan 2023 - Present | NTT DATA & GiffGaff_
+_Jan 2021 - Present | Skupreme_
 
-- Leadership: Stepped up to manage team lead responsibilities during the urgent absense of the team lead, effectively coordinating tasks and ensuring project continuity, earning recognition from project and engineering managers for professionalism and leadership.
+- Leadership: Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a 30% increase in client satisfaction ratings.
+- Innovation: Developed a dynamic multi-tenant architecture, reducing integration time by 25% and boosting platform reliability by 20%, solidifying Skupreme's position as an e-commerce automation leader.
+- Collaboration: Collaborated with teams to integrate address validation APIs, reducing errors by 30% and improving shipping accuracy by 15%, driving operational excellence for Skupreme's clients.
+- Optimization: Implemented advanced backend API optimizations, reducing response times by 40% and increasing concurrent user capacity by 25%, enhancing user experience and platform competitiveness.
+- Efficiency: Engineered scalable microservices architecture, cutting deployment times by 50%, and ensuring uninterrupted service during updates, enhancing operational efficiency and customer satisfaction.
+- Strategic Integration: Orchestrated seamless integration of payment gateways, driving a 30% increase in transaction success rates and substantial revenue growth for Skupreme's clientele.
+- Mentorship: Mentored junior engineers, fostering a culture of innovation and excellence, resulting in standardized and efficient development practices across the organization.
+
+### Senior Software Engineer
+
+_Jan 2023 - Mar 2024 | NTT DATA & GiffGaff_
+
+- Leadership: Stepped up to manage team lead responsibilities during the urgent absence of the team lead, effectively coordinating tasks and ensuring project continuity, earning recognition from project and engineering managers for professionalism and leadership.
 - Collaboration: Worked with various teams to understand their component usage needs, updating and optimizing components to support diverse requirements, resulting in increased efficiency and satisfaction across teams.
 - Efficiency: Spearheaded contract plan design implementation, resulting in a 20% increase in giffgaff service offerings and more than a million in revenue.
 - Innovation: Developed and published over 10 React components to the internal design library, standardizing UI elements across teams and ensuring consistency in design implementation.
-- Impact: Engineered a scalable microservices architecture, supporting a 25% increase in product service loads.
-- Mentorship: Created onboarding documentation for new employees that was used to onboard 5 employees. Provided mentorship and guidance to junior engineers, resulting in a 30% increase in team productivity.
-
-### Software Engineer
-
-_Jan 2021 - Dec 2022 | Skupreme_
-
-- Leadership: Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a 30% increase in client satisfaction ratings.
-- Impact: Enhanced application functionality and speed by 30%, adding $2M in value through advanced strategies and techniques.
-- Efficiency: Engineered scalable frameworks, implementing best-in-class design principles, achieving overall performance metrics by 25%.
-- Mentorship: Mentored junior engineers on best practices, methodologies, and feature optimization for standardized and efficient development.
+- Mentorship: Created on boarding documentation for new employees that was used to onboard 5 employees. Provided mentorship and guidance to junior engineers, resulting in a 30% increase in team productivity.
 
 ### Full Stack Developer
 

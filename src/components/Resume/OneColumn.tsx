@@ -13,7 +13,6 @@ import { Box, Grid, Theme, Typography } from "@mui/material"
 
 import { SkillType } from "../Portfolio/types"
 import {
-  jobs,
   Phone,
   Email,
   Skills,
@@ -124,10 +123,10 @@ const styles = {
 export const Resume = forwardRef(
   (
     {
-      index = 0,
+      role = "Software Engineer",
       skills = Skills.filter(({ list }) => list),
     }: {
-      index?: number
+      role?: string
       skills?: SkillType[]
     },
     ref
@@ -168,7 +167,7 @@ export const Resume = forwardRef(
 
           {/* Summary */}
           <Typography sx={styles.text}>
-            {jobs[index]} {Summary}
+            {role} {Summary}
           </Typography>
         </Box>
 

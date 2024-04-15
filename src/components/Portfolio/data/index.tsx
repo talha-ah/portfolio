@@ -53,17 +53,17 @@ export const HighlightedWords = [
 ]
 
 export const jobs = [
-  "Software",
-  "Full Stack",
-  "Backend",
-  "Frontend",
-  "Javascript",
+  "Software Engineer",
+  "Full Stack Developer",
+  "Backend Developer",
+  "Frontend Developer",
+  "Javascript Developer",
 ]
 
 export const Summary = (
   <>
-    Engineer recognized for delivering top-tier solutions and proven expertise
-    in JavaScript and Python, with a keen eye for a healthy degree of
+    recognized for delivering top-tier solutions and proven expertise in
+    JavaScript and Python, with a keen eye for a healthy degree of
     perfectionism. Led a team of <strong>5-6</strong> engineers successfully in
     agile project environments, contributing to the success of projects valued
     between <strong>$5M</strong> to <strong>$7M</strong>. Adept at driving
@@ -73,8 +73,70 @@ export const Summary = (
 
 export const Experiences = [
   {
+    company: "Skupreme",
+    role: "Senior Software Engineer",
+    location: "Miami, US (Remote)",
+    logos: [
+      {
+        logo: <Skupreme key="skupreme" />,
+        link: "https://skupreme.com",
+      },
+    ],
+    duration: {
+      start: {
+        year: "2021",
+        month: "January",
+      },
+      end: null,
+    },
+    skills:
+      "Javascript, Next.js, Node.js, Express.js, MongoDB, AWS, Serverless, Automation, Package management, Agile",
+    description: [
+      <>
+        <strong>Leadership:</strong> Led client collaboration, conducted demos,
+        and addressed challenges for seamless project development, leading to a{" "}
+        <strong>30%</strong> increase in client satisfaction ratings.
+      </>,
+      <>
+        <strong>Innovation:</strong> Developed a dynamic multi-tenant
+        architecture, reducing integration time by <strong>25%</strong> and
+        boosting platform reliability by <strong>20%</strong>, solidifying
+        Skupreme&apos;s position as an e-commerce automation leader.
+      </>,
+      <>
+        <strong>Collaboration:</strong> Collaborated with teams to integrate
+        address validation APIs, reducing errors by <strong>30%</strong> and
+        improving shipping accuracy by <strong>15%</strong>, driving operational
+        excellence for Skupreme&apos;s clients.
+      </>,
+      <>
+        <strong>Optimization:</strong> Implemented advanced backend API
+        optimizations, reducing response times by <strong>40%</strong> and
+        increasing concurrent user capacity by <strong>25%</strong>, enhancing
+        user experience and platform competitiveness.
+      </>,
+      <>
+        <strong>Efficiency:</strong> Engineered scalable microservices
+        architecture, cutting deployment times by <strong>50%</strong>, and
+        ensuring uninterrupted service during updates, enhancing operational
+        efficiency and customer satisfaction.
+      </>,
+      <>
+        <strong>Strategic Integration:</strong> Orchestrated seamless
+        integration of payment gateways, driving a <strong>30%</strong> increase
+        in transaction success rates and substantial revenue growth for
+        Skupreme&apos;s clientele.
+      </>,
+      <>
+        <strong>Mentorship:</strong> Mentored junior engineers, fostering a
+        culture of innovation and excellence, resulting in standardized and
+        efficient development practices across the organization.
+      </>,
+    ],
+  },
+  {
     company: "NTT DATA & GiffGaff",
-    role: "Software Engineer",
+    role: "Senior Software Engineer",
     location: "London, UK",
     logos: [
       {
@@ -91,14 +153,17 @@ export const Experiences = [
         year: "2023",
         month: "January",
       },
-      end: null,
+      end: {
+        year: "2024",
+        month: "March",
+      },
     },
     skills:
       "Javascript, React, Next.js, PHP, PostgreSQL, AWS, Airtime Hypernova, Jenkins, Elastic Search, Agile",
     description: [
       <>
         <strong>Leadership:</strong> Stepped up to manage team lead
-        responsibilities during the urgent absense of the team lead, effectively
+        responsibilities during the urgent absence of the team lead, effectively
         coordinating tasks and ensuring project continuity, earning recognition
         from project and engineering managers for professionalism and
         leadership.
@@ -121,60 +186,10 @@ export const Experiences = [
         design implementation.
       </>,
       <>
-        <strong>Impact:</strong> Engineered a scalable microservices
-        architecture, supporting a <strong>25%</strong> increase in product
-        service loads.
-      </>,
-      <>
-        <strong>Mentorship:</strong> Created onboarding documentation for new
+        <strong>Mentorship:</strong> Created on boarding documentation for new
         employees that was used to onboard <strong>5</strong> employees.
         Provided mentorship and guidance to junior engineers, resulting in a{" "}
         <strong>30%</strong> increase in team productivity.
-      </>,
-    ],
-  },
-  {
-    company: "Skupreme",
-    role: "Software Engineer",
-    location: "Miami, US (Remote)",
-    logos: [
-      {
-        logo: <Skupreme key="skupreme" />,
-        link: "https://skupreme.com",
-      },
-    ],
-    duration: {
-      start: {
-        year: "2021",
-        month: "January",
-      },
-      end: {
-        year: "2022",
-        month: "December",
-      },
-    },
-    skills:
-      "Javascript, Next.js, Node.js, Express.js, MongoDB, AWS, Serverless, Automation, Package management, Agile",
-    description: [
-      <>
-        <strong>Leadership:</strong> Led client collaboration, conducted demos,
-        and addressed challenges for seamless project development, leading to a{" "}
-        <strong>30%</strong> increase in client satisfaction ratings.
-      </>,
-      <>
-        <strong>Impact:</strong> Enhanced application functionality and speed by{" "}
-        <strong>30%</strong>, adding <strong>$2M</strong> in value through
-        advanced strategies and techniques.
-      </>,
-      <>
-        <strong>Efficiency:</strong> Engineered scalable frameworks,
-        implementing best-in-class design principles, achieving and enhanced
-        overall performance metrics by <strong>25%</strong>.
-      </>,
-      <>
-        <strong>Mentorship:</strong> Mentored junior engineers on best
-        practices, methodologies, and feature optimization for standardized and
-        efficient development.
       </>,
     ],
   },
@@ -226,41 +241,41 @@ export const Experiences = [
       </>,
     ],
   },
-  {
-    company: "Freelancer",
-    location: "Lahore, PK",
-    role: "Full Stack Developer",
-    logos: [
-      {
-        logo: <Si key="Sports Illustrated" />,
-        link: "https://www.si.com",
-      },
-    ],
-    duration: {
-      start: {
-        year: "2018",
-        month: "October",
-      },
-      end: {
-        year: "2020",
-        month: "May",
-      },
-    },
-    skills:
-      "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, AWS, Lambda, EC2",
-    description: [
-      <>
-        <strong>Excellence:</strong> Maintained consistent{" "}
-        <strong>5-star</strong> ratings for project deliverables across{" "}
-        <strong>10+</strong> diverse projects.
-      </>,
-      <>
-        <strong>Efficiency:</strong> Delivered tailored web applications across
-        diverse industries, ensuring seamless user experiences and optimal
-        performance.
-      </>,
-    ],
-  },
+  // {
+  //   company: "Freelancer",
+  //   location: "Lahore, PK",
+  //   role: "Full Stack Developer",
+  //   logos: [
+  //     {
+  //       logo: <Si key="Sports Illustrated" />,
+  //       link: "https://www.si.com",
+  //     },
+  //   ],
+  //  duration: {
+  //    start: {
+  //       year: "2018",
+  //       month: "October",
+  //     },
+  //     end: {
+  //       year: "2020",
+  //      month: "May",
+  // //     },
+  //  },
+  //   skills:
+  //     "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, AWS, Lambda, EC2",
+  //   description: [
+  //     <>
+  //       <strong>Excellence:</strong> Maintained consistent{" "}
+  //      <strong>5-star</strong> ratings for project deliverables across{" "}
+  //       <strong>10+</strong> diverse projects.
+  //  </>,
+  //        <>
+  //    <strong>Efficiency:</strong> Delivered tailored web applications across
+  //    diverse industries, ensuring seamless user experiences and optimal
+  //       performance.
+  //      </>,
+  //   ],
+  //  },
 ]
 
 // JavaScript, Typescript, React, Next.js, React Native, HTML, CSS, Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, Firestore, Webpack, Babel, CSS-in-JS, AWS, Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH
