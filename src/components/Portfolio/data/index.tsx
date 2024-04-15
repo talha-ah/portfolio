@@ -241,41 +241,42 @@ export const Experiences = [
       </>,
     ],
   },
-  // {
-  //   company: "Freelancer",
-  //   location: "Lahore, PK",
-  //   role: "Full Stack Developer",
-  //   logos: [
-  //     {
-  //       logo: <Si key="Sports Illustrated" />,
-  //       link: "https://www.si.com",
-  //     },
-  //   ],
-  //  duration: {
-  //    start: {
-  //       year: "2018",
-  //       month: "October",
-  //     },
-  //     end: {
-  //       year: "2020",
-  //      month: "May",
-  // //     },
-  //  },
-  //   skills:
-  //     "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, AWS, Lambda, EC2",
-  //   description: [
-  //     <>
-  //       <strong>Excellence:</strong> Maintained consistent{" "}
-  //      <strong>5-star</strong> ratings for project deliverables across{" "}
-  //       <strong>10+</strong> diverse projects.
-  //  </>,
-  //        <>
-  //    <strong>Efficiency:</strong> Delivered tailored web applications across
-  //    diverse industries, ensuring seamless user experiences and optimal
-  //       performance.
-  //      </>,
-  //   ],
-  //  },
+  {
+    hidden: true,
+    company: "Freelancer",
+    location: "Lahore, PK",
+    role: "Full Stack Developer",
+    logos: [
+      {
+        logo: <Si key="Sports Illustrated" />,
+        link: "https://www.si.com",
+      },
+    ],
+    duration: {
+      start: {
+        year: "2018",
+        month: "October",
+      },
+      end: {
+        year: "2020",
+        month: "May",
+      },
+    },
+    skills:
+      "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, AWS, Lambda, EC2",
+    description: [
+      <>
+        <strong>Excellence:</strong> Maintained consistent{" "}
+        <strong>5-star</strong> ratings for project deliverables across{" "}
+        <strong>10+</strong> diverse projects.
+      </>,
+      <>
+        <strong>Efficiency:</strong> Delivered tailored web applications across
+        diverse industries, ensuring seamless user experiences and optimal
+        performance.
+      </>,
+    ],
+  },
 ]
 
 // JavaScript, Typescript, React, Next.js, React Native, HTML, CSS, Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, Firestore, Webpack, Babel, CSS-in-JS, AWS, Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH

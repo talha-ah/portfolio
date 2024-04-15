@@ -175,7 +175,7 @@ export const Resume = forwardRef(
         <Box>
           <Typography sx={styles.title}>EXPERIENCES</Typography>
 
-          {Experiences.map((item, index) => (
+          {Experiences.filter((item) => !item.hidden).map((item, index) => (
             <Box sx={{ my: 1 }} key={index} mb={5}>
               <Typography sx={styles.subtitle} fontWeight={800}>
                 {item.role} | {item.company} | {item.location} |{" "}

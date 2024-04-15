@@ -219,7 +219,7 @@ export const Resume = forwardRef(
             <Box sx={styles.section}>
               <Typography sx={styles.heading}>Projects</Typography>
 
-              {Projects.slice(0, 4).map((item, index) => (
+              {Projects.slice(0, 3).map((item, index) => (
                 <Box sx={styles.box} key={index}>
                   <Box>
                     <Typography
@@ -291,40 +291,6 @@ export const Resume = forwardRef(
                 </Box>
               ))}
             </Box>
-          </Grid>
-
-          {/* Right Column */}
-          <Grid item xs={6}>
-            {/* Experience */}
-            <Box sx={styles.section}>
-              <Typography sx={styles.heading}>
-                Professional Experience
-              </Typography>
-
-              {Experiences.slice(0, 3).map((item, index) => (
-                <Box sx={styles.box} key={index}>
-                  <Typography sx={styles.title}>{item.role}</Typography>
-                  <Typography sx={styles.subtitle}>
-                    {item.company} | {item.duration.start.month.substring(0, 3)}{" "}
-                    {item.duration.start.year} -{" "}
-                    {item.duration.end
-                      ? `${item.duration.end.month.substring(0, 3)} ${
-                          item.duration.end.year
-                        }`
-                      : "Present"}
-                  </Typography>
-
-                  <Box component="ul" sx={styles.list}>
-                    {item.description.map((desc, index) => (
-                      <Box component="li" sx={styles.listItem} key={index}>
-                        <FiberManualRecord fontSize="small" />
-                        <Typography sx={styles.text}>{desc}</Typography>
-                      </Box>
-                    ))}
-                  </Box>
-                </Box>
-              ))}
-            </Box>
 
             {/* Skills */}
             <Box sx={styles.section}>
@@ -338,6 +304,43 @@ export const Resume = forwardRef(
                   </Typography>
                 </Box>
               ))}
+            </Box>
+          </Grid>
+
+          {/* Right Column */}
+          <Grid item xs={6}>
+            {/* Experience */}
+            <Box sx={styles.section}>
+              <Typography sx={styles.heading}>
+                Professional Experience
+              </Typography>
+
+              {Experiences.filter((item) => !item.hidden)
+                .slice(0, 3)
+                .map((item, index) => (
+                  <Box sx={styles.box} key={index}>
+                    <Typography sx={styles.title}>{item.role}</Typography>
+                    <Typography sx={styles.subtitle}>
+                      {item.company} |{" "}
+                      {item.duration.start.month.substring(0, 3)}{" "}
+                      {item.duration.start.year} -{" "}
+                      {item.duration.end
+                        ? `${item.duration.end.month.substring(0, 3)} ${
+                            item.duration.end.year
+                          }`
+                        : "Present"}
+                    </Typography>
+
+                    <Box component="ul" sx={styles.list}>
+                      {item.description.map((desc, index) => (
+                        <Box component="li" sx={styles.listItem} key={index}>
+                          <FiberManualRecord fontSize="small" />
+                          <Typography sx={styles.text}>{desc}</Typography>
+                        </Box>
+                      ))}
+                    </Box>
+                  </Box>
+                ))}
             </Box>
           </Grid>
         </Grid>
