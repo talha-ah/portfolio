@@ -11,7 +11,7 @@ export const Name = "Talha Ahmed"
 export const LinkedIn = "talha-ah"
 export const Location = "London, UK"
 export const Phone = "+44 794-643-4693"
-export const Email = "talha1392.ahmed@gmail.com"
+export const Email = "talha.ah08@gmail.com"
 export const LocationLink = "https://maps.app.goo.gl/qKhcWwXKXbewqidB7"
 
 // Words to be highlighted in the resume

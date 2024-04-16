@@ -1,6 +1,6 @@
 # Talha Ahmad
 
-Email: talha1392.ahmed@gmail.com | Phone: +44 794-643-4693 | LinkedIn: talha-ah | GitHub: talha-ah
+Email: talha.ah08@gmail.com | Phone: +44 794-643-4693 | LinkedIn: talha-ah | GitHub: talha-ah
 
 ## Summary
 
