@@ -1,8 +1,8 @@
 import * as React from "react"
 import { useState, useEffect } from "react"
 
+import { Forward } from "@mui/icons-material"
 import { Box, Fab, Theme } from "@mui/material"
-import { KeyboardArrowUp } from "@mui/icons-material"
 
 import { Header } from "./Header"
 import { Footer } from "./Footer"
@@ -24,7 +24,6 @@ const styles = {
       }),
   }),
   fab: (visibility: boolean) => ({
-    display: "block",
     position: "fixed",
     transition: "all 0.5s ease",
     opacity: visibility ? 1 : 0,
@@ -32,6 +31,10 @@ const styles = {
     bottom: (theme: Theme) => theme.spacing(3),
     zIndex: (theme: Theme) => theme.zIndex.fab,
     pointerEvents: visibility ? "auto" : "none",
+
+    "& svg": {
+      transform: "rotate(-90deg)",
+    },
   }),
 }
 
@@ -77,7 +80,7 @@ export const HeaderLayout = ({
         sx={() => styles.fab(fabVisibility)}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
-        <KeyboardArrowUp />
+        <Forward />
       </Fab>
     </Box>
   )

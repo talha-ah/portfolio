@@ -35,7 +35,7 @@ const Page = () => {
           <Section id="projects" title="Projects">
             <Grid container spacing={2}>
               {Projects.map((item) => (
-                <Grid key={item.title} item xs={12} sm={6} md={4}>
+                <Grid key={item.title} item xs={12} md={6} lg={4}>
                   <Project project={item} />
                 </Grid>
               ))}
