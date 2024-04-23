@@ -54,10 +54,10 @@ export const HighlightedWords = [
 
 export const jobs = [
   "Software Engineer",
-  "Full Stack Developer",
-  "Backend Developer",
-  "Frontend Developer",
-  "Javascript Developer",
+  "Full Stack Engineer",
+  "Backend Engineer",
+  "Frontend Engineer",
+  "Javascript Engineer",
 ]
 
 export const Summary = (
@@ -90,7 +90,7 @@ export const Experiences = [
       end: null,
     },
     skills:
-      "Javascript, Next.js, Node.js, Express.js, MongoDB, AWS, Serverless, Automation, Package management, Agile",
+      "Javascript, Next.js, Node.js, Express.js, MongoDB, AWS, Serverless, NPM, AI, Agile",
     description: [
       <>
         <strong>Leadership:</strong> Led client collaboration, conducted demos,
@@ -177,7 +177,7 @@ export const Experiences = [
       <>
         <strong>Efficiency:</strong> Spearheaded contract plan design
         implementation, resulting in a <strong>20%</strong> increase in giffgaff
-        service offerings and more than a million in revenue.
+        service offerings.
       </>,
       <>
         <strong>Innovation:</strong> Developed and published over{" "}
@@ -220,16 +220,16 @@ export const Experiences = [
       },
     },
     skills:
-      "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase",
+      "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, DevOps",
     description: [
       <>
         <strong>Mentorship:</strong> Mentored a team of <strong>5</strong>{" "}
         engineers, providing career advice and pinpointing areas for growth.
       </>,
       <>
-        <strong>Collaboration:</strong> Led comprehensive analysis and
-        documentation of client requirements, resulting in a{" "}
-        <strong>20%</strong> reduction in project iteration cycles.
+        <strong>Collaboration:</strong> Led comprehensive analysis of client
+        requirements, resulting in a <strong>20%</strong> reduction in project
+        iteration cycles.
       </>,
       <>
         <strong>Achievement:</strong> Oversaw a <strong>$3</strong> million

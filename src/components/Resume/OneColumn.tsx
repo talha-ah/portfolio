@@ -185,6 +185,8 @@ export const Resume = forwardRef(
                   : "Present"}
               </Typography>
 
+              <Typography sx={styles.subtitle2}>{item.skills}</Typography>
+
               <Box component="ul" sx={styles.list}>
                 {item.description.map((i, index) => (
                   <Box component="li" sx={styles.listItem} key={index}>
