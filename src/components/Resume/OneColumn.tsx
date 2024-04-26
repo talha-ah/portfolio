@@ -287,12 +287,15 @@ export const Resume = forwardRef(
             <Box sx={styles.section} key={index}>
               <Box>
                 <Typography
-                  target="_blank"
-                  component={Link}
-                  href={item.link}
                   sx={styles.subtitle}
+                  {...(item.link && {
+                    component: Link,
+                    href: item.link,
+                    target: "_blank",
+                    rel: "noreferrer",
+                  })}
                 >
-                  {item.title} ↗
+                  {item.title} {item.link && "↗"}
                 </Typography>
                 <Typography sx={styles.subtitle2}>{item.skills}</Typography>
               </Box>

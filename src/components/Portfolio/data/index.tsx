@@ -62,12 +62,12 @@ export const jobs = [
 
 export const Summary = (
   <>
-    recognized for delivering top-tier solutions and proven expertise in
-    JavaScript and Python, with a keen eye for a healthy degree of
-    perfectionism. Led a team of <strong>5-6</strong> engineers successfully in
-    agile project environments, contributing to the success of projects valued
-    between <strong>$5M</strong> to <strong>$7M</strong>. Adept at driving
-    success through innovation, collaboration, and a commitment to excellence.
+    with <strong>4+</strong> years of proven track record in building innovative
+    solutions and leading teams in agile environments. Skilled in JavaScript,
+    Python, React, and Node.js, and possessing a strong understanding of AI and
+    Large Language Models (LLMs). Passionate for leveraging AI technologies to
+    drive product excellence. Recognized for delivering exceptional results in
+    fast-paced, early-stage startup environments.
   </>
 )
 
@@ -90,7 +90,7 @@ export const Experiences = [
       end: null,
     },
     skills:
-      "Javascript, Next.js, Node.js, Express.js, MongoDB, AWS, Serverless, NPM, AI, Agile",
+      "Javascript, React, Next.js, Node.js, Express.js, SQL, MongoDB, AWS, Serverless, NPM, AI, Agile",
     description: [
       <>
         <strong>Leadership:</strong> Led client collaboration, conducted demos,
@@ -129,8 +129,7 @@ export const Experiences = [
       </>,
       <>
         <strong>Mentorship:</strong> Mentored junior engineers, fostering a
-        culture of innovation and excellence, resulting in standardized and
-        efficient development practices across the organization.
+        culture of innovation and excellence across the organization.
       </>,
     ],
   },
@@ -181,13 +180,11 @@ export const Experiences = [
       </>,
       <>
         <strong>Innovation:</strong> Developed and published over{" "}
-        <strong>10</strong> React components to the internal design library,
-        standardizing UI elements across teams and ensuring consistency in
-        design implementation.
+        <strong>10</strong> React components to the internal design library.
       </>,
       <>
         <strong>Mentorship:</strong> Created on boarding documentation for new
-        employees that was used to onboard <strong>5</strong> employees.
+        employees that was used to onboard <strong>5</strong> new employees.
         Provided mentorship and guidance to junior engineers, resulting in a{" "}
         <strong>30%</strong> increase in team productivity.
       </>,
@@ -229,7 +226,7 @@ export const Experiences = [
       <>
         <strong>Collaboration:</strong> Led comprehensive analysis of client
         requirements, resulting in a <strong>20%</strong> reduction in project
-        iteration cycles.
+        iterations.
       </>,
       <>
         <strong>Achievement:</strong> Oversaw a <strong>$3</strong> million
@@ -282,12 +279,12 @@ export const Experiences = [
 // JavaScript, Typescript, React, Next.js, React Native, HTML, CSS, Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, Firestore, Webpack, Babel, CSS-in-JS, AWS, Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH
 export const Skills: SkillType[] = [
   {
-    title: "Main Stack",
-    list: "JavaScript, TypeScript, React, Node.js, Python, MongoDB, PostgreSQL, AWS, GCP",
+    title: "Expertise",
+    list: "JavaScript (ES6+), TypeScript, React, Node.js, Python, MongoDB, PostgreSQL, AWS, GCP",
   },
   {
-    title: "Others",
-    list: "Redux, Next.js, Express.js, FastAPI, DynamoDB, Firestore, RESTAPI, GraphQL, Serverless, Microservices, Docker, CI/CD, Git, Agile",
+    title: "Other Experience",
+    list: "Next.js, Express.js, FastAPI, NLP, LLMs, DynamoDB, Elasticsearch, Neo4j, Firestore, RESTAPI, GraphQL, Serverless, Microservices, Docker, CI/CD, Git, Agile",
   },
   {
     title: "Languages",
@@ -354,6 +351,24 @@ export const Projects: ProjectType[] = [
     ],
   },
   {
+    slug: "mission-automate",
+    title: "Mission Automate (ChatGPT and and DALL·E)",
+    skills:
+      "Python, FastAPI, Firebase, WordPress, DevOps, BeautifulSoup, ChatGPT, DALL·E",
+    role: "A data extraction and content reformatting solution that utilizes web scraping, ChatGPT integration, and DALL·E image generation to streamline the process of curating high-quality medical blog content with visually appealing images.",
+
+    shortDescription:
+      "As a Full Stack Developer, built a robust system to scrape online medical blogs, extract relevant content, leverage ChatGPT to reformat the extracted data into long-form blog posts, and integrate DALL·E for generating visually appealing images and variations. Implemented CI/CD practices and utilized tech stack including Python, FastAPI, Firebase, WordPress, BeautifulSoup, ChatGPT API, and DALL·E API.",
+    description:
+      "In this project, I demonstrated my expertise in developing a comprehensive solution for data extraction, content reformatting, and image generation in the medical domain. The platform leverages web scraping techniques to extract relevant data from online medical blogs, ensuring a steady stream of up-to-date and authoritative content. To enhance the quality and readability of the extracted content, I seamlessly integrated the powerful ChatGPT API, enabling intelligent reformatting and generation of long-form blog posts. Additionally, I integrated the DALL·E API to generate visually appealing images and variations, further enriching the blog content with engaging visuals. Through my proficiency in Python, FastAPI, Firebase, WordPress, BeautifulSoup, ChatGPT API, and DALL·E API, I built a robust and scalable system that streamlines the entire process, saving valuable time and resources. Furthermore, I implemented CI/CD best practices to ensure efficient deployment and maintenance of the platform, showcasing my commitment to delivering high-quality, reliable solutions.",
+    highlights: [
+      "Developed a robust system to scrape online medical blogs, extract relevant content, leverage ChatGPT to reformat the extracted data into long-form blog posts, and integrate DALL·E for generating visually appealing images and variations.",
+      "Implemented CI/CD practices for efficient deployment and maintenance of the platform.",
+      "Utilized a comprehensive tech stack including Python, FastAPI, Firebase, WordPress, BeautifulSoup, ChatGPT API, and DALL·E API.",
+      "Streamlined the process of curating high-quality medical blog content with engaging visuals, saving valuable time and resources.",
+    ],
+  },
+  {
     slug: "electromatic-works",
     title: "Electromatic Works",
     link: "https://electromatic-next.vercel.app",
@@ -384,6 +399,22 @@ export const Projects: ProjectType[] = [
       "Improved order processing efficiency by 30%.",
       "Successfully developed Retail Link from scratch, providing local retail shops with a cutting-edge digital platform.",
       "Implemented DevOps best practices, ensuring seamless deployment and operation.",
+    ],
+  },
+  {
+    slug: "nlp-text-sentiment-analysis-tool",
+    title: "NLP Text Sentiment Analysis Tool",
+    skills: "Python, NLTK, NLP, Scikit-learn, AI, Machine Learning",
+    role: "A sentiment analysis tool using NLP and machine learning to analyze the sentiment of movie review comments.",
+
+    shortDescription:
+      "Developed a sentiment analysis tool utilizing natural language processing (NLP) and machine learning techniques to analyze the sentiment of movie review comments. Trained a machine learning model on a dataset of movie reviews to classify comments as positive, negative, or neutral. Implemented a user-friendly interface for users to input movie review comments and receive sentiment analysis results.",
+    description:
+      "Developed a sentiment analysis tool utilizing natural language processing (NLP) and machine learning techniques to analyze the sentiment of movie review comments. Trained a machine learning model on a dataset of movie reviews to classify comments as positive, negative, or neutral. Implemented a user-friendly interface for users to input movie review comments and receive sentiment analysis results.",
+    highlights: [
+      "Trained a machine learning model for sentiment analysis of movie review comments.",
+      "Developed an intuitive user interface for inputting movie review comments and viewing sentiment analysis results.",
+      "Achieved high accuracy in sentiment classification through NLP and machine learning techniques.",
     ],
   },
   {
@@ -437,57 +468,57 @@ export const Projects: ProjectType[] = [
       "Improved my skills in backend development and DevOps.",
     ],
   },
-  {
-    slug: "owl-express",
-    title: "Owl Express",
-    link: "https://www.owlexpress.net",
-    skills:
-      "React, React Native, GraphQL, AWS, DynamoDB, AppSync, Amplify, Cognito, CI/CD, DevOps",
-    role: "Fostering collaboration among students and empowering them to learn and collaborate effectively.",
+  // {
+  //   slug: "owl-express",
+  //   title: "Owl Express",
+  //   link: "https://www.owlexpress.net",
+  //   skills:
+  //     "React, React Native, GraphQL, AWS, DynamoDB, AppSync, Amplify, Cognito, CI/CD, DevOps",
+  //   role: "Fostering collaboration among students and empowering them to learn and collaborate effectively.",
 
-    shortDescription:
-      "As a Full stack Engineer, designed a dynamic Learning Platform, fostering collaboration among users. Pioneered a system for active user engagement, empowering them to create help requests with seamless responsiveness from volunteers.",
-    description:
-      "As a Full-Stack Developer on the Owl Express project, I designed a dynamic Learning Platform that fostered collaboration among students. Owl Express is an educational platform designed to facilitate peer-to-peer learning and support. My leadership in implementing OAuth with AWS Cognito and managing real-time updates efficiently underscored my technical prowess and problem-solving skills. I delivered a seamless user experience, empowering students to learn and collaborate effectively.",
-    highlights: [
-      "Developed the web and mobile application, implementing UI/UX design and the design system.",
-      "Integrated DynamoDB using GraphQL and AWS AppSync.",
-      "Developed serverless synced data architecture for web and mobile applications.",
-    ],
-  },
-  {
-    slug: "orgaplan",
-    title: "Orgaplan",
-    skills: "React, React Native, Node.js, Express.js, MongoDB, Firebase",
-    link: "http://orgaplansa.com",
-    role: "Streamlining resource management and enhancing efficiency for construction firms.",
+  //   shortDescription:
+  //     "As a Full stack Engineer, designed a dynamic Learning Platform, fostering collaboration among users. Pioneered a system for active user engagement, empowering them to create help requests with seamless responsiveness from volunteers.",
+  //   description:
+  //     "As a Full-Stack Developer on the Owl Express project, I designed a dynamic Learning Platform that fostered collaboration among students. Owl Express is an educational platform designed to facilitate peer-to-peer learning and support. My leadership in implementing OAuth with AWS Cognito and managing real-time updates efficiently underscored my technical prowess and problem-solving skills. I delivered a seamless user experience, empowering students to learn and collaborate effectively.",
+  //   highlights: [
+  //     "Developed the web and mobile application, implementing UI/UX design and the design system.",
+  //     "Integrated DynamoDB using GraphQL and AWS AppSync.",
+  //     "Developed serverless synced data architecture for web and mobile applications.",
+  //   ],
+  // },
+  // {
+  //   slug: "orgaplan",
+  //   title: "Orgaplan",
+  //   skills: "React, React Native, Node.js, Express.js, MongoDB, Firebase",
+  //   link: "http://orgaplansa.com",
+  //   role: "Streamlining resource management and enhancing efficiency for construction firms.",
 
-    shortDescription:
-      "As a Full stack Engineer, led the project of 5 developers and overcame challenges in integrating visualization tools. Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map. Improved team efficiency by 25%.",
-    description:
-      "In my role as a Full-Stack Engineer for Orgaplan, I played a pivotal role in developing a logistic platform for construction firms. Orgaplan is a platform designed to streamline resource management and enhance efficiency for construction companies. Leading a team of five developers, I spearheaded comprehensive analysis and documentation efforts, resulting in a 20% reduction in project iteration cycles. By integrating CanvasJS for construction site visualization, I overcame significant challenges, ultimately contributing to the platform's success. Orgaplan highlights my ability to lead cross-functional teams and deliver outstanding accomplishments in complex projects.",
-    highlights: [
-      "Led project of 5 developers and overcame challenges in integrating visualization tools.",
-      "Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map.",
-      "Improved team efficiency by 25%",
-    ],
-  },
-  {
-    slug: "permispop",
-    title: "Permispop",
-    link: "https://permispop.fr",
-    skills: "React, React Native, .NET, MongoDB",
-    role: "Revolutionizing the driving lesson experience for instructors and students.",
+  //   shortDescription:
+  //     "As a Full stack Engineer, led the project of 5 developers and overcame challenges in integrating visualization tools. Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map. Improved team efficiency by 25%.",
+  //   description:
+  //     "In my role as a Full-Stack Engineer for Orgaplan, I played a pivotal role in developing a logistic platform for construction firms. Orgaplan is a platform designed to streamline resource management and enhance efficiency for construction companies. Leading a team of five developers, I spearheaded comprehensive analysis and documentation efforts, resulting in a 20% reduction in project iteration cycles. By integrating CanvasJS for construction site visualization, I overcame significant challenges, ultimately contributing to the platform's success. Orgaplan highlights my ability to lead cross-functional teams and deliver outstanding accomplishments in complex projects.",
+  //   highlights: [
+  //     "Led project of 5 developers and overcame challenges in integrating visualization tools.",
+  //     "Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map.",
+  //     "Improved team efficiency by 25%",
+  //   ],
+  // },
+  // {
+  //   slug: "permispop",
+  //   title: "Permispop",
+  //   link: "https://permispop.fr",
+  //   skills: "React, React Native, .NET, MongoDB",
+  //   role: "Revolutionizing the driving lesson experience for instructors and students.",
 
-    shortDescription:
-      "As a Full stack Engineer, developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling. Completed the project successfully, appreciated by the team and the project manager.",
-    description:
-      "In my role as a Frontend Developer for Permispop, I led the development of a mobile application using React Native. Permispop is a driving lesson platform that allows driving instructors to manage their students, lessons, and schedules. Through my efforts in integrating a calendar for lesson scheduling and creating user-friendly forms, I significantly enhanced user engagement and experience. Permispop exemplifies my ability to leverage technology to solve real-world problems and deliver impactful solutions in mobile development projects.",
-    highlights: [
-      "Developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling.",
-      "Completed the project successfully, appreciated by the team and the project manager.",
-    ],
-  },
+  //   shortDescription:
+  //     "As a Full stack Engineer, developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling. Completed the project successfully, appreciated by the team and the project manager.",
+  //   description:
+  //     "In my role as a Frontend Developer for Permispop, I led the development of a mobile application using React Native. Permispop is a driving lesson platform that allows driving instructors to manage their students, lessons, and schedules. Through my efforts in integrating a calendar for lesson scheduling and creating user-friendly forms, I significantly enhanced user engagement and experience. Permispop exemplifies my ability to leverage technology to solve real-world problems and deliver impactful solutions in mobile development projects.",
+  //   highlights: [
+  //     "Developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling.",
+  //     "Completed the project successfully, appreciated by the team and the project manager.",
+  //   ],
+  // },
 ]
 
 export const Educations = [

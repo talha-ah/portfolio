@@ -92,6 +92,23 @@ _Oct 2018 - May 2020 | Freelancer_
 **URL**: https://apps.apple.com/us/app/saiy/id6462937067
 **URL**: https://www.saiy.ai
 
+### Mission Automate (ChatGPT and and DALL·E)
+
+**About**: A data extraction and content reformatting solution that utilizes web scraping, ChatGPT integration, and DALL·E image generation to streamline the process of curating high-quality medical blog content with visually appealing images.
+
+**Short Description**: As a Full Stack Developer, built a robust system to scrape online medical blogs, extract relevant content, leverage ChatGPT to reformat the extracted data into long-form blog posts, and integrate DALL·E for generating visually appealing images and variations. Implemented CI/CD practices and utilized tech stack including Python, FastAPI, Firebase, WordPress, BeautifulSoup, ChatGPT API, and DALL·E API.
+
+**Description**: In this project, I demonstrated my expertise in developing a comprehensive solution for data extraction, content reformatting, and image generation in the medical domain. The platform leverages web scraping techniques to extract relevant data from online medical blogs, ensuring a steady stream of up-to-date and authoritative content. To enhance the quality and readability of the extracted content, I seamlessly integrated the powerful ChatGPT API, enabling intelligent reformatting and generation of long-form blog posts. Additionally, I integrated the DALL·E API to generate visually appealing images and variations, further enriching the blog content with engaging visuals. Through my proficiency in Python, FastAPI, Firebase, WordPress, BeautifulSoup, ChatGPT API, and DALL·E API, I built a robust and scalable system that streamlines the entire process, saving valuable time and resources. Furthermore, I implemented CI/CD best practices to ensure efficient deployment and maintenance of the platform, showcasing my commitment to delivering high-quality, reliable solutions.
+
+**Tech Stack**: Python, FastAPI, Firebase, WordPress, DevOps, BeautifulSoup, ChatGPT, DALL·E
+
+**Achievements**:
+
+- Developed a robust system to scrape online medical blogs, extract relevant content, leverage ChatGPT to reformat the extracted data into long-form blog posts, and integrate DALL·E for generating visually appealing images and variations.
+- Implemented CI/CD practices for efficient deployment and maintenance of the platform.
+- Utilized a comprehensive tech stack including Python, FastAPI, Firebase, WordPress, BeautifulSoup, ChatGPT API, and DALL·E API.
+- Streamlined the process of curating high-quality medical blog content with engaging visuals, saving valuable time and resources.
+
 ### Electromatic Works
 
 **About**: A platform designed for a local business by providing users the ability to contact the business and list products they are interested in without the need for user registration.
@@ -126,6 +143,22 @@ _Oct 2018 - May 2020 | Freelancer_
 - Implemented DevOps best practices, ensuring seamless deployment and operation.
 
 **URL**: https://retail-link.vercel.app
+
+### NLP Text Sentiment Analysis Tool
+
+**About**: A sentiment analysis tool using NLP and machine learning to analyze the sentiment of movie review comments.
+
+**Short Description**: Developed a sentiment analysis tool utilizing natural language processing (NLP) and machine learning techniques to analyze the sentiment of movie review comments. Trained a machine learning model on a dataset of movie reviews to classify comments as positive, negative, or neutral. Implemented a user-friendly interface for users to input movie review comments and receive sentiment analysis results.
+
+**Description**: Developed a sentiment analysis tool utilizing natural language processing (NLP) and machine learning techniques to analyze the sentiment of movie review comments. Trained a machine learning model on a dataset of movie reviews to classify comments as positive, negative, or neutral. Implemented a user-friendly interface for users to input movie review comments and receive sentiment analysis results.
+
+**Tech Stack**: Python, NLTK, NLP, Scikit-learn, AI, Machine Learning
+
+**Achievements**:
+
+- Trained a machine learning model for sentiment analysis of movie review comments.
+- Developed an intuitive user interface for inputting movie review comments and viewing sentiment analysis results.
+- Achieved high accuracy in sentiment classification through NLP and machine learning techniques.
 
 ### Six Wraps
 

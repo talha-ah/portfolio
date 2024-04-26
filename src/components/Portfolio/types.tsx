@@ -5,7 +5,7 @@ export interface SkillType {
 
 export interface ProjectType {
   title: string
-  link: string
+  link?: string
   skills: string
   slug: string
   role: string
