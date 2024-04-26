@@ -57,7 +57,7 @@ export const LogoSplash = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       progressRef.current()
-    }, 500)
+    }, 300)
 
     return () => {
       clearInterval(timer)
