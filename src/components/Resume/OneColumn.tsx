@@ -283,7 +283,7 @@ export const Resume = forwardRef(
         <Box>
           <Typography sx={styles.title}>Projects</Typography>
 
-          {Projects.map((item, index) => (
+          {Projects.slice(0, 9).map((item, index) => (
             <Box sx={styles.section} key={index}>
               <Box>
                 <Typography
