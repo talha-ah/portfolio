@@ -1,4 +1,4 @@
-import { SkillType, ProjectType } from "../types"
+import { SkillType, ProjectType, ExperienceType, EducationType } from "../types"
 
 import Si from "public/companies/si.svg"
 import Gg from "public/companies/gg.svg"
@@ -7,15 +7,15 @@ import Skupreme from "public/companies/skupreme.svg"
 
 export const GitHub = "talha-ah"
 export const TotalExperience = 4
-export const Name = "Talha Ahmed"
+export const Name = "Talha Ahmad"
 export const LinkedIn = "talha-ah"
 export const Location = "London, UK"
-export const Phone = "+44 794-643-4693"
+export const Phone = "+44 794 643 4693"
 export const Email = "talha.ah08@gmail.com"
 export const LocationLink = "https://maps.app.goo.gl/qKhcWwXKXbewqidB7"
 
 // Words to be highlighted in the resume
-export const HighlightedWords = [
+export const HighlightedWords: string[] = [
   "Managing",
   "Mentoring",
   "Leading",
@@ -52,7 +52,7 @@ export const HighlightedWords = [
   "Troubleshot",
 ]
 
-export const jobs = [
+export const jobs: string[] = [
   "Software Engineer",
   "Full Stack Engineer",
   "Backend Engineer",
@@ -60,22 +60,15 @@ export const jobs = [
   "Javascript Engineer",
 ]
 
-export const Summary = (
-  <>
-    with <strong>4+</strong> years of proven track record in building innovative
-    solutions and leading teams in agile environments. Skilled in JavaScript,
-    Python, React, and Node.js, and possessing a strong understanding of AI and
-    Large Language Models (LLMs). Passionate for leveraging AI technologies to
-    drive product excellence. Recognized for delivering exceptional results in
-    fast-paced, early-stage startup environments.
-  </>
-)
+export const Summary: string =
+  "with <strong>4+</strong> years of proven track record in building innovative solutions and leading teams in agile environments. Skilled in JavaScript, Python, React, and Node.js, and possessing a strong understanding of AI and Large Language Models (LLMs). Passionate for leveraging AI technologies to drive product excellence. Recognized for delivering exceptional results in fast-paced, early-stage startup environments."
 
-export const Experiences = [
+export const Experiences: ExperienceType[] = [
   {
     company: "Skupreme",
     role: "Senior Software Engineer",
     location: "Miami, US (Remote)",
+    link: "https://skupreme.com",
     logos: [
       {
         logo: <Skupreme key="skupreme" />,
@@ -92,51 +85,20 @@ export const Experiences = [
     skills:
       "Javascript, React, Next.js, Node.js, Express.js, SQL, MongoDB, AWS, Serverless, NPM, AI, Agile",
     description: [
-      <>
-        <strong>Leadership:</strong> Led client collaboration, conducted demos,
-        and addressed challenges for seamless project development, leading to a{" "}
-        <strong>30%</strong> increase in client satisfaction ratings.
-      </>,
-      <>
-        <strong>Innovation:</strong> Developed a dynamic multi-tenant
-        architecture, reducing integration time by <strong>25%</strong> and
-        boosting platform reliability by <strong>20%</strong>, solidifying
-        Skupreme&apos;s position as an e-commerce automation leader.
-      </>,
-      <>
-        <strong>Collaboration:</strong> Collaborated with teams to integrate
-        address validation APIs, reducing errors by <strong>30%</strong> and
-        improving shipping accuracy by <strong>15%</strong>, driving operational
-        excellence for Skupreme&apos;s clients.
-      </>,
-      <>
-        <strong>Optimization:</strong> Implemented advanced backend API
-        optimizations, reducing response times by <strong>40%</strong> and
-        increasing concurrent user capacity by <strong>25%</strong>, enhancing
-        user experience and platform competitiveness.
-      </>,
-      <>
-        <strong>Efficiency:</strong> Engineered scalable microservices
-        architecture, cutting deployment times by <strong>50%</strong>, and
-        ensuring uninterrupted service during updates, enhancing operational
-        efficiency and customer satisfaction.
-      </>,
-      <>
-        <strong>Strategic Integration:</strong> Orchestrated seamless
-        integration of payment gateways, driving a <strong>30%</strong> increase
-        in transaction success rates and substantial revenue growth for
-        Skupreme&apos;s clientele.
-      </>,
-      <>
-        <strong>Mentorship:</strong> Mentored junior engineers, fostering a
-        culture of innovation and excellence across the organization.
-      </>,
+      "<strong>Leadership:</strong> Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a <strong>30%</strong> increase in client satisfaction ratings.",
+      "<strong>Innovation:</strong> Developed a dynamic multi-tenant architecture, reducing integration time by <strong>25%</strong> and boosting platform reliability by <strong>20%</strong>, solidifying Skupreme&apos;s position as an e-commerce automation leader.",
+      "<strong>Collaboration:</strong> Collaborated with teams to integrate address validation APIs, reducing errors by <strong>30%</strong> and improving shipping accuracy by <strong>15%</strong>, driving operational excellence for Skupreme&apos;s clients.",
+      "<strong>Optimization:</strong> Implemented advanced backend API optimizations, reducing response times by <strong>40%</strong> and increasing concurrent user capacity by <strong>25%</strong>, enhancing user experience and platform competitiveness.",
+      "<strong>Efficiency:</strong> Engineered scalable microservices architecture, cutting deployment times by <strong>50%</strong>, and ensuring uninterrupted service during updates, enhancing operational efficiency and customer satisfaction.",
+      "<strong>Strategic Integration:</strong> Orchestrated seamless integration of payment gateways, driving a <strong>30%</strong> increase in transaction success rates and substantial revenue growth for Skupreme&apos;s clientele.",
+      "<strong>Mentorship:</strong> Mentored junior engineers, fostering a culture of innovation and excellence across the organization.",
     ],
   },
   {
     company: "NTT DATA & GiffGaff",
     role: "Senior Software Engineer",
     location: "London, UK",
+    link: "https://www.giffgaff.com",
     logos: [
       {
         logo: <Ntt key="NTT Data" />,
@@ -160,40 +122,18 @@ export const Experiences = [
     skills:
       "Javascript, React, Next.js, PHP, PostgreSQL, AWS, Airtime Hypernova, Jenkins, Elastic Search, Agile",
     description: [
-      <>
-        <strong>Leadership:</strong> Stepped up to manage team lead
-        responsibilities during the urgent absence of the team lead, effectively
-        coordinating tasks and ensuring project continuity, earning recognition
-        from project and engineering managers for professionalism and
-        leadership.
-      </>,
-      <>
-        <strong>Collaboration:</strong> Worked with various teams to understand
-        their component usage needs, updating and optimizing components to
-        support diverse requirements, resulting in increased efficiency and
-        satisfaction across teams.
-      </>,
-      <>
-        <strong>Efficiency:</strong> Spearheaded contract plan design
-        implementation, resulting in a <strong>20%</strong> increase in giffgaff
-        service offerings.
-      </>,
-      <>
-        <strong>Innovation:</strong> Developed and published over{" "}
-        <strong>10</strong> React components to the internal design library.
-      </>,
-      <>
-        <strong>Mentorship:</strong> Created on boarding documentation for new
-        employees that was used to onboard <strong>5</strong> new employees.
-        Provided mentorship and guidance to junior engineers, resulting in a{" "}
-        <strong>30%</strong> increase in team productivity.
-      </>,
+      "<strong>Leadership:</strong> Stepped up to manage team lead responsibilities during the urgent absence of the team lead, effectively coordinating tasks and ensuring project continuity, earning recognition from project and engineering managers for professionalism and leadership.",
+      "<strong>Collaboration:</strong> Worked with various teams to understand their component usage needs, updating and optimizing components to support diverse requirements, resulting in increased efficiency and satisfaction across teams.",
+      "<strong>Efficiency:</strong> Spearheaded contract plan design implementation, resulting in a <strong>20%</strong> increase in giffgaff service offerings.",
+      "<strong>Innovation:</strong> Developed and published over <strong>10</strong> React components to the internal design library.",
+      "<strong>Mentorship:</strong> Created on boarding documentation for new employees that was used to onboard <strong>5</strong> new employees. Provided mentorship and guidance to junior engineers, resulting in a <strong>30%</strong> increase in team productivity.",
     ],
   },
   {
     location: "Lahore, PK",
     role: "Full Stack Developer",
     company: "Falcon IT Consulting",
+    link: "https://falconconsulting.fr",
     logos: [
       {
         logo: (
@@ -219,29 +159,15 @@ export const Experiences = [
     skills:
       "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, DevOps",
     description: [
-      <>
-        <strong>Mentorship:</strong> Mentored a team of <strong>5</strong>{" "}
-        engineers, providing career advice and pinpointing areas for growth.
-      </>,
-      <>
-        <strong>Collaboration:</strong> Led comprehensive analysis of client
-        requirements, resulting in a <strong>20%</strong> reduction in project
-        iterations.
-      </>,
-      <>
-        <strong>Achievement:</strong> Oversaw a <strong>$3</strong> million
-        project from analysis to completion, earning the{" "}
-        <strong>
-          &apos;Award of Excellence for Outstanding Accomplishments&apos;
-        </strong>{" "}
-        .
-      </>,
+      "<strong>Mentorship:</strong> Mentored a team of <strong>5</strong> engineers, providing career advice and pinpointing areas for growth.",
+      "<strong>Collaboration:</strong> Led comprehensive analysis of clientrequirements, resulting in a <strong>20%</strong> reduction in projectiterations.",
+      "<strong>Achievement:</strong> Oversaw a <strong>$3</strong> millionproject from analysis to completion, earning the <strong>&apos;Award of Excellence for Outstanding Accomplishments&apos;</strong>.",
     ],
   },
   {
-    hidden: true,
     company: "Freelancer",
     location: "Lahore, PK",
+    link: "https://www.si.com",
     role: "Full Stack Developer",
     logos: [
       {
@@ -262,16 +188,8 @@ export const Experiences = [
     skills:
       "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, AWS, Lambda, EC2",
     description: [
-      <>
-        <strong>Excellence:</strong> Maintained consistent{" "}
-        <strong>5-star</strong> ratings for project deliverables across{" "}
-        <strong>10+</strong> diverse projects.
-      </>,
-      <>
-        <strong>Efficiency:</strong> Delivered tailored web applications across
-        diverse industries, ensuring seamless user experiences and optimal
-        performance.
-      </>,
+      "<strong>Excellence:</strong> Maintained consistent <strong>5-star</strong> ratings for project deliverables across <strong>10+</strong> diverse projects.",
+      "<strong>Efficiency:</strong> Delivered tailored web applications acrossdiverse industries, ensuring seamless user experiences and optimalperformance.",
     ],
   },
 ]
@@ -288,7 +206,7 @@ export const Skills: SkillType[] = [
   },
   {
     title: "Languages",
-    list: "English (professional), Urdu (native), Punjabi (native)",
+    list: "English (fluent), Urdu (native)",
   },
 ]
 
@@ -338,7 +256,7 @@ export const Projects: ProjectType[] = [
     link: "https://www.saiy.ai",
     skills:
       "Node.js, Express.js, Stripe, PostgreSQL (AWS Aurora), AWS, Docker, ChatGPT",
-    role: "Developing a revolutionary platform that leverages GEN AI to redefine communication and interactions.",
+    task: "Revolutionary platform leveraging GEN AI for enhanced communication and interactions. Integrated ChatGPT API, managed DevOps using AWS.",
 
     shortDescription:
       "As a Backend Engineer, developed the platform from scratch, integrating GEN AI APIs to enhance communication and self-expression for users. Managed the DevOps and successfully integrated GEN AI APIs.",
@@ -352,10 +270,10 @@ export const Projects: ProjectType[] = [
   },
   {
     slug: "mission-automate",
-    title: "Mission Automate (ChatGPT and and DALL·E)",
+    title: "Mission Automate",
     skills:
       "Python, FastAPI, Firebase, WordPress, DevOps, BeautifulSoup, ChatGPT, DALL·E",
-    role: "A data extraction and content reformatting solution that utilizes web scraping, ChatGPT integration, and DALL·E image generation to streamline the process of curating high-quality medical blog content with visually appealing images.",
+    task: "Scraped medical blogs, integrated ChatGPT for content reformatting and DALL·E for image generation. Streamlined medical content curation process.",
 
     shortDescription:
       "As a Full Stack Developer, built a robust system to scrape online medical blogs, extract relevant content, leverage ChatGPT to reformat the extracted data into long-form blog posts, and integrate DALL·E for generating visually appealing images and variations. Implemented CI/CD practices and utilized tech stack including Python, FastAPI, Firebase, WordPress, BeautifulSoup, ChatGPT API, and DALL·E API.",
@@ -372,7 +290,7 @@ export const Projects: ProjectType[] = [
     title: "Electromatic Works",
     link: "https://electromatic-next.vercel.app",
     skills: "React, Next.js, Node.js, Express.js, MongoDB, CI/CD, DevOps",
-    role: "Streamlining the customer experience by enabling the users to send product queries without an account.",
+    task: "Implemented cart functionality without user registration, streamlining product inquiry process by 40%. Enabled client updates via Admin Panel.",
 
     shortDescription:
       "As a Full Stack Engineer, played a pivotal role in developing a platform for a local business, enabling seamless communication and product showcasing. Implemented CI/CD best practices to streamline deployment and operation.",
@@ -388,7 +306,7 @@ export const Projects: ProjectType[] = [
     title: "Retail Link",
     link: "https://retail-link.vercel.app",
     skills: "React, Next.js, Node.js, Express.js, MongoDB, CI/CD, DevOps",
-    role: "Developing a transformative platform tailored for local retail shops, enabling digital transformation and operational efficiency.",
+    task: "Digital platform for local retail shops, improving order processing efficiency by 30%. Implemented DevOps best practices.",
 
     shortDescription:
       "As a Full stack Engineer, developed the platform from scratch, providing local retail shops with a cutting-edge digital platform. Implemented DevOps best practices, ensuring seamless deployment and operation.",
@@ -404,7 +322,7 @@ export const Projects: ProjectType[] = [
     slug: "nlp-text-sentiment-analysis-tool",
     title: "NLP Text Sentiment Analysis Tool",
     skills: "Python, NLTK, NLP, Scikit-learn, AI, Machine Learning",
-    role: "A sentiment analysis tool using NLP and machine learning to analyze the sentiment of movie review comments.",
+    task: "Sentiment analysis tool using NLP and machine learning to analyze movie review comments. Trained ML model, ",
 
     shortDescription:
       "Developed a sentiment analysis tool utilizing natural language processing (NLP) and machine learning techniques to analyze the sentiment of movie review comments. Trained a machine learning model on a dataset of movie reviews to classify comments as positive, negative, or neutral. Implemented a user-friendly interface for users to input movie review comments and receive sentiment analysis results.",
@@ -421,7 +339,7 @@ export const Projects: ProjectType[] = [
     title: "Six Wraps",
     link: "https://six-wraps.vercel.app",
     skills: "React, Next.js, Node.js, Express.js, Flutter, MongoDB, AWS",
-    role: "Developing a comprehensive car wrapping platform for the auto services industry.",
+    task: "Developed backend APIs and CMS portal for auto services industry. Implemented CI/CD for streamlined deployment.",
 
     shortDescription:
       "As a Full Stack Engineer, developed the backend APIs and CMS portal. Implemented CI/CD best practices to streamline deployment and operation.",
@@ -439,7 +357,7 @@ export const Projects: ProjectType[] = [
     link: "https://www.owlexpress.net",
     skills:
       "React, React Native, GraphQL, AWS, DynamoDB, AppSync, Amplify, Cognito, CI/CD, DevOps",
-    role: "Fostering collaboration among students and empowering them to learn and collaborate effectively.",
+    task: " Dynamic learning platform for peer-to-peer collaboration. Implemented OAuth with AWS Cognito, managed real-time updates.",
 
     shortDescription:
       "As a Full stack Engineer, designed a dynamic Learning Platform, fostering collaboration among users. Pioneered a system for active user engagement, empowering them to create help requests with seamless responsiveness from volunteers.",
@@ -456,7 +374,7 @@ export const Projects: ProjectType[] = [
     title: "Prospects Trading",
     link: "https://play.google.com/store/apps/details?id=com.si.prospects",
     skills: "Node.js, Express.js, MongoDB, AWS, CI/CD, DevOps",
-    role: "Enabling player engagement in Sports Illustrated tournaments through a sticker trading platform.",
+    task: 'Developed backend APIs, integrated EventConnect APIs for "Sports Illustrated" sticker trading game tournaments.',
 
     shortDescription:
       "As a Backend Engineer, developed the backend APIs and integrated EventConnect APIs, managing the DevOps and successfully integrating EventConnect APIs.",
@@ -473,7 +391,7 @@ export const Projects: ProjectType[] = [
     title: "Permispop",
     link: "https://permispop.fr",
     skills: "React, React Native, .NET, MongoDB",
-    role: "Revolutionizing the driving lesson experience for instructors and students.",
+    task: "Revolutionizing the driving lesson experience for instructors and students.",
 
     shortDescription:
       "As a Full stack Engineer, developed the mobile application, implementing UI/UX design and integrating the calendar for lesson scheduling. Completed the project successfully, appreciated by the team and the project manager.",
@@ -489,7 +407,7 @@ export const Projects: ProjectType[] = [
     title: "AAB Engage App",
     skills: "Node.js, Express.js, SQL, TFS, DevOps",
     link: "https://play.google.com/store/apps/details?id=com.sap.webide.x4efb5a44557f416482c43ec9805cc9b6&hl=en&gl=US",
-    role: "Simplifying rental processes and enhancing user support for Abdul Ghani Car rental service customers.",
+    task: "Simplifying rental processes and enhancing user support for Abdul Ghani Car rental service customers.",
 
     shortDescription:
       "As a Full stack Engineer, developed the backend APIs and integrated SAP APIs, managing the DevOps and successfully integrating SAP APIs.",
@@ -506,7 +424,7 @@ export const Projects: ProjectType[] = [
     title: "Orgaplan",
     skills: "React, React Native, Node.js, Express.js, MongoDB, Firebase",
     link: "http://orgaplansa.com",
-    role: "Streamlining resource management and enhancing efficiency for construction firms.",
+    task: "Logistic platform for construction firms. Led team of 5, integrated visualization tools like CanvasJS for construction site mapping.",
 
     shortDescription:
       "As a Full stack Engineer, led the project of 5 developers and overcame challenges in integrating visualization tools. Overcame challenges in integrating CanvasJS for the visualization of the construction site editable map. Improved team efficiency by 25%.",
@@ -604,3 +522,6 @@ export const Certifications = [
     link: "https://www.coursera.org/account/accomplishments/certificate/4PEJU8B5LTFG",
   },
 ]
+
+export const Interests =
+  "Traveling, gaming, anime & tv series (science fiction & fantasy), technology, AI, driving"

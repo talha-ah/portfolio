@@ -40,7 +40,7 @@ const styles = {
     lineHeight: "1.1em",
     margin: "0px 0px 10px",
   },
-  role: {
+  task: {
     fontSize: "14px",
     marginBottom: "24px",
     lineHeight: "1.785em",
@@ -68,8 +68,8 @@ export const Project = ({ project }: { project: ProjectType }) => {
           {project.title}
         </Typography>
 
-        <Typography variant="body1" sx={styles.role}>
-          {project.role}
+        <Typography variant="body1" sx={styles.task}>
+          {project.task}
         </Typography>
 
         <Box sx={styles.skills}>

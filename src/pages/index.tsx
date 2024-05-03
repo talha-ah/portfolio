@@ -73,7 +73,7 @@ const styles = {
     fontSize: "clamp(14px, 4vw, 20px)",
   },
   metrics: {
-    gap: 2,
+    gap: 10,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -100,8 +100,14 @@ const styles = {
     fontSize: "clamp(18px, 4vw, 24px)",
   },
   aboutSkills: {
-    mt: 2,
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
     paddingInlineStart: 2,
+
+    "& li": {
+      width: "50%",
+    },
   },
   companies: (theme: Theme) => ({
     py: "40px",
@@ -224,105 +230,85 @@ const Main = () => {
 
       <HeaderLayout mb="0">
         <Section id="introduction">
-          <Box sx={styles.line} />
-
-          <Typography variant="h1" sx={styles.title}>
-            Hi, I&apos;m {Name.split(" ")[0]}.
-          </Typography>
-
-          <Typography variant="h2" sx={styles.subTitle}>
-            I build things for the web.
-          </Typography>
-
-          <Typography
-            variant="body1"
-            sx={{
-              ...styles.text,
-              maxWidth: (theme: Theme) => `${theme.breakpoints.values.md}px`,
-            }}
-          >
-            I am a Software Engineer with over {TotalExperience} years of
-            experience. I am passionate about building web applications and
-            solving problems. I have experience in Full Stack Web and Mobile
-            Development. I am proficient in JavaScript, TypeScript, React,
-            Node.js, and Python.
-          </Typography>
-
-          <Box sx={styles.socials}>
-            <Link to={`tel:${Phone}`}>
-              <PhoneIcon sx={{ fontSize: 24 }} />
-            </Link>
-            <Link to={`mailto:${Email}`}>
-              <EmailIcon sx={{ fontSize: 24 }} />
-            </Link>
-            <Link
-              target="_blank"
-              rel="noreferrer"
-              to={`https://github.com/${GitHub}`}
-            >
-              <GitHubIcon sx={{ fontSize: 24 }} />
-            </Link>
-            <Link
-              target="_blank"
-              rel="noreferrer"
-              to={`https://www.linkedin.com/in/${LinkedIn}`}
-            >
-              <LinkedInIcon sx={{ fontSize: 24 }} />
-            </Link>
-          </Box>
-        </Section>
-
-        <Section
-          id="about"
-          heading="About me"
-          backgroundColor="background.paper"
-        >
           <Grid container spacing={4}>
+            <Grid item xs={12}>
+              <Box sx={styles.line} />
+
+              <Typography variant="h1" sx={styles.title}>
+                Hi, I&apos;m {Name.split(" ")[0]}.
+              </Typography>
+
+              <Typography variant="h2" sx={styles.subTitle}>
+                I build things for internet.
+              </Typography>
+            </Grid>
+
             <Grid item xs={12} md={6}>
               <Typography variant="body1" sx={styles.text}>
-                Hello! My name is Talha, and I enjoy creating things that live
-                on the internet. My interest in web development started back in
-                2018 when I decided to build a web based project for my final
-                Year in Bachelors --- turns out building a custom CMS for my
-                University taught me a lot of React and Node.js.
-              </Typography>
-              &nbsp;
-              <Typography variant="body1" sx={styles.text}>
-                I have more than {TotalExperience} years of Professional
-                Experience and in my latest role at NTT DATA & GiffGaff, I
-                stepped up to lead a team, earning recognition for my leadership
-                and professionalism. I&apos;ve collaborated across teams to
-                optimize component usage and spearheaded impactful projects.
-              </Typography>
-              &nbsp;
-              <Typography variant="body1" sx={styles.text}>
+                I am a Software Engineer with over {TotalExperience} years of
+                experience. I am passionate about building web applications and
+                solving problems. I have experience in Full Stack Web and Mobile
+                Development. I am proficient in JavaScript, TypeScript, React,
+                Node.js, and Python.
+                <br />
+                <br />
+                I enjoy creating things that live on the internet. My interest
+                in web development started back in 2018 when I decided to build
+                a web based project for my final Year in Bachelors --- turns out
+                building a custom CMS for my University taught me a lot of React
+                and Node.js.
+                <br />
+                <br />
                 Here are a few technologies I&apos;ve been working with
                 recently:
               </Typography>
-              <Grid container component="ul" sx={styles.aboutSkills}>
+
+              <Box component="ul" sx={styles.aboutSkills}>
                 {[
-                  "JavaScript (ES6+)",
-                  "TypeScript",
-                  "React",
-                  "Next.js",
+                  "JavaScript, TypeScript",
+                  "React, Next.js",
                   "Node.js",
                   "Python",
+                  "PostgreSQL, MongoDB",
+                  "DevOps (Docker, CI/CD)",
                 ].map((skill) => (
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
+                  <Typography
                     key={skill}
                     component="li"
+                    variant="body1"
+                    sx={styles.text}
                     color="text.secondary"
                   >
                     {skill}
-                  </Grid>
+                  </Typography>
                 ))}
-              </Grid>
+              </Box>
+
+              <Box sx={styles.socials}>
+                <Link to={`tel:${Phone}`}>
+                  <PhoneIcon sx={{ fontSize: 36 }} />
+                </Link>
+                <Link to={`mailto:${Email}`}>
+                  <EmailIcon sx={{ fontSize: 36 }} />
+                </Link>
+                <Link
+                  target="_blank"
+                  rel="noreferrer"
+                  to={`https://github.com/${GitHub}`}
+                >
+                  <GitHubIcon sx={{ fontSize: 36 }} />
+                </Link>
+                <Link
+                  target="_blank"
+                  rel="noreferrer"
+                  to={`https://www.linkedin.com/in/${LinkedIn}`}
+                >
+                  <LinkedInIcon sx={{ fontSize: 36 }} />
+                </Link>
+              </Box>
             </Grid>
 
-            <Grid item xs={12} md={6} sx={styles.metrics}>
+            <Grid item xs={12} sm={6} sx={styles.metrics}>
               <Box sx={styles.metric}>
                 <Typography variant="body1" sx={styles.metricNumber}>
                   {TotalExperience}+
@@ -331,6 +317,7 @@ const Main = () => {
                   Years of experience
                 </Typography>
               </Box>
+
               <Box sx={styles.metric}>
                 <Typography variant="body1" sx={styles.metricNumber}>
                   {Projects.length}+
@@ -365,15 +352,15 @@ const Main = () => {
           </Container>
         </Box>
 
-        <Section id="experience" heading="Experience">
+        <Section
+          id="experience"
+          heading="Experience"
+          backgroundColor="background.paper"
+        >
           <ExperiencesList />
         </Section>
 
-        <Section
-          id="projects"
-          heading="Projects"
-          backgroundColor="background.paper"
-        >
+        <Section id="projects" heading="Projects">
           <Grid container spacing={2}>
             {Projects.map((item) => (
               <Grid key={item.title} item xs={12} md={6} lg={4}>
@@ -383,7 +370,11 @@ const Main = () => {
           </Grid>
         </Section>
 
-        <Section id="education" heading="Education">
+        <Section
+          id="education"
+          backgroundColor="background.paper"
+          heading="Education & Certifications"
+        >
           {Educations.map((item) => (
             <Box key={item.degree} mb={4}>
               <Typography variant="h4">{item.degree}</Typography>
@@ -396,13 +387,9 @@ const Main = () => {
               </Typography>
             </Box>
           ))}
-        </Section>
 
-        <Section
-          id="certifications"
-          heading="Certifications"
-          backgroundColor="background.paper"
-        >
+          <Box sx={styles.line} />
+
           {Certifications.map((item) => (
             <Box key={item.title} mb={4}>
               <Typography variant="h4">
@@ -432,8 +419,8 @@ const Main = () => {
 
         <Section
           id="skills"
-          heading="Skills"
           backgroundColor="background.paper"
+          heading="Experience with technologies"
         >
           {SkillsAll.map((skill) => (
             <Typography

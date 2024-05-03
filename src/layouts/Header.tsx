@@ -10,7 +10,7 @@ import { Logo } from "@ui/Logo"
 import { Dialog } from "@ui/Dialog"
 import { Button } from "@ui/Button"
 import { IconButton } from "@ui/IconButton"
-import { OneColumn } from "@components/Resume"
+// import { OneColumn } from "@components/Resume"
 import { scrollIntoView } from "@utils/common"
 import { useIsMobile } from "@hooks/useIsMobile"
 import { Width, Link as LinkType } from "@utils/types"
@@ -171,9 +171,9 @@ export const Header = ({ maxWidth }: { maxWidth: Width }) => {
           )}
         </Box>
 
-        <Box display="none">
+        {/* <Box display="none">
           <OneColumn ref={componentRef} />
-        </Box>
+        </Box> */}
       </Container>
     </Box>
   )

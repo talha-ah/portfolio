@@ -2,7 +2,7 @@ import React from "react"
 import Head from "next/head"
 
 import { Box, Typography } from "@mui/material"
-import { InsertLink, GitHub } from "@mui/icons-material"
+import { InsertLink } from "@mui/icons-material"
 
 import { Link } from "@ui/Link"
 import { Button } from "@ui/Button"
@@ -54,7 +54,7 @@ const Page = ({ project }: { project: ProjectType }) => {
           </Box>
 
           <Typography variant="h3" sx={styles.text}>
-            <strong>Role:</strong> {project.role}
+            <strong>Task:</strong> {project.task}
           </Typography>
 
           <Typography variant="body1" sx={styles.text}>
@@ -76,9 +76,11 @@ const Page = ({ project }: { project: ProjectType }) => {
           </Typography>
 
           <Box sx={styles.icons}>
-            <Link target="_blank" rel="noreferrer" to={project.link}>
-              <InsertLink />
-            </Link>
+            {project.link && (
+              <Link target="_blank" rel="noreferrer" to={project.link}>
+                <InsertLink />
+              </Link>
+            )}
             {/* <Link
               target="_blank"
               rel="noreferrer"

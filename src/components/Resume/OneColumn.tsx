@@ -11,18 +11,20 @@ import {
 } from "@mui/icons-material"
 import { Box, Grid, Theme, Typography } from "@mui/material"
 
-import { SkillType } from "../Portfolio/types"
+import { ParseHTML } from "@components/ParseHTML"
+
+import {
+  SkillType,
+  ProjectType,
+  EducationType,
+  ExperienceType,
+} from "../Portfolio/types"
 import {
   Phone,
   Email,
-  Skills,
   GitHub,
-  Summary,
-  Projects,
   LinkedIn,
   Location,
-  Educations,
-  Experiences,
   LocationLink,
   Achievements,
   Certifications,
@@ -120,25 +122,33 @@ const styles = {
   },
 }
 
+interface Props {
+  name: string
+  summary: string
+  interests: string
+  skills: SkillType[]
+  projects: ProjectType[]
+  educations: EducationType[]
+  experiences: ExperienceType[]
+}
+
 export const Resume = forwardRef(
   (
     {
-      role = "Software Engineer",
-      skills = Skills.filter(({ list }) => list),
-    }: {
-      role?: string
-      skills?: SkillType[]
-    },
+      name = "",
+      skills = [],
+      summary = "",
+      projects = [],
+      educations = [],
+      experiences = [],
+    }: Props,
     ref
   ) => {
     return (
       <Box ref={ref} id="resume-pdf">
-        {/* Introduction */}
         <Box sx={styles.header}>
-          {/* Name */}
-          <Typography sx={styles.headerName}>Talha Ahmad</Typography>
+          <Typography sx={styles.headerName}>{name}</Typography>
 
-          {/* Contacts */}
           <Box sx={styles.headerContact}>
             <Link href={LocationLink} target="_blank" rel="noreferrer">
               <LocationOn fontSize="small" /> {Location}
@@ -165,17 +175,15 @@ export const Resume = forwardRef(
             </Link>
           </Box>
 
-          {/* Summary */}
-          <Typography sx={styles.text}>
-            {role} {Summary}
-          </Typography>
+          <ParseHTML sx={styles.text} component={Typography}>
+            {summary}
+          </ParseHTML>
         </Box>
 
-        {/* Experiences */}
         <Box>
           <Typography sx={styles.title}>EXPERIENCES</Typography>
 
-          {Experiences.filter((item) => !item.hidden).map((item, index) => (
+          {experiences.slice(0, 3).map((item, index) => (
             <Box sx={{ my: 1 }} key={index} mb={5}>
               <Typography sx={styles.subtitle} fontWeight={800}>
                 {item.role} | {item.company} | {item.location} |{" "}
@@ -191,7 +199,13 @@ export const Resume = forwardRef(
                 {item.description.map((i, index) => (
                   <Box component="li" sx={styles.listItem} key={index}>
                     <FiberManualRecord fontSize="small" />
-                    <Typography sx={styles.text}>{i}</Typography>
+                    <ParseHTML
+                      key={index}
+                      sx={styles.text}
+                      component={Typography}
+                    >
+                      {i}
+                    </ParseHTML>
                   </Box>
                 ))}
               </Box>
@@ -199,7 +213,6 @@ export const Resume = forwardRef(
           ))}
         </Box>
 
-        {/* Skills */}
         <Box>
           <Typography sx={styles.title}>Skills</Typography>
 
@@ -212,11 +225,10 @@ export const Resume = forwardRef(
           ))}
         </Box>
 
-        {/* Education */}
         <Box>
           <Typography sx={styles.title}>Education</Typography>
 
-          {Educations.map((item, index) => (
+          {educations.map((item, index) => (
             <Box sx={styles.section} key={index}>
               <Box sx={styles.spaceBetween}>
                 <Typography sx={styles.subtitle}>{item.institution}</Typography>
@@ -236,7 +248,6 @@ export const Resume = forwardRef(
 
         <Grid container spacing={1}>
           <Grid item xs={6}>
-            {/* Certifications */}
             <Box>
               <Typography sx={styles.title}>Certifications</Typography>
 
@@ -259,7 +270,6 @@ export const Resume = forwardRef(
           </Grid>
 
           <Grid item xs={6}>
-            {/* Achievements */}
             <Box>
               <Typography sx={styles.title}>Achievements</Typography>
 
@@ -279,11 +289,10 @@ export const Resume = forwardRef(
 
         <Box sx={styles.pageBreak} />
 
-        {/* Projects */}
         <Box>
           <Typography sx={styles.title}>Projects</Typography>
 
-          {Projects.slice(0, 9).map((item, index) => (
+          {projects.slice(0, 9).map((item, index) => (
             <Box sx={styles.section} key={index}>
               <Box>
                 <Typography

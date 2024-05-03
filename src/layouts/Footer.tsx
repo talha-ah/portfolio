@@ -73,9 +73,10 @@ const styles = {
     textTransform: "uppercase",
   },
   copyright: {
+    width: "100%",
     fontWeight: 400,
     fontSize: "16px",
-    padding: "32px 0",
+    padding: "16px 0",
     textAlign: "center",
     lineHeight: "1.667em",
   },
@@ -161,12 +162,12 @@ export const Footer = ({
         </Container>
       </Box>
 
-      <Container maxWidth={maxWidth}>
-        <Box sx={styles.copyright}>
+      <Box sx={styles.copyright}>
+        <Container maxWidth={maxWidth}>
           Crafted by yours truly using Next.js and Material UI, then launched
           with Vercel. © {new Date().getFullYear()}
-        </Box>
-      </Container>
+        </Container>
+      </Box>
     </Box>
   )
 }

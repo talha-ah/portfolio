@@ -29,8 +29,8 @@ const styles = {
     opacity: visibility ? 1 : 0,
     right: (theme: Theme) => theme.spacing(3),
     bottom: (theme: Theme) => theme.spacing(3),
-    zIndex: (theme: Theme) => theme.zIndex.fab,
     pointerEvents: visibility ? "auto" : "none",
+    zIndex: (theme: Theme) => theme.zIndex.drawer + 2,
 
     "& svg": {
       transform: "rotate(-90deg)",

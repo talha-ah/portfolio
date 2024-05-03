@@ -7,25 +7,31 @@ import { Input } from "@ui/Input"
 import { Button } from "@ui/Button"
 import { SkillType } from "@components/Portfolio/types"
 
-export const UpdateResume = ({
-  data,
-  onClose,
-  onSubmit,
-}: Readonly<{
+interface Data {
+  role: string
+  summary: string
+  interests: string
+  skills: SkillType[]
+}
+
+interface Props {
   onClose: () => void
   onSubmit: (args: any) => void
-  data: {
-    role: string
-    skills: SkillType[]
-  }
-}>) => {
+  data: Data
+}
+
+export const UpdateResume = ({ data, onClose, onSubmit }: Readonly<Props>) => {
   const [role, setRole] = useState<string>(data.role)
+  const [summary, setSummary] = useState<string>(data.summary)
   const [skills, setSkills] = useState<SkillType[]>(data.skills)
+  const [interests, setInterests] = useState<string>(data.interests)
 
   useEffect(() => {
     setRole(data.role)
     setSkills(data.skills)
-  }, [data.role, data.skills])
+    setSummary(data.summary)
+    setInterests(data.interests)
+  }, [data.role, data.skills, data.summary, data.interests])
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -37,6 +43,8 @@ export const UpdateResume = ({
     const data = {
       skills: [] as SkillType[],
       role: formData.get("role") as string,
+      summary: formData.get("summary") as string,
+      interests: formData.get("interests") as string,
     }
 
     let nextEntry = iterator.next()
@@ -62,21 +70,50 @@ export const UpdateResume = ({
   }
 
   return (
-    <Box
-      noValidate
-      component="form"
-      onSubmit={handleSubmit}
-      sx={{
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <Grid container spacing={2}>
+    <Box noValidate component="form" onSubmit={handleSubmit}>
+      <Grid container spacing={1}>
         <Grid item>
           <FormLabel>Role</FormLabel>
+        </Grid>
+
+        <Grid item>
           <Input required fullWidth id="role" name="role" defaultValue={role} />
+        </Grid>
+
+        <Grid item>
+          <FormLabel>Summary</FormLabel>
+        </Grid>
+
+        <Grid item>
+          <Input
+            rows={4}
+            required
+            fullWidth
+            multiline
+            id="summary"
+            name="summary"
+            defaultValue={summary}
+          />
+        </Grid>
+
+        <Grid item>
+          <FormLabel>Interests</FormLabel>
+        </Grid>
+
+        <Grid item>
+          <Input
+            rows={2}
+            required
+            fullWidth
+            multiline
+            id="interests"
+            name="interests"
+            defaultValue={interests}
+          />
+        </Grid>
+
+        <Grid item>
+          <FormLabel>Skills</FormLabel>
         </Grid>
 
         {skills.map((skill) => {
