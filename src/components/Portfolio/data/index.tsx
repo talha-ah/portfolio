@@ -12,6 +12,7 @@ export const LinkedIn = "talha-ah"
 export const Location = "London, UK"
 export const Phone = "+44 794 643 4693"
 export const Email = "talha.ah08@gmail.com"
+export const Portfolio = "talha-ah.vercel.app"
 export const LocationLink = "https://maps.app.goo.gl/qKhcWwXKXbewqidB7"
 
 // Words to be highlighted in the resume
@@ -197,12 +198,20 @@ export const Experiences: ExperienceType[] = [
 // JavaScript, Typescript, React, Next.js, React Native, HTML, CSS, Node.js, Express.js, Python, FastAPI, MongoDB, PostgreSQL, Firestore, Webpack, Babel, CSS-in-JS, AWS, Linux, Lambda, Serverless, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, GitHub Actions, Automation, Package management, Agile, Heroku, Vercel, Netlify, SCSS, Bootstrap, Tailwind.css, Material-ui, Styled-Components, Redux-Thunk, React-Testing-Library, Jest, Enzyme, Cypress, Mocha, Chai, Sinon, Django, C++, C#, PHP, MySQL, Angular, Flutter, Machine Learning/AI, Docker, Jenkins, Elastic Search, Git, Microservices, CI/CD, DevOps, Google Cloud, Firebase, Azure, TFS, Jira, DynamoDB, GraphQL, Apollo, XML, SOAP, RESTAPI, Nginx, Apache, Bash, SSH
 export const Skills: SkillType[] = [
   {
-    title: "Expertise",
-    list: "JavaScript (ES6+), TypeScript, React, Node.js, Python, MongoDB, PostgreSQL, AWS, GCP",
+    title: "Front-End Expertise",
+    list: "JavaScript, TypeScript, React, Next.js, Angular, React Native, Redux",
+  },
+  {
+    title: "Back-End Expertise",
+    list: "Node.js, Express.js, Python, FastAPI, Django, MongoDB, PostgreSQL, DynamoDB, Firebase",
+  },
+  {
+    title: "Cloud & DevOps Expertise",
+    list: "AWS, Azure, Google Cloud Platform, Docker, CI/CD, Git",
   },
   {
     title: "Other Experience",
-    list: "Next.js, Express.js, FastAPI, NLP, LLMs, DynamoDB, Elasticsearch, Neo4j, Firestore, RESTAPI, GraphQL, Serverless, Microservices, Docker, CI/CD, Git, Agile",
+    list: "Agile/Scrum, GraphQL, LLMs, Elastic Search, Neo4j, Serverless, Microservices, Software Architecture, Security, Infrastructure as Code",
   },
   {
     title: "Languages",
@@ -524,4 +533,4 @@ export const Certifications = [
 ]
 
 export const Interests =
-  "Traveling, gaming, anime & tv series (science fiction & fantasy), technology, AI, driving"
+  "Traveling, gaming, anime & tv series (science fiction & fantasy), technology"

@@ -21,6 +21,7 @@ import {
 import { Link } from "@ui/Link"
 import { APP_NAME } from "@utils/constants"
 import { HeaderLayout } from "@layouts/index"
+import { ParseHTML } from "@components/ParseHTML"
 import { Project } from "@components/Portfolio/Project"
 import { Section } from "@components/Portfolio/Section"
 
@@ -206,9 +207,9 @@ const ExperiencesList = () => {
 
               <Box component="ul">
                 {item.description.map((i, index) => (
-                  <Typography key={index} component="li" sx={styles.text}>
+                  <ParseHTML key={index} component="li" sx={styles.text}>
                     {i}
-                  </Typography>
+                  </ParseHTML>
                 ))}
               </Box>
             </Box>

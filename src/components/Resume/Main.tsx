@@ -18,6 +18,7 @@ import {
   GitHub,
   LinkedIn,
   Location,
+  Portfolio,
   LocationLink,
 } from "../Portfolio/data"
 
@@ -96,7 +97,7 @@ const styles = {
       `${theme.spacing(1.4)} 0 ${theme.spacing(1)} ${theme.spacing(2)}`,
   },
   section: {
-    mt: 2,
+    mt: 1,
   },
 }
 
@@ -155,6 +156,8 @@ export const Resume = forwardRef(
                     </Typography>
                   </Box>
 
+                  <Typography sx={styles.mute}>{item.skills}</Typography>
+
                   <Box component="ul" sx={styles.list}>
                     {item.description.map((i, index) => (
                       <ParseHTML key={index} sx={styles.text} component="li">
@@ -203,6 +206,13 @@ export const Resume = forwardRef(
                 to={`https://www.linkedin.com/in/${LinkedIn}`}
               >
                 linkedin.com/in/{LinkedIn}
+              </Typography>
+              <Typography
+                to={Portfolio}
+                sx={styles.textLink}
+                component={LinkBehaviour}
+              >
+                {Portfolio}
               </Typography>
             </Box>
 
