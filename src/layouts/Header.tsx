@@ -1,6 +1,4 @@
 import * as React from "react"
-import { useRef } from "react"
-import { useReactToPrint } from "react-to-print"
 
 import { Theme } from "@mui/material/styles"
 import { Menu, Close } from "@mui/icons-material"
@@ -10,10 +8,11 @@ import { Logo } from "@ui/Logo"
 import { Dialog } from "@ui/Dialog"
 import { Button } from "@ui/Button"
 import { IconButton } from "@ui/IconButton"
-// import { OneColumn } from "@components/Resume"
 import { scrollIntoView } from "@utils/common"
 import { useIsMobile } from "@hooks/useIsMobile"
+import { Resume } from "@components/Resume/Main"
 import { Width, Link as LinkType } from "@utils/types"
+import { useResume } from "@components/Resume/useResume"
 
 const glassmorphism = {
   opacity: 0.9,
@@ -84,6 +83,10 @@ const styles = {
     display: "flex",
     alignItems: "center",
   },
+  resumeButton: {
+    py: 0,
+    fontWeight: 700,
+  },
 }
 
 const links: LinkType[] = [
@@ -125,24 +128,7 @@ const Links = ({ onClick }: { onClick?: () => void }) => (
 
 export const Header = ({ maxWidth }: { maxWidth: Width }) => {
   const { isMobile } = useIsMobile()
-  const componentRef = useRef<HTMLDivElement>(null)
-
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-    documentTitle: "Resume - Talha Ahmad - Software Engineer",
-    pageStyle: `
-      @page {
-        size: A4 portrait;
-      }
-
-      body {
-        color: black !important;
-        font-size: 11px !important;
-        background-color: white !important;
-        font-family: Cambria, serif !important;
-      }
-    `,
-  })
+  const { ref, onPrint, resume } = useResume()
 
   return (
     <Box id="header" component="header" sx={styles.root}>
@@ -164,16 +150,16 @@ export const Header = ({ maxWidth }: { maxWidth: Width }) => {
             <>
               <Links />
 
-              <Button size="small" onClick={handlePrint}>
+              <Button size="small" onClick={onPrint} sx={styles.resumeButton}>
                 Resume
               </Button>
             </>
           )}
         </Box>
 
-        {/* <Box display="none">
-          <OneColumn ref={componentRef} />
-        </Box> */}
+        <Box display="none">
+          <Resume ref={ref} {...resume} />
+        </Box>
       </Container>
     </Box>
   )

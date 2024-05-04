@@ -88,6 +88,7 @@ const styles = {
     gap: 1,
     display: "flex",
     alignItems: "center",
+    flexDirection: "column",
   },
   metricNumber: {
     fontWeight: "700",
@@ -98,17 +99,12 @@ const styles = {
     fontWeight: "700",
     maxWidth: "120px",
     lineHeight: "1.1em",
+    textAlign: "center",
     fontSize: "clamp(18px, 4vw, 24px)",
   },
   aboutSkills: {
-    display: "flex",
     flexWrap: "wrap",
-    alignItems: "center",
     paddingInlineStart: 2,
-
-    "& li": {
-      width: "50%",
-    },
   },
   companies: (theme: Theme) => ({
     py: "40px",
@@ -244,46 +240,46 @@ const Main = () => {
               </Typography>
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={10}>
               <Typography variant="body1" sx={styles.text}>
-                I am a Software Engineer with over {TotalExperience} years of
-                experience. I am passionate about building web applications and
-                solving problems. I have experience in Full Stack Web and Mobile
-                Development. I am proficient in JavaScript, TypeScript, React,
-                Node.js, and Python.
+                With over 4 years of experience as a Software Engineer, I am
+                driven by a passion for building web applications that solve
+                real-world problems and create seamless user experiences. My
+                expertise spans the full stack, encompassing both web and mobile
+                development.
                 <br />
                 <br />
-                I enjoy creating things that live on the internet. My interest
-                in web development started back in 2018 when I decided to build
-                a web based project for my final Year in Bachelors --- turns out
-                building a custom CMS for my University taught me a lot of React
-                and Node.js.
+                As a proficient JavaScript and TypeScript developer, I wield the
+                power of React and Next.js to create dynamic and responsive user
+                interfaces. Complementing my front-end prowess, I leverage
+                Node.js and Python on the back-end to build robust and scalable
+                server-side solutions. My experience with PostgreSQL and MongoDB
+                empowers me to design and implement efficient and optimized data
+                storage and retrieval systems.
                 <br />
                 <br />
-                Here are a few technologies I&apos;ve been working with
-                recently:
+                From my early days in 2018, when I built a custom CMS for my
+                university as a final year project, I have been captivated by
+                the art of web development. This project not only taught me
+                valuable lessons in React and Node.js but also ignited a passion
+                for creating digital experiences that leave a lasting impact.
+                <br />
+                <br />
+                Embracing the principles of DevOps, I am well-versed in
+                containerization with Docker and proficient in implementing
+                CI/CD pipelines for efficient and streamlined development and
+                deployment processes.
+                <br />
+                <br />
+                Whether it&apos;s building feature-rich web applications,
+                crafting intuitive mobile experiences, or integrating
+                cutting-edge technologies, I thrive on collaborating with
+                cross-functional teams to deliver innovative and user-centric
+                solutions. With a keen eye for detail and a commitment to
+                staying up-to-date with the latest industry trends, I strive to
+                push the boundaries of what&apos;s possible in the digital
+                realm.
               </Typography>
-
-              <Box component="ul" sx={styles.aboutSkills}>
-                {[
-                  "JavaScript, TypeScript",
-                  "React, Next.js",
-                  "Node.js",
-                  "Python",
-                  "PostgreSQL, MongoDB",
-                  "DevOps (Docker, CI/CD)",
-                ].map((skill) => (
-                  <Typography
-                    key={skill}
-                    component="li"
-                    variant="body1"
-                    sx={styles.text}
-                    color="text.secondary"
-                  >
-                    {skill}
-                  </Typography>
-                ))}
-              </Box>
 
               <Box sx={styles.socials}>
                 <Link to={`tel:${Phone}`}>
@@ -309,7 +305,7 @@ const Main = () => {
               </Box>
             </Grid>
 
-            <Grid item xs={12} sm={6} sx={styles.metrics}>
+            <Grid item xs={12} md={2} sx={styles.metrics}>
               <Box sx={styles.metric}>
                 <Typography variant="body1" sx={styles.metricNumber}>
                   {TotalExperience}+

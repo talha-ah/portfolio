@@ -1,4 +1,11 @@
-import { SkillType, ProjectType, ExperienceType, EducationType } from "../types"
+import {
+  SkillType,
+  ProjectType,
+  EducationType,
+  ExperienceType,
+  AchievementType,
+  CertificationtType,
+} from "../types"
 
 import Si from "public/companies/si.svg"
 import Gg from "public/companies/gg.svg"
@@ -11,8 +18,8 @@ export const Name = "Talha Ahmad"
 export const LinkedIn = "talha-ah"
 export const Location = "London, UK"
 export const Phone = "+44 794 643 4693"
+export const Portfolio = "talhaahmad.dev"
 export const Email = "talha.ah08@gmail.com"
-export const Portfolio = "talha-ah.vercel.app"
 export const LocationLink = "https://maps.app.goo.gl/qKhcWwXKXbewqidB7"
 
 // Words to be highlighted in the resume
@@ -63,6 +70,9 @@ export const jobs: string[] = [
 
 export const Summary: string =
   "with <strong>4+</strong> years of proven track record in building innovative solutions and leading teams in agile environments. Skilled in JavaScript, Python, React, and Node.js, and possessing a strong understanding of AI and Large Language Models (LLMs). Passionate for leveraging AI technologies to drive product excellence. Recognized for delivering exceptional results in fast-paced, early-stage startup environments."
+
+export const Interests: string =
+  "Traveling, gaming, anime & tv series (science fiction & fantasy), technology"
 
 export const Experiences: ExperienceType[] = [
   {
@@ -250,7 +260,7 @@ export const SkillsAll: SkillType[] = [
   },
   {
     title: "Others",
-    list: "Lambda, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, S3, XML, SOAP, RESTAPI, GraphQL, Apollo, Linux, Bash, SSH, Automation, Package management, Agile, Machine Learning/AI, Jira, Nginx, Apache",
+    list: "LLMs, Lambda, AppSync, Amplify, ECS, ECR, EC2, SQS, SNS, S3, XML, SOAP, RESTAPI, GraphQL, Apollo, Linux, Bash, SSH, Automation, Package management, Agile/Scrum, Machine Learning/AI, Jira, Nginx, Apache, Software Architecture,Security, Infrastructure as Code",
   },
   {
     title: "Languages",
@@ -447,7 +457,7 @@ export const Projects: ProjectType[] = [
   },
 ]
 
-export const Educations = [
+export const Educations: EducationType[] = [
   {
     institution: "Canterbury Christ Church University",
     location: "Canterbury, UK",
@@ -480,7 +490,7 @@ export const Educations = [
   },
 ]
 
-export const Achievements = [
+export const Achievements: AchievementType[] = [
   {
     title: "Award of Excellence for Outstanding Accomplishments",
     organizations: [
@@ -505,7 +515,7 @@ export const Achievements = [
   },
 ]
 
-export const Certifications = [
+export const Certifications: CertificationtType[] = [
   // {
   //   title: "MongoDB Basics",
   //   organization: "MongoDB University",
@@ -531,6 +541,3 @@ export const Certifications = [
     link: "https://www.coursera.org/account/accomplishments/certificate/4PEJU8B5LTFG",
   },
 ]
-
-export const Interests =
-  "Traveling, gaming, anime & tv series (science fiction & fantasy), technology"

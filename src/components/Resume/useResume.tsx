@@ -102,35 +102,21 @@ export const useResume = (props?: Props) => {
         margin: 34px 44px;
       }
 
-      body {
-        max-width: 800px;
-        padding: 34px 44px;
-        max-height: 1122.24px;
-
-        color: black !important;
-        font-size: ${BFS} !important;
-        font-family: ${FONT} !important;
-        background-color: white !important;
-      }
-
       @media print {
         body {
           margin: 0;
           padding: 0;
           max-width: 100%;
           max-height: 100%;
+
+          color: black !important;
+          font-size: ${BFS} !important;
+          font-family: ${FONT} !important;
+          background-color: white !important;
         }
       }
     `,
-    print: async (iFrame: HTMLIFrameElement) => {
-      //github.com/gregnb/react-to-print/issues/484
-      if (iFrame) {
-        // const fd = iFrame.contentDocument
-        // if (fd)  const html = fd.getElementsByTagName("html")
-
-        window.print()
-      }
-    },
+    documentTitle: `Resume - Talha Ahmad - ${role}`,
   })
 
   const onChangeResume = () => {
