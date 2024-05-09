@@ -321,6 +321,24 @@ export const Projects: ProjectType[] = [
     ],
   },
   {
+    slug: "go-scholar",
+    title: "Go Scholar",
+    link: "https://github.com/talha-ah/go_scholar",
+    skills:
+      "Python, FastAPI, JavaScript, React, Next.js, Firebase, DevOps, BeautifulSoup",
+    task: "Developed a tool to gather Google Scholar analytics, links, and citations. Visualized data on graphs, saving time for authors to find co-authors and articles.",
+
+    shortDescription:
+      "As a Full stack Engineer, developed this tool which gathers Google Scholar analytics, links, citations and represents them visually on the graphs, saving time for the authors to find co-authors, their articles and links across their network.",
+    description:
+      "In this project, I developed a tool to gather Google Scholar analytics, links, and citations, enabling authors to visualize their academic impact and network. By leveraging web scraping techniques and data visualization libraries, I created a user-friendly platform that saves time for authors to find co-authors, articles, and links across their network. The tool streamlines the process of gathering and analyzing academic data, empowering authors to make informed decisions and enhance their academic reach and impact.",
+    highlights: [
+      "Developed a tool to gather Google Scholar analytics, links, and citations.",
+      "Visualized data on graphs, saving time for authors to find co-authors and articles.",
+      "Empowered authors to enhance their academic reach and impact through data-driven insights.",
+    ],
+  },
+  {
     slug: "retail-link",
     title: "Retail Link",
     link: "https://retail-link.vercel.app",
@@ -341,7 +359,7 @@ export const Projects: ProjectType[] = [
     slug: "nlp-text-sentiment-analysis-tool",
     title: "NLP Text Sentiment Analysis Tool",
     skills: "Python, NLTK, NLP, Scikit-learn, AI, Machine Learning",
-    task: "Sentiment analysis tool using NLP and machine learning to analyze movie review comments. Trained ML model, ",
+    task: "Sentiment analysis tool using NLP and machine learning to analyze movie review comments. Trained ML model to classify comments as positive, negative, or neutral. Implemented user-friendly interface.",
 
     shortDescription:
       "Developed a sentiment analysis tool utilizing natural language processing (NLP) and machine learning techniques to analyze the sentiment of movie review comments. Trained a machine learning model on a dataset of movie reviews to classify comments as positive, negative, or neutral. Implemented a user-friendly interface for users to input movie review comments and receive sentiment analysis results.",

@@ -266,6 +266,26 @@ export const Resume = forwardRef(
             </Box>
           </Grid>
         </Grid>
+
+        <Box>
+          <Typography sx={styles.heading}>
+            Additional Projects and Experience
+          </Typography>
+
+          {projects.map((item) => (
+            <Box key={item.slug} sx={styles.section}>
+              <Typography
+                to={item.title}
+                sx={styles.titleLink}
+                component={LinkBehaviour}
+              >
+                {item.title}
+              </Typography>
+              <Typography sx={styles.mute}>{item.skills}</Typography>
+              <Typography sx={styles.text}>{item.description}</Typography>
+            </Box>
+          ))}
+        </Box>
       </Box>
     )
   }
