@@ -4,7 +4,7 @@ Email: talha.ah08@gmail.com | Phone: +44 794-643-4693 | LinkedIn: talha-ah | Git
 
 ## Summary
 
-Software Engineer recognized for delivering top-tier solutions and proven expertise in JavaScript and Python, with a keen eye for a healthy degree of perfectionism. Led a team of 5-6 engineers successfully in agile project environments, contributing to the success of projects valued between $5M to $7M. Adept at driving success through innovation, collaboration, and a commitment to excellence.
+Software Engineer with 4+ years of proven track record in building innovative solutions and leading teams in agile environments. Skilled in JavaScript, Python, React, and Node.js, and possessing a strong understanding of AI and Large Language Models (LLMs). Passionate for leveraging AI technologies to drive product excellence. Recognized for delivering exceptional results in fast-paced, early-stage startup environments.
 
 ## Professional Experience
 
@@ -12,13 +12,13 @@ Software Engineer recognized for delivering top-tier solutions and proven expert
 
 _Jan 2021 - Present | Skupreme_
 
-- Leadership: Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a 30% increase in client satisfaction ratings.
-- Innovation: Developed a dynamic multi-tenant architecture, reducing integration time by 25% and boosting platform reliability by 20%, solidifying Skupreme's position as an e-commerce automation leader.
-- Collaboration: Collaborated with teams to integrate address validation APIs, reducing errors by 30% and improving shipping accuracy by 15%, driving operational excellence for Skupreme's clients.
+- Leadership: Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a 30% increase in client satisfaction ratings."
+- Innovation: Developed a dynamic multi-tenant architecture, reducing integration time by 25% and boosting platform reliability by 20%, solidifying Skupreme&apos;s position as an e-commerce automation leader.
+- Collaboration: Collaborated with teams to integrate address validation APIs, reducing errors by 30% and improving shipping accuracy by 15%, driving operational excellence for Skupreme&apos;s clients.
 - Optimization: Implemented advanced backend API optimizations, reducing response times by 40% and increasing concurrent user capacity by 25%, enhancing user experience and platform competitiveness.
 - Efficiency: Engineered scalable microservices architecture, cutting deployment times by 50%, and ensuring uninterrupted service during updates, enhancing operational efficiency and customer satisfaction.
-- Strategic Integration: Orchestrated seamless integration of payment gateways, driving a 30% increase in transaction success rates and substantial revenue growth for Skupreme's clientele.
-- Mentorship: Mentored junior engineers, fostering a culture of innovation and excellence, resulting in standardized and efficient development practices across the organization.
+- Strategic Integration: Orchestrated seamless integration of payment gateways, driving a 30% increase in transaction success rates and substantial revenue growth for Skupreme&apos;s clientele.
+- Mentorship: Mentored junior engineers, fostering a culture of innovation and excellence across the organization.
 
 ### Senior Software Engineer
 
@@ -26,17 +26,17 @@ _Jan 2023 - Mar 2024 | NTT DATA & GiffGaff_
 
 - Leadership: Stepped up to manage team lead responsibilities during the urgent absence of the team lead, effectively coordinating tasks and ensuring project continuity, earning recognition from project and engineering managers for professionalism and leadership.
 - Collaboration: Worked with various teams to understand their component usage needs, updating and optimizing components to support diverse requirements, resulting in increased efficiency and satisfaction across teams.
-- Efficiency: Spearheaded contract plan design implementation, resulting in a 20% increase in giffgaff service offerings and more than a million in revenue.
-- Innovation: Developed and published over 10 React components to the internal design library, standardizing UI elements across teams and ensuring consistency in design implementation.
-- Mentorship: Created on boarding documentation for new employees that was used to onboard 5 employees. Provided mentorship and guidance to junior engineers, resulting in a 30% increase in team productivity.
+- Efficiency: Spearheaded contract plan design implementation, resulting in a 20% increase in giffgaff service offerings.
+- Innovation: Developed and published over 10 React components to the internal design library.
+- Mentorship: Created on boarding documentation for new employees that was used to onboard 5 new employees. Provided mentorship and guidance to junior engineers, resulting in a 30% increase in team productivity.
 
 ### Full Stack Developer
 
 _Jul 2020 - May 2021 | Falcon IT Consulting_
 
 - Mentorship: Mentored a team of 5 engineers, providing career advice and pinpointing areas for growth.
-- Collaboration: Led comprehensive analysis and documentation of client requirements, resulting in a 20% reduction in project iteration cycles.
-- Achievement: Oversaw a $3 million project from analysis to completion, earning the 'Award of Excellence for Outstanding Accomplishments'.
+- Collaboration: Led comprehensive analysis of clientrequirements, resulting in a 20% reduction in projectiterations.
+- Achievement: Oversaw a $3 millionproject from analysis to completion, earning the &apos;Award of Excellence for Outstanding Accomplishments&apos;.
 
 ### Full Stack Developer
 
@@ -52,11 +52,15 @@ _Oct 2018 - May 2020 | Freelancer_
 
 ## Skills
 
-**Main Stack**: JavaScript, Python, React, Node.js, Express.js, MongoDB, PostgreSQL, AWS
+**Front-End Expertise**: JavaScript, TypeScript, React, Next.js, Angular, React Native, Redux
 
-**Others**: Redux, TypeScript, Next.js, FastAPI, DynamoDB, Firestore, Serverless, Microservices, Docker, CI/CD, Git, Agile, RESTAPI, GraphQL
+**Back-End Expertise**: Node.js, Express.js, Python, FastAPI, Django, MongoDB, PostgreSQL, DynamoDB, Firebase
 
-**Languages**: English (professional), Urdu (native), Punjabi (native)
+**Cloud & DevOps Expertise**: AWS, Azure, Google Cloud Platform, Docker, CI/CD, Git
+
+**Other Experience**: Agile/Scrum, GraphQL, LLMs, Elastic Search, Neo4j, Serverless, Microservices, Software Architecture, Security, Infrastructure as Code
+
+**Languages**: English (fluent), Urdu (native)
 
 ## Certifications
 
