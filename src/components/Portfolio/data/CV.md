@@ -12,7 +12,9 @@ Software Engineer with 4+ years of proven track record in building innovative so
 
 _Jan 2021 - Present | Skupreme_
 
-- Leadership: Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a 30% increase in client satisfaction ratings."
+skills: Javascript, React, Next.js, Node.js, Express.js, SQL, MongoDB, AWS, Serverless, Lambda, NPM, AI, Agile/Scrum, CI/CD, DevOps
+
+- Leadership: Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a 30% increase in client satisfaction ratings.
 - Innovation: Developed a dynamic multi-tenant architecture, reducing integration time by 25% and boosting platform reliability by 20%, solidifying Skupreme&apos;s position as an e-commerce automation leader.
 - Collaboration: Collaborated with teams to integrate address validation APIs, reducing errors by 30% and improving shipping accuracy by 15%, driving operational excellence for Skupreme&apos;s clients.
 - Optimization: Implemented advanced backend API optimizations, reducing response times by 40% and increasing concurrent user capacity by 25%, enhancing user experience and platform competitiveness.
@@ -24,6 +26,8 @@ _Jan 2021 - Present | Skupreme_
 
 _Jan 2023 - Mar 2024 | NTT DATA & GiffGaff_
 
+skills: Javascript, React, Next.js, PHP, PostgreSQL, AWS, Airtime Hypernova, Jenkins, Elastic Search, Agile/Scrum
+
 - Leadership: Stepped up to manage team lead responsibilities during the urgent absence of the team lead, effectively coordinating tasks and ensuring project continuity, earning recognition from project and engineering managers for professionalism and leadership.
 - Collaboration: Worked with various teams to understand their component usage needs, updating and optimizing components to support diverse requirements, resulting in increased efficiency and satisfaction across teams.
 - Efficiency: Spearheaded contract plan design implementation, resulting in a 20% increase in giffgaff service offerings.
@@ -34,6 +38,8 @@ _Jan 2023 - Mar 2024 | NTT DATA & GiffGaff_
 
 _Jul 2020 - May 2021 | Falcon IT Consulting_
 
+skills: Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, DevOps, CI/CD
+
 - Mentorship: Mentored a team of 5 engineers, providing career advice and pinpointing areas for growth.
 - Collaboration: Led comprehensive analysis of clientrequirements, resulting in a 20% reduction in projectiterations.
 - Achievement: Oversaw a $3 millionproject from analysis to completion, earning the &apos;Award of Excellence for Outstanding Accomplishments&apos;.
@@ -41,6 +47,8 @@ _Jul 2020 - May 2021 | Falcon IT Consulting_
 ### Full Stack Developer
 
 _Oct 2018 - May 2020 | Freelancer_
+
+skills: Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, DevOps
 
 - Excellence: Maintained consistent 5-star ratings for project deliverables across 10+ diverse projects.
 - Efficiency: Delivered tailored web applications across diverse industries, ensuring seamless user experiences and optimal performance.
@@ -84,7 +92,7 @@ _Oct 2018 - May 2020 | Freelancer_
 
 **Description**: For SAiY as a Backend Engineer, I played a key role in developing a revolutionary platform that leverages GEN AI to redefine communication and interactions. SAiY is designed to enhance communication skills, self-expression, and clarity for individuals and businesses. Through my expertise in backend development and integration of GEN AI APIs, I made it possible to overcome communication barriers and empower users to achieve meaningful interactions. Using AWS ECR and ECS, I managed the DevOps and successfully integrated GEN AI APIs. SAiY highlights my ability to leverage cutting-edge technology to drive innovation and deliver impactful solutions that transform user experiences.
 
-**Tech Stack**: Node.js, Express.js, Stripe, PostgreSQL (AWS Aurora), AWS, Docker, ChatGPT
+**Tech Stack**: Node.js, Express.js, Stripe, PostgreSQL (AWS Aurora), AWS, Lambda, Serverless, Docker, ChatGPT
 
 **Achievements**:
 
@@ -96,7 +104,10 @@ _Oct 2018 - May 2020 | Freelancer_
 **URL**: https://apps.apple.com/us/app/saiy/id6462937067
 **URL**: https://www.saiy.ai
 
-### Mission Automate (ChatGPT and and DALL·E)
+**Date and Affiliation**:
+June 2023 - December 2021 (Freelancer)
+
+### Mission Automate
 
 **About**: A data extraction and content reformatting solution that utilizes web scraping, ChatGPT integration, and DALL·E image generation to streamline the process of curating high-quality medical blog content with visually appealing images.
 
@@ -112,6 +123,9 @@ _Oct 2018 - May 2020 | Freelancer_
 - Implemented CI/CD practices for efficient deployment and maintenance of the platform.
 - Utilized a comprehensive tech stack including Python, FastAPI, Firebase, WordPress, BeautifulSoup, ChatGPT API, and DALL·E API.
 - Streamlined the process of curating high-quality medical blog content with engaging visuals, saving valuable time and resources.
+
+**Date and Affiliation**:
+August 2023 - December 2023 (Freelancer)
 
 ### Electromatic Works
 
@@ -129,6 +143,30 @@ _Oct 2018 - May 2020 | Freelancer_
 - Implemented CI/CD best practices to ensure the client can update the platform business details and deploy the changes directly from the Admin Panel.
 
 **URL**: https://electromatic-next.vercel.app
+
+**Date and Affiliation**:
+April 2023 - September 2023 (Freelancer)
+
+### Go Scholar
+
+**About**: A tool to gather Google Scholar analytics, links, and citations and then visualize the data on graphs, saving time for authors to find co-authors and articles.
+
+**Short Description**: As a Full stack Engineer, developed this tool which gathers Google Scholar analytics, links, citations and represents them visually on the graphs, saving time for the authors to find co-authors, their articles and links across their network.
+
+**Description**: In this project, I developed a tool to gather Google Scholar analytics, links, and citations, enabling authors to visualize their academic impact and network. By leveraging web scraping techniques and data visualization libraries, I created a user-friendly platform that saves time for authors to find co-authors, articles, and links across their network. The tool streamlines the process of gathering and analyzing academic data, empowering authors to make informed decisions and enhance their academic reach and impact.
+
+**Tech Stack**: Python, FastAPI, JavaScript, React, Next.js, Firebase, DevOps, BeautifulSoup
+
+**Achievements**:
+
+- Developed a tool to gather Google Scholar analytics, links, and citations.
+- Visualized data on graphs, saving time for authors to find co-authors and articles.
+- Empowered authors to enhance their academic reach and impact through data-driven insights.
+
+**URL**: https://github.com/talha-ah/go_scholar
+
+**Date and Affiliation**:
+August 2022 - September 2022 (Master's FYP)
 
 ### Retail Link
 
@@ -148,6 +186,9 @@ _Oct 2018 - May 2020 | Freelancer_
 
 **URL**: https://retail-link.vercel.app
 
+**Date and Affiliation**:
+November 2020 - December 2022 (Freelancer)
+
 ### NLP Text Sentiment Analysis Tool
 
 **About**: A sentiment analysis tool using NLP and machine learning to analyze the sentiment of movie review comments.
@@ -163,6 +204,9 @@ _Oct 2018 - May 2020 | Freelancer_
 - Trained a machine learning model for sentiment analysis of movie review comments.
 - Developed an intuitive user interface for inputting movie review comments and viewing sentiment analysis results.
 - Achieved high accuracy in sentiment classification through NLP and machine learning techniques.
+
+**Date and Affiliation**:
+January 2018 - March 2018 (University Project)
 
 ### Six Wraps
 
@@ -182,6 +226,9 @@ _Oct 2018 - May 2020 | Freelancer_
 
 **URL**: https://six-wraps.vercel.app
 
+**Date and Affiliation**:
+July 2022 - July 2023 (Freelancer)
+
 ### Prospects Trading
 
 **About**: A platform for "Sports Illustrated" tournaments to engage players in a sticker trading game.
@@ -199,6 +246,9 @@ _Oct 2018 - May 2020 | Freelancer_
 - Managed the DevOps and introduced batch processing and optimizations to the APIs fetching the event details.
 
 **URL**: https://play.google.com/store/apps/details?id=com.si.prospects
+
+**Date and Affiliation**:
+November 2021 - December 2022 (Freelancer)
 
 ### AAB Engage App
 
@@ -218,6 +268,9 @@ _Oct 2018 - May 2020 | Freelancer_
 
 **URL**: https://play.google.com/store/apps/details?id=com.sap.webide.x4efb5a44557f416482c43ec9805cc9b6&hl=en&gl=US
 
+**Date and Affiliation**:
+October 2021 - November 2021 (Systems Limited)
+
 ### Owl Express
 
 **About**: A platform for students to get help from their peers and teachers.
@@ -235,6 +288,9 @@ _Oct 2018 - May 2020 | Freelancer_
 - Developed serverless synced data architecture for web and mobile applications.
 
 **URL**: https://www.owlexpress.net
+
+**Date and Affiliation**:
+July 2022 - July 2023 (Freelancer)
 
 ### Orgaplan
 
@@ -254,6 +310,9 @@ _Oct 2018 - May 2020 | Freelancer_
 
 **URL**: http://orgaplansa.com
 
+**Date and Affiliation**:
+December 2020 - May 2021 (Falcon IT Consulting)
+
 ### Permispop
 
 **About**: Permispop is a platform for driving instructors to manage their students, lessons, and schedules.
@@ -270,3 +329,6 @@ _Oct 2018 - May 2020 | Freelancer_
 - Completed the project successfully, appreciated by the team and the project manager.
 
 **URL**: https://permispop.fr
+
+**Date and Affiliation**:
+July 2020 - October 2020 (Falcon IT Consulting)

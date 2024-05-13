@@ -171,8 +171,8 @@ export const Experiences: ExperienceType[] = [
       "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, DevOps",
     description: [
       "<strong>Mentorship:</strong> Mentored a team of <strong>5</strong> engineers, providing career advice and pinpointing areas for growth.",
-      "<strong>Collaboration:</strong> Led comprehensive analysis of clientrequirements, resulting in a <strong>20%</strong> reduction in projectiterations.",
-      "<strong>Achievement:</strong> Oversaw a <strong>$3</strong> millionproject from analysis to completion, earning the <strong>&apos;Award of Excellence for Outstanding Accomplishments&apos;</strong>.",
+      "<strong>Collaboration:</strong> Led comprehensive analysis of client requirements, resulting in a <strong>20%</strong> reduction in projectiterations.",
+      "<strong>Achievement:</strong> Oversaw a <strong>$3</strong> million project from analysis to completion, earning the <strong>&apos;Award of Excellence for Outstanding Accomplishments&apos;</strong>.",
     ],
   },
   {
