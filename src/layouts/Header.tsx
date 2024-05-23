@@ -95,12 +95,12 @@ const links: LinkType[] = [
     label: "Home",
   },
   {
-    to: "/#about",
-    label: "About",
-  },
-  {
     to: "/#experience",
     label: "Experience",
+  },
+  {
+    to: "/#skills",
+    label: "Skills",
   },
   {
     to: "/#projects",

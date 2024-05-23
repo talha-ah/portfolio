@@ -363,7 +363,27 @@ const Main = () => {
           <ExperiencesList />
         </Section>
 
-        <Section id="projects" heading="Projects">
+        <Section id="skills" heading="Technologies">
+          {SkillsAll.map((skill) => (
+            <Typography
+              mb={2}
+              variant="body1"
+              sx={styles.text}
+              key={skill.title}
+            >
+              <span style={{ color: theme.palette.primary.main }}>
+                {skill.title}:{" "}
+              </span>
+              {skill.list}
+            </Typography>
+          ))}
+        </Section>
+
+        <Section
+          id="projects"
+          heading="Projects"
+          backgroundColor="background.paper"
+        >
           <Grid container spacing={2}>
             {Projects.map((item) => (
               <Grid key={item.title} item xs={12} md={6} lg={4}>
@@ -373,11 +393,7 @@ const Main = () => {
           </Grid>
         </Section>
 
-        <Section
-          id="education"
-          backgroundColor="background.paper"
-          heading="Education & Certifications"
-        >
+        <Section id="education" heading="Education & Certifications">
           {Educations.map((item) => (
             <Box key={item.degree} mb={4}>
               <Typography variant="h4">{item.degree}</Typography>
@@ -407,7 +423,11 @@ const Main = () => {
           ))}
         </Section>
 
-        <Section id="achievements" heading="Achievements">
+        <Section
+          id="achievements"
+          heading="Achievements"
+          backgroundColor="background.paper"
+        >
           {Achievements.map((item) => (
             <Box key={item.title} mb={4}>
               <Typography variant="h4">{item.title}</Typography>
@@ -417,26 +437,6 @@ const Main = () => {
                   .join(" AND ")}
               </Typography>
             </Box>
-          ))}
-        </Section>
-
-        <Section
-          id="skills"
-          backgroundColor="background.paper"
-          heading="Experience with technologies"
-        >
-          {SkillsAll.map((skill) => (
-            <Typography
-              mb={2}
-              variant="body1"
-              sx={styles.text}
-              key={skill.title}
-            >
-              <span style={{ color: theme.palette.primary.main }}>
-                {skill.title}:{" "}
-              </span>
-              {skill.list}
-            </Typography>
           ))}
         </Section>
       </HeaderLayout>
