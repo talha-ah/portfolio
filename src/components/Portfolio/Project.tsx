@@ -21,10 +21,6 @@ const styles = {
     "&:hover": {
       transform: "translateY(-2px)",
       border: (theme: Theme) => `1px solid ${theme.palette.primary.main}`,
-
-      "& h3": {
-        color: "primary.main",
-      },
     },
   },
   header: {
@@ -39,6 +35,7 @@ const styles = {
     fontWeight: "500",
     lineHeight: "1.1em",
     margin: "0px 0px 10px",
+    color: (theme: Theme) => theme.palette.primary.main,
   },
   task: {
     fontSize: "14px",

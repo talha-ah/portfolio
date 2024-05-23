@@ -7,6 +7,7 @@ import {
   Grid,
   Tabs,
   Theme,
+  useTheme,
   Container,
   Typography,
 } from "@mui/material"
@@ -135,6 +136,7 @@ const styles = {
 }
 
 const ExperiencesList = () => {
+  const theme = useTheme()
   const { isMobile } = useIsMobile()
 
   const [value, setValue] = React.useState(0)
@@ -204,7 +206,9 @@ const ExperiencesList = () => {
               <Box component="ul">
                 {item.description.map((i, index) => (
                   <ParseHTML key={index} component="li" sx={styles.text}>
-                    {i}
+                    {`<span style="color: ${theme.palette.primary.main};">${
+                      i.split("<strong>")[1].split("</strong>")[0]
+                    }</span>${i.split("</strong>")[1]}`}
                   </ParseHTML>
                 ))}
               </Box>
@@ -217,6 +221,8 @@ const ExperiencesList = () => {
 }
 
 const Main = () => {
+  const theme = useTheme()
+
   return (
     <>
       <Head>
@@ -426,7 +432,10 @@ const Main = () => {
               sx={styles.text}
               key={skill.title}
             >
-              <strong>{skill.title}:</strong> {skill.list}
+              <span style={{ color: theme.palette.primary.main }}>
+                {skill.title}:{" "}
+              </span>
+              {skill.list}
             </Typography>
           ))}
         </Section>
