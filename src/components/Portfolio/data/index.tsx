@@ -11,9 +11,10 @@ import Si from "public/companies/si.svg"
 import Gg from "public/companies/gg.svg"
 import Ntt from "public/companies/ntt-data.svg"
 import Skupreme from "public/companies/skupreme.svg"
+import ImpactAdvantage from "public/companies/impact-advantage.png"
 
 export const GitHub = "talha-ah"
-export const TotalExperience = 4
+export const TotalExperience = 5
 export const Name = "Talha Ahmad"
 export const LinkedIn = "talha-ah"
 export const Location = "London, UK"
@@ -68,41 +69,44 @@ export const jobs: string[] = [
   "Javascript Engineer",
 ]
 
-export const Summary: string =
-  "with <strong>4+</strong> years of proven track record in building innovative solutions and leading teams in agile environments. Skilled in JavaScript, Python, React, and Node.js, and possessing a strong understanding of AI and Large Language Models (LLMs). Passionate for leveraging AI technologies to drive product excellence. Recognized for delivering exceptional results in fast-paced, early-stage startup environments."
+export const Summary: string = `with <strong>${TotalExperience}+</strong> years of proven track record in building innovative solutions and leading teams in agile environments. Skilled in JavaScript, Python, React, and Node.js, and possessing a strong understanding of AI and Large Language Models (LLMs). Passionate for leveraging AI technologies to drive product excellence. Recognized for delivering exceptional results in fast-paced, early-stage startup environments.`
 
 export const Interests: string =
   "Traveling, gaming, anime & tv series (science fiction & fantasy), technology"
 
 export const Experiences: ExperienceType[] = [
   {
-    company: "Skupreme",
+    company: "ImpactAdvantage",
     role: "Senior Software Engineer",
-    location: "Miami, US (Remote)",
-    link: "https://skupreme.com",
+    location: "London, UK",
+    link: "https://www.impactadvantage.co.uk",
     logos: [
       {
-        logo: <Skupreme key="skupreme" />,
-        link: "https://skupreme.com",
+        logo: (
+          <img
+            key="falcon"
+            alt="Falcon IT Consulting"
+            src={ImpactAdvantage.src}
+          />
+        ),
+        link: "https://www.impactadvantage.co.uk",
       },
     ],
     duration: {
       start: {
-        year: "2021",
-        month: "January",
+        year: "2024",
+        month: "June",
       },
       end: null,
     },
     skills:
-      "Javascript, React, Next.js, Node.js, Express.js, SQL, MongoDB, AWS, Serverless, NPM, AI, Agile",
+      "Javascript, React, Next.js, Node.js, Express.js, SQL, Azure, Serverless, NPM, AI, Agile",
     description: [
-      "<strong>Leadership:</strong> Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a <strong>30%</strong> increase in client satisfaction ratings.",
-      "<strong>Innovation:</strong> Developed a dynamic multi-tenant architecture, reducing integration time by <strong>25%</strong> and boosting platform reliability by <strong>20%</strong>, solidifying Skupreme&apos;s position as an e-commerce automation leader.",
-      "<strong>Collaboration:</strong> Collaborated with teams to integrate address validation APIs, reducing errors by <strong>30%</strong> and improving shipping accuracy by <strong>15%</strong>, driving operational excellence for Skupreme&apos;s clients.",
-      "<strong>Optimization:</strong> Implemented advanced backend API optimizations, reducing response times by <strong>40%</strong> and increasing concurrent user capacity by <strong>25%</strong>, enhancing user experience and platform competitiveness.",
-      "<strong>Efficiency:</strong> Engineered scalable microservices architecture, cutting deployment times by <strong>50%</strong>, and ensuring uninterrupted service during updates, enhancing operational efficiency and customer satisfaction.",
-      "<strong>Strategic Integration:</strong> Orchestrated seamless integration of payment gateways, driving a <strong>30%</strong> increase in transaction success rates and substantial revenue growth for Skupreme&apos;s clientele.",
-      "<strong>Mentorship:</strong> Mentored junior engineers, fostering a culture of innovation and excellence across the organization.",
+      "<strong>Innovation:</strong> Designed, developed, tested and shipped high-quality multi-tenant architectural solutions that scale across multiple services, ensuring optimal performance and reliability.",
+      "<strong>Optimization:</strong> Implemented standard and strong production ready architecture for backend and the frontend, reducing the development time by <strong>25%</strong> and made the platform available for multiple demos and clients.",
+      "<strong>DevOps:</strong> Dockerized the application and deployed it on Azure, tested and implemented the CI/CD pipeline for the platform.",
+      "<strong>Experimentation:</strong> Wrote architecture briefs, carried out code experiments, and built prototypes and scaled systems to meet the needs of the business. Owned the technical roadmap and ensured alignment with business goals.",
+      "<strong>Mentorship:</strong> Mentored junior engineers, fostering a culture of innovation and excellence across the organization. Provided code reviews and feedback to ensure high-quality code standards.",
     ],
   },
   {
@@ -138,6 +142,36 @@ export const Experiences: ExperienceType[] = [
       "<strong>Efficiency:</strong> Spearheaded contract plan design implementation, resulting in a <strong>20%</strong> increase in giffgaff service offerings.",
       "<strong>Innovation:</strong> Developed and published over <strong>10</strong> React components to the internal design library.",
       "<strong>Mentorship:</strong> Created on boarding documentation for new employees that was used to onboard <strong>5</strong> new employees. Provided mentorship and guidance to junior engineers, resulting in a <strong>30%</strong> increase in team productivity.",
+    ],
+  },
+  {
+    company: "Skupreme",
+    role: "Senior Software Engineer",
+    location: "Miami, US (Remote)",
+    link: "https://skupreme.com",
+    logos: [
+      {
+        logo: <Skupreme key="skupreme" />,
+        link: "https://skupreme.com",
+      },
+    ],
+    duration: {
+      start: {
+        year: "2021",
+        month: "January",
+      },
+      end: null,
+    },
+    skills:
+      "Javascript, React, Next.js, Node.js, Express.js, SQL, MongoDB, AWS, Serverless, NPM, AI, Agile",
+    description: [
+      "<strong>Leadership:</strong> Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a <strong>30%</strong> increase in client satisfaction ratings.",
+      "<strong>Innovation:</strong> Developed a dynamic multi-tenant architecture, reducing integration time by <strong>25%</strong> and boosting platform reliability by <strong>20%</strong>, solidifying Skupreme&apos;s position as an e-commerce automation leader.",
+      "<strong>Collaboration:</strong> Collaborated with teams to integrate address validation APIs, reducing errors by <strong>30%</strong> and improving shipping accuracy by <strong>15%</strong>, driving operational excellence for Skupreme&apos;s clients.",
+      "<strong>Optimization:</strong> Implemented advanced backend API optimizations, reducing response times by <strong>40%</strong> and increasing concurrent user capacity by <strong>25%</strong>, enhancing user experience and platform competitiveness.",
+      "<strong>Efficiency:</strong> Engineered scalable microservices architecture, cutting deployment times by <strong>50%</strong>, and ensuring uninterrupted service during updates, enhancing operational efficiency and customer satisfaction.",
+      "<strong>Strategic Integration:</strong> Orchestrated seamless integration of payment gateways, driving a <strong>30%</strong> increase in transaction success rates and substantial revenue growth for Skupreme&apos;s clientele.",
+      "<strong>Mentorship:</strong> Mentored junior engineers, fostering a culture of innovation and excellence across the organization.",
     ],
   },
   {
@@ -209,7 +243,7 @@ export const Experiences: ExperienceType[] = [
 export const Skills: SkillType[] = [
   {
     title: "Front-End Expertise",
-    list: "JavaScript, TypeScript, React, Next.js, Angular, React Native, Redux",
+    list: "JavaScript, TypeScript, React, Next.js, React Native, Angular",
   },
   {
     title: "Back-End Expertise",
