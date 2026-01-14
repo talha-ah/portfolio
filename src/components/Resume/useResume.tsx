@@ -35,7 +35,7 @@ const DefaultProps = {
 export const useResume = (props?: Props) => {
   const ref = useRef<any>(null)
 
-  const [type, setType] = useState<string>("")
+  const [type, setType] = useState<string>("one-column")
 
   const { BFS } = { ...DefaultProps, ...props }
 
