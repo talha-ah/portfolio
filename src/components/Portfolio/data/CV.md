@@ -41,7 +41,7 @@ _Jul 2020 - May 2021 | Falcon IT Consulting_
 skills: Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, DevOps, CI/CD
 
 - Mentorship: Mentored a team of 5 engineers, providing career advice and pinpointing areas for growth.
-- Collaboration: Led comprehensive analysis of clientrequirements, resulting in a 20% reduction in projectiterations.
+- Collaboration: Led comprehensive analysis of client requirements, resulting in a 20% reduction in project iterations.
 - Achievement: Oversaw a $3 millionproject from analysis to completion, earning the &apos;Award of Excellence for Outstanding Accomplishments&apos;.
 
 ### Full Stack Developer

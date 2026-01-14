@@ -181,7 +181,7 @@ export const Resume = forwardRef(
         </Box>
 
         <Box>
-          <Typography sx={styles.title}>EXPERIENCES</Typography>
+          <Typography sx={styles.title}>Experience</Typography>
 
           {experiences.slice(0, 3).map((item, index) => (
             <Box sx={{ my: 1 }} key={index} mb={5}>

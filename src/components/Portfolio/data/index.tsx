@@ -14,7 +14,7 @@ import Skupreme from "public/companies/skupreme.svg"
 import ImpactAdvantage from "public/companies/impact-advantage.png"
 
 export const GitHub = "talha-ah"
-export const TotalExperience = 5
+export const TotalExperience = 6
 export const Name = "Talha Ahmad"
 export const LinkedIn = "talha-ah"
 export const Location = "London, UK"
@@ -62,14 +62,14 @@ export const HighlightedWords: string[] = [
 ]
 
 export const jobs: string[] = [
+  "Senior Software Engineer",
+  "Senior Frontend Engineer",
   "Software Engineer",
   "Full Stack Engineer",
-  "Backend Engineer",
   "Frontend Engineer",
-  "Javascript Engineer",
 ]
 
-export const Summary: string = `with <strong>${TotalExperience}+</strong> years of proven track record in building innovative solutions and leading teams in agile environments. Skilled in JavaScript, Python, React, and Node.js, and possessing a strong understanding of AI and Large Language Models (LLMs). Passionate for leveraging AI technologies to drive product excellence. Recognized for delivering exceptional results in fast-paced, early-stage startup environments.`
+export const Summary: string = `with <strong>${TotalExperience}+</strong> years of proven track record building scalable, performant frontend applications. Expert in React, TypeScript, and modern frontend testing practices including Jest, Cypress, Playwright, and visual regression testing. Experienced in developing design systems, component libraries, and extensible platform architectures. Strong background in CI/CD, package management, and cross-team collaboration. Recognized for delivering exceptional results in fast-paced startup environments while maintaining high code quality standards.`
 
 export const Interests: string =
   "Traveling, gaming, anime & tv series (science fiction & fantasy), technology"
@@ -100,18 +100,19 @@ export const Experiences: ExperienceType[] = [
       end: null,
     },
     skills:
-      "Javascript, React, Next.js, Node.js, Express.js, SQL, Azure, Serverless, NPM, AI, Agile",
+      "React, TypeScript, Next.js, Node.js, Express, MSSQL, Azure (Blob, Key Vault, Tables), Docker, Playwright, Jest, Auth0",
     description: [
-      "<strong>Innovation:</strong> Designed, developed, tested and shipped high-quality multi-tenant architectural solutions that scale across multiple services, ensuring optimal performance and reliability.",
-      "<strong>Optimization:</strong> Implemented standard and strong production ready architecture for backend and the frontend, reducing the development time by <strong>25%</strong> and made the platform available for multiple demos and clients.",
-      "<strong>DevOps:</strong> Dockerized the application and deployed it on Azure, tested and implemented the CI/CD pipeline for the platform.",
-      "<strong>Experimentation:</strong> Wrote architecture briefs, carried out code experiments, and built prototypes and scaled systems to meet the needs of the business. Owned the technical roadmap and ensured alignment with business goals.",
-      "<strong>Mentorship:</strong> Mentored junior engineers, fostering a culture of innovation and excellence across the organization. Provided code reviews and feedback to ensure high-quality code standards.",
+      "<strong>System Architecture:</strong> Architected and built the entire B2B platform from scratch—backend APIs (Node.js/Express/MSSQL), frontend (React/Next.js), and Azure infrastructure—enabling multi-tenant support for enterprise clients.",
+      "<strong>Azure Ecosystem:</strong> Designed Azure infrastructure including Blob Storage, Key Vault, Table Storage, and Managed Identity authentication for secure, scalable cloud operations.",
+      "<strong>E2E Automation:</strong> Migrated test suite from Cypress to <strong>Playwright</strong>, implementing comprehensive E2E automation with Page Object Model and CI-integrated test runs.",
+      "<strong>DevOps & CI/CD:</strong> Established Docker containerization with version-controlled images, automated pipelines, and streamlined deployments.",
+      "<strong>DIM Publishing System:</strong> Built Digital Impact Model builder with semantic versioning, multi-stage publishing workflow, and comprehensive change tracking for audit compliance.",
+      "<strong>Mentorship:</strong> Conducted code reviews, established engineering best practices, and mentored junior engineers.",
     ],
   },
   {
     company: "NTT DATA & GiffGaff",
-    role: "Senior Software Engineer",
+    role: "Senior Frontend Engineer",
     location: "London, UK",
     link: "https://www.giffgaff.com",
     logos: [
@@ -135,13 +136,13 @@ export const Experiences: ExperienceType[] = [
       },
     },
     skills:
-      "Javascript, React, Next.js, PHP, PostgreSQL, AWS, Airtime Hypernova, Jenkins, Elastic Search, Agile",
+      "React, TypeScript, Next.js, Jest, Cypress, Chromatic, Jenkins, Azure DevOps, Storybook, Design Systems",
     description: [
-      "<strong>Leadership:</strong> Stepped up to manage team lead responsibilities during the urgent absence of the team lead, effectively coordinating tasks and ensuring project continuity, earning recognition from project and engineering managers for professionalism and leadership.",
-      "<strong>Collaboration:</strong> Worked with various teams to understand their component usage needs, updating and optimizing components to support diverse requirements, resulting in increased efficiency and satisfaction across teams.",
-      "<strong>Efficiency:</strong> Spearheaded contract plan design implementation, resulting in a <strong>20%</strong> increase in giffgaff service offerings.",
-      "<strong>Innovation:</strong> Developed and published over <strong>10</strong> React components to the internal design library.",
-      "<strong>Mentorship:</strong> Created on boarding documentation for new employees that was used to onboard <strong>5</strong> new employees. Provided mentorship and guidance to junior engineers, resulting in a <strong>30%</strong> increase in team productivity.",
+      "<strong>Component Library:</strong> Developed and published over <strong>10</strong> React components to the internal design library with comprehensive test coverage using Jest and React Testing Library, ensuring consistency across product teams.",
+      "<strong>Testing & Quality:</strong> Implemented visual regression testing using Chromatic and end-to-end testing with Cypress, reducing production bugs by <strong>40%</strong> and improving release confidence.",
+      "<strong>Leadership:</strong> Stepped up to manage team lead responsibilities during absence, coordinating cross-functional tasks and ensuring project continuity, earning recognition from engineering managers.",
+      "<strong>Collaboration:</strong> Partnered with product, design, and backend teams to define scope and deliver features increasing service offerings by <strong>20%</strong>.",
+      // "<strong>Mentorship:</strong> Created onboarding documentation and mentored junior engineers, resulting in <strong>30%</strong> increase in team productivity.",
     ],
   },
   {
@@ -160,18 +161,20 @@ export const Experiences: ExperienceType[] = [
         year: "2021",
         month: "January",
       },
-      end: null,
+      end: {
+        year: "2024",
+        month: "May",
+      },
     },
     skills:
-      "Javascript, React, Next.js, Node.js, Express.js, SQL, MongoDB, AWS, Serverless, NPM, AI, Agile",
+      "Node.js, Express.js, MongoDB, AWS Lambda, Serverless, React, Next.js, Jest, Stripe, CI/CD",
     description: [
-      "<strong>Leadership:</strong> Led client collaboration, conducted demos, and addressed challenges for seamless project development, leading to a <strong>30%</strong> increase in client satisfaction ratings.",
-      "<strong>Innovation:</strong> Developed a dynamic multi-tenant architecture, reducing integration time by <strong>25%</strong> and boosting platform reliability by <strong>20%</strong>, solidifying Skupreme&apos;s position as an e-commerce automation leader.",
-      "<strong>Collaboration:</strong> Collaborated with teams to integrate address validation APIs, reducing errors by <strong>30%</strong> and improving shipping accuracy by <strong>15%</strong>, driving operational excellence for Skupreme&apos;s clients.",
-      "<strong>Optimization:</strong> Implemented advanced backend API optimizations, reducing response times by <strong>40%</strong> and increasing concurrent user capacity by <strong>25%</strong>, enhancing user experience and platform competitiveness.",
-      "<strong>Efficiency:</strong> Engineered scalable microservices architecture, cutting deployment times by <strong>50%</strong>, and ensuring uninterrupted service during updates, enhancing operational efficiency and customer satisfaction.",
-      "<strong>Strategic Integration:</strong> Orchestrated seamless integration of payment gateways, driving a <strong>30%</strong> increase in transaction success rates and substantial revenue growth for Skupreme&apos;s clientele.",
-      "<strong>Mentorship:</strong> Mentored junior engineers, fostering a culture of innovation and excellence across the organization.",
+      "<strong>Backend Architecture:</strong> Built scalable backend APIs handling <strong>high-volume traffic</strong> for e-commerce operations, implementing microservices with AWS Lambda and Serverless framework.",
+      "<strong>Multi-tenant Platform:</strong> Developed dynamic multi-tenant architecture, enabling rapid client onboarding and reducing integration time by <strong>25%</strong>.",
+      // "<strong>API Optimization:</strong> Implemented advanced backend optimizations, reducing response times by <strong>40%</strong> and increasing concurrent user capacity by <strong>25%</strong>.",
+      "<strong>Payment Integrations:</strong> Integrated Stripe and Plaid for payments and label purchasing, improving transaction success rates by <strong>30%</strong>.",
+      // "<strong>Shipping Integrations:</strong> Built integrations with USPS, UPS, FedEx, DHL, and Royal Mail APIs for rate quotes and label generation.",
+      "<strong>Mentorship:</strong> Mentored junior engineers on backend best practices, code reviews, and API design patterns.",
     ],
   },
   {
@@ -205,7 +208,7 @@ export const Experiences: ExperienceType[] = [
       "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, DevOps",
     description: [
       "<strong>Mentorship:</strong> Mentored a team of <strong>5</strong> engineers, providing career advice and pinpointing areas for growth.",
-      "<strong>Collaboration:</strong> Led comprehensive analysis of client requirements, resulting in a <strong>20%</strong> reduction in projectiterations.",
+      "<strong>Collaboration:</strong> Led comprehensive analysis of client requirements, resulting in a <strong>20%</strong> reduction in project iterations.",
       "<strong>Achievement:</strong> Oversaw a <strong>$3</strong> million project from analysis to completion, earning the <strong>&apos;Award of Excellence for Outstanding Accomplishments&apos;</strong>.",
     ],
   },
@@ -234,7 +237,7 @@ export const Experiences: ExperienceType[] = [
       "Javascript, React, React Native, Node.js, Express.js, MongoDB, Firebase, AWS, Lambda, EC2",
     description: [
       "<strong>Excellence:</strong> Maintained consistent <strong>5-star</strong> ratings for project deliverables across <strong>10+</strong> diverse projects.",
-      "<strong>Efficiency:</strong> Delivered tailored web applications acrossdiverse industries, ensuring seamless user experiences and optimalperformance.",
+      "<strong>Efficiency:</strong> Delivered tailored web applications across diverse industries, ensuring seamless user experiences and optimal performance.",
     ],
   },
 ]
@@ -243,19 +246,23 @@ export const Experiences: ExperienceType[] = [
 export const Skills: SkillType[] = [
   {
     title: "Front-End Expertise",
-    list: "JavaScript, TypeScript, React, Next.js, React Native, Angular",
+    list: "JavaScript, TypeScript, React, Next.js, Redux, HTML5, CSS3, Styled-Components, Material-UI, Tailwind CSS",
   },
   {
-    title: "Back-End Expertise",
-    list: "Node.js, Express.js, Python, FastAPI, Django, MongoDB, PostgreSQL, DynamoDB, Firebase",
+    title: "Testing & Quality",
+    list: "Jest, Cypress, Playwright, React Testing Library, Chromatic, Visual Regression Testing, E2E Testing, Unit Testing, Storybook",
   },
   {
-    title: "Cloud & DevOps Expertise",
-    list: "AWS, Azure, Google Cloud Platform, Docker, CI/CD, Git",
+    title: "CI/CD & Tooling",
+    list: "GitHub Actions, Jenkins, pnpm, npm, Webpack, Babel, Docker, Git, Artifactory",
+  },
+  {
+    title: "Back-End & Cloud",
+    list: "Node.js, Express.js, PostgreSQL, MongoDB, AWS, Azure, Serverless, REST APIs, GraphQL",
   },
   {
     title: "Other Experience",
-    list: "Agile/Scrum, GraphQL, LLMs, Elastic Search, Neo4j, Serverless, Microservices, Software Architecture, Security, Infrastructure as Code",
+    list: "Agile/Scrum, Design Systems, Component Libraries, Microservices, Software Architecture, Cross-functional Collaboration",
   },
   {
     title: "Languages",
@@ -278,7 +285,7 @@ export const SkillsAll: SkillType[] = [
   },
   {
     title: "Testing Libraries",
-    list: "Jest, Enzyme, Cypress, Mocha, Chai, Sinon, React-Testing-Library",
+    list: "Jest, Enzyme, Cypress, Playwright, Mocha, Chai, Sinon, React-Testing-Library",
   },
   {
     title: "Databases",
@@ -406,18 +413,18 @@ export const Projects: ProjectType[] = [
     ],
   },
   {
-    slug: "six-wraps",
-    title: "Six Wraps",
-    link: "https://six-wraps.vercel.app",
+    slug: "ox-motive",
+    title: "Ox Motive",
+    link: "https://www.oxmotive.co",
     skills: "React, Next.js, Node.js, Express.js, Flutter, MongoDB, AWS",
     task: "Developed backend APIs and CMS portal for auto services industry. Implemented CI/CD for streamlined deployment.",
 
     shortDescription:
       "As a Full Stack Engineer, developed the backend APIs and CMS portal. Implemented CI/CD best practices to streamline deployment and operation.",
     description:
-      "As a Full Stack Engineer for Six Wraps, I played a key role in developing the backend APIs for the mobile app and CMS portal for the auto services industry. Six Wraps is a platform designed to offer comprehensive car wrapping services, catering to the auto services industry. Through my expertise in Node.js, Express.js, and MongoDB, I developed backend APIs that enabled seamless data management and user interaction. My initiative in implementing CI/CD best practices ensured streamlined deployment and operation, enhancing platform functionality and user experience. Six Wraps highlights my ability to deliver innovative solutions that meet industry-specific needs and drive business growth.",
+      "As a Full Stack Engineer for Ox Motive, I played a key role in developing the backend APIs for the mobile app and CMS portal for the auto services industry. Ox Motive is a platform designed to offer comprehensive car wrapping services, catering to the auto services industry. Through my expertise in Node.js, Express.js, and MongoDB, I developed backend APIs that enabled seamless data management and user interaction. My initiative in implementing CI/CD best practices ensured streamlined deployment and operation, enhancing platform functionality and user experience. Ox Motive highlights my ability to deliver innovative solutions that meet industry-specific needs and drive business growth.",
     highlights: [
-      "Developed the backend APIs and CMS portal for Six Wraps.",
+      "Developed the backend APIs and CMS portal for Ox Motive.",
       "Implemented CI/CD best practices to streamline deployment and operation.",
       "Enhanced user experience and platform functionality through efficient data management and user interaction.",
     ],
